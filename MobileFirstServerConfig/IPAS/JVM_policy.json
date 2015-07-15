@@ -1,0 +1,35 @@
+{
+    "layers_nodes": "JVM Policy",
+    
+    "model_nodes": {
+        "attributes": {
+          "healthCenterEnabled": false,
+          "32heapRange": [
+            512,
+            1536
+          ],
+          "verboseGCEnabled": false,
+          "classLoaderOrder": "PARENT_LAST",
+          "warClassLoader": "MULTIPLE",
+          "debugPort": 7777,
+          "CPU": "2",
+          "hcPort": 1972,
+          "debugEnabled": false
+        },
+        "id": "JVM Policy",
+        "type": "JVMPolicyofWAS",
+        "groups": {
+          "32Bit": true,
+          "64Bit": false
+        }
+    },
+
+    "model_links": {
+        "source": "JVM Policy",
+        "target": "MobileFirst Server",
+        "attributes": {},
+        "type": "policy.JVMPolicyofWAS",
+        "id": "policy.JVMPolicyofWAS_1",
+        "groups": {}
+    }
+}

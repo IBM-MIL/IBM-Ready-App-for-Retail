@@ -1,0 +1,56 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context="com.ibm.mil.readyapps.summit.fragments.DashboardFragment">
+
+    <com.ibm.mil.readyapps.summit.views.NestingScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.ibm.mil.readyapps.summit.views.AutoInfiniteViewPager
+                android:id="@+id/featured_items_pager"
+                android:layout_width="match_parent"
+                android:layout_height="186dp" />
+
+            <TextView
+                android:id="@+id/recommended_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recommended_dashboard_fragment"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/recommended_items_pager"
+                android:layout_width="match_parent"
+                android:layout_height="174dp" />
+
+            <TextView
+                android:id="@+id/shop_all_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shopall_dashboard_fragment"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/shopall_items_pager"
+                android:layout_width="match_parent"
+                android:layout_height="174dp" />
+
+        </LinearLayout>
+
+    </com.ibm.mil.readyapps.summit.views.NestingScrollView>
+
+</FrameLayout>

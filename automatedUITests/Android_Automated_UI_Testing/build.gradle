@@ -1,0 +1,668 @@
+defaultTasks 'help'
+
+import org.apache.commons.net.telnet.TelnetClient
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+version = '0.1'
+
+project.ext {
+    dexDir = new File('build/dex')
+    distDir = new File('./dist')
+}
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+def EMULATOR_NAME = "summitAndroidUIAutomator"
+
+/**************************************************************************************************************
+ **************************************************************************************************************
+ *****************************                                                *********************************
+ *****************************  Command Line arguments that can be set in     *********************************
+ *****************************       gradle.properties file                   *********************************
+ *****************************                                                *********************************
+ **************************************************************************************************************
+ **************************************************************************************************************/
+
+/* the properties */
+def SdkHome=System.getProperty("SdkHome")
+def SdkTarget=System.getProperty("SdkTarget")
+def SdkBuildToolsDir = System.getProperty("SdkBuildToolsDir")
+def ApkPath = System.getProperty("ApkPath")
+def TestDirectory = System.getProperty("TestDirectory")
+def FilesToIgnore = System.getProperty("FilesToIgnore")
+
+if(SdkHome != null && !SdkHome.equals("")) {
+    project.ext.set("androidSdkHome", SdkHome)
+}
+
+if(SdkTarget != null && !SdkTarget.equals("")){
+    project.ext.set("androidSdkTarget", SdkTarget)
+}
+
+if(SdkBuildToolsDir != null && !SdkBuildToolsDir.equals("")){
+    project.ext.set("androidSdkBuildToolsDir", SdkBuildToolsDir)
+}
+
+if(ApkPath != null && !ApkPath.equals("")) {
+    project.ext.set("androidApkPath", ApkPath)
+}
+
+if(TestDirectory != null && !TestDirectory.equals("")){
+    project.ext.set("testDirectory", TestDirectory)
+}
+
+if(FilesToIgnore != null && !FilesToIgnore.equals("")){
+    project.ext.set("filesToIgnore", FilesToIgnore)
+}
+
+
+/**************************************************************************************************************
+ **************************************************************************************************************
+ *****************************                                                *********************************
+ *****************************               Set up                           *********************************
+ *****************************                                                *********************************
+ **************************************************************************************************************
+ **************************************************************************************************************/
+
+def sdkJarRoot = androidSdkHome + '/platforms/' + androidSdkTarget
+project.ext.set('sdkJarRoot', sdkJarRoot)
+println "Using android libraries from: ${sdkJarRoot}" 
+dependencies {
+    compile fileTree(dir: sdkJarRoot, include: '*.jar')
+    compile group: 'junit', name: 'junit', version: '4.11'
+}
+
+buildscript{
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'commons-net', name: 'commons-net', version: '3.3'
+        classpath fileTree(dir: androidSdkHome + '/platforms/' + androidSdkTarget, include: '*.jar')
+        classpath group: 'junit', name: 'junit', version: '4.11'
+    }
+}
+
+/**************************************************************************************************************
+ **************************************************************************************************************
+ *****************************                                                *********************************
+ *****************************                    Tasks                       *********************************
+ *****************************                                                *********************************
+ **************************************************************************************************************
+ **************************************************************************************************************/
+
+//create jar
+task jarCode(dependsOn: ['compileJava', 'jar']) << {
+}
+
+//create dex
+task mydex (dependsOn: jarCode) << {
+    println "jararchivepath: " + jar.archivePath 
+    def cmd = [androidSdkHome + '/' + androidSdkBuildToolsDir + '/' + 'dx', '--dex', '--no-strict', '--output=' + buildDir +'/libs/' + project.name + '.jar', jar.archivePath]
+    runCmd(cmd)
+}
+
+//move jar file to distDir
+task dist(dependsOn:mydex, type:Copy) << {
+    project.distDir.mkdirs()
+    from(project.dexDir)
+    into(project.distDir)
+    include('*.jar')
+}
+
+//delete the emulator
+task deleteEmulator(dependsOn:'dist') << {
+    println("Deleting the emulator")
+    //command: android delete avd -n <emulator name>
+    def cmd = ["$androidSdkHome/tools/android", 'delete', 'avd', '-n',  EMULATOR_NAME]
+    runCmdNeverFail(cmd)
+}
+
+//create the emulator
+task createEmulator(dependsOn:'deleteEmulator')<< {
+    println("Creating the Emulator")
+    //command: create avd --name Nexus 5 API 21
+    def cmd = ["$androidSdkHome/tools/android", 'create', 'avd', '--name', EMULATOR_NAME, '--target', 'Google Inc.:Google APIs:21', '--abi', 'google_apis/x86', '--device', 'Nexus 5', '--sdcard', '2048M', '--skin', '1080x1920']
+    runCmd(cmd)
+    def USER_HOME = System.properties['user.home'] 
+    def LINE_SEPARATOR = System.properties['line.separator']
+    def EMU_INI = "$USER_HOME/.android/avd/${EMULATOR_NAME}.avd/config.ini"
+    writeFile(EMU_INI, ["vm.heapSize=64" + LINE_SEPARATOR, "hw.ramSize=2048" + LINE_SEPARATOR, "hw.gpu.enabled=yes" + LINE_SEPARATOR], true)
+}
+
+//start the emulator
+task startEmulator(dependsOn:'createEmulator') << {
+    println("Starting emulator")
+    //command: emulator -avd <avd_name>
+    //call can't be a blocking call, so we need to call ant instead
+    ant.exec(executable: "$androidSdkHome/tools/emulator", dir:"$androidSdkHome/tools", spawn:true){
+        arg(value:"-avd")
+        arg(value:EMULATOR_NAME)
+    }
+    //psuedo infinite loop try to do emulator-5554 shell ls
+    def rc = 1
+    while (rc != 0) {
+        //adb devices to get out the running emulator suffixes
+        //if there are no devices then the device array will be empty
+        def device = findRunningAVDPort(EMULATOR_NAME)
+        //if the device array has something in it
+        if (device.length > 0) {
+            //need to prefix "emulator-" in front of device because that's what the command line is expecting
+            def fullDevice = "emulator-" + device[0]
+            //the command to be run
+            def cmd = [androidSdkHome + "/platform-tools/adb", '-s', fullDevice, 'shell', 'ls']
+            //issue the command, should return 0
+            rc = runCmdNeverFail(cmd)
+        }
+        sleep(5000)
+    }
+    sleep(10000)
+}
+
+//install the app on the emulator
+task installApp(dependsOn:'startEmulator') << {
+    println("Installing app")
+    //command: adb install <path_to_apk>
+    def cmd = [androidSdkHome + "/platform-tools/adb", 'install', "${androidApkPath}"]
+    runCmd(cmd)
+}
+
+//install the jar file on the emulator
+task installTest(dependsOn:'installApp') << {
+    println ("Pushing jar file")
+    //command: adb push Android_Automated_UI_Testing.jar /data/local/tmp
+    def cmd = [androidSdkHome + "/platform-tools/adb", 'push', 'build/libs/' + project.name + '.jar', 'data/local/tmp']
+    runCmd(cmd)
+}
+
+//run the test
+task runTest(dependsOn:'installTest') << {
+    def htmlReports = new File('./reports/')
+    htmlReports.mkdirs()
+    def reportsDir = './reports/'
+
+    println("Attempting to get all the test cases")
+    println("Ignoring the following files: " + filesToIgnore)
+
+    //testArray will get out all of the files in the user given directory with the extension ".java"
+    def testArray = findFilesWithExtension("$testDirectory", ".java", true)
+    def testArraySize = testArray.size
+    def ignoreArray = new ArrayList<String>()
+
+    /*
+    *   Begin by getting out the files that the user specified
+    *   that they want to ignore
+    */
+
+    //need to divide up the ignore files passed in by , (commas)
+    def ignoreSplit = filesToIgnore.split(",")
+    def numberOfFilesToIgnore = ignoreSplit.length
+
+    //clean up even more by deleting the " " (spacse), . (periods), and "java"
+    for (numberOfFilesToIgnore; numberOfFilesToIgnore > 0; numberOfFilesToIgnore--){
+        //go through and delete all the spaces, periods, and java extension and add to ignoreArray
+        ignoreArray.add(ignoreSplit[numberOfFilesToIgnore-1].replaceAll("\\s+", "").replaceAll("\\.", "").replaceAll("java", ""))
+    }
+
+    //I will need to put the valid tests into a dictionary with the <testName, packageName>
+    def validTestDictionary = new HashMap<String, String>()
+    def packageName
+    def testName
+    //I will then put the testDictionary into a validTestArray so I can check against the ignoreArray to delete the tests that are suppoesd to be ignored
+    def validTestArray = new ArrayList<HashMap>()
+
+    while (testArraySize > 0){
+        def currentTest = testArray[testArraySize-1].toString()
+        //clean up how our tests are being written, currently it has the whole file path before
+        //clean up our tests by erasing the file path
+        def testString = currentTest.replaceAll("$testDirectory", "")
+
+        //split up the package name from the class name
+        def parts = testString.split("/");
+        packageName = parts[1]
+
+        //clean up the testName by deleting . (dots) and "java"
+        def cleanTestString = parts[2].replaceAll("\\.", "").replaceAll("java", "")
+    
+        //add it to the validTestDictionary: cleanTestString = key packageName = value
+        validTestDictionary.put(cleanTestString, packageName)
+
+        //decrement the testArraySize to loop again
+        testArraySize--
+    }
+    validTestArray.add(validTestDictionary)
+    
+    /* 
+     * Now that we have the ignoreArray and validTestArray we can loop through the arrays
+     * if a validTest is in the ignoreArray - delete, if it's not then run that test!
+     */
+
+    def iter = validTestDictionary.keySet().iterator()
+    while (iter.hasNext()){
+        def key = iter.next()
+        for (String s : ignoreArray) {
+            if (s.equals(key)){
+                iter.remove()
+            }
+        }
+    }
+    println("validTestDictionary: " + validTestDictionary)
+    def outputFiles = new ArrayList<String>()  
+    def logsuffix = '.log'     
+    def dictionaryCount = validTestDictionary.size()
+    if (dictionaryCount == 0){
+        //do nothing
+        println("No tests to perform")
+    }
+
+    else {
+        // actually run the command
+
+        for (Map.Entry<String, String> entry : validTestDictionary.entrySet()){
+            //get out the packageName and testName
+            packageName = entry.getValue()
+            testName = entry.getKey()
+            //run the automated tests
+            def cmd = [androidSdkHome + "/platform-tools/adb", 'shell','uiautomator','runtest', "${project.name}.jar" , '-c', "${packageName}.${testName}"]
+            def output = runCmd(cmd)
+            println("output: "+ output)
+            def logName = reportsDir + testName + "-uitests"
+            writeFile(logName + logsuffix, [output])
+            outputFiles.add(logName)
+        }
+    }
+    for (def outFile : outputFiles) {
+    	def logfile = outFile + logsuffix
+    	println("logfile: " + logfile)
+        //def cmd = ['java','-jar', 'libs/uiautomator2junit-0.2.jar', 'convert', outFile + logsuffix]
+        def cmd = ['java','-jar', 'libs/uiautomator2junit-0.2.jar', "${logfile}"]
+        runCmd(cmd)
+    } 
+}
+
+//stop the emulator
+task stopEmulator(dependsOn:'runTest')<<  {
+    println("Stopping emulator after running test")
+    //command: adb emu kill
+    def cmd = [androidSdkHome + "/platform-tools/adb", 'emu', 'kill']
+    runCmd(cmd)
+}
+
+//task to actually run everything
+task startTest(dependsOn:['clean','jarCode', 'mydex', 'dist', 'deleteEmulator', 'createEmulator', 'startEmulator', 'installApp', 'installTest', 'runTest', 'stopEmulator'])<<  {
+    println("Finished running Android Tests")
+}
+
+jarCode.mustRunAfter(clean)
+mydex.mustRunAfter(jarCode)
+dist.mustRunAfter(mydex)
+deleteEmulator.mustRunAfter(dist)
+createEmulator.mustRunAfter(deleteEmulator)
+installApp.mustRunAfter(createEmulator)
+installTest.mustRunAfter(installApp)
+runTest.mustRunAfter(installTest) 
+
+
+/**************************************************************************************************************
+ **************************************************************************************************************
+ *****************************                                                *********************************
+ *****************************            Helper Functions                    *********************************
+ *****************************                                                *********************************
+ **************************************************************************************************************
+ **************************************************************************************************************/
+
+/**
+ * Function that runs the provided command and waits for the command to complete before returning. Will return the output generated and printed to standard out
+ * and standard error as a String.
+ *
+ * NOTE:  THIS IS A BLOCKING FUNCTION.  IF THE COMMAND DOES NOT RETURN, NEITHER WILL THIS FUNCTION.
+ * NOTE: IDEALLY THE COMMAND SHOULD BE SUPPLIED AS A STRING ARRAY.  YOU CAN OPTIONALLY PROVIDE A STRING BUT PARAMETERS
+ *      PASSED USED IN THE STRING FORM CANNOT CONTAIN SPACES OTHERWISE THEY GET RECOGNIZED AS SEPARATE PARAMETERS WHICH
+ *      IS DEFINITELY NOT THE EXPECTED BEHAVIOR
+ *
+ * For example:
+ *
+ * Do this:
+ *
+ * output = runCmd(['ls', '-l', 'My Directory'])
+ *
+ * Do not do this
+ *
+ * output = runCmd('ls -l "My Directory"')
+ *
+ * The first version does the right thing (runs the listing command against the "My Diretory" directory).
+ * The second version actually gets interpreted as 'ls -l My Directory'.  So it attempts
+ * 
+ * @param cmd String array representing the command that should be executed, possibly in its own unmanaged thread.
+ * @param shouldWait boolean that tells the function whether is should block and wait for the 'cmd' to complete before
+ * returning.  If true this spawns a new, unmonitored thread in which to run the command.  This is great for system
+ * commands that could be blocking and thus not let this function returned if set to wait for the command to complete.
+ * @param saveProcess Whether the function should attempt to save the started process into the projects SAVED_PROCESS
+ * property which is a HashMap<String, Process> of the saved processes.  This will only be used if shouldWait is set
+ * to false.
+ * @return A string representing all the output the command produced, both to standard out and standard error. Could be
+ * set to nothing (empty string) if the shouldWait flag is set to false.
+ */
+Integer runCmdNeverFail(cmd, shouldWait = true, printCommand = true) {
+    if (cmd == null || "".equals(cmd)) {
+        return "No command specified, no command executed."
+    }
+    
+    if (printCommand) {
+        println "************************************************************"
+        println "Executing command: "  + cmd
+        println "************************************************************"
+    }
+    def allout = ''
+    if (shouldWait) {
+        def cmdproc = cmd.execute()
+        def cmdout = new StringBuffer()
+        def cmderr = new StringBuffer()
+        
+        cmdproc.consumeProcessOutput(cmdout, cmderr)
+        def rc = 0
+        rc = cmdproc.waitFor()
+        allout = cmdout.toString() + cmderr.toString()
+        if (rc != 0) {
+            println "Return Code = " + rc
+            println ("Standard Out: " + cmdout.toString())
+            println ("Standard Error: " + cmderr.toString())
+        }
+        return rc
+    } 
+}
+
+/**
+ * Function that runs the provided command and waits for the command to complete before returning.  If the command fails
+ * the function will throw a StopExecutionException.  Will return the output generated and printed to standard out
+ * and standard error as a String.
+ *
+ * NOTE:  THIS IS A BLOCKING FUNCTION.  IF THE COMMAND DOES NOT RETURN, NEITHER WILL THIS FUNCTION.
+ * NOTE: IDEALLY THE COMMAND SHOULD BE SUPPLIED AS A STRING ARRAY.  YOU CAN OPTIONALLY PROVIDE A STRING BUT PARAMETERS
+ *      PASSED USED IN THE STRING FORM CANNOT CONTAIN SPACES OTHERWISE THEY GET RECOGNIZED AS SEPARATE PARAMETERS WHICH
+ *      IS DEFINITELY NOT THE EXPECTED BEHAVIOR
+ *
+ * For example:
+ *
+ * Do this:
+ *
+ * output = runCmd(['ls', '-l', 'My Directory'])
+ *
+ * Do not do this
+ *
+ * output = runCmd('ls -l "My Directory"')
+ *
+ * The first version does the right thing (runs the listing command against the "My Diretory" directory).
+ * The second version actually gets interpreted as 'ls -l My Directory'.  So it attempts
+ * 
+ * @param cmd String array representing the command that should be executed, possibly in its own unmanaged thread.
+ * @param shouldWait boolean that tells the function whether is should block and wait for the 'cmd' to complete before
+ * returning.  If true this spawns a new, unmonitored thread in which to run the command.  This is great for system
+ * commands that could be blocking and thus not let this function returned if set to wait for the command to complete.
+ * @param saveProcess Whether the function should attempt to save the started process into the projects SAVED_PROCESS
+ * property which is a HashMap<String, Process> of the saved processes.  This will only be used if shouldWait is set
+ * to false.
+ * @return A string representing all the output the command produced, both to standard out and standard error. Could be
+ * set to nothing (empty string) if the shouldWait flag is set to false.
+ */
+String runCmd(cmd, shouldWait = true, printCommand = true) {
+    if (cmd == null || "".equals(cmd)) {
+        return "No command specified, no command executed."
+    }
+    
+    if (printCommand) {
+        println "************************************************************"
+        println "Executing command: "  + cmd
+        println "************************************************************"
+    }
+    def allout = ''
+    if (shouldWait) {
+        def cmdproc = cmd.execute()
+        def cmdout = new StringBuffer()
+        def cmderr = new StringBuffer()
+        
+        cmdproc.consumeProcessOutput(cmdout, cmderr)
+        def rc = 0
+        rc = cmdproc.waitFor()
+        allout = cmdout.toString() + cmderr.toString()
+        if (rc != 0) {
+            println "Return Code = " + rc
+            println ("Standard Out: " + cmdout.toString())
+            println ("Standard Error: " + cmderr.toString())
+            ant.fail(allout)
+        }
+    } 
+    
+    
+    return allout
+} 
+
+/**
+ * Takes a file name and a string array of data, and writes out the data in the string array to the file. Uses UTF-8 as
+ * the encoding for the file.
+ * 
+ * @param name The name of the file to create.  Ideally fully qualified file name
+ * @param data String array representing each line that should go into the file.
+ * @param append Whether to append to a file or overwrite. By default set to false so overwrites take place
+ */
+void writeFile(name, data, append=false) {
+    def CHARSET = "UTF-8"
+    if (append) {
+        new File(name).withWriterAppend CHARSET, {  out ->
+            data.each {
+                out.println it
+            }
+        }
+    } else {
+        new File(name).withWriter CHARSET, {  out ->
+            data.each {
+                out.println it
+            }
+        }
+    }
+    
+}
+
+/**
+ * Given a "pretty" name of an AVD, it will look at running emulators to figure out if any of the running emulators
+ * were created from the AVD defition with that name and return the port number of a running instance of the emulator
+ * created from that definition.
+ * 
+ * Will call the command 'adb devices' and loop over the output, which will loop like the following:
+ * 
+ * List of devices attached
+ * emulator-5555    device
+ * emulator-5556    device
+ * 
+ * As it loops through the output, it will strip the port number from the 'emulator-<port>' portion of the output
+ * and telnet to this emulator port to figure out what that emulator instance "pretty" name is.  For instance when
+ * you create an emulator configuration, you can name them things like "nexus5' or 'nexus-10'.  When you start an
+ * instance of this definition, you can only see whats running by 'adb devices' but that doesn't actually tell you
+ * what definition this running emulator came from, so you have to telnet to the running emulator to figure out what
+ * definition it was created from.
+ * 
+ * @param name The 'pretty' name of the AVD definition that we are looking to see if there is a running instance of. If
+ *              empty, will return all the ports currently being used.
+ * @return An array of ports found.  Could be sized 0 or more depending on what is found running (or not found).
+ */
+String[] findRunningAVDPort(name) {
+    /*
+     * We'll start by restarting the adb server so we get a clean list of running devices.  If we don't do this, then we
+     * more than likely won't get the right list of running devices
+     */
+    runCmd([androidSdkHome+ "/platform-tools/adb" , 'kill-server'])
+    sleep(5000)
+    runCmd([androidSdkHome+ "/platform-tools/adb" , 'start-server'])
+    def cmd = [androidSdkHome + '/platform-tools/adb','devices']
+    def out = runCmd(cmd)
+    def devices = out.split(System.getProperty("line.separator"))
+    def idx = 0
+    def foundEmulators = []
+    for (int i = 0 ; i < devices.size() ; ++i) {
+        //Theres other gibberish in the output, lets filter only the lines we want
+        if (devices[i].startsWith('emulator-')) {
+            def dev = devices[i].split("\t")
+            def port = Integer.parseInt(dev[0].split('-')[1])
+            def avdname = readAndroidNameFromEmulator('localhost', port)
+            //if name is null or empty string we're just going to return all ports we get
+            if (name == null || "".equals(name) || avdname.equals(name)) {
+                foundEmulators[idx++] = port
+            }
+        }
+    }
+    println("foundEmulators from within findRunningAVDPort: " + foundEmulators)
+    return foundEmulators
+}
+
+/**
+ * Will take a host and port number and telnet to that port and run the command 'avd name' on that telnet connection
+ * and return the value from that command run.  This assumes that you are connecting to an android emulator
+ * which understands the "avd name" command.
+ * 
+ * @param host The host the emulator is running on (should usually be 'localhost')
+ * @param port The port number of the running emulator
+ * @return The name AVD template from which this emulator was created.
+ */
+String readAndroidNameFromEmulator(host, port) {
+    def telnet = new TelnetClient()
+    telnet.setConnectTimeout(1000)
+    telnet.connect( host, port )
+    def reader = telnet.inputStream.newReader()
+    def writer = new PrintWriter(new OutputStreamWriter(telnet.outputStream),true)
+    //read until we get the first OK
+
+    readUntil( reader, "OK" )
+    //then send the avd name so it can gives us its name
+    writer.println("avd name")
+    //and then it ends that request with an OK, so lets read till there.  
+    def avdName = readUntil( reader, "OK" , true)
+    //now we'll disconnect and trim any extra whitespace and return everything the telnet session gave us.
+    telnet.disconnect()
+    avdName = avdName.trim()
+    return avdName
+}
+
+/**
+ * Utility method used with the telnet function to sit and read data from a telnet connection until the given
+ * pattern is found.  The method will return all the text read from the telnet connection including the given pattern.
+ *
+ * @param reader The input stream to read until the 'pattern' string is found.
+ * @param pattern The pattern string to detect while reading data from the reader, which will step the read from the reader
+ *                  and retun all the output read up to the pattern found, inclusive.
+ */
+def readUntil(reader, pattern) {
+    return readUntil(reader, pattern, false)
+}
+
+/**
+ * Utility method used with the telnet function to sit and read data from a telnet connection until the given
+ * pattern is found.  The method will return all the text read from the telnet connection including the given pattern.
+ * If the excludePattern parameter is true, the returned string will not include the 'pattern' provided.
+ *
+ * @param reader The input stream to read until the 'pattern' string is found.
+ * @param pattern The pattern string to detect while reading data from the reader, which will step the read from the reader
+ *                  and retun all the output read up to and possibly including the pattern found.
+ * @param excludePatter boolean, if true, will exclude the 'pattern' specified from the string returned
+ */
+def readUntil( reader, pattern, excludePattern ) {
+    def sb = new StringBuffer()
+    def ch = reader.read()
+    while (ch != -1) {
+        sb << (char) ch
+        if (sb.toString().endsWith(pattern)) {
+            def found = sb.toString()
+            if (excludePattern) {
+                found = found.replace(pattern, "")
+            }
+            sb = new StringBuffer()
+            return found
+        }
+        ch = reader.read()
+    }
+    return null
+}
+
+/**
+ * Searches the given directory for a file (or directory) with the given extension. The codes doesn't actually look
+ * for a true extension, rather it takes the file (or directory) name and does an "endsWith" so hopefully its slighly
+ * more powerful than a search for true extensions.
+ * 
+ * @param dir The directory to search
+ * @param extension The extension to look for in a file name.
+ * @param recurse Whether we should recurse into child directories when looking for files.  Default is true.
+ * @return List of all files that exist under the provided directory, whose names end with the given extension
+ */
+ArrayList<String> findFilesWithExtension(dir, extension, recurse=true) {
+    def list = getAllFiles(dir, null, extension, recurse)
+    return list
+}
+
+/*
+ * Gets out all the files
+ *
+ * @param dir The directory to search
+ * @param contains Contains a string
+ * @param extension The Extension of the files to search
+ * @param recurse Whether we should recurse into the child directories
+ */
+ArrayList<String> getAllFiles(dir, contains, extension, recurse=true) {
+    def list = []
+    def searchdir = new File(dir)
+    if (searchdir.isDirectory()) {
+        if (!recurse) {
+            searchdir.eachFile  { file ->
+                if (contains != null && extension ==null) {
+                    if (file.getAbsolutePath().contains(contains)) {
+                        list << file
+                    }
+                } else if (contains ==null && extension != null) {
+                    if (file.getAbsolutePath().endsWith(extension)) {
+                        list << file
+                    }
+                } else if (contains != null && extension != null) {
+                    if (file.getAbsolutePath().contains(contains) && file.getAbsolutePath().endsWith(extension)) {
+                        list << file
+                    }
+                } else {
+                    list << file
+                }
+            }
+        } else {
+            println(searchdir.getAbsolutePath())
+            searchdir.eachFileRecurse  { file ->
+                if (contains != null && extension ==null) {
+                    if (file.getAbsolutePath().contains(contains)) {
+                        list << file
+                    }
+                } else if (contains ==null && extension != null) {
+                    if (file.getAbsolutePath().endsWith(extension)) {
+                        list << file
+                    }
+                } else if (contains != null && extension != null) {
+                    if (file.getAbsolutePath().contains(contains) && file.getAbsolutePath().endsWith(extension)) {
+                        list << file
+                    }
+                } else {
+                    list << file
+                }
+            }
+        }
+    }
+    return list
+}
+

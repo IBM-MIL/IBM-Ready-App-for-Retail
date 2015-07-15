@@ -1,0 +1,26 @@
+var classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client =
+[
+    [ "StoreClient", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#a3de68370a43625016531ae8c1f4690a5", null ],
+    [ "getAddress", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#aa0c414b06a130d5a6f04b68ec7997d85", null ],
+    [ "getDepartments", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#ad76d8035b2ccc681d1d58cce44fdb086", null ],
+    [ "getImage", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#a0971ca223b7755ad72b0801a6540d838", null ],
+    [ "getLocation", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#aca70441700f1d77795956152a6c130eb", null ],
+    [ "getPhone_number", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#ae7c24917e3cc3a72ba7ef6fba62d035e", null ],
+    [ "getStore_hours", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#a3ddadcaade0ace408e9bfd7d5cb8d843", null ],
+    [ "getStore_number", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#a82561f0665e697365c093db082cb82e5", null ],
+    [ "setAddress", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#a2b27d00bb40b1467f3032d20b5c767f4", null ],
+    [ "setDepartments", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#abfa517ddc6c74f4ae39f9b94fcf74dc7", null ],
+    [ "setImage", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#abcadb57d0331712b95812ecb378b0fc1", null ],
+    [ "setLocation", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#a099239e14218c93ee1d0b5b933c3fe61", null ],
+    [ "setPhone_number", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#a403016f0e9bf4f818ddc334c9c6c8066", null ],
+    [ "setStore_hours", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#aa436b0b8af6e08549b663ffb4cc7779b", null ],
+    [ "setStore_number", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#ac9dfda791944d245300edfc0d8242e86", null ],
+    [ "toString", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#a9c16f06616b0c4e0e5d49812a270f2e0", null ],
+    [ "address", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#aa34515705ff0d576239f43255beb8d35", null ],
+    [ "departments", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#ae3d4d252df5cd28e58c3afde8d98124e", null ],
+    [ "image", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#a3168785c8bb7dae5a284bc91ae229d32", null ],
+    [ "location", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#a1c2559528795e41653e7fc5a006b7e66", null ],
+    [ "phone_number", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#aed63c591037f551f3ee9be6f5ede5338", null ],
+    [ "store_hours", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#a10be797defa33d0de21e670d85c4460c", null ],
+    [ "store_number", "classcom_1_1ibm_1_1mil_1_1summit_1_1model_1_1_store_client.html#a655e8e3d118bd9f80680a5281de9f42c", null ]
+];

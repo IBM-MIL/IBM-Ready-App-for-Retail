@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/Users/rudy/dev/projects/AH-IBM-Android-Lib/apphance-lib/build/ibm%20qa/variants/ibm%20qa/res/values/ui.xml -->
+    <color name="background_color">#dee9f0</color>
+    <color name="background_primary">#40be4c</color>
+    <color name="background_secondary">#ffffff</color>
+    <color name="emphasize_color">#5D7A8C</color>
+    <!-- From: file:/Users/rudy/dev/projects/AH-IBM-Android-Lib/apphance-lib/build/ibm%20qa/variants/ibm%20qa/res/values/colors.xml -->
+    <color name="green">#10b000</color>
+    <!-- From: file:/Users/rudy/dev/projects/AH-IBM-Android-Lib/apphance-lib/build/ibm%20qa/variants/ibm%20qa/res/values/ui.xml -->
+    <color name="outline_color">#bec9d0</color>
+    <color name="text_primary">#ffffff</color>
+    <color name="text_secondary">#000000</color>
+    <!-- From: file:/Users/rudy/dev/projects/AH-IBM-Android-Lib/apphance-lib/build/ibm%20qa/variants/ibm%20qa/res/values/colors.xml -->
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <drawable name="highlight">#c000a0e0</drawable>
+    <!-- From: file:/Users/rudy/dev/projects/AH-IBM-Android-Lib/apphance-lib/build/ibm%20qa/variants/common/res/values/string.xml -->
+    <string name="app_name">apphance</string>
+    <!-- From: file:/Users/rudy/dev/projects/AH-IBM-Android-Lib/apphance-lib/build/ibm%20qa/variants/ibm%20qa/res/values/ui.xml -->
+    <string name="clear_overlay">Clear</string>
+    <string name="edit_overlay">Edit</string>
+    <string name="login_anon_login_button">Anonymous Login</string>
+    <string name="login_appIdText">App. key</string>
+    <string name="login_app_version">App version: %1$s (%2$d)</string>
+    <string name="login_application_inactive">This application does not have an active subscription set up. Please contact application\'s owners.</string>
+    <string name="login_emailText">E-mail</string>
+    <string name="login_failed">Login failed</string>
+    <string name="login_identifyProgress">Contacting MQA server...</string>
+    <string name="login_loginButton">Login</string>
+    <string name="login_login_button">Login</string>
+    <string name="login_passwordText">Password</string>
+    <string name="login_progress">Logging in...</string>
+    <string name="login_quickLoginHint">Please select your name from the list below:</string>
+    <string name="login_quickLoginHint2">Please provide your MQA or uTest credentials</string>
+    <string name="login_skipButton">Skip</string>
+    <string name="login_title">Login</string>
+    <string name="login_too_many_devices">A maximum number of devices registered for this application has been reached. Please contact application\'s owners.</string>
+    <string name="login_versionNameText">Version name</string>
+    <string name="login_versionNumberText">Version no.</string>
+    <string name="login_welcomeText">Welcome to MQA\nPlease login to proceed</string>
+    <string name="login_wrong_application">Invalid application key or version. Please contact application\'s developers.</string>
+    <string name="login_wrong_credentials">Invalid credentials.</string>
+    <string name="notification_text_login">Logging in - please wait...</string>
+    <string name="notification_text_prelogin">Logging in as %1$s in %2$d seconds</string>
+    <string name="notification_text_report">Tap to report problem</string>
+    <string name="notification_ticker">MQA</string>
+    <string name="notification_title">%s (tested using MQA)</string>
+    <string name="notification_update_text">Tap to install version %1$d (%2$s)</string>
+    <string name="notification_update_ticker">Update available</string>
+    <string name="notification_update_title">Update for %s</string>
+    <string name="problem_back">Back</string>
+    <string name="problem_cancel">Cancel</string>
+    <string name="problem_hint">Describe the problem</string>
+    <string name="problem_includes">The problem will be reported to MQA. The report includes: screenshots, logs, comment.</string>
+    <string name="problem_includes_comment">Comment</string>
+    <string name="problem_includes_logs">Logs</string>
+    <string name="problem_includes_screen">Screenshot\(s\)</string>
+    <string name="problem_includes_screenshots_logs_comments">screenshots, logs, comment.</string>
+    <string name="problem_instruction">Reporting problem with %s</string>
+    <string name="problem_postscriptum">Following the report, you will receive an e-mail with confirmation.</string>
+    <string name="problem_proceed">Proceed</string>
+    <string name="problem_prompt">Please enter your comment:</string>
+    <string name="problem_report">Report</string>
+    <string name="problem_select_app">Select an application to report problem with</string>
+    <string name="problem_title">Report a Problem</string>
+    <string name="problem_toast_no_message">Please provide a comment in your report (at least 10 characters).</string>
+    <string name="settings_credentials">Credentials</string>
+    <string name="settings_credentials_email">E-mail</string>
+    <string name="settings_credentials_email_summary">E-mail used when logging to MQA</string>
+    <string name="settings_credentials_password">Password</string>
+    <string name="settings_credentials_password_summary">Password used when logging to MQA</string>
+    <string name="settings_enabled">Enabled</string>
+    <string name="settings_enabled_summary">Whether MQA should report applications\' logs</string>
+    <string name="settings_menu_start_service">Start service</string>
+    <!-- From: file:/Users/rudy/dev/projects/AH-IBM-Android-Lib/apphance-lib/build/ibm%20qa/variants/common/res/values/test.xml -->
+    <string name="test_api_key">f4cba2f6ca4afb2ba91b90e01c00d45c</string>
+    <!-- From: file:/Users/rudy/dev/projects/AH-IBM-Android-Lib/apphance-lib/build/ibm%20qa/variants/ibm%20qa/res/values/ui.xml -->
+    <string name="test_cycles_hint">Please select your test cycle from the list below:</string>
+    <string name="test_cycles_manual">If you are a uTester, please provide your Test Cycle ID.</string>
+    <string name="test_cycles_title">Test cycles</string>
+    <!-- From: file:/Users/rudy/dev/projects/AH-IBM-Android-Lib/apphance-lib/build/ibm%20qa/variants/common/res/values/test.xml -->
+    <string name="test_ui_group">Group</string>
+    <string name="test_ui_level">Level</string>
+    <string name="test_ui_message_hint">Enter message here</string>
+    <string name="test_ui_report">Report</string>
+    <string name="test_ui_type">Type</string>
+    <!-- From: file:/Users/rudy/dev/projects/AH-IBM-Android-Lib/apphance-lib/build/ibm%20qa/variants/ibm%20qa/res/values/ui.xml -->
+    <string name="toast_application_blocked">Your application has expired and can not be run at this time.</string>
+    <string name="toast_application_inactive">This application does not have an active subscription set up. Please contact application\'s owners.</string>
+    <string name="toast_email_changed">You need to restart tested application(s) for e-mail change to take effect.</string>
+    <string name="toast_enabled_off">Note that disabling MQA does not stop already running applications from logging, only the newly started ones.</string>
+    <string name="toast_enabled_on">Note that enabling MQA does not cause already running applications to commence logging, only the newly started ones.</string>
+    <string name="toast_first_run">Contacting MQA server.\nPlease wait...</string>
+    <string name="toast_impending_login">Logging in to MQA as %1$s. Tap notification to change.</string>
+    <string name="toast_mandatory_update">Your version (%s) is known to be unstable. Tap the notification to install a stable one.</string>
+    <string name="toast_no_test_cycle_found">No test cycles were found for this application.</string>
+    <string name="toast_recommended_update">Your version (%s) is outdated. Tap the notification to install a new one.</string>
+    <string name="toast_test_cycle_auto_selected">Test cycle was selected automatically.</string>
+    <string name="toast_too_many_devices">Maximum number of devices has been reached. Please contact application\'s owners.</string>
+    <string name="toast_unknown_mandatory_update">Your version (%s) is known to be unstable. Please contact development team to get a new version.</string>
+    <string name="toast_unknown_recommended_update">Your version (%s) is outdated. Please contact development team to a get a new version.</string>
+    <string name="toast_wrong_application">Invalid MQA application key or version. Please contact application\'s developers.</string>
+    <string name="toast_wrong_credentials">Could not login to MQA - invalid credentials.</string>
+    <string name="ui_back">Back</string>
+    <string name="ui_cancel">Cancel</string>
+    <string name="ui_exit">Exit</string>
+    <string name="ui_next">Next</string>
+    <string name="ui_skip">Skip</string>
+    <string name="update_changelog">Changelog:</string>
+    <string name="update_close_btn">Close</string>
+    <string name="update_intro">There is a %s update available for this application:</string>
+    <string name="update_link">Link:</string>
+    <string name="update_perform_btn">Perform</string>
+    <string name="update_required_title">Update required</string>
+    <string name="update_skip_btn">Skip</string>
+    <string name="update_title">Update available</string>
+    <string name="update_version">Version:</string>
+    <string name="update_warning_mandatory">The version you are using now is deprecated and shall NOT be run. Please exit the application immediately.</string>
+    <string name="update_warning_recommended">The version you are using now is obsolete and will NOT send any logging information to MQA.</string>
+    <string name="view_flip_interval">300</string>
+
+</resources>

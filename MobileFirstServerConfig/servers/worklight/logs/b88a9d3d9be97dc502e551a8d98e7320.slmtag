@@ -1,0 +1,114 @@
+<SchemaVersion>2.1.1</SchemaVersion>
+<SoftwareIdentity>
+	<PersistentId>fc867a66d6c94261a4771de8baf585bd</PersistentId>
+	<Name>IBM MobileFirst Platform Foundation</Name>
+	<InstanceId>/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/?ReadyAppsSummit</InstanceId>
+</SoftwareIdentity>
+<Metric logTime="2015-01-19T14:08:27-06:00">
+	<Type>CLIENT_DEVICE</Type>
+	<SubType>Development Server</SubType>
+	<Value>0</Value>
+	<Period>
+		<StartTime>2015-01-19T14:08:27-06:00</StartTime>
+		<EndTime>2015-01-19T14:08:27-06:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2015-01-19T14:08:27-06:00">
+	<Type>APPLICATION</Type>
+	<SubType>Development Server</SubType>
+	<Value>0</Value>
+	<Period>
+		<StartTime>2015-01-19T14:08:27-06:00</StartTime>
+		<EndTime>2015-01-19T14:08:27-06:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2015-01-19T14:09:53-06:00">
+	<Type>CLIENT_DEVICE</Type>
+	<SubType>Development Server</SubType>
+	<Value>0</Value>
+	<Period>
+		<StartTime>2015-01-19T14:08:27-06:00</StartTime>
+		<EndTime>2015-01-19T14:09:53-06:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2015-01-19T14:09:53-06:00">
+	<Type>APPLICATION</Type>
+	<SubType>Development Server</SubType>
+	<Value>0</Value>
+	<Period>
+		<StartTime>2015-01-19T14:08:27-06:00</StartTime>
+		<EndTime>2015-01-19T14:09:53-06:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2015-01-19T14:11:52-06:00">
+	<Type>CLIENT_DEVICE</Type>
+	<SubType>Development Server</SubType>
+	<Value>0</Value>
+	<Period>
+		<StartTime>2015-01-19T14:11:52-06:00</StartTime>
+		<EndTime>2015-01-19T14:11:52-06:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2015-01-19T14:11:52-06:00">
+	<Type>APPLICATION</Type>
+	<SubType>Development Server</SubType>
+	<Value>0</Value>
+	<Period>
+		<StartTime>2015-01-19T14:11:52-06:00</StartTime>
+		<EndTime>2015-01-19T14:11:52-06:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2015-01-19T18:14:39-06:00">
+	<Type>CLIENT_DEVICE</Type>
+	<SubType>Development Server</SubType>
+	<Value>0</Value>
+	<Period>
+		<StartTime>2015-01-19T14:11:52-06:00</StartTime>
+		<EndTime>2015-01-19T18:14:39-06:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2015-01-19T18:14:39-06:00">
+	<Type>APPLICATION</Type>
+	<SubType>Development Server</SubType>
+	<Value>0</Value>
+	<Period>
+		<StartTime>2015-01-19T14:11:52-06:00</StartTime>
+		<EndTime>2015-01-19T18:14:39-06:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2015-01-19T18:21:51-06:00">
+	<Type>CLIENT_DEVICE</Type>
+	<SubType>Development Server</SubType>
+	<Value>0</Value>
+	<Period>
+		<StartTime>2015-01-19T18:21:51-06:00</StartTime>
+		<EndTime>2015-01-19T18:21:51-06:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2015-01-19T18:21:51-06:00">
+	<Type>APPLICATION</Type>
+	<SubType>Development Server</SubType>
+	<Value>0</Value>
+	<Period>
+		<StartTime>2015-01-19T18:21:51-06:00</StartTime>
+		<EndTime>2015-01-19T18:21:51-06:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2015-01-20T15:01:48-06:00">
+	<Type>CLIENT_DEVICE</Type>
+	<SubType>Development Server</SubType>
+	<Value>0</Value>
+	<Period>
+		<StartTime>2015-01-20T15:01:48-06:00</StartTime>
+		<EndTime>2015-01-20T15:01:48-06:00</EndTime>
+	</Period>
+</Metric>
+<Metric logTime="2015-01-20T15:01:48-06:00">
+	<Type>APPLICATION</Type>
+	<SubType>Development Server</SubType>
+	<Value>0</Value>
+	<Period>
+		<StartTime>2015-01-20T15:01:48-06:00</StartTime>
+		<EndTime>2015-01-20T15:01:48-06:00</EndTime>
+	</Period>
+</Metric>

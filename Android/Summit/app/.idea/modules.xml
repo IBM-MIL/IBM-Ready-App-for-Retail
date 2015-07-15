@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../MQApreprod/MQApreprod.iml" filepath="$PROJECT_DIR$/../MQApreprod/MQApreprod.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ReadyAppsLibrary/ReadyAppsLibrary.iml" filepath="$PROJECT_DIR$/../ReadyAppsLibrary/ReadyAppsLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Summit.iml" filepath="$PROJECT_DIR$/../Summit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/app.iml" filepath="$PROJECT_DIR$/.idea/app.iml" />
+    </modules>
+  </component>
+</project>
+

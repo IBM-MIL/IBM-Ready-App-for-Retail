@@ -1,0 +1,1074 @@
+********************************************************************************
+product = WebSphere Application Server 8.5.5.3 (wlp-1.0.6.cl50320140731-0257)
+wlp.install.dir = /Users/blakeball/Downloads/eclipse 2/plugins/com.worklight.worklight-artifacts_6.3.0.00-20141127-1357/liberty/wlp/
+server.config.dir = /Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/
+java.home = /Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre
+java.version = 1.7.0_65
+java.runtime = Java(TM) SE Runtime Environment (1.7.0_65-b17)
+os = Mac OS X (10.10.1; x86_64) (en_US)
+********************************************************************************
+[1/19/15 14:10:39:856 CST] 00000001 com.ibm.ws.logging.internal.TraceSpecification               I TRAS0018I: The trace state has been changed. The new trace state is *=info.
+[1/19/15 14:10:39:873 CST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: The server worklight has been launched.
+[1/19/15 14:10:41:319 CST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: The kernel started after 1.636 seconds
+[1/19/15 14:10:41:347 CST] 00000017 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[1/19/15 14:10:42:045 CST] 00000011 com.ibm.ws.security.internal.SecurityReadyServiceImpl        I CWWKS0007I: The security service is starting...
+[1/19/15 14:10:42:546 CST] 00000011 com.ibm.ws.app.manager.internal.monitor.DropinMonitor        A CWWKZ0058I: Monitoring dropins for applications. 
+[1/19/15 14:10:42:756 CST] 00000023 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel defaultHttpEndpoint has been started and is now listening for requests on host *  (IPv6) port 10080.
+[1/19/15 14:10:42:763 CST] 00000023 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel defaultHttpEndpoint-ssl has been started and is now listening for requests on host *  (IPv6) port 10443.
+[1/19/15 14:10:43:008 CST] 00000027 com.ibm.ws.security.internal.SecurityReadyServiceImpl        I CWWKS0008I: The security service is ready.
+[1/19/15 14:10:43:010 CST] 00000027 com.ibm.ws.security.token.ltpa.internal.LTPAKeyCreator       I CWWKS4105I: LTPA configuration is ready after 0.101 seconds.
+[1/19/15 14:10:43:227 CST] 0000002d com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application WorklightServices.
+[1/19/15 14:10:43:227 CST] 0000002e com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application _MobileBrowserSimulator.
+[1/19/15 14:10:43:227 CST] 0000002b com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application WorklightAnalytics.
+[1/19/15 14:10:43:227 CST] 00000030 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application WorklightAnalyticsServices.
+[1/19/15 14:10:43:227 CST] 0000002c com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application ReadyAppsSummit.
+[1/19/15 14:10:43:227 CST] 0000002f com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application WorklightConsole.
+[1/19/15 14:10:43:382 CST] 0000002f m.ibm.ws.container.service.app.deploy.ManifestClassPathUtils W SRVE9967W: The manifest class path jaxb-api.jar can not be found in jar file wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/apps/worklight-management-ui.war!/WEB-INF/lib/jaxb-impl-2.1.12.osgi.jar or its parent.
+[1/19/15 14:10:43:383 CST] 0000002f m.ibm.ws.container.service.app.deploy.ManifestClassPathUtils W SRVE9967W: The manifest class path activation.jar can not be found in jar file wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/apps/worklight-management-ui.war!/WEB-INF/lib/jaxb-impl-2.1.12.osgi.jar or its parent.
+[1/19/15 14:10:43:383 CST] 0000002f m.ibm.ws.container.service.app.deploy.ManifestClassPathUtils W SRVE9967W: The manifest class path jsr173_1.0_api.jar can not be found in jar file wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/apps/worklight-management-ui.war!/WEB-INF/lib/jaxb-impl-2.1.12.osgi.jar or its parent.
+[1/19/15 14:10:43:383 CST] 0000002f m.ibm.ws.container.service.app.deploy.ManifestClassPathUtils W SRVE9967W: The manifest class path jaxb1-impl.jar can not be found in jar file wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/apps/worklight-management-ui.war!/WEB-INF/lib/jaxb-impl-2.1.12.osgi.jar or its parent.
+[1/19/15 14:10:43:496 CST] 0000002f m.ibm.ws.container.service.app.deploy.ManifestClassPathUtils W SRVE9967W: The manifest class path jaxb-api.jar can not be found in jar file wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/apps/worklight-management-ui.war!/WEB-INF/lib/jaxb-impl-2.1.12.osgi.jar or its parent.
+[1/19/15 14:10:43:497 CST] 0000002f m.ibm.ws.container.service.app.deploy.ManifestClassPathUtils W SRVE9967W: The manifest class path activation.jar can not be found in jar file wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/apps/worklight-management-ui.war!/WEB-INF/lib/jaxb-impl-2.1.12.osgi.jar or its parent.
+[1/19/15 14:10:43:497 CST] 0000002f m.ibm.ws.container.service.app.deploy.ManifestClassPathUtils W SRVE9967W: The manifest class path jsr173_1.0_api.jar can not be found in jar file wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/apps/worklight-management-ui.war!/WEB-INF/lib/jaxb-impl-2.1.12.osgi.jar or its parent.
+[1/19/15 14:10:43:498 CST] 0000002f m.ibm.ws.container.service.app.deploy.ManifestClassPathUtils W SRVE9967W: The manifest class path jaxb1-impl.jar can not be found in jar file wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/apps/worklight-management-ui.war!/WEB-INF/lib/jaxb-impl-2.1.12.osgi.jar or its parent.
+[1/19/15 14:10:43:564 CST] 0000002e com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: _MobileBrowserSimulator.
+[1/19/15 14:10:43:565 CST] 0000002e com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module _MobileBrowserSimulator has been bound to default_host.
+[1/19/15 14:10:43:567 CST] 0000002c com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Worklight.
+[1/19/15 14:10:43:567 CST] 0000002c com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module Worklight has been bound to default_host.
+[1/19/15 14:10:43:569 CST] 0000002e com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://192.168.56.1:10080/_MobileBrowserSimulator/
+[1/19/15 14:10:43:569 CST] 00000029 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: IBMJMXConnectorREST.
+[1/19/15 14:10:43:569 CST] 00000029 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module IBMJMXConnectorREST has been bound to default_host.
+[1/19/15 14:10:43:570 CST] 0000002c com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://192.168.56.1:10080/ReadyAppsSummit/
+[1/19/15 14:10:43:570 CST] 00000029 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://192.168.56.1:10080/IBMJMXConnectorREST/
+[1/19/15 14:10:43:726 CST] 0000002c com.ibm.ws.session.WASSessionCore                            I SESN8501I: The session manager did not find a persistent storage location; HttpSession objects will be stored in the local application server's memory.
+[1/19/15 14:10:43:735 CST] 00000029 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/IBMJMXConnectorREST
+[1/19/15 14:10:43:735 CST] 0000002e com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/_MobileBrowserSimulator
+[1/19/15 14:10:43:735 CST] 0000002c com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/ReadyAppsSummit
+[1/19/15 14:10:43:752 CST] 00000029 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/19/15 14:10:43:767 CST] 0000002c com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/19/15 14:10:43:768 CST] 0000002e com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/19/15 14:10:43:823 CST] 0000002e com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application _MobileBrowserSimulator started in 0.596 seconds.
+[1/19/15 14:10:44:211 CST] 00000029 apache.wink.server.internal.application.ApplicationProcessor I The following JAX-RS application has been processed: com.ibm.ws.jaxrs.webcontainer.JAXRSDefaultApplicationSubclassProxy
+[1/19/15 14:10:44:212 CST] 00000029 org.apache.wink.server.internal.log.Resources                I The server has registered the JAX-RS resource class com.ibm.ws.jmx.connector.server.rest.resources.FileTransferRouterResource with @Path(/fileTransfer/router/{filePath}).
+[1/19/15 14:10:44:212 CST] 00000029 org.apache.wink.server.internal.log.Resources                I The server has registered the JAX-RS resource class com.ibm.ws.jmx.connector.server.rest.resources.AttributeResource with @Path(/mbeans/{objectName}/attributes).
+[1/19/15 14:10:44:212 CST] 00000029 org.apache.wink.server.internal.log.Resources                I The server has registered the JAX-RS resource class com.ibm.ws.jmx.connector.server.rest.resources.FileTransferResource with @Path(/fileTransfer/{filePath}).
+[1/19/15 14:10:44:213 CST] 00000029 org.apache.wink.server.internal.log.Resources                I The server has registered the JAX-RS resource class com.ibm.ws.jmx.connector.server.rest.resources.NotificationResource with @Path(/notifications).
+[1/19/15 14:10:44:213 CST] 00000029 org.apache.wink.server.internal.log.Resources                I The server has registered the JAX-RS resource class com.ibm.ws.jmx.connector.server.rest.resources.FileStatusResource with @Path(/file/status).
+[1/19/15 14:10:44:213 CST] 00000029 org.apache.wink.server.internal.log.Resources                I The server has registered the JAX-RS resource class com.ibm.ws.jmx.connector.server.rest.resources.MBeanResource with @Path(/mbeans).
+[1/19/15 14:10:44:213 CST] 00000029 org.apache.wink.server.internal.log.Resources                I The server has registered the JAX-RS resource class com.ibm.ws.jmx.connector.server.rest.resources.MBeanRouterResource with @Path(/router).
+[1/19/15 14:10:44:213 CST] 00000029 org.apache.wink.server.internal.log.Resources                I The server has registered the JAX-RS resource class com.ibm.ws.jmx.connector.server.rest.resources.FileResource with @Path(/file/{filePath}).
+[1/19/15 14:10:44:213 CST] 00000029 org.apache.wink.server.internal.log.Resources                I The server has registered the JAX-RS resource class com.ibm.ws.jmx.connector.server.rest.resources.JMXResource with @Path().
+[1/19/15 14:10:44:216 CST] 00000029 org.apache.wink.server.internal.log.Providers                I The class com.ibm.ws.jmx.connector.server.rest.providers.JSONErrorOutputStreamProvider was registered as a JAX-RS MessageBodyWriter provider for com.ibm.ws.jmx.connector.server.rest.providers.JSONErrorOutputStream Java types and application/json media types.
+[1/19/15 14:10:44:603 CST] 00000029 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [com.ibm.ws.jmx.connector.server.rest] [/IBMJMXConnectorREST] [MBeanServerConnector]: Initialization successful.
+[1/19/15 14:10:45:453 CST] 0000002b com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: analytics.
+[1/19/15 14:10:45:453 CST] 0000002b com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module analytics has been bound to default_host.
+[1/19/15 14:10:45:453 CST] 0000002b com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://192.168.56.1:10080/worklight-analytics/
+[1/19/15 14:10:45:728 CST] 0000002c com.worklight.common.util.JNDIFromPropertiesUtil             I Using JNDI configuration conf/jndi/default.properties
+[1/19/15 14:10:45:763 CST] 0000002b com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/worklight-analytics
+[1/19/15 14:10:45:763 CST] 0000002b com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/19/15 14:10:45:835 CST] 0000002c com.worklight.server.bundle.api.WorklightConfiguration       I FWLSE4006I: IBM MobileFirst Platform Studio is running in 'development' mode. [project ReadyAppsSummit]
+[1/19/15 14:10:45:838 CST] 00000038 com.worklight.server.bundle.project.JeeProjectActivator      I FWLST0022I: Worklight project async start = true
+[1/19/15 14:10:45:873 CST] 0000002c apache.wink.server.internal.application.ApplicationProcessor I The following JAX-RS application has been processed: com.ibm.ws.jaxrs.webcontainer.JAXRSDefaultApplicationSubclassProxy
+[1/19/15 14:10:45:873 CST] 0000002c org.apache.wink.server.internal.log.Resources                I The server has registered the JAX-RS resource class com.worklight.oauth.TokenValidationEndpoint with @Path(/validation).
+[1/19/15 14:10:45:873 CST] 0000002c org.apache.wink.server.internal.log.Resources                I The server has registered the JAX-RS resource class com.worklight.oauth.TokenEndpoint with @Path(/token).
+[1/19/15 14:10:45:874 CST] 0000002c org.apache.wink.server.internal.log.Providers                I There are no custom JAX-RS providers defined in the application.
+[1/19/15 14:10:45:907 CST] 0000002c com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [ReadyAppsSummit] [/ReadyAppsSummit] [AuthorizationServer]: Initialization successful.
+[1/19/15 14:10:45:917 CST] 0000002c com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application ReadyAppsSummit started in 2.690 seconds.
+[1/19/15 14:10:46:041 CST] 00000038 com.worklight.server.bundle.project.JeeProjectActivator      I FWLST0001I: Worklight home folder is /Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/workarea/org.eclipse.osgi/bundles/79/data/temp/default_node/SMF_WebContainer/ReadyAppsSummit/ReadyAppsSummit [project ReadyAppsSummit]
+[1/19/15 14:10:46:065 CST] 00000038 ingframework.context.support.FileSystemXmlApplicationContext I Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@c2f4c66: display name [org.springframework.context.support.FileSystemXmlApplicationContext@c2f4c66]; startup date [Mon Jan 19 14:10:46 CST 2015]; root of context hierarchy
+[1/19/15 14:10:46:101 CST] 0000002b com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [WorklightAnalytics] [/worklight-analytics] [utilityServlet]: Initialization successful.
+[1/19/15 14:10:46:102 CST] 0000002b com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [WorklightAnalytics] [/worklight-analytics] [servicesServlet]: Initialization successful.
+[1/19/15 14:10:46:102 CST] 0000002b com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application WorklightAnalytics started in 2.875 seconds.
+[1/19/15 14:10:46:128 CST] 00000038 rg.springframework.beans.factory.xml.XmlBeanDefinitionReader I Loading XML bean definitions from URL [wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar!/conf/spring-server-core.xml]
+[1/19/15 14:10:46:328 CST] 00000038 rg.springframework.beans.factory.xml.XmlBeanDefinitionReader I Loading XML bean definitions from URL [wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar!/conf/core.xml]
+[1/19/15 14:10:46:352 CST] 00000038 rg.springframework.beans.factory.xml.XmlBeanDefinitionReader I Loading XML bean definitions from URL [wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar!/conf/integration.xml]
+[1/19/15 14:10:46:364 CST] 0000002f com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Worklight Console.
+[1/19/15 14:10:46:364 CST] 0000002f com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module Worklight Console has been bound to default_host.
+[1/19/15 14:10:46:364 CST] 0000002f com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://192.168.56.1:10080/worklightconsole/
+[1/19/15 14:10:46:365 CST] 00000038 rg.springframework.beans.factory.xml.XmlBeanDefinitionReader I Loading XML bean definitions from URL [wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar!/conf/gadgets.xml]
+[1/19/15 14:10:46:374 CST] 00000038 rg.springframework.beans.factory.xml.XmlBeanDefinitionReader I Loading XML bean definitions from URL [wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar!/conf/pushworks.xml]
+[1/19/15 14:10:46:388 CST] 00000038 ngframework.beans.factory.support.DefaultListableBeanFactory I Overriding bean definition for bean 'gadgetCustomizedResourcesRoot': replacing [Generic bean: class [com.worklight.core.util.WorkingDirectory]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar!/conf/gadgets.xml]] with [Generic bean: class [com.worklight.core.util.WorkingDirectory]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar!/conf/spring-server-core.xml]]
+[1/19/15 14:10:46:388 CST] 00000038 ngframework.beans.factory.support.DefaultListableBeanFactory I Overriding bean definition for bean 'gadgetResourcesRoot': replacing [Generic bean: class [com.worklight.core.util.WorkingDirectory]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar!/conf/gadgets.xml]] with [Generic bean: class [com.worklight.core.util.WorkingDirectory]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar!/conf/spring-server-core.xml]]
+[1/19/15 14:10:46:394 CST] 00000038 ingframework.context.support.FileSystemXmlApplicationContext I Bean factory for application context [org.springframework.context.support.FileSystemXmlApplicationContext@c2f4c66]: org.springframework.beans.factory.support.DefaultListableBeanFactory@4e4fb282
+[1/19/15 14:10:46:410 CST] 0000002f com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/worklightconsole
+[1/19/15 14:10:46:411 CST] 0000002f com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/19/15 14:10:46:439 CST] 0000002f com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [WorklightConsole] [/worklightconsole] [servicesServlet]: Initialization successful.
+[1/19/15 14:10:46:441 CST] 0000002f com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application WorklightConsole started in 3.213 seconds.
+[1/19/15 14:10:46:644 CST] 00000038 ngframework.beans.factory.support.DefaultListableBeanFactory I Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4e4fb282: defining beans [org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,txManager,mailingService,WorkLightNotice,rssBrokerUtils,audit,GenericDAO,clusterSynchronizationDAO,taskCoordinator,taskManager,worklightAuthenticationService,authenticationDAO,ssoDAO,ssoExpiredLoginContextsCleanupTask,keyStoreManager,analyticsHttpService,dataAccessService,shellResourcesService,analyticsService,coreServiceManager,adapterManager,nodeProcessManager,adapterManagementService,factProcessingTask,PlatformUsageProcessingTask,notificationCleanupTask,WSSecurityService,gadgetDAO,deviceDAO,licenseTermsDAO,platformUsageService,configProfileService,gfwProps,gadgetEnvironmentManager,gadgetResourcesRoot,gadgetCustomizedResourcesRoot,applicationMetadataService,applicationManagementService,beaconService,notificationsSimulationManager,pushServiceListener,PushService,worklight-direct,rssBrokerDS,brokerSessionFactory,reportService,reportsDS,reportsBrokerDS,reportsSessionFactory,gadgetReportsDAO,notificationReportsDao,gadgetReportsService,analyticsFactService,nodeInfo,registrationService,runtimeTransactionHandler,projectSyncService]; root of factory hierarchy
+[1/19/15 14:10:46:978 CST] 0000002d com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Worklight Administration Services.
+[1/19/15 14:10:46:978 CST] 0000002d com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module Worklight Administration Services has been bound to default_host.
+[1/19/15 14:10:46:979 CST] 0000002d com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://192.168.56.1:10080/worklightadmin/
+[1/19/15 14:10:47:045 CST] 0000002d com.ibm.ws.injectionengine.AbstractInjectionEngine           W CWNEN0070W: The javax.ws.rs.PathParam annotation class will not be recognized because it was loaded from the null location rather than from a product class loader.
+[1/19/15 14:10:47:046 CST] 0000002d com.ibm.ws.injectionengine.AbstractInjectionEngine           W CWNEN0070W: The javax.ws.rs.core.Context annotation class will not be recognized because it was loaded from the null location rather than from a product class loader.
+[1/19/15 14:10:47:048 CST] 0000002d com.ibm.ws.injectionengine.AbstractInjectionEngine           W CWNEN0070W: The javax.ws.rs.HeaderParam annotation class will not be recognized because it was loaded from the null location rather than from a product class loader.
+[1/19/15 14:10:47:048 CST] 0000002d com.ibm.ws.injectionengine.AbstractInjectionEngine           W CWNEN0070W: The javax.ws.rs.QueryParam annotation class will not be recognized because it was loaded from the null location rather than from a product class loader.
+[1/19/15 14:10:47:049 CST] 0000002d com.ibm.ws.injectionengine.AbstractInjectionEngine           W CWNEN0070W: The javax.ws.rs.MatrixParam annotation class will not be recognized because it was loaded from the null location rather than from a product class loader.
+[1/19/15 14:10:47:049 CST] 0000002d com.ibm.ws.injectionengine.AbstractInjectionEngine           W CWNEN0070W: The javax.ws.rs.CookieParam annotation class will not be recognized because it was loaded from the null location rather than from a product class loader.
+[1/19/15 14:10:47:063 CST] 0000002d com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/worklightadmin
+[1/19/15 14:10:47:063 CST] 0000002d com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/19/15 14:10:47:322 CST] 00000038 ringframework.orm.jpa.LocalContainerEntityManagerFactoryBean I Building JPA container EntityManagerFactory for persistence unit 'WorklightPU'
+[1/19/15 14:10:47:366 CST] 0000002d com.ibm.ws.webcontainer.webapp                               I SRVE0292I: Servlet Message - [worklight-management-service]:.Initializing Spring root WebApplicationContext
+[1/19/15 14:10:47:366 CST] 0000002d org.springframework.web.context.ContextLoader                I Root WebApplicationContext: initialization started
+[1/19/15 14:10:47:392 CST] 0000002d springframework.web.context.support.XmlWebApplicationContext I Refreshing org.springframework.web.context.support.XmlWebApplicationContext@4eb7a146: display name [Root WebApplicationContext]; startup date [Mon Jan 19 14:10:47 CST 2015]; root of context hierarchy
+[1/19/15 14:10:47:429 CST] 0000002d rg.springframework.beans.factory.xml.XmlBeanDefinitionReader I Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-management-service.xml]
+[1/19/15 14:10:47:451 CST] 0000002d springframework.web.context.support.XmlWebApplicationContext I Bean factory for application context [org.springframework.web.context.support.XmlWebApplicationContext@4eb7a146]: org.springframework.beans.factory.support.DefaultListableBeanFactory@7850ebc8
+[1/19/15 14:10:47:467 CST] 0000002d ngframework.beans.factory.support.DefaultListableBeanFactory I Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@7850ebc8: defining beans [registrationServiceFactory]; root of factory hierarchy
+[1/19/15 14:10:47:492 CST] 0000002d com.ibm.worklight.dataaccess.datastore.DataStoreUtil         I getWorklightDataSourceProperties Read properties file. allProperties: {ibm.worklight.admin.db.jndi.name=java:comp/env/jdbc/WorklightAdminDS}
+[1/19/15 14:10:47:508 CST] 0000002d com.ibm.worklight.dataaccess.datastore.DataStoreUtil         I Resource conf/jndi/default.properties not found. This is not an error. Context path is /worklightadmin
+[1/19/15 14:10:47:520 CST] 0000002d com.ibm.worklight.dataaccess.datastore.DataStoreUtil         I dereferenceProperties Handling propName=ibm.worklight.admin.db.jndi.name propValue=java:comp/env/jdbc/WorklightAdminDS
+[1/19/15 14:10:47:520 CST] 0000002d com.ibm.worklight.dataaccess.datastore.DataStoreUtil         I dereferenceProperties Handling propName=ibm.worklight.admin.db.openjpa.Log propValue=
+[1/19/15 14:10:47:520 CST] 0000002d com.ibm.worklight.dataaccess.datastore.DataStoreUtil         I dereferenceProperties Handling propName=ibm.worklight.admin.db.type propValue=
+[1/19/15 14:10:47:536 CST] 00000038 SystemErr                                                    R 23  WorklightPU  WARN   [Thread-16] openjpa.Runtime - An error occurred while registering a ClassTransformer with PersistenceUnitInfo: name 'WorklightPU', root URL [file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar]. The error has been consumed. To see it, set your openjpa.Runtime log level to TRACE. Load-time class transformation will not be available.
+[1/19/15 14:10:47:682 CST] 0000002d com.ibm.ws.recoverylog.spi.RecoveryDirectorImpl              I CWRLS0010I: Performing recovery processing for local WebSphere server (Cell\Node\Server).
+[1/19/15 14:10:47:715 CST] 0000002d com.ibm.ws.recoverylog.spi.RecoveryDirectorImpl              I CWRLS0012I: All persistent services have been directed to perform recovery processing for this WebSphere server (Cell\Node\Server).
+[1/19/15 14:10:47:717 CST] 00000042 com.ibm.tx.jta.impl.RecoveryManager                          I WTRN0135I: Transaction service recovering no transactions.
+[1/19/15 14:10:48:332 CST] 00000038 SystemErr                                                    R 820  WorklightPU  INFO   [Thread-16] openjpa.Runtime - Starting OpenJPA 1.2.2
+[1/19/15 14:10:48:382 CST] 00000038 SystemErr                                                    R 870  WorklightPU  INFO   [Thread-16] openjpa.jdbc.JDBC - Using dictionary class "org.apache.openjpa.jdbc.sql.HSQLDictionary".
+[1/19/15 14:10:48:485 CST] 0000002d com.ibm.ws.rsadapter.spi.InternalGenericDataStoreHelper      I DSRA8203I: Database product name : Apache Derby
+[1/19/15 14:10:48:486 CST] 0000002d com.ibm.ws.rsadapter.spi.InternalGenericDataStoreHelper      I DSRA8204I: Database product version : 10.8.2.2 - (1181258)
+[1/19/15 14:10:48:486 CST] 0000002d com.ibm.ws.rsadapter.spi.InternalGenericDataStoreHelper      I DSRA8205I: JDBC driver name  : Apache Derby Embedded JDBC Driver
+[1/19/15 14:10:48:486 CST] 0000002d com.ibm.ws.rsadapter.spi.InternalGenericDataStoreHelper      I DSRA8206I: JDBC driver version  : 10.8.2.2 - (1181258)
+[1/19/15 14:10:48:514 CST] 0000002d com.ibm.worklight.dataaccess.datastore.DataStore             I constructor Creating EntityManagerFactory for persistence-unit=WorklightManagementPU-derby with properties: {openjpa.ConnectionFactory=com.ibm.ws.rsadapter.jdbc.WSJdbcDataSource@33f8c1d7, openjpa.jdbc.SynchronizeMappings=buildSchema(SchemaAction='add')}
+[1/19/15 14:10:48:771 CST] 0000002d com.ibm.worklight.dataaccess.datastore.DataStoreUtil         I getWorklightDataSourceProperties Read properties file. allProperties: {ibm.worklight.admin.db.jndi.name=java:comp/env/jdbc/WorklightAdminDS}
+[1/19/15 14:10:48:774 CST] 0000002d com.ibm.worklight.dataaccess.datastore.DataStoreUtil         I dereferenceProperties Handling propName=ibm.worklight.admin.db.jndi.name propValue=java:comp/env/jdbc/WorklightAdminDS
+[1/19/15 14:10:48:774 CST] 0000002d com.ibm.worklight.dataaccess.datastore.DataStoreUtil         I dereferenceProperties Handling propName=ibm.worklight.admin.db.openjpa.Log propValue=
+[1/19/15 14:10:48:774 CST] 0000002d com.ibm.worklight.dataaccess.datastore.DataStoreUtil         I dereferenceProperties Handling propName=ibm.worklight.admin.db.type propValue=
+[1/19/15 14:10:48:775 CST] 0000002d com.ibm.worklight.dataaccess.datastore.DataStore             I constructor Creating EntityManagerFactory for persistence-unit=WorklightManagementPU-derby with properties: {openjpa.ConnectionFactory=com.ibm.ws.rsadapter.jdbc.WSJdbcDataSource@33f8c1d7, openjpa.jdbc.SynchronizeMappings=buildSchema(SchemaAction='add')}
+[1/19/15 14:10:48:805 CST] 0000002d com.worklight.common.util.JNDIUtils                          I Resource conf/jndi/default.properties not found. This is not an error. Context path is __globalscope__
+[1/19/15 14:10:48:839 CST] 0000002d com.worklight.common.util.jmx.LibertyJMXRegister             I FWLSE2008I: MBean registration succeeded for: com.worklight.common.server.jmx.api:type=WorklightAdmin,qualifier=worklightadmin
+[1/19/15 14:10:48:846 CST] 0000002d SystemErr                                                    R 47  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-15] openjpa.Runtime - Starting OpenJPA 1.2.2
+[1/19/15 14:10:48:978 CST] 0000002d SystemErr                                                    R 179  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-15] openjpa.jdbc.JDBC - Using dictionary class "org.apache.openjpa.jdbc.sql.DerbyDictionary" (Apache Derby 10.8.2.2 - (1181258) ,Apache Derby Embedded JDBC Driver 10.8.2.2 - (1181258)).
+[1/19/15 14:10:49:429 CST] 00000030 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: analytics.
+[1/19/15 14:10:49:429 CST] 00000030 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module analytics has been bound to default_host.
+[1/19/15 14:10:49:430 CST] 00000030 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://192.168.56.1:10080/worklight-analytics-service/
+[1/19/15 14:10:49:521 CST] 00000030 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/worklight-analytics-service
+[1/19/15 14:10:49:521 CST] 00000030 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/19/15 14:10:50:222 CST] 00000030 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application WorklightAnalyticsServices started in 6.995 seconds.
+[1/19/15 14:10:50:262 CST] 0000002d SystemErr                                                    R 1463  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-15] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:10:50:308 CST] 0000002d SystemErr                                                    R 1509  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-15] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:10:50:312 CST] 0000002d org.springframework.web.context.ContextLoader                I Root WebApplicationContext: initialization completed in 2945 ms
+[1/19/15 14:10:50:313 CST] 0000002d ht.admin.listeners.WorklightManagementServletContextListener I MobileFirst Administration Services servlet context listener initialized
+[1/19/15 14:10:50:317 CST] 0000002d ht.admin.listeners.WorklightManagementServletContextListener I FWLSE3199I: ========= MobileFirst Administration Services version 6.3.0.00-20141127-1357 started.
+[1/19/15 14:10:50:348 CST] 0000002d org.apache.wink.server.internal.servlet.RestServlet          I The system is using the com.ibm.worklight.admin.services.ManagementServiceServlet JAX-RS application class that is named in the javax.ws.rs.Application init-param initialization parameter.
+[1/19/15 14:10:50:405 CST] 0000002d apache.wink.server.internal.application.ApplicationProcessor I The following JAX-RS application has been processed: com.ibm.worklight.admin.services.ManagementServiceServlet
+[1/19/15 14:10:50:406 CST] 0000002d org.apache.wink.server.internal.log.Resources                I The server has registered the JAX-RS resource class com.ibm.worklight.admin.services.ManagementService with @Path(/).
+[1/19/15 14:10:50:407 CST] 0000002d org.apache.wink.server.internal.log.Providers                I The class com.ibm.worklight.admin.util.ByteArrayWorkaroundProvider was registered as a JAX-RS MessageBodyReader provider for com.ibm.worklight.admin.util.ByteArrayWorkaround Java types and */* media types.
+[1/19/15 14:10:50:408 CST] 0000002d org.apache.wink.server.internal.log.Providers                I The class com.ibm.worklight.admin.util.ByteArrayWorkaroundProvider was registered as a JAX-RS MessageBodyWriter provider for com.ibm.worklight.admin.util.ByteArrayWorkaround Java types and */* media types.
+[1/19/15 14:10:50:491 CST] 0000002d com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [WorklightServices] [/worklightadmin] [ManagementServlet]: Initialization successful.
+[1/19/15 14:10:50:491 CST] 0000002d com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application WorklightServices started in 7.265 seconds.
+[1/19/15 14:10:50:498 CST] 00000017 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0015I: The server has the following interim fixes installed: PI23168.
+[1/19/15 14:10:50:499 CST] 00000017 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: Feature update completed in 9.180 seconds.
+[1/19/15 14:10:50:499 CST] 00000017 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: The server worklight is ready to run a smarter planet.
+[1/19/15 14:10:50:620 CST] 00000038 com.worklight.server.database.api.WorklightDataSource        I FWLSE0187I: jdbc/WorklightReportsDS data source is disabled. No connection opened.  [project ReadyAppsSummit]
+[1/19/15 14:10:50:627 CST] 00000038 ringframework.orm.jpa.LocalContainerEntityManagerFactoryBean I Building JPA container EntityManagerFactory for persistence unit 'WorklightReportsPU'
+[1/19/15 14:10:50:631 CST] 00000038 SystemErr                                                    R 1  WorklightReportsPU  WARN   [Thread-16] openjpa.Runtime - An error occurred while registering a ClassTransformer with PersistenceUnitInfo: name 'WorklightReportsPU', root URL [file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar]. The error has been consumed. To see it, set your openjpa.Runtime log level to TRACE. Load-time class transformation will not be available.
+[1/19/15 14:10:50:667 CST] 00000038 com.worklight.report.impl.GadgetReportsServiceImpl           I FWLSE0186I: Application raw reports are disabled. [project ReadyAppsSummit]
+[1/19/15 14:10:50:978 CST] 00000053 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:10:50:978 CST] 00000050 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:10:50:978 CST] 00000055 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:10:50:979 CST] 00000052 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:10:50:979 CST] 0000004e SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:10:50:979 CST] 0000004f SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:10:50:979 CST] 00000051 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:10:50:980 CST] 00000054 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:10:50:981 CST] 00000038 com.worklight.common.util.jmx.LibertyJMXRegister             I FWLSE2008I: MBean registration succeeded for: com.worklight.common.server.jmx.api:type=ProjectManagement,qualifier=ReadyAppsSummit [project ReadyAppsSummit]
+[1/19/15 14:10:50:992 CST] 00000066 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:10:50:996 CST] 00000038 com.worklight.core.auth.impl.AuthenticationFilter            I FWLSE0273I: Set sync required to 'true' [project ReadyAppsSummit]
+[1/19/15 14:10:50:998 CST] 00000038 com.worklight.common.util.jmx.LibertyRuntimeMBeanHandler     I Establishing REST connection to service:jmx:rest://localhost:10443/IBMJMXConnectorREST
+[1/19/15 14:10:51:001 CST] 00000069 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:10:51:003 CST] 00000053 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:10:51:515 CST] 00000083 com.ibm.worklight.admin.services.ManagementService           I ping service invoked to check if the HTTP(s) port is available
+[1/19/15 14:10:51:545 CST] 00000085 SystemErr                                                    R 2757  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-72] openjpa.Runtime - Starting OpenJPA 1.2.2
+[1/19/15 14:10:51:546 CST] 00000085 SystemErr                                                    R 2758  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-72] openjpa.jdbc.JDBC - Using dictionary class "org.apache.openjpa.jdbc.sql.DerbyDictionary" (Apache Derby 10.8.2.2 - (1181258) ,Apache Derby Embedded JDBC Driver 10.8.2.2 - (1181258)).
+[1/19/15 14:10:51:766 CST] 00000085 SystemErr                                                    R 2967  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-72] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:10:51:768 CST] 00000085 SystemErr                                                    R 2969  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-72] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:10:51:975 CST] 00000038 com.worklight.core.auth.impl.AuthenticationFilter            I FWLSE0273I: Set sync required to 'true' [project ReadyAppsSummit]
+[1/19/15 14:10:51:975 CST] 00000038 com.worklight.core.jmx.ProjectSynchronizationBean            I FWLSE0271I: Resources dir '/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/workarea/org.eclipse.osgi/bundles/79/data/temp/default_node/SMF_WebContainer/ReadyAppsSummit/ReadyAppsSummit/widget-resources' is going to be cleaned [project ReadyAppsSummit]
+[1/19/15 14:10:51:979 CST] 00000050 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:10:51:979 CST] 00000055 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:10:51:990 CST] 0000008b SystemErr                                                    R 3191  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-78] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:10:52:000 CST] 0000008b com.ibm.worklight.admin.jmx.ManagementMXBeanImpl             I Result: ReadyAppsSummit: worklight///9.41.138.101: Runtime was synchronized successfully
+[1/19/15 14:10:52:000 CST] 0000008b com.ibm.worklight.admin.jmx.ManagementMXBeanImpl             I ReadyAppsSummit: worklight///9.41.138.101: 2015-01-19T20:10:51.981Z: Transaction handler reset
+[1/19/15 14:10:52:002 CST] 00000038 com.worklight.core.init.WorklightServletInitializer          I FWLSE0247I: The ReadyAppsSummit project initialization times were: start-firstReadyCheck=1, firstReadyCheck=533, ready for sync=0, sync=472 [project ReadyAppsSummit]
+[1/19/15 14:10:52:003 CST] 00000038 com.worklight.core.auth.impl.AuthenticationFilter            I FWLSE0273I: Set sync required to 'false' [project ReadyAppsSummit]
+[1/19/15 14:10:52:007 CST] 0000004e SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:10:52:007 CST] 00000052 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:10:52:020 CST] 00000038 com.worklight.core.ilmt.WorklightILMTLogger                  I FWLSE0278I: The default ILMT directory '/var/ibm/common/slm' cannot be used. [project ReadyAppsSummit]
+[1/19/15 14:10:52:020 CST] 00000038 com.worklight.core.ilmt.WorklightILMTLogger                  I FWLSE0282I: Using the ILMT directory '/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/logs'. [project ReadyAppsSummit]
+[1/19/15 14:10:52:024 CST] 0000004f SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:10:52:024 CST] 00000051 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:10:52:026 CST] 00000038 com.worklight.server.bundle.project.JeeProjectActivator      I FWLST0002I: ========= Project /ReadyAppsSummit started. The project WAR file version is 6.3.0.00.20141127-1357,running on server version 6.3.0.00.20141127-1357. [project ReadyAppsSummit]
+[1/19/15 14:10:52:030 CST] 00000054 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:10:52:199 CST] 00000099 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [ReadyAppsSummit] [/ReadyAppsSummit] [PreviewServlet]: Initialization successful.
+[1/19/15 14:11:30:964 CST] 000000b0 SystemErr                                                    R 42281  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-108] openjpa.Runtime - Starting OpenJPA 1.2.2
+[1/19/15 14:11:30:965 CST] 000000b0 SystemErr                                                    R 42282  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-108] openjpa.jdbc.JDBC - Using dictionary class "org.apache.openjpa.jdbc.sql.DerbyDictionary" (Apache Derby 10.8.2.2 - (1181258) ,Apache Derby Embedded JDBC Driver 10.8.2.2 - (1181258)).
+[1/19/15 14:11:31:092 CST] 000000b0 com.worklight.common.util.jmx.LibertyRuntimeMBeanHandler     I Establishing REST connection to service:jmx:rest://localhost:10443/IBMJMXConnectorREST
+[1/19/15 14:11:32:137 CST] 000000c6 SystemErr                                                    R 43391  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-126] openjpa.Runtime - Starting OpenJPA 1.2.2
+[1/19/15 14:11:32:137 CST] 000000c6 SystemErr                                                    R 43392  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-126] openjpa.jdbc.JDBC - Using dictionary class "org.apache.openjpa.jdbc.sql.DerbyDictionary" (Apache Derby 10.8.2.2 - (1181258) ,Apache Derby Embedded JDBC Driver 10.8.2.2 - (1181258)).
+[1/19/15 14:11:32:245 CST] 000000c6 SystemErr                                                    R 43500  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-126] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:11:32:250 CST] 000000c6 SystemErr                                                    R 43505  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-126] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:11:32:270 CST] 000000c6 SystemErr                                                    R 43525  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-126] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:11:32:389 CST] 000000ce com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 1 for 'deployAdapter'.  [project ReadyAppsSummit]
+[1/19/15 14:11:32:394 CST] 00000066 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:11:32:394 CST] 00000069 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:11:32:434 CST] 000000ce com.worklight.common.util.HttpUtil                           I FWLSE2014I: Downloading a worklight artifact from http://9.41.138.101:10080/worklightadmin/otu/1.0/ffffff8928fffffff82dffffffc3ffffffc86428fffffff8ffffffe01b706cffffff9e1bffffff89/runtimes/ReadyAppsSummit/downloads/adapters/Temporary317569284 [project ReadyAppsSummit]
+[1/19/15 14:11:32:439 CST] 00000053 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:11:32:831 CST] 000000c6 com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Preparation to deploy adapter 'SummitAdapter' finished successfully, SUCCESS
+[1/19/15 14:11:32:850 CST] 000000d9 com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 1 for 'commit'.  [project ReadyAppsSummit]
+[1/19/15 14:11:32:853 CST] 000000c6 com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Commit
+[1/19/15 14:11:32:853 CST] 000000c6 com.ibm.worklight.admin.actions.BaseTransaction              I ReadyAppsSummit: worklight///9.41.138.101: 2015-01-19T20:11:32.850Z: Operation to deploy adapter SummitAdapter was commited
+[1/19/15 14:11:32:854 CST] 00000050 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:11:32:873 CST] 000000c6 SystemErr                                                    R 44128  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-126] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:11:39:352 CST] 000000ea SystemErr                                                    R 50607  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-161] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:11:39:358 CST] 000000ea SystemErr                                                    R 50613  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-161] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:11:39:366 CST] 000000ea SystemErr                                                    R 50620  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-161] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:11:39:422 CST] 000000f2 com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 2 for 'deployAdapter'.  [project ReadyAppsSummit]
+[1/19/15 14:11:39:427 CST] 00000055 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:11:39:438 CST] 000000f2 com.worklight.common.util.HttpUtil                           I FWLSE2014I: Downloading a worklight artifact from http://9.41.138.101:10080/worklightadmin/otu/1.0/4f50ffffffd0194cfffffff365083c5cffffff9c3cffffffbeffffffb8ffffff8effffffd1/runtimes/ReadyAppsSummit/downloads/adapters/Temporary317569284 [project ReadyAppsSummit]
+[1/19/15 14:11:39:442 CST] 0000004e SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:11:39:526 CST] 000000ea com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Preparation to deploy adapter 'SummitAdapter' finished successfully, SUCCESS
+[1/19/15 14:11:39:558 CST] 000000fb com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 2 for 'commit'.  [project ReadyAppsSummit]
+[1/19/15 14:11:39:563 CST] 00000052 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:11:39:565 CST] 000000ea com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Commit
+[1/19/15 14:11:39:565 CST] 000000ea com.ibm.worklight.admin.actions.BaseTransaction              I ReadyAppsSummit: worklight///9.41.138.101: 2015-01-19T20:11:39.562Z: Operation to deploy adapter SummitAdapter was commited
+[1/19/15 14:11:39:573 CST] 000000ea SystemErr                                                    R 50828  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-161] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:11:49:485 CST] 0000010d SystemErr                                                    R 60739  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-194] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:11:49:490 CST] 0000010d SystemErr                                                    R 60745  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-194] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:11:49:494 CST] 0000010d SystemErr                                                    R 60749  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-194] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:11:49:533 CST] 0000001a com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 3 for 'deployAdapter'.  [project ReadyAppsSummit]
+[1/19/15 14:11:49:537 CST] 0000004f SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:11:49:550 CST] 0000001a com.worklight.common.util.HttpUtil                           I FWLSE2014I: Downloading a worklight artifact from http://9.41.138.101:10080/worklightadmin/otu/1.0/23ffffffd8ffffff867811ffffffbbffffffb57bffffff84ffffffbaffffffbdffffffdcffffffe27263ffffff85/runtimes/ReadyAppsSummit/downloads/adapters/Temporary317569284 [project ReadyAppsSummit]
+[1/19/15 14:11:49:554 CST] 00000051 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:11:49:638 CST] 0000010d com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Preparation to deploy adapter 'SummitAdapter' finished successfully, SUCCESS
+[1/19/15 14:11:49:647 CST] 00000027 com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 3 for 'commit'.  [project ReadyAppsSummit]
+[1/19/15 14:11:49:651 CST] 0000010d com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Commit
+[1/19/15 14:11:49:651 CST] 0000010d com.ibm.worklight.admin.actions.BaseTransaction              I ReadyAppsSummit: worklight///9.41.138.101: 2015-01-19T20:11:49.648Z: Operation to deploy adapter SummitAdapter was commited
+[1/19/15 14:11:49:652 CST] 00000054 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:11:49:659 CST] 0000010d SystemErr                                                    R 60914  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-194] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:11:52:028 CST] 00000095 com.worklight.core.ilmt.WorklightILMTLogger                  I FWLSE0277I: Creating an ILMT record in the file '/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/logs/b88a9d3d9be97dc502e551a8d98e7320.slmtag'.
+[1/19/15 14:11:58:366 CST] 00000114 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [ReadyAppsSummit] [/ReadyAppsSummit] [DevRootServlet]: Initialization successful.
+[1/19/15 14:11:58:403 CST] 00000114 om.worklight.integration.services.impl.DataAccessServiceImpl E FWLSE0099E: An error occurred while invoking procedure  [project ReadyAppsSummit]SummitAdapter/HttpRequestFWLSE0100E:  parameters: [project ReadyAppsSummit]
+Http request failed: java.net.UnknownHostException: https://c38f4c98-da63-41be-b62f-48b5934da36d-bluemix:92fd5f89e181388e381055501d3d894212c02efd017e2551fed276f4d8feefba@c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com: nodename nor servname provided, or not known
+FWLSE0101E: Caused by:  [project ReadyAppsSummit]java.net.UnknownHostException: https://c38f4c98-da63-41be-b62f-48b5934da36d-bluemix:92fd5f89e181388e381055501d3d894212c02efd017e2551fed276f4d8feefba@c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com: nodename nor servname provided, or not knownjava.lang.RuntimeException: Http request failed: java.net.UnknownHostException: https://c38f4c98-da63-41be-b62f-48b5934da36d-bluemix:92fd5f89e181388e381055501d3d894212c02efd017e2551fed276f4d8feefba@c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com: nodename nor servname provided, or not known
+	at com.worklight.adapters.http.HTTPConnectionManager.execute(HTTPConnectionManager.java:236)
+	at com.worklight.adapters.http.HttpClientContext.doExecute(HttpClientContext.java:185)
+	at com.worklight.adapters.http.HttpClientContext.execute(HttpClientContext.java:169)
+	at com.worklight.adapters.http.HTTP.execRequest(HTTP.java:145)
+	at com.worklight.adapters.http.HTTP.invoke(HTTP.java:134)
+	at com.worklight.integration.model.ProcedureInvoker.invokeProcedure(ProcedureInvoker.java:54)
+	at com.worklight.integration.model.Procedure.invoke(Procedure.java:166)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedureInternal(DataAccessServiceImpl.java:593)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedure(DataAccessServiceImpl.java:539)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.access$100(DataAccessServiceImpl.java:58)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl$3.execute(DataAccessServiceImpl.java:433)
+	at com.worklight.core.auth.impl.AuthenticationServiceBean.accessResource(AuthenticationServiceBean.java:76)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeProcedureInternal(DataAccessServiceImpl.java:430)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeDynamicProcedure(DataAccessServiceImpl.java:496)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeDynamicProcedureWithEnclosingProcedureProperties(DataAccessServiceImpl.java:480)
+	at com.worklight.integration.js.JavaScriptIntegrationLibraryImplementation.invokeDynamicProcedure(JavaScriptIntegrationLibraryImplementation.java:131)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:126)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:225)
+	at org.mozilla.javascript.optimizer.OptRuntime.callN(OptRuntime.java:52)
+	at org.mozilla.javascript.gen._integration_js_1._c_anonymous_12(/integration.js:103)
+	at org.mozilla.javascript.gen._integration_js_1.call(/integration.js)
+	at org.mozilla.javascript.Interpreter.interpretLoop(Interpreter.java:1473)
+	at org.mozilla.javascript.Interpreter.interpret(Interpreter.java:815)
+	at org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:109)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3091)
+	at org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:107)
+	at com.worklight.integration.js.JavaScriptManager.callFunction(JavaScriptManager.java:267)
+	at com.worklight.integration.js.JavaScriptManager.invokeFunction(JavaScriptManager.java:241)
+	at com.worklight.integration.js.JavaScriptManager.invokeFunction(JavaScriptManager.java:211)
+	at com.worklight.integration.services.impl.AdapterManagerImpl.invokeFunction(AdapterManagerImpl.java:124)
+	at com.worklight.integration.js.JavaScriptProcedureInvoker.invoke(JavaScriptProcedureInvoker.java:42)
+	at com.worklight.integration.model.ProcedureInvoker.invokeProcedure(ProcedureInvoker.java:54)
+	at com.worklight.integration.model.Procedure.invoke(Procedure.java:166)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedureInternal(DataAccessServiceImpl.java:593)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedure(DataAccessServiceImpl.java:539)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.access$100(DataAccessServiceImpl.java:58)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl$3.execute(DataAccessServiceImpl.java:433)
+	at com.worklight.core.auth.impl.AuthenticationServiceBean.accessResource(AuthenticationServiceBean.java:76)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeProcedureInternal(DataAccessServiceImpl.java:430)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeProcedure(DataAccessServiceImpl.java:139)
+	at com.worklight.server.dev.InvokeProcedureHandler.handle(InvokeProcedureHandler.java:85)
+	at com.worklight.server.dev.DevRootServlet.service(DevRootServlet.java:97)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:668)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1274)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:767)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:469)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:127)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:88)
+	at com.worklight.core.auth.impl.AuthenticationFilter.doFilter(AuthenticationFilter.java:151)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:194)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:85)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:968)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1056)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:4553)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.handleRequest(DynamicVirtualHost.java:301)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:954)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:266)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:776)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.UnknownHostException: https://c38f4c98-da63-41be-b62f-48b5934da36d-bluemix:92fd5f89e181388e381055501d3d894212c02efd017e2551fed276f4d8feefba@c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com: nodename nor servname provided, or not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$1.lookupAllHostAddr(InetAddress.java:901)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1293)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1246)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1162)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:304)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at com.worklight.adapters.http.HTTPConnectionManager.execute(HTTPConnectionManager.java:234)
+	... 65 more
+ 
+                                                                                                               com.worklight.common.log.filters.ErrorFilter
+[1/19/15 14:11:58:406 CST] 00000066 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:11:58:407 CST] 00000069 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:11:58:507 CST] 0000004a com.ibm.worklight.admin.common.util.ContextPropertyUtil      I Resource conf/jndi/default.properties not found. This is not an error. Context path is /worklightconsole
+[1/19/15 14:16:34:499 CST] 0000011a SystemErr                                                    R 345753  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-203] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:16:34:505 CST] 0000011a SystemErr                                                    R 345760  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-203] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:16:34:510 CST] 0000011a SystemErr                                                    R 345764  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-203] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:16:34:544 CST] 00000094 com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 4 for 'deployAdapter'.  [project ReadyAppsSummit]
+[1/19/15 14:16:34:547 CST] 00000053 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:16:34:559 CST] 00000094 com.worklight.common.util.HttpUtil                           I FWLSE2014I: Downloading a worklight artifact from http://9.41.138.101:10080/worklightadmin/otu/1.0/ffffff9a137cffffffbaffffffa547ffffffb4ffffffcf3520fffffff4ffffffc4635effffff9034/runtimes/ReadyAppsSummit/downloads/adapters/Temporary317569284 [project ReadyAppsSummit]
+[1/19/15 14:16:34:563 CST] 00000050 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:16:34:639 CST] 0000011a com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Preparation to deploy adapter 'SummitAdapter' finished successfully, SUCCESS
+[1/19/15 14:16:34:648 CST] 0000007c com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 4 for 'commit'.  [project ReadyAppsSummit]
+[1/19/15 14:16:34:651 CST] 0000011a com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Commit
+[1/19/15 14:16:34:651 CST] 0000011a com.ibm.worklight.admin.actions.BaseTransaction              I ReadyAppsSummit: worklight///9.41.138.101: 2015-01-19T20:16:34.649Z: Operation to deploy adapter SummitAdapter was commited
+[1/19/15 14:16:34:651 CST] 00000055 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:16:34:660 CST] 0000011a SystemErr                                                    R 345914  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-203] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:17:07:642 CST] 000000b7 org.apache.http.impl.client.DefaultHttpClient                I I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com:443: The target server failed to respond
+[1/19/15 14:17:07:643 CST] 000000b7 org.apache.http.impl.client.DefaultHttpClient                I Retrying request to {}->http://c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com:443
+[1/19/15 14:17:07:825 CST] 000000b7 org.apache.http.impl.client.DefaultHttpClient                I I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com:443: The target server failed to respond
+[1/19/15 14:17:07:826 CST] 000000b7 org.apache.http.impl.client.DefaultHttpClient                I Retrying request to {}->http://c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com:443
+[1/19/15 14:17:07:992 CST] 000000b7 org.apache.http.impl.client.DefaultHttpClient                I I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com:443: The target server failed to respond
+[1/19/15 14:17:07:992 CST] 000000b7 org.apache.http.impl.client.DefaultHttpClient                I Retrying request to {}->http://c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com:443
+[1/19/15 14:17:08:158 CST] 000000b7 om.worklight.integration.services.impl.DataAccessServiceImpl E FWLSE0099E: An error occurred while invoking procedure  [project ReadyAppsSummit]SummitAdapter/HttpRequestFWLSE0100E:  parameters: [project ReadyAppsSummit]
+Http request failed: org.apache.http.NoHttpResponseException: c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com:443 failed to respond
+FWLSE0101E: Caused by:  [project ReadyAppsSummit]org.apache.http.NoHttpResponseException: c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com:443 failed to respondjava.lang.RuntimeException: Http request failed: org.apache.http.NoHttpResponseException: c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com:443 failed to respond
+	at com.worklight.adapters.http.HTTPConnectionManager.execute(HTTPConnectionManager.java:236)
+	at com.worklight.adapters.http.HttpClientContext.doExecute(HttpClientContext.java:185)
+	at com.worklight.adapters.http.HttpClientContext.execute(HttpClientContext.java:169)
+	at com.worklight.adapters.http.HTTP.execRequest(HTTP.java:145)
+	at com.worklight.adapters.http.HTTP.invoke(HTTP.java:134)
+	at com.worklight.integration.model.ProcedureInvoker.invokeProcedure(ProcedureInvoker.java:54)
+	at com.worklight.integration.model.Procedure.invoke(Procedure.java:166)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedureInternal(DataAccessServiceImpl.java:593)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedure(DataAccessServiceImpl.java:539)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.access$100(DataAccessServiceImpl.java:58)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl$3.execute(DataAccessServiceImpl.java:433)
+	at com.worklight.core.auth.impl.AuthenticationServiceBean.accessResource(AuthenticationServiceBean.java:76)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeProcedureInternal(DataAccessServiceImpl.java:430)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeDynamicProcedure(DataAccessServiceImpl.java:496)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeDynamicProcedureWithEnclosingProcedureProperties(DataAccessServiceImpl.java:480)
+	at com.worklight.integration.js.JavaScriptIntegrationLibraryImplementation.invokeDynamicProcedure(JavaScriptIntegrationLibraryImplementation.java:131)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:126)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:225)
+	at org.mozilla.javascript.optimizer.OptRuntime.callN(OptRuntime.java:52)
+	at org.mozilla.javascript.gen._integration_js_1._c_anonymous_12(/integration.js:103)
+	at org.mozilla.javascript.gen._integration_js_1.call(/integration.js)
+	at org.mozilla.javascript.Interpreter.interpretLoop(Interpreter.java:1473)
+	at org.mozilla.javascript.Interpreter.interpret(Interpreter.java:815)
+	at org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:109)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3091)
+	at org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:107)
+	at com.worklight.integration.js.JavaScriptManager.callFunction(JavaScriptManager.java:267)
+	at com.worklight.integration.js.JavaScriptManager.invokeFunction(JavaScriptManager.java:241)
+	at com.worklight.integration.js.JavaScriptManager.invokeFunction(JavaScriptManager.java:211)
+	at com.worklight.integration.services.impl.AdapterManagerImpl.invokeFunction(AdapterManagerImpl.java:124)
+	at com.worklight.integration.js.JavaScriptProcedureInvoker.invoke(JavaScriptProcedureInvoker.java:42)
+	at com.worklight.integration.model.ProcedureInvoker.invokeProcedure(ProcedureInvoker.java:54)
+	at com.worklight.integration.model.Procedure.invoke(Procedure.java:166)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedureInternal(DataAccessServiceImpl.java:593)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedure(DataAccessServiceImpl.java:539)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.access$100(DataAccessServiceImpl.java:58)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl$3.execute(DataAccessServiceImpl.java:433)
+	at com.worklight.core.auth.impl.AuthenticationServiceBean.accessResource(AuthenticationServiceBean.java:76)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeProcedureInternal(DataAccessServiceImpl.java:430)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeProcedure(DataAccessServiceImpl.java:139)
+	at com.worklight.server.dev.InvokeProcedureHandler.handle(InvokeProcedureHandler.java:85)
+	at com.worklight.server.dev.DevRootServlet.service(DevRootServlet.java:97)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:668)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1274)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:767)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:469)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:127)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:88)
+	at com.worklight.core.auth.impl.AuthenticationFilter.doFilter(AuthenticationFilter.java:151)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:194)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:85)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:968)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1056)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:81)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:885)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:266)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:776)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.NoHttpResponseException: c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com:443 failed to respond
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:143)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:57)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:260)
+	at org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader(AbstractHttpClientConnection.java:283)
+	at org.apache.http.impl.conn.DefaultClientConnection.receiveResponseHeader(DefaultClientConnection.java:251)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.receiveResponseHeader(ManagedClientConnectionImpl.java:197)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:271)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:123)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at com.worklight.adapters.http.HTTPConnectionManager.execute(HTTPConnectionManager.java:234)
+	... 64 more
+ 
+                                                                                                               com.worklight.common.log.filters.ErrorFilter
+[1/19/15 14:17:08:162 CST] 0000004e SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:19:06:048 CST] 000000c8 SystemErr                                                    R 497303  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-128] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:19:06:055 CST] 000000c8 SystemErr                                                    R 497309  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-128] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:19:06:060 CST] 000000c8 SystemErr                                                    R 497315  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-128] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:19:06:092 CST] 00000020 com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 5 for 'deployAdapter'.  [project ReadyAppsSummit]
+[1/19/15 14:19:06:095 CST] 00000052 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:19:06:108 CST] 00000020 com.worklight.common.util.HttpUtil                           I FWLSE2014I: Downloading a worklight artifact from http://9.41.138.101:10080/worklightadmin/otu/1.0/1dffffffd8ffffffd62e7317ffffff97107d561d040028ffffffc746/runtimes/ReadyAppsSummit/downloads/adapters/Temporary317569284 [project ReadyAppsSummit]
+[1/19/15 14:19:06:112 CST] 0000004f SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:19:06:188 CST] 000000c8 com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Preparation to deploy adapter 'SummitAdapter' finished successfully, SUCCESS
+[1/19/15 14:19:06:195 CST] 000000fd com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 5 for 'commit'.  [project ReadyAppsSummit]
+[1/19/15 14:19:06:199 CST] 00000051 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:19:06:200 CST] 000000c8 com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Commit
+[1/19/15 14:19:06:200 CST] 000000c8 com.ibm.worklight.admin.actions.BaseTransaction              I ReadyAppsSummit: worklight///9.41.138.101: 2015-01-19T20:19:06.196Z: Operation to deploy adapter SummitAdapter was commited
+[1/19/15 14:19:06:207 CST] 000000c8 SystemErr                                                    R 497462  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-128] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:19:13:357 CST] 0000003c om.worklight.integration.services.impl.DataAccessServiceImpl E FWLSE0099E: An error occurred while invoking procedure  [project ReadyAppsSummit]SummitAdapter/HttpRequestFWLSE0100E:  parameters: [project ReadyAppsSummit]
+Http request failed: java.net.UnknownHostException: c38f4c98-da63-41be-b62f-48b5934da36d-bluemix:92fd5f89e181388e381055501d3d894212c02efd017e2551fed276f4d8feefba@c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com: nodename nor servname provided, or not known
+FWLSE0101E: Caused by:  [project ReadyAppsSummit]java.net.UnknownHostException: c38f4c98-da63-41be-b62f-48b5934da36d-bluemix:92fd5f89e181388e381055501d3d894212c02efd017e2551fed276f4d8feefba@c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com: nodename nor servname provided, or not knownjava.lang.RuntimeException: Http request failed: java.net.UnknownHostException: c38f4c98-da63-41be-b62f-48b5934da36d-bluemix:92fd5f89e181388e381055501d3d894212c02efd017e2551fed276f4d8feefba@c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com: nodename nor servname provided, or not known
+	at com.worklight.adapters.http.HTTPConnectionManager.execute(HTTPConnectionManager.java:236)
+	at com.worklight.adapters.http.HttpClientContext.doExecute(HttpClientContext.java:185)
+	at com.worklight.adapters.http.HttpClientContext.execute(HttpClientContext.java:169)
+	at com.worklight.adapters.http.HTTP.execRequest(HTTP.java:145)
+	at com.worklight.adapters.http.HTTP.invoke(HTTP.java:134)
+	at com.worklight.integration.model.ProcedureInvoker.invokeProcedure(ProcedureInvoker.java:54)
+	at com.worklight.integration.model.Procedure.invoke(Procedure.java:166)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedureInternal(DataAccessServiceImpl.java:593)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedure(DataAccessServiceImpl.java:539)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.access$100(DataAccessServiceImpl.java:58)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl$3.execute(DataAccessServiceImpl.java:433)
+	at com.worklight.core.auth.impl.AuthenticationServiceBean.accessResource(AuthenticationServiceBean.java:76)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeProcedureInternal(DataAccessServiceImpl.java:430)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeDynamicProcedure(DataAccessServiceImpl.java:496)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeDynamicProcedureWithEnclosingProcedureProperties(DataAccessServiceImpl.java:480)
+	at com.worklight.integration.js.JavaScriptIntegrationLibraryImplementation.invokeDynamicProcedure(JavaScriptIntegrationLibraryImplementation.java:131)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:126)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:225)
+	at org.mozilla.javascript.optimizer.OptRuntime.callN(OptRuntime.java:52)
+	at org.mozilla.javascript.gen._integration_js_1._c_anonymous_12(/integration.js:103)
+	at org.mozilla.javascript.gen._integration_js_1.call(/integration.js)
+	at org.mozilla.javascript.Interpreter.interpretLoop(Interpreter.java:1473)
+	at org.mozilla.javascript.Interpreter.interpret(Interpreter.java:815)
+	at org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:109)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3091)
+	at org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:107)
+	at com.worklight.integration.js.JavaScriptManager.callFunction(JavaScriptManager.java:267)
+	at com.worklight.integration.js.JavaScriptManager.invokeFunction(JavaScriptManager.java:241)
+	at com.worklight.integration.js.JavaScriptManager.invokeFunction(JavaScriptManager.java:211)
+	at com.worklight.integration.services.impl.AdapterManagerImpl.invokeFunction(AdapterManagerImpl.java:124)
+	at com.worklight.integration.js.JavaScriptProcedureInvoker.invoke(JavaScriptProcedureInvoker.java:42)
+	at com.worklight.integration.model.ProcedureInvoker.invokeProcedure(ProcedureInvoker.java:54)
+	at com.worklight.integration.model.Procedure.invoke(Procedure.java:166)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedureInternal(DataAccessServiceImpl.java:593)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedure(DataAccessServiceImpl.java:539)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.access$100(DataAccessServiceImpl.java:58)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl$3.execute(DataAccessServiceImpl.java:433)
+	at com.worklight.core.auth.impl.AuthenticationServiceBean.accessResource(AuthenticationServiceBean.java:76)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeProcedureInternal(DataAccessServiceImpl.java:430)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeProcedure(DataAccessServiceImpl.java:139)
+	at com.worklight.server.dev.InvokeProcedureHandler.handle(InvokeProcedureHandler.java:85)
+	at com.worklight.server.dev.DevRootServlet.service(DevRootServlet.java:97)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:668)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1274)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:767)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:469)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:127)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:88)
+	at com.worklight.core.auth.impl.AuthenticationFilter.doFilter(AuthenticationFilter.java:151)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:194)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:85)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:968)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1056)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:81)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:885)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:266)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:776)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.UnknownHostException: c38f4c98-da63-41be-b62f-48b5934da36d-bluemix:92fd5f89e181388e381055501d3d894212c02efd017e2551fed276f4d8feefba@c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com: nodename nor servname provided, or not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$1.lookupAllHostAddr(InetAddress.java:901)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1293)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1246)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1162)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:304)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at com.worklight.adapters.http.HTTPConnectionManager.execute(HTTPConnectionManager.java:234)
+	... 64 more
+ 
+                                                                                                               com.worklight.common.log.filters.ErrorFilter
+[1/19/15 14:19:13:361 CST] 00000054 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:19:26:091 CST] 00000122 SystemErr                                                    R 517346  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-207] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:19:26:098 CST] 00000122 SystemErr                                                    R 517353  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-207] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:19:26:103 CST] 00000122 SystemErr                                                    R 517358  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-207] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:19:26:133 CST] 000000d8 com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 6 for 'deployAdapter'.  [project ReadyAppsSummit]
+[1/19/15 14:19:26:137 CST] 00000066 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:19:26:149 CST] 000000d8 com.worklight.common.util.HttpUtil                           I FWLSE2014I: Downloading a worklight artifact from http://9.41.138.101:10080/worklightadmin/otu/1.0/3214ffffffcfffffffceffffff913828ffffffd3ffffffcaffffff9d2f2f762dffffffc756/runtimes/ReadyAppsSummit/downloads/adapters/Temporary317569284 [project ReadyAppsSummit]
+[1/19/15 14:19:26:152 CST] 00000069 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:19:26:361 CST] 00000122 com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Preparation to deploy adapter 'SummitAdapter' finished successfully, SUCCESS
+[1/19/15 14:19:26:370 CST] 00000075 com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 6 for 'commit'.  [project ReadyAppsSummit]
+[1/19/15 14:19:26:374 CST] 00000122 com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Commit
+[1/19/15 14:19:26:374 CST] 00000122 com.ibm.worklight.admin.actions.BaseTransaction              I ReadyAppsSummit: worklight///9.41.138.101: 2015-01-19T20:19:26.372Z: Operation to deploy adapter SummitAdapter was commited
+[1/19/15 14:19:26:375 CST] 00000053 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:19:26:382 CST] 00000122 SystemErr                                                    R 517637  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-207] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:19:30:441 CST] 00000099 om.worklight.integration.services.impl.DataAccessServiceImpl E FWLSE0099E: An error occurred while invoking procedure  [project ReadyAppsSummit]SummitAdapter/HttpRequestFWLSE0100E:  parameters: [project ReadyAppsSummit]
+Http request failed: java.net.UnknownHostException: c38f4c98-da63-41be-b62f-48b5934da36d-bluemix:92fd5f89e181388e381055501d3d894212c02efd017e2551fed276f4d8feefba@c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com: nodename nor servname provided, or not known
+FWLSE0101E: Caused by:  [project ReadyAppsSummit]java.net.UnknownHostException: c38f4c98-da63-41be-b62f-48b5934da36d-bluemix:92fd5f89e181388e381055501d3d894212c02efd017e2551fed276f4d8feefba@c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com: nodename nor servname provided, or not knownjava.lang.RuntimeException: Http request failed: java.net.UnknownHostException: c38f4c98-da63-41be-b62f-48b5934da36d-bluemix:92fd5f89e181388e381055501d3d894212c02efd017e2551fed276f4d8feefba@c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com: nodename nor servname provided, or not known
+	at com.worklight.adapters.http.HTTPConnectionManager.execute(HTTPConnectionManager.java:236)
+	at com.worklight.adapters.http.HttpClientContext.doExecute(HttpClientContext.java:185)
+	at com.worklight.adapters.http.HttpClientContext.execute(HttpClientContext.java:169)
+	at com.worklight.adapters.http.HTTP.execRequest(HTTP.java:145)
+	at com.worklight.adapters.http.HTTP.invoke(HTTP.java:134)
+	at com.worklight.integration.model.ProcedureInvoker.invokeProcedure(ProcedureInvoker.java:54)
+	at com.worklight.integration.model.Procedure.invoke(Procedure.java:166)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedureInternal(DataAccessServiceImpl.java:593)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedure(DataAccessServiceImpl.java:539)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.access$100(DataAccessServiceImpl.java:58)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl$3.execute(DataAccessServiceImpl.java:433)
+	at com.worklight.core.auth.impl.AuthenticationServiceBean.accessResource(AuthenticationServiceBean.java:76)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeProcedureInternal(DataAccessServiceImpl.java:430)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeDynamicProcedure(DataAccessServiceImpl.java:496)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeDynamicProcedureWithEnclosingProcedureProperties(DataAccessServiceImpl.java:480)
+	at com.worklight.integration.js.JavaScriptIntegrationLibraryImplementation.invokeDynamicProcedure(JavaScriptIntegrationLibraryImplementation.java:131)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:126)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:225)
+	at org.mozilla.javascript.optimizer.OptRuntime.callN(OptRuntime.java:52)
+	at org.mozilla.javascript.gen._integration_js_1._c_anonymous_12(/integration.js:103)
+	at org.mozilla.javascript.gen._integration_js_1.call(/integration.js)
+	at org.mozilla.javascript.Interpreter.interpretLoop(Interpreter.java:1473)
+	at org.mozilla.javascript.Interpreter.interpret(Interpreter.java:815)
+	at org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:109)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3091)
+	at org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:107)
+	at com.worklight.integration.js.JavaScriptManager.callFunction(JavaScriptManager.java:267)
+	at com.worklight.integration.js.JavaScriptManager.invokeFunction(JavaScriptManager.java:241)
+	at com.worklight.integration.js.JavaScriptManager.invokeFunction(JavaScriptManager.java:211)
+	at com.worklight.integration.services.impl.AdapterManagerImpl.invokeFunction(AdapterManagerImpl.java:124)
+	at com.worklight.integration.js.JavaScriptProcedureInvoker.invoke(JavaScriptProcedureInvoker.java:42)
+	at com.worklight.integration.model.ProcedureInvoker.invokeProcedure(ProcedureInvoker.java:54)
+	at com.worklight.integration.model.Procedure.invoke(Procedure.java:166)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedureInternal(DataAccessServiceImpl.java:593)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedure(DataAccessServiceImpl.java:539)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.access$100(DataAccessServiceImpl.java:58)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl$3.execute(DataAccessServiceImpl.java:433)
+	at com.worklight.core.auth.impl.AuthenticationServiceBean.accessResource(AuthenticationServiceBean.java:76)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeProcedureInternal(DataAccessServiceImpl.java:430)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeProcedure(DataAccessServiceImpl.java:139)
+	at com.worklight.server.dev.InvokeProcedureHandler.handle(InvokeProcedureHandler.java:85)
+	at com.worklight.server.dev.DevRootServlet.service(DevRootServlet.java:97)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:668)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1274)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:767)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:469)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:127)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:88)
+	at com.worklight.core.auth.impl.AuthenticationFilter.doFilter(AuthenticationFilter.java:151)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:194)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:85)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:968)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1056)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:81)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:885)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:266)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:776)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.UnknownHostException: c38f4c98-da63-41be-b62f-48b5934da36d-bluemix:92fd5f89e181388e381055501d3d894212c02efd017e2551fed276f4d8feefba@c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com: nodename nor servname provided, or not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$1.lookupAllHostAddr(InetAddress.java:901)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1293)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1246)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1162)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:304)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at com.worklight.adapters.http.HTTPConnectionManager.execute(HTTPConnectionManager.java:234)
+	... 64 more
+ 
+                                                                                                               com.worklight.common.log.filters.ErrorFilter
+[1/19/15 14:19:30:446 CST] 00000050 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:20:04:373 CST] 000000e4 SystemErr                                                    R 555627  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-155] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:20:04:379 CST] 000000e4 SystemErr                                                    R 555634  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-155] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:20:04:384 CST] 000000e4 SystemErr                                                    R 555639  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-155] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:20:04:416 CST] 000000c6 com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 7 for 'deployAdapter'.  [project ReadyAppsSummit]
+[1/19/15 14:20:04:419 CST] 00000055 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:20:04:430 CST] 000000c6 com.worklight.common.util.HttpUtil                           I FWLSE2014I: Downloading a worklight artifact from http://9.41.138.101:10080/worklightadmin/otu/1.0/1fffffffde3956ffffffb8292dffffffcd38ffffffeb0affffffb8ffffff9bffffffbbffffff8b23/runtimes/ReadyAppsSummit/downloads/adapters/Temporary317569284 [project ReadyAppsSummit]
+[1/19/15 14:20:04:434 CST] 0000004e SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:20:04:626 CST] 000000e4 com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Preparation to deploy adapter 'SummitAdapter' finished successfully, SUCCESS
+[1/19/15 14:20:04:635 CST] 00000127 com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 7 for 'commit'.  [project ReadyAppsSummit]
+[1/19/15 14:20:04:638 CST] 000000e4 com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Commit
+[1/19/15 14:20:04:638 CST] 000000e4 com.ibm.worklight.admin.actions.BaseTransaction              I ReadyAppsSummit: worklight///9.41.138.101: 2015-01-19T20:20:04.636Z: Operation to deploy adapter SummitAdapter was commited
+[1/19/15 14:20:04:639 CST] 00000052 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:20:04:650 CST] 000000e4 SystemErr                                                    R 555904  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-155] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:21:09:186 CST] 000000e5 SystemErr                                                    R 620441  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-156] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:21:09:193 CST] 000000e5 SystemErr                                                    R 620448  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-156] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:21:09:198 CST] 000000e5 SystemErr                                                    R 620453  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-156] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:21:09:239 CST] 000000ff com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 8 for 'deployAdapter'.  [project ReadyAppsSummit]
+[1/19/15 14:21:09:242 CST] 0000004f SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:21:09:254 CST] 000000ff com.worklight.common.util.HttpUtil                           I FWLSE2014I: Downloading a worklight artifact from http://9.41.138.101:10080/worklightadmin/otu/1.0/21ffffff921839fffffff6fffffff8ffffffb0ffffff8532ffffff9372ffffff81ffffffc2ffffffc6ffffffc0ffffffa4/runtimes/ReadyAppsSummit/downloads/adapters/Temporary317569284 [project ReadyAppsSummit]
+[1/19/15 14:21:09:257 CST] 00000051 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:21:09:470 CST] 000000e5 com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Preparation to deploy adapter 'SummitAdapter' finished successfully, SUCCESS
+[1/19/15 14:21:09:480 CST] 00000083 com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 8 for 'commit'.  [project ReadyAppsSummit]
+[1/19/15 14:21:09:484 CST] 000000e5 com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Commit
+[1/19/15 14:21:09:484 CST] 000000e5 com.ibm.worklight.admin.actions.BaseTransaction              I ReadyAppsSummit: worklight///9.41.138.101: 2015-01-19T20:21:09.482Z: Operation to deploy adapter SummitAdapter was commited
+[1/19/15 14:21:09:485 CST] 00000054 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:21:09:496 CST] 000000e5 SystemErr                                                    R 620751  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-156] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:21:17:714 CST] 000000cf om.worklight.integration.services.impl.DataAccessServiceImpl E FWLSE0099E: An error occurred while invoking procedure  [project ReadyAppsSummit]SummitAdapter/HttpRequestFWLSE0100E:  parameters: [project ReadyAppsSummit]
+Http request failed: java.net.UnknownHostException: c38f4c98-da63-41be-b62f-48b5934da36d-bluemix:92fd5f89e181388e381055501d3d894212c02efd017e2551fed276f4d8feefba@c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com: nodename nor servname provided, or not known
+FWLSE0101E: Caused by:  [project ReadyAppsSummit]java.net.UnknownHostException: c38f4c98-da63-41be-b62f-48b5934da36d-bluemix:92fd5f89e181388e381055501d3d894212c02efd017e2551fed276f4d8feefba@c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com: nodename nor servname provided, or not knownjava.lang.RuntimeException: Http request failed: java.net.UnknownHostException: c38f4c98-da63-41be-b62f-48b5934da36d-bluemix:92fd5f89e181388e381055501d3d894212c02efd017e2551fed276f4d8feefba@c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com: nodename nor servname provided, or not known
+	at com.worklight.adapters.http.HTTPConnectionManager.execute(HTTPConnectionManager.java:236)
+	at com.worklight.adapters.http.HttpClientContext.doExecute(HttpClientContext.java:185)
+	at com.worklight.adapters.http.HttpClientContext.execute(HttpClientContext.java:169)
+	at com.worklight.adapters.http.HTTP.execRequest(HTTP.java:145)
+	at com.worklight.adapters.http.HTTP.invoke(HTTP.java:134)
+	at com.worklight.integration.model.ProcedureInvoker.invokeProcedure(ProcedureInvoker.java:54)
+	at com.worklight.integration.model.Procedure.invoke(Procedure.java:166)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedureInternal(DataAccessServiceImpl.java:593)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedure(DataAccessServiceImpl.java:539)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.access$100(DataAccessServiceImpl.java:58)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl$3.execute(DataAccessServiceImpl.java:433)
+	at com.worklight.core.auth.impl.AuthenticationServiceBean.accessResource(AuthenticationServiceBean.java:76)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeProcedureInternal(DataAccessServiceImpl.java:430)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeDynamicProcedure(DataAccessServiceImpl.java:496)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeDynamicProcedureWithEnclosingProcedureProperties(DataAccessServiceImpl.java:480)
+	at com.worklight.integration.js.JavaScriptIntegrationLibraryImplementation.invokeDynamicProcedure(JavaScriptIntegrationLibraryImplementation.java:131)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:126)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:225)
+	at org.mozilla.javascript.optimizer.OptRuntime.callN(OptRuntime.java:52)
+	at org.mozilla.javascript.gen._integration_js_1._c_anonymous_12(/integration.js:103)
+	at org.mozilla.javascript.gen._integration_js_1.call(/integration.js)
+	at org.mozilla.javascript.Interpreter.interpretLoop(Interpreter.java:1473)
+	at org.mozilla.javascript.Interpreter.interpret(Interpreter.java:815)
+	at org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:109)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3091)
+	at org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:107)
+	at com.worklight.integration.js.JavaScriptManager.callFunction(JavaScriptManager.java:267)
+	at com.worklight.integration.js.JavaScriptManager.invokeFunction(JavaScriptManager.java:241)
+	at com.worklight.integration.js.JavaScriptManager.invokeFunction(JavaScriptManager.java:211)
+	at com.worklight.integration.services.impl.AdapterManagerImpl.invokeFunction(AdapterManagerImpl.java:124)
+	at com.worklight.integration.js.JavaScriptProcedureInvoker.invoke(JavaScriptProcedureInvoker.java:42)
+	at com.worklight.integration.model.ProcedureInvoker.invokeProcedure(ProcedureInvoker.java:54)
+	at com.worklight.integration.model.Procedure.invoke(Procedure.java:166)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedureInternal(DataAccessServiceImpl.java:593)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedure(DataAccessServiceImpl.java:539)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.access$100(DataAccessServiceImpl.java:58)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl$3.execute(DataAccessServiceImpl.java:433)
+	at com.worklight.core.auth.impl.AuthenticationServiceBean.accessResource(AuthenticationServiceBean.java:76)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeProcedureInternal(DataAccessServiceImpl.java:430)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeProcedure(DataAccessServiceImpl.java:139)
+	at com.worklight.server.dev.InvokeProcedureHandler.handle(InvokeProcedureHandler.java:85)
+	at com.worklight.server.dev.DevRootServlet.service(DevRootServlet.java:97)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:668)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1274)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:767)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:469)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:127)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:88)
+	at com.worklight.core.auth.impl.AuthenticationFilter.doFilter(AuthenticationFilter.java:151)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:194)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:85)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:968)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1056)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:81)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:885)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:266)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:776)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.UnknownHostException: c38f4c98-da63-41be-b62f-48b5934da36d-bluemix:92fd5f89e181388e381055501d3d894212c02efd017e2551fed276f4d8feefba@c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com: nodename nor servname provided, or not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$1.lookupAllHostAddr(InetAddress.java:901)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1293)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1246)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1162)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:304)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at com.worklight.adapters.http.HTTPConnectionManager.execute(HTTPConnectionManager.java:234)
+	... 64 more
+ 
+                                                                                                               com.worklight.common.log.filters.ErrorFilter
+[1/19/15 14:21:17:719 CST] 00000066 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:21:30:653 CST] 00000074 SystemErr                                                    R 641907  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-57] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:21:30:658 CST] 00000074 SystemErr                                                    R 641913  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-57] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:21:30:662 CST] 00000074 SystemErr                                                    R 641917  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-57] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 14:21:30:691 CST] 000000ad com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 9 for 'deployAdapter'.  [project ReadyAppsSummit]
+[1/19/15 14:21:30:695 CST] 00000069 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:21:30:706 CST] 000000ad com.worklight.common.util.HttpUtil                           I FWLSE2014I: Downloading a worklight artifact from http://9.41.138.101:10080/worklightadmin/otu/1.0/ffffffa8ffffffe9ffffffce2117ffffff99ffffffb9ffffff802effffff9612fffffff9ffffffc9ffffffc8ffffffdf4f/runtimes/ReadyAppsSummit/downloads/adapters/Temporary317569284 [project ReadyAppsSummit]
+[1/19/15 14:21:30:709 CST] 00000053 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:21:30:931 CST] 00000074 com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Preparation to deploy adapter 'SummitAdapter' finished successfully, SUCCESS
+[1/19/15 14:21:30:939 CST] 000000e8 com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 9 for 'commit'.  [project ReadyAppsSummit]
+[1/19/15 14:21:30:942 CST] 00000074 com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Commit
+[1/19/15 14:21:30:942 CST] 00000074 com.ibm.worklight.admin.actions.BaseTransaction              I ReadyAppsSummit: worklight///9.41.138.101: 2015-01-19T20:21:30.940Z: Operation to deploy adapter SummitAdapter was commited
+[1/19/15 14:21:30:942 CST] 00000050 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 14:21:30:949 CST] 00000074 SystemErr                                                    R 642204  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-57] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 16:39:06:912 CST] 000000b1 SystemErr                                                    R 8898167  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-109] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 16:39:06:918 CST] 000000b1 SystemErr                                                    R 8898173  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-109] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 16:39:06:922 CST] 000000b1 SystemErr                                                    R 8898177  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-109] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 16:39:06:963 CST] 0000011c com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 10 for 'deployAdapter'.  [project ReadyAppsSummit]
+[1/19/15 16:39:06:970 CST] 00000055 org.apache.http.client.protocol.ResponseProcessCookies       W Invalid cookie header: "Set-Cookie: LtpaToken2=""; Expires=Thu, 01 Dec 1994 16:00:00 GMT; Path=/; HttpOnly". Unable to parse expires attribute: Thu
+[1/19/15 16:39:06:970 CST] 00000055 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 16:39:06:979 CST] 0000011c com.worklight.common.util.HttpUtil                           I FWLSE2014I: Downloading a worklight artifact from http://9.41.138.101:10080/worklightadmin/otu/1.0/ffffffa367ffffff88ffffff89ffffff9cffffffb7fffffff4ffffffba6fffffff9021fffffff52c11ffffffadffffff8e/runtimes/ReadyAppsSummit/downloads/adapters/Temporary317569284 [project ReadyAppsSummit]
+[1/19/15 16:39:06:983 CST] 0000004e SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 16:39:07:232 CST] 000000b1 com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Preparation to deploy adapter 'SummitAdapter' finished successfully, SUCCESS
+[1/19/15 16:39:07:242 CST] 0000006b com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 10 for 'commit'.  [project ReadyAppsSummit]
+[1/19/15 16:39:07:246 CST] 000000b1 com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Commit
+[1/19/15 16:39:07:246 CST] 000000b1 com.ibm.worklight.admin.actions.BaseTransaction              I ReadyAppsSummit: worklight///9.41.138.101: 2015-01-19T22:39:07.244Z: Operation to deploy adapter SummitAdapter was commited
+[1/19/15 16:39:07:246 CST] 00000052 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 16:39:07:256 CST] 000000b1 SystemErr                                                    R 8898511  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-109] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 16:39:20:746 CST] 00000057 SystemErr                                                    R 8912000  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-32] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 16:39:20:751 CST] 00000057 SystemErr                                                    R 8912006  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-32] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 16:39:20:755 CST] 00000057 SystemErr                                                    R 8912010  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-32] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 16:39:20:794 CST] 00000022 com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 11 for 'deployAdapter'.  [project ReadyAppsSummit]
+[1/19/15 16:39:20:797 CST] 0000004f SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 16:39:20:809 CST] 00000022 com.worklight.common.util.HttpUtil                           I FWLSE2014I: Downloading a worklight artifact from http://9.41.138.101:10080/worklightadmin/otu/1.0/ffffffa4fffffff4ffffffa6ffffffcfffffffe5ffffffdc6a0affffffac5a340656ffffffbf32ffffffce/runtimes/ReadyAppsSummit/downloads/adapters/Temporary317569284 [project ReadyAppsSummit]
+[1/19/15 16:39:20:813 CST] 00000051 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 16:39:20:994 CST] 00000057 com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Preparation to deploy adapter 'SummitAdapter' finished successfully, SUCCESS
+[1/19/15 16:39:21:002 CST] 000002e3 com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 11 for 'commit'.  [project ReadyAppsSummit]
+[1/19/15 16:39:21:004 CST] 00000057 com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Commit
+[1/19/15 16:39:21:004 CST] 00000057 com.ibm.worklight.admin.actions.BaseTransaction              I ReadyAppsSummit: worklight///9.41.138.101: 2015-01-19T22:39:21.002Z: Operation to deploy adapter SummitAdapter was commited
+[1/19/15 16:39:21:005 CST] 00000054 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 16:39:21:013 CST] 00000057 SystemErr                                                    R 8912268  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-32] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 16:39:29:232 CST] 0000015e SystemErr                                                    R 8920487  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-225] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 16:39:29:237 CST] 0000015e SystemErr                                                    R 8920491  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-225] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 16:39:29:241 CST] 0000015e SystemErr                                                    R 8920495  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-225] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 16:39:29:271 CST] 0000008d com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 12 for 'deployAdapter'.  [project ReadyAppsSummit]
+[1/19/15 16:39:29:276 CST] 00000066 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 16:39:29:287 CST] 0000008d com.worklight.common.util.HttpUtil                           I FWLSE2014I: Downloading a worklight artifact from http://9.41.138.101:10080/worklightadmin/otu/1.0/ffffffc1ffffffbb1dffffffa3ffffffd0094b5d23ffffffc845ffffffdaffffffa53c50ffffff99/runtimes/ReadyAppsSummit/downloads/adapters/Temporary317569284 [project ReadyAppsSummit]
+[1/19/15 16:39:29:290 CST] 00000069 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 16:39:29:488 CST] 0000015e com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Preparation to deploy adapter 'SummitAdapter' finished successfully, SUCCESS
+[1/19/15 16:39:29:497 CST] 00000058 com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 12 for 'commit'.  [project ReadyAppsSummit]
+[1/19/15 16:39:29:500 CST] 0000015e com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Commit
+[1/19/15 16:39:29:500 CST] 0000015e com.ibm.worklight.admin.actions.BaseTransaction              I ReadyAppsSummit: worklight///9.41.138.101: 2015-01-19T22:39:29.498Z: Operation to deploy adapter SummitAdapter was commited
+[1/19/15 16:39:29:500 CST] 00000053 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 16:39:29:508 CST] 0000015e SystemErr                                                    R 8920762  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-225] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 16:39:41:298 CST] 0000034f om.worklight.integration.services.impl.DataAccessServiceImpl E FWLSE0099E: An error occurred while invoking procedure  [project ReadyAppsSummit]SummitAdapter/HttpRequestFWLSE0100E:  parameters: [project ReadyAppsSummit]
+java.lang.IllegalArgumentException: Http content type 'post' not supported. Supported types are: [json, css, csv, javascript, plain, xml, html]
+FWLSE0101E: Caused by:  [project ReadyAppsSummit]java.lang.IllegalArgumentException: Http content type 'post' not supported. Supported types are: [json, css, csv, javascript, plain, xml, html]java.lang.RuntimeException: java.lang.IllegalArgumentException: Http content type 'post' not supported. Supported types are: [json, css, csv, javascript, plain, xml, html]
+	at com.worklight.adapters.http.HttpMessageExtractor.getXmlSource(HttpMessageExtractor.java:64)
+	at com.worklight.adapters.http.HttpMessageExtractor.getXmlSource(HttpMessageExtractor.java:34)
+	at com.worklight.integration.mapping.XMLDataProcessor.getXmlFromExtractor(XMLDataProcessor.java:141)
+	at com.worklight.integration.mapping.XMLDataProcessor.getPayloadAsXml(XMLDataProcessor.java:136)
+	at com.worklight.integration.mapping.XMLDataProcessor.receivePayload(XMLDataProcessor.java:76)
+	at com.worklight.integration.model.ProcedureInvoker.processXMLData(ProcedureInvoker.java:65)
+	at com.worklight.adapters.http.HTTP.parseResponseContent(HTTP.java:390)
+	at com.worklight.adapters.http.HTTP.execRequest(HTTP.java:178)
+	at com.worklight.adapters.http.HTTP.invoke(HTTP.java:134)
+	at com.worklight.integration.model.ProcedureInvoker.invokeProcedure(ProcedureInvoker.java:54)
+	at com.worklight.integration.model.Procedure.invoke(Procedure.java:166)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedureInternal(DataAccessServiceImpl.java:593)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedure(DataAccessServiceImpl.java:539)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.access$100(DataAccessServiceImpl.java:58)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl$3.execute(DataAccessServiceImpl.java:433)
+	at com.worklight.core.auth.impl.AuthenticationServiceBean.accessResource(AuthenticationServiceBean.java:76)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeProcedureInternal(DataAccessServiceImpl.java:430)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeDynamicProcedure(DataAccessServiceImpl.java:496)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeDynamicProcedureWithEnclosingProcedureProperties(DataAccessServiceImpl.java:480)
+	at com.worklight.integration.js.JavaScriptIntegrationLibraryImplementation.invokeDynamicProcedure(JavaScriptIntegrationLibraryImplementation.java:131)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:126)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:225)
+	at org.mozilla.javascript.optimizer.OptRuntime.callN(OptRuntime.java:52)
+	at org.mozilla.javascript.gen._integration_js_1._c_anonymous_12(/integration.js:103)
+	at org.mozilla.javascript.gen._integration_js_1.call(/integration.js)
+	at org.mozilla.javascript.Interpreter.interpretLoop(Interpreter.java:1473)
+	at org.mozilla.javascript.Interpreter.interpret(Interpreter.java:815)
+	at org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:109)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3091)
+	at org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:107)
+	at com.worklight.integration.js.JavaScriptManager.callFunction(JavaScriptManager.java:267)
+	at com.worklight.integration.js.JavaScriptManager.invokeFunction(JavaScriptManager.java:241)
+	at com.worklight.integration.js.JavaScriptManager.invokeFunction(JavaScriptManager.java:211)
+	at com.worklight.integration.services.impl.AdapterManagerImpl.invokeFunction(AdapterManagerImpl.java:124)
+	at com.worklight.integration.js.JavaScriptProcedureInvoker.invoke(JavaScriptProcedureInvoker.java:42)
+	at com.worklight.integration.model.ProcedureInvoker.invokeProcedure(ProcedureInvoker.java:54)
+	at com.worklight.integration.model.Procedure.invoke(Procedure.java:166)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedureInternal(DataAccessServiceImpl.java:593)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.callProcedure(DataAccessServiceImpl.java:539)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.access$100(DataAccessServiceImpl.java:58)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl$3.execute(DataAccessServiceImpl.java:433)
+	at com.worklight.core.auth.impl.AuthenticationServiceBean.accessResource(AuthenticationServiceBean.java:76)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeProcedureInternal(DataAccessServiceImpl.java:430)
+	at com.worklight.integration.services.impl.DataAccessServiceImpl.invokeProcedure(DataAccessServiceImpl.java:139)
+	at com.worklight.server.dev.InvokeProcedureHandler.handle(InvokeProcedureHandler.java:85)
+	at com.worklight.server.dev.DevRootServlet.service(DevRootServlet.java:97)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:668)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1274)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:767)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:469)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:127)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:88)
+	at com.worklight.core.auth.impl.AuthenticationFilter.doFilter(AuthenticationFilter.java:151)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:194)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:85)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:968)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1056)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:81)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:885)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:266)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:776)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: Http content type 'post' not supported. Supported types are: [json, css, csv, javascript, plain, xml, html]
+	at com.worklight.adapters.http.HttpMessageExtractor.getXmlSource(HttpMessageExtractor.java:61)
+	... 68 more
+ 
+                                                                                                               com.worklight.common.log.filters.ErrorFilter
+[1/19/15 16:39:41:301 CST] 00000050 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 16:40:11:592 CST] 00000035 SystemErr                                                    R 8962846  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-19] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 16:40:11:597 CST] 00000035 SystemErr                                                    R 8962852  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-19] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 16:40:11:601 CST] 00000035 SystemErr                                                    R 8962856  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-19] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 16:40:11:642 CST] 0000010b com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 13 for 'deployAdapter'.  [project ReadyAppsSummit]
+[1/19/15 16:40:11:647 CST] 00000055 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 16:40:11:660 CST] 0000010b com.worklight.common.util.HttpUtil                           I FWLSE2014I: Downloading a worklight artifact from http://9.41.138.101:10080/worklightadmin/otu/1.0/ffffffe140255a68ffffffb117465b092effffffe40effffff8754ffffffa7/runtimes/ReadyAppsSummit/downloads/adapters/Temporary317569284 [project ReadyAppsSummit]
+[1/19/15 16:40:11:664 CST] 0000004e SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 16:40:11:882 CST] 00000035 com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Preparation to deploy adapter 'SummitAdapter' finished successfully, SUCCESS
+[1/19/15 16:40:11:891 CST] 000000aa com.worklight.core.jmx.ProjectManagementMXBeanImpl           I FWLSE0275I: Starting transaction with ID 13 for 'commit'.  [project ReadyAppsSummit]
+[1/19/15 16:40:11:895 CST] 00000035 com.ibm.worklight.admin.actions.BaseTransaction              I Result: ReadyAppsSummit: worklight///9.41.138.101: Commit
+[1/19/15 16:40:11:895 CST] 00000035 com.ibm.worklight.admin.actions.BaseTransaction              I ReadyAppsSummit: worklight///9.41.138.101: 2015-01-19T22:40:11.893Z: Operation to deploy adapter SummitAdapter was commited
+[1/19/15 16:40:11:895 CST] 00000052 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 16:40:11:904 CST] 00000035 SystemErr                                                    R 8963158  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-19] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 18:14:39:581 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[1/19/15 18:14:39:617 CST] 00000627 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0017I: The server configuration was successfully updated in 0.040 seconds.
+[1/19/15 18:14:39:623 CST] 0000005b com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://192.168.56.1:10080/ReadyAppsSummit/
+[1/19/15 18:14:39:624 CST] 0000005b com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [ReadyAppsSummit] [/ReadyAppsSummit] [DevRootServlet]: Destroy successful.
+[1/19/15 18:14:39:625 CST] 0000005b com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [ReadyAppsSummit] [/ReadyAppsSummit] [AuthorizationServer]: Destroy successful.
+[1/19/15 18:14:39:626 CST] 0000005b com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [ReadyAppsSummit] [/ReadyAppsSummit] [PreviewServlet]: Destroy successful.
+[1/19/15 18:14:39:677 CST] 0000005b com.worklight.core.ilmt.WorklightILMTLogger                  I FWLSE0277I: Creating an ILMT record in the file '/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/logs/b88a9d3d9be97dc502e551a8d98e7320.slmtag'. [project ReadyAppsSummit]
+[1/19/15 18:14:39:684 CST] 0000004f org.apache.http.client.protocol.ResponseProcessCookies       W Invalid cookie header: "Set-Cookie: LtpaToken2=""; Expires=Thu, 01 Dec 1994 16:00:00 GMT; Path=/; HttpOnly". Unable to parse expires attribute: Thu
+[1/19/15 18:14:39:684 CST] 0000005b ingframework.context.support.FileSystemXmlApplicationContext I Closing org.springframework.context.support.FileSystemXmlApplicationContext@c2f4c66: display name [org.springframework.context.support.FileSystemXmlApplicationContext@c2f4c66]; startup date [Mon Jan 19 14:10:46 CST 2015]; root of context hierarchy
+[1/19/15 18:14:39:684 CST] 0000004f SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:14:39:685 CST] 0000005b ngframework.beans.factory.support.DefaultListableBeanFactory I Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4e4fb282: defining beans [org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,txManager,mailingService,WorkLightNotice,rssBrokerUtils,audit,GenericDAO,clusterSynchronizationDAO,taskCoordinator,taskManager,worklightAuthenticationService,authenticationDAO,ssoDAO,ssoExpiredLoginContextsCleanupTask,keyStoreManager,analyticsHttpService,dataAccessService,shellResourcesService,analyticsService,coreServiceManager,adapterManager,nodeProcessManager,adapterManagementService,factProcessingTask,PlatformUsageProcessingTask,notificationCleanupTask,WSSecurityService,gadgetDAO,deviceDAO,licenseTermsDAO,platformUsageService,configProfileService,gfwProps,gadgetEnvironmentManager,gadgetResourcesRoot,gadgetCustomizedResourcesRoot,applicationMetadataService,applicationManagementService,beaconService,notificationsSimulationManager,pushServiceListener,PushService,worklight-direct,rssBrokerDS,brokerSessionFactory,reportService,reportsDS,reportsBrokerDS,reportsSessionFactory,gadgetReportsDAO,notificationReportsDao,gadgetReportsService,analyticsFactService,nodeInfo,registrationService,runtimeTransactionHandler,projectSyncService]; root of factory hierarchy
+[1/19/15 18:14:39:687 CST] 0000005b ringframework.orm.jpa.LocalContainerEntityManagerFactoryBean I Closing JPA EntityManagerFactory for persistence unit 'WorklightReportsPU'
+[1/19/15 18:14:39:691 CST] 0000005b ringframework.orm.jpa.LocalContainerEntityManagerFactoryBean I Closing JPA EntityManagerFactory for persistence unit 'WorklightPU'
+[1/19/15 18:14:39:703 CST] 0000005b hsqldb.db.HSQLDB4B03CE8AED.ENGINE                            I Database closed
+[1/19/15 18:14:42:822 CST] 0000005b com.worklight.server.bundle.project.JeeProjectActivator      I FWLST0004I: ========= Project /ReadyAppsSummit stopped
+[1/19/15 18:14:42:837 CST] 0000005b com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application ReadyAppsSummit has stopped successfully.
+[1/19/15 18:14:43:540 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[1/19/15 18:14:43:553 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0018I: The server configuration was not updated. No functional changes were detected.
+[1/19/15 18:15:13:957 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[1/19/15 18:15:13:974 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0018I: The server configuration was not updated. No functional changes were detected.
+[1/19/15 18:15:44:377 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[1/19/15 18:15:44:394 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0018I: The server configuration was not updated. No functional changes were detected.
+[1/19/15 18:16:14:390 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[1/19/15 18:16:14:401 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0018I: The server configuration was not updated. No functional changes were detected.
+[1/19/15 18:16:44:796 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[1/19/15 18:16:44:805 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0018I: The server configuration was not updated. No functional changes were detected.
+[1/19/15 18:17:15:220 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[1/19/15 18:17:15:231 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0018I: The server configuration was not updated. No functional changes were detected.
+[1/19/15 18:17:45:227 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[1/19/15 18:17:45:237 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0018I: The server configuration was not updated. No functional changes were detected.
+[1/19/15 18:18:15:640 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[1/19/15 18:18:15:648 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0018I: The server configuration was not updated. No functional changes were detected.
+[1/19/15 18:18:46:035 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[1/19/15 18:18:46:044 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0018I: The server configuration was not updated. No functional changes were detected.
+[1/19/15 18:19:16:046 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[1/19/15 18:19:16:056 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0018I: The server configuration was not updated. No functional changes were detected.
+[1/19/15 18:19:46:444 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[1/19/15 18:19:46:453 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0018I: The server configuration was not updated. No functional changes were detected.
+[1/19/15 18:20:16:831 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[1/19/15 18:20:16:845 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0018I: The server configuration was not updated. No functional changes were detected.
+[1/19/15 18:20:47:247 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[1/19/15 18:20:47:256 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0018I: The server configuration was not updated. No functional changes were detected.
+[1/19/15 18:21:17:239 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[1/19/15 18:21:17:248 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0018I: The server configuration was not updated. No functional changes were detected.
+[1/19/15 18:21:47:630 CST] 00000015 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[1/19/15 18:21:47:720 CST] 00000662 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0017I: The server configuration was successfully updated in 0.089 seconds.
+[1/19/15 18:21:47:723 CST] 0000064d com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application ReadyAppsSummit.
+[1/19/15 18:21:47:857 CST] 0000064d com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Worklight.
+[1/19/15 18:21:47:857 CST] 0000064d com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module Worklight has been bound to default_host.
+[1/19/15 18:21:47:857 CST] 0000064d com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://192.168.56.1:10080/ReadyAppsSummit/
+[1/19/15 18:21:47:861 CST] 0000064d com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/ReadyAppsSummit
+[1/19/15 18:21:47:862 CST] 0000064d com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/19/15 18:21:48:121 CST] 0000064d com.worklight.common.util.JNDIFromPropertiesUtil             I Using JNDI configuration conf/jndi/default.properties
+[1/19/15 18:21:48:142 CST] 0000064d com.worklight.server.bundle.api.WorklightConfiguration       I FWLSE4006I: IBM MobileFirst Platform Studio is running in 'development' mode. [project ReadyAppsSummit]
+[1/19/15 18:21:48:145 CST] 00000667 com.worklight.server.bundle.project.JeeProjectActivator      I FWLST0022I: Worklight project async start = true
+[1/19/15 18:21:48:150 CST] 0000064d apache.wink.server.internal.application.ApplicationProcessor I The following JAX-RS application has been processed: com.ibm.ws.jaxrs.webcontainer.JAXRSDefaultApplicationSubclassProxy
+[1/19/15 18:21:48:150 CST] 0000064d org.apache.wink.server.internal.log.Resources                I The server has registered the JAX-RS resource class com.worklight.oauth.TokenValidationEndpoint with @Path(/validation).
+[1/19/15 18:21:48:150 CST] 0000064d org.apache.wink.server.internal.log.Resources                I The server has registered the JAX-RS resource class com.worklight.oauth.TokenEndpoint with @Path(/token).
+[1/19/15 18:21:48:150 CST] 0000064d org.apache.wink.server.internal.log.Providers                I There are no custom JAX-RS providers defined in the application.
+[1/19/15 18:21:48:167 CST] 0000064d com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [ReadyAppsSummit] [/ReadyAppsSummit] [AuthorizationServer]: Initialization successful.
+[1/19/15 18:21:48:168 CST] 0000064d com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application ReadyAppsSummit started in 0.445 seconds.
+[1/19/15 18:21:48:351 CST] 00000667 com.worklight.server.bundle.project.JeeProjectActivator      I FWLST0001I: Worklight home folder is /Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/workarea/org.eclipse.osgi/bundles/79/data/temp/default_node/SMF_WebContainer/ReadyAppsSummit/ReadyAppsSummit [project ReadyAppsSummit]
+[1/19/15 18:21:48:352 CST] 00000667 ingframework.context.support.FileSystemXmlApplicationContext I Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@389ea262: display name [org.springframework.context.support.FileSystemXmlApplicationContext@389ea262]; startup date [Mon Jan 19 18:21:48 CST 2015]; root of context hierarchy
+[1/19/15 18:21:48:353 CST] 00000667 rg.springframework.beans.factory.xml.XmlBeanDefinitionReader I Loading XML bean definitions from URL [wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar!/conf/spring-server-core.xml]
+[1/19/15 18:21:48:377 CST] 00000667 rg.springframework.beans.factory.xml.XmlBeanDefinitionReader I Loading XML bean definitions from URL [wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar!/conf/core.xml]
+[1/19/15 18:21:48:386 CST] 00000667 rg.springframework.beans.factory.xml.XmlBeanDefinitionReader I Loading XML bean definitions from URL [wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar!/conf/integration.xml]
+[1/19/15 18:21:48:392 CST] 00000667 rg.springframework.beans.factory.xml.XmlBeanDefinitionReader I Loading XML bean definitions from URL [wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar!/conf/gadgets.xml]
+[1/19/15 18:21:48:399 CST] 00000667 rg.springframework.beans.factory.xml.XmlBeanDefinitionReader I Loading XML bean definitions from URL [wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar!/conf/pushworks.xml]
+[1/19/15 18:21:48:407 CST] 00000667 ngframework.beans.factory.support.DefaultListableBeanFactory I Overriding bean definition for bean 'gadgetCustomizedResourcesRoot': replacing [Generic bean: class [com.worklight.core.util.WorkingDirectory]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar!/conf/gadgets.xml]] with [Generic bean: class [com.worklight.core.util.WorkingDirectory]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar!/conf/spring-server-core.xml]]
+[1/19/15 18:21:48:407 CST] 00000667 ngframework.beans.factory.support.DefaultListableBeanFactory I Overriding bean definition for bean 'gadgetResourcesRoot': replacing [Generic bean: class [com.worklight.core.util.WorkingDirectory]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar!/conf/gadgets.xml]] with [Generic bean: class [com.worklight.core.util.WorkingDirectory]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [wsjar:file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar!/conf/spring-server-core.xml]]
+[1/19/15 18:21:48:410 CST] 00000667 ingframework.context.support.FileSystemXmlApplicationContext I Bean factory for application context [org.springframework.context.support.FileSystemXmlApplicationContext@389ea262]: org.springframework.beans.factory.support.DefaultListableBeanFactory@156fa4bd
+[1/19/15 18:21:48:525 CST] 00000667 ngframework.beans.factory.support.DefaultListableBeanFactory I Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@156fa4bd: defining beans [org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,txManager,mailingService,WorkLightNotice,rssBrokerUtils,audit,GenericDAO,clusterSynchronizationDAO,taskCoordinator,taskManager,worklightAuthenticationService,authenticationDAO,ssoDAO,ssoExpiredLoginContextsCleanupTask,keyStoreManager,analyticsHttpService,dataAccessService,shellResourcesService,analyticsService,coreServiceManager,adapterManager,nodeProcessManager,adapterManagementService,factProcessingTask,PlatformUsageProcessingTask,notificationCleanupTask,WSSecurityService,gadgetDAO,deviceDAO,licenseTermsDAO,platformUsageService,configProfileService,gfwProps,gadgetEnvironmentManager,gadgetResourcesRoot,gadgetCustomizedResourcesRoot,applicationMetadataService,applicationManagementService,beaconService,notificationsSimulationManager,pushServiceListener,PushService,worklight-direct,rssBrokerDS,brokerSessionFactory,reportService,reportsDS,reportsBrokerDS,reportsSessionFactory,gadgetReportsDAO,notificationReportsDao,gadgetReportsService,analyticsFactService,nodeInfo,registrationService,runtimeTransactionHandler,projectSyncService]; root of factory hierarchy
+[1/19/15 18:21:49:024 CST] 00000667 ringframework.orm.jpa.LocalContainerEntityManagerFactoryBean I Building JPA container EntityManagerFactory for persistence unit 'WorklightPU'
+[1/19/15 18:21:49:029 CST] 00000667 SystemErr                                                    R 1  WorklightPU  WARN   [Thread-42] openjpa.Runtime - An error occurred while registering a ClassTransformer with PersistenceUnitInfo: name 'WorklightPU', root URL [file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar]. The error has been consumed. To see it, set your openjpa.Runtime log level to TRACE. Load-time class transformation will not be available.
+[1/19/15 18:21:49:140 CST] 00000667 SystemErr                                                    R 112  WorklightPU  INFO   [Thread-42] openjpa.Runtime - Starting OpenJPA 1.2.2
+[1/19/15 18:21:49:140 CST] 00000667 SystemErr                                                    R 112  WorklightPU  INFO   [Thread-42] openjpa.jdbc.JDBC - Using dictionary class "org.apache.openjpa.jdbc.sql.HSQLDictionary".
+[1/19/15 18:21:49:588 CST] 00000667 com.worklight.server.database.api.WorklightDataSource        I FWLSE0187I: jdbc/WorklightReportsDS data source is disabled. No connection opened.  [project ReadyAppsSummit]
+[1/19/15 18:21:49:592 CST] 00000672 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:593 CST] 00000671 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:593 CST] 0000066e SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:594 CST] 0000066f SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:594 CST] 0000066d SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:595 CST] 00000670 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:595 CST] 00000673 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:595 CST] 00000675 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:595 CST] 00000674 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:596 CST] 00000676 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:596 CST] 00000667 ringframework.orm.jpa.LocalContainerEntityManagerFactoryBean I Building JPA container EntityManagerFactory for persistence unit 'WorklightReportsPU'
+[1/19/15 18:21:49:597 CST] 00000672 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:598 CST] 00000667 SystemErr                                                    R 0  WorklightReportsPU  WARN   [Thread-42] openjpa.Runtime - An error occurred while registering a ClassTransformer with PersistenceUnitInfo: name 'WorklightReportsPU', root URL [file:/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/shared/resources/worklight-jee-library-6.3.0.jar]. The error has been consumed. To see it, set your openjpa.Runtime log level to TRACE. Load-time class transformation will not be available.
+[1/19/15 18:21:49:600 CST] 00000667 com.worklight.report.impl.GadgetReportsServiceImpl           I FWLSE0186I: Application raw reports are disabled. [project ReadyAppsSummit]
+[1/19/15 18:21:49:603 CST] 00000671 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:603 CST] 0000066e SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:618 CST] 00000667 com.worklight.common.util.jmx.LibertyJMXRegister             I FWLSE2008I: MBean registration succeeded for: com.worklight.common.server.jmx.api:type=ProjectManagement,qualifier=ReadyAppsSummit [project ReadyAppsSummit]
+[1/19/15 18:21:49:622 CST] 0000066f SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:623 CST] 00000667 com.worklight.core.auth.impl.AuthenticationFilter            I FWLSE0273I: Set sync required to 'true' [project ReadyAppsSummit]
+[1/19/15 18:21:49:623 CST] 0000066d SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:626 CST] 00000673 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:627 CST] 00000670 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:635 CST] 00000307 com.ibm.worklight.admin.services.ManagementService           I ping service invoked to check if the HTTP(s) port is available
+[1/19/15 18:21:49:645 CST] 0000050b SystemErr                                                    R 15060845  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-570] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 18:21:49:647 CST] 0000050b SystemErr                                                    R 15060848  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-570] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 18:21:49:661 CST] 00000667 com.worklight.core.auth.impl.AuthenticationFilter            I FWLSE0273I: Set sync required to 'true' [project ReadyAppsSummit]
+[1/19/15 18:21:49:662 CST] 00000667 com.worklight.core.jmx.ProjectSynchronizationBean            I FWLSE0271I: Resources dir '/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/workarea/org.eclipse.osgi/bundles/79/data/temp/default_node/SMF_WebContainer/ReadyAppsSummit/ReadyAppsSummit/widget-resources' is going to be cleaned [project ReadyAppsSummit]
+[1/19/15 18:21:49:665 CST] 00000674 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:665 CST] 00000675 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:665 CST] 00000676 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:665 CST] 00000672 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:678 CST] 00000667 com.worklight.common.util.HttpUtil                           I FWLSE2014I: Downloading a worklight artifact from http://localhost:10080/worklightadmin/otu/1.0/2163ffffff98ffffff856166ffffffb16dffffffc942ffffffa4ffffffbc651368ffffffab/runtimes/ReadyAppsSummit/downloads/adapters/SummitAdapter [project ReadyAppsSummit]
+[1/19/15 18:21:49:681 CST] 00000671 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:681 CST] 0000066e SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:928 CST] 0000022b SystemErr                                                    R 15061128  WorklightManagementPU-derby  INFO   [LargeThreadPool-thread-308] openjpa.Runtime - Though you are using optimistic transactions, OpenJPA is now beginning a datastore transaction because you have requested a lock on some data.
+[1/19/15 18:21:49:931 CST] 0000022b com.ibm.worklight.admin.jmx.ManagementMXBeanImpl             I Result: ReadyAppsSummit: worklight///9.41.138.101: Runtime was synchronized successfully
+[1/19/15 18:21:49:931 CST] 0000022b com.ibm.worklight.admin.jmx.ManagementMXBeanImpl             I ReadyAppsSummit: worklight///9.41.138.101: 2015-01-20T00:21:49.920Z: Preparation to deploy adapter 'SummitAdapter' finished successfully, SUCCESS
+[1/19/15 18:21:49:931 CST] 0000022b com.ibm.worklight.admin.jmx.ManagementMXBeanImpl             I ReadyAppsSummit: worklight///9.41.138.101: 2015-01-20T00:21:49.920Z: Transaction handler reset
+[1/19/15 18:21:49:933 CST] 00000667 com.worklight.core.init.WorklightServletInitializer          I FWLSE0247I: The ReadyAppsSummit project initialization times were: start-firstReadyCheck=1, firstReadyCheck=14, ready for sync=0, sync=295 [project ReadyAppsSummit]
+[1/19/15 18:21:49:934 CST] 00000667 com.worklight.core.auth.impl.AuthenticationFilter            I FWLSE0273I: Set sync required to 'false' [project ReadyAppsSummit]
+[1/19/15 18:21:49:936 CST] 00000667 com.worklight.core.ilmt.WorklightILMTLogger                  I FWLSE0278I: The default ILMT directory '/var/ibm/common/slm' cannot be used. [project ReadyAppsSummit]
+[1/19/15 18:21:49:936 CST] 00000667 com.worklight.core.ilmt.WorklightILMTLogger                  I FWLSE0282I: Using the ILMT directory '/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/logs'. [project ReadyAppsSummit]
+[1/19/15 18:21:49:937 CST] 00000673 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:937 CST] 0000066d SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:937 CST] 0000066f SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:937 CST] 00000670 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:937 CST] 00000667 com.worklight.server.bundle.project.JeeProjectActivator      I FWLST0002I: ========= Project /ReadyAppsSummit started. The project WAR file version is 6.3.0.00.20141127-1357,running on server version 6.3.0.00.20141127-1357. [project ReadyAppsSummit]
+[1/19/15 18:21:49:939 CST] 00000674 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:939 CST] 00000675 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:940 CST] 00000672 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:940 CST] 00000676 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:941 CST] 0000066e SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:49:941 CST] 00000671 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 200
+[1/19/15 18:21:50:263 CST] 000000b2 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [ReadyAppsSummit] [/ReadyAppsSummit] [PreviewServlet]: Initialization successful.
+[1/19/15 18:21:51:245 CST] 000005fe com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://192.168.56.1:10080/worklightadmin/
+[1/19/15 18:21:51:245 CST] 00000592 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://192.168.56.1:10080/worklightconsole/
+[1/19/15 18:21:51:246 CST] 000001f8 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://192.168.56.1:10080/worklight-analytics/
+[1/19/15 18:21:51:246 CST] 00000592 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [WorklightConsole] [/worklightconsole] [servicesServlet]: Destroy successful.
+[1/19/15 18:21:51:246 CST] 000005fe com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [WorklightServices] [/worklightadmin] [ManagementServlet]: Destroy successful.
+[1/19/15 18:21:51:246 CST] 00000110 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://192.168.56.1:10080/worklight-analytics-service/
+[1/19/15 18:21:51:246 CST] 000001f8 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [WorklightAnalytics] [/worklight-analytics] [servicesServlet]: Destroy successful.
+[1/19/15 18:21:51:247 CST] 0000034f com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://192.168.56.1:10080/_MobileBrowserSimulator/
+[1/19/15 18:21:51:247 CST] 000001f8 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [WorklightAnalytics] [/worklight-analytics] [utilityServlet]: Destroy successful.
+[1/19/15 18:21:51:248 CST] 000005fe ht.admin.listeners.WorklightManagementServletContextListener I MobileFirst Administration Services servlet context listener destroyed
+[1/19/15 18:21:51:248 CST] 00000430 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://192.168.56.1:10080/ReadyAppsSummit/
+[1/19/15 18:21:51:248 CST] 000005fe com.ibm.ws.webcontainer.webapp                               I SRVE0292I: Servlet Message - [worklight-management-service]:.Closing Spring root WebApplicationContext
+[1/19/15 18:21:51:249 CST] 00000430 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [ReadyAppsSummit] [/ReadyAppsSummit] [AuthorizationServer]: Destroy successful.
+[1/19/15 18:21:51:249 CST] 000005fe springframework.web.context.support.XmlWebApplicationContext I Closing org.springframework.web.context.support.XmlWebApplicationContext@4eb7a146: display name [Root WebApplicationContext]; startup date [Mon Jan 19 14:10:47 CST 2015]; root of context hierarchy
+[1/19/15 18:21:51:249 CST] 00000430 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [ReadyAppsSummit] [/ReadyAppsSummit] [PreviewServlet]: Destroy successful.
+[1/19/15 18:21:51:249 CST] 00000110 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application WorklightAnalyticsServices has stopped successfully.
+[1/19/15 18:21:51:250 CST] 000005fe ngframework.beans.factory.support.DefaultListableBeanFactory I Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@7850ebc8: defining beans [registrationServiceFactory]; root of factory hierarchy
+[1/19/15 18:21:51:251 CST] 0000034f com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application _MobileBrowserSimulator has stopped successfully.
+[1/19/15 18:21:51:251 CST] 00000430 com.worklight.core.ilmt.WorklightILMTLogger                  I FWLSE0277I: Creating an ILMT record in the file '/Users/blakeball/workspace/ReadyAppsWorkspace/Ready.App.2.Summit/MobileFirstServerConfig/servers/worklight/logs/b88a9d3d9be97dc502e551a8d98e7320.slmtag'. [project ReadyAppsSummit]
+[1/19/15 18:21:51:252 CST] 00000592 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application WorklightConsole has stopped successfully.
+[1/19/15 18:21:51:253 CST] 000001f8 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application WorklightAnalytics has stopped successfully.
+[1/19/15 18:21:51:253 CST] 000005fe com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application WorklightServices has stopped successfully.
+[1/19/15 18:21:51:269 CST] 0000066d SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 404
+[1/19/15 18:21:51:269 CST] 00000673 SystemOut                                                    O com.worklight.analytics.api.AnalyticsHttpService.sendDataToURL target server response code: 404
+[1/19/15 18:21:51:297 CST] 00000430 ingframework.context.support.FileSystemXmlApplicationContext I Closing org.springframework.context.support.FileSystemXmlApplicationContext@389ea262: display name [org.springframework.context.support.FileSystemXmlApplicationContext@389ea262]; startup date [Mon Jan 19 18:21:48 CST 2015]; root of context hierarchy
+[1/19/15 18:21:51:298 CST] 00000430 ngframework.beans.factory.support.DefaultListableBeanFactory I Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@156fa4bd: defining beans [org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,txManager,mailingService,WorkLightNotice,rssBrokerUtils,audit,GenericDAO,clusterSynchronizationDAO,taskCoordinator,taskManager,worklightAuthenticationService,authenticationDAO,ssoDAO,ssoExpiredLoginContextsCleanupTask,keyStoreManager,analyticsHttpService,dataAccessService,shellResourcesService,analyticsService,coreServiceManager,adapterManager,nodeProcessManager,adapterManagementService,factProcessingTask,PlatformUsageProcessingTask,notificationCleanupTask,WSSecurityService,gadgetDAO,deviceDAO,licenseTermsDAO,platformUsageService,configProfileService,gfwProps,gadgetEnvironmentManager,gadgetResourcesRoot,gadgetCustomizedResourcesRoot,applicationMetadataService,applicationManagementService,beaconService,notificationsSimulationManager,pushServiceListener,PushService,worklight-direct,rssBrokerDS,brokerSessionFactory,reportService,reportsDS,reportsBrokerDS,reportsSessionFactory,gadgetReportsDAO,notificationReportsDao,gadgetReportsService,analyticsFactService,nodeInfo,registrationService,runtimeTransactionHandler,projectSyncService]; root of factory hierarchy
+[1/19/15 18:21:51:300 CST] 00000430 ringframework.orm.jpa.LocalContainerEntityManagerFactoryBean I Closing JPA EntityManagerFactory for persistence unit 'WorklightReportsPU'
+[1/19/15 18:21:51:303 CST] 00000430 ringframework.orm.jpa.LocalContainerEntityManagerFactoryBean I Closing JPA EntityManagerFactory for persistence unit 'WorklightPU'
+[1/19/15 18:21:51:313 CST] 00000430 hsqldb.db.HSQLDB4B03CE8AED.ENGINE                            I Database closed
+[1/19/15 18:22:00:437 CST] 00000430 com.worklight.server.bundle.project.JeeProjectActivator      I FWLST0004I: ========= Project /ReadyAppsSummit stopped
+[1/19/15 18:22:00:438 CST] 00000430 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application ReadyAppsSummit has stopped successfully.
+[1/19/15 18:22:00:454 CST] 0000067e com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://192.168.56.1:10080/IBMJMXConnectorREST/
+[1/19/15 18:22:00:455 CST] 0000067e com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [com.ibm.ws.jmx.connector.server.rest] [/IBMJMXConnectorREST] [MBeanServerConnector]: Destroy successful.
+[1/19/15 18:22:00:517 CST] 0000067e com.ibm.tx.jta.impl.FailureScopeController                   A WTRN0105I: The transaction service has shutdown successfully with no transactions requiring recovery.
+[1/19/15 18:22:00:545 CST] 0000067e com.ibm.ws.security.internal.SecurityReadyServiceImpl        I CWWKS0009I: The security service has stopped.
+[1/19/15 18:22:00:569 CST] 0000067e com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel defaultHttpEndpoint-ssl has stopped listening for requests on host *  (IPv6) port 10443.
+[1/19/15 18:22:00:581 CST] 00000564 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel defaultHttpEndpoint has stopped listening for requests on host *  (IPv6) port 10080.
+[1/19/15 18:22:00:670 CST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0036I: The server worklight stopped after 4 hours, 11 minutes, 20.989 seconds.

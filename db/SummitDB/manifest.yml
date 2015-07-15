@@ -1,0 +1,11 @@
+applications:
+- services:
+  - SummitDB-cloudantNoSQLDB
+  disk_quota: 1024M
+  host: SummitDB
+  name: SummitDB
+  command: node app.js
+  path: .
+  domain: mybluemix.net
+  instances: 1
+  memory: 512M

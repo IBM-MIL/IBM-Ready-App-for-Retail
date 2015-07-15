@@ -1,0 +1,135 @@
+{
+   "layers": [
+      {
+         "nodes": [
+            "MobileFirst Server",
+            "MobileFirst Configuration",
+            "MobileFirst Runtime DB",
+            "MobileFirst Admin DB"
+         ],
+         "id": "layer"
+      }
+   ],
+   "model": {
+      "nodes": [
+         {
+            "groups": {
+            },
+            "attributes": {
+               "clientInactivityTimeout": 60,
+               "archive": "artifacts\/worklight-vApp.ear",
+               "asyncResponseTimeout": 120,
+               "propogatedOrBMTTranLifetimeTimeout": 300,
+               "totalTranLifetimeTimeout": 120,
+               "ignoreFailedIfix": true
+            },
+            "type": "EAR",
+            "id": "MobileFirst Server"
+         },
+         {
+            "groups": {
+            },
+            "attributes": {
+               "console_protection": false,
+               "console_password": "<xor>OzoyMA==",
+               "console_username": "demo"
+            },
+            "type": "configuration",
+            "id": "MobileFirst Configuration"
+         },
+         {
+            "groups": {
+               "cloneApproach": false,
+               "workloadStandardApproach": true,
+               "advancedOptions": false,
+               "defaultWorkloadStandardApproach": false
+            },
+            "attributes": {
+               "cusVersionName": "V105Linux",
+               "workloadStandard": "departmental_OLTP",
+               "cusWorkloadStandard": "ffffffff-1111-2222-3333-000000000000",
+               "cusFixpackName": "db2_hybrid_en-10.5.0.1-linuxx64-20130902_tsamp.tgz",
+               "dbname": "WLRTIME",
+               "fixpackName": "db2_hybrid_en-9.7.0.8-linuxx64-20130401.tgz",
+               "cusHADRenable": false,
+               "cusDbDiskSize": 30,
+               "purpose": "production"
+            },
+            "type": "DB2",
+            "id": "MobileFirst Runtime DB"
+         },
+         {
+            "groups": {
+               "cloneApproach": false,
+               "workloadStandardApproach": true,
+               "advancedOptions": false,
+               "defaultWorkloadStandardApproach": false
+            },
+            "attributes": {
+               "cusVersionName": "V105Linux",
+               "workloadStandard": "departmental_OLTP",
+               "cusWorkloadStandard": "ffffffff-1111-2222-3333-000000000000",
+               "cusFixpackName": "db2_hybrid_en-10.5.0.1-linuxx64-20130902_tsamp.tgz",
+               "dbname": "WLADM",
+               "fixpackName": "db2_hybrid_en-9.7.0.8-linuxx64-20130401.tgz",
+               "cusHADRenable": false,
+               "cusDbDiskSize": 30,
+               "purpose": "production"
+            },
+            "type": "DB2",
+            "id": "MobileFirst Admin DB"
+         }
+      ],
+      "app_type": "application",
+      "version": "6.3",
+      "links": [
+         {
+            "target": "MobileFirst Admin DB",
+            "groups": {
+            },
+            "attributes": {
+               "connectionTimeout": 180,
+               "transactionType": "Connection pool data source",
+               "nontransactional": true,
+               "resourceRefs": [
+                  "worklightadmin.war#jdbc\/WorklightAdminDS"
+               ],
+               "maxConnectionPool": 50,
+               "jndiDataSource": "jdbc\/WorklightAdminDS"
+            },
+            "type": "WASDB2",
+            "source": "MobileFirst Server",
+            "id": "WASDB2_1"
+         },
+         {
+            "target": "MobileFirst Runtime DB",
+            "groups": {
+            },
+            "attributes": {
+               "connectionTimeout": 180,
+               "transactionType": "Connection pool data source",
+               "nontransactional": true,
+               "resourceRefs": [
+               ],
+               "maxConnectionPool": 50,
+               "jndiDataSource": "jdbc\/WorklightDS"
+            },
+            "type": "WASDB2",
+            "source": "MobileFirst Server",
+            "id": "WASDB2_2"
+         },
+         {
+            "target": "MobileFirst Configuration",
+            "attributes": {
+            },
+            "type": "WAS2WORKLIGHTLink",
+            "source": "MobileFirst Server",
+            "id": "WAS2WORKLIGHTLink_1"
+         }
+      ],
+      "locked": false,
+      "patterntype": "mobilefirst.ptype",
+      "name": "IBM MobileFirst Platform 6.3 VAP",
+      "description": "IBM MobileFirst Platform Application Pattern"
+   }
+}

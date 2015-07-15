@@ -1,0 +1,128 @@
+/*
+ *  Licensed Materials - Property of IBM
+ *  © Copyright IBM Corporation 2015. All Rights Reserved.
+ */
+
+.availability-bar {
+    background-color: $gray-bckgrnd-color;
+    padding: 20px 25px;
+    overflow: hidden;
+    span:last-child {
+        float: right;
+    }
+}
+
+.image-section {
+    .feedback-frame {
+        height: 210px;
+        line-height: 210px;
+        vertical-align: middle;
+        text-align: center;
+        background-image: url(../../img/placeholder.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .image-frame {
+        height: 210px;
+        overflow: hidden;
+        text-align: center;
+        img {
+            height: 100%;
+        }
+    }
+}
+
+.thick-divider {
+    background-color: $gray-bckgrnd-color;
+    width: 100%;
+    height: 5px;
+}
+
+.thin-divider {
+    background-color: $gray-bckgrnd-color;
+    width: 100%;
+    height: 1px;
+}
+
+.padbottom {
+    padding: 55px;
+}
+
+.overview-section {
+    padding: 20px 25px;
+    .name {
+        display: inline-block;
+    }
+    .rating {
+        display: inline-block;
+        float: right;
+        img {
+            width: 20px;
+        }
+    }
+    .price {
+        margin: 10px 0;
+        .old:not(:empty) {
+            font-family: 'Oswald';
+            color: $disabled-txt-color;
+            text-decoration: line-through;
+            margin-right: 15px;
+        }
+        .current {
+            font-family: 'Oswald';
+            color: $gold-txt-color;
+        }
+    }
+    .color {
+        margin-top: 15px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+    .option {
+        margin-top: 15px;
+        margin-bottom: 5px;
+        display: inline-block;
+        float: right;
+        .dropDownSelect {
+            font-family: 'Oswald';
+        }
+    }
+    
+    .buttons {
+        margin-top: 10px;
+        clear: left;
+    }
+    
+    .add-button {
+        margin: 5px 5px 5px 0px;
+        display: inline-block;
+        clear: left;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        background: $darkyellow-btn-color;
+        font-family: 'OpenSansRegular';
+        color: #fff;
+        font-size: 11pt;
+        border: none;
+        padding: 9px 14px;
+        outline: none;
+    }
+    
+    .list-button {
+        background: $darkyellow-btn-color;
+        
+        &:active {
+            background: darken($darkyellow-btn-color, 10%);
+        }
+    }
+    
+    .cart-button {
+        background: $yellow-btn-color;
+    }
+    
+    .disabled-button {
+        opacity: 0.25;
+    }
+}

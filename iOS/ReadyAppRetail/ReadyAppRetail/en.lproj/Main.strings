@@ -1,0 +1,66 @@
+
+/* Class = "IBUILabel"; text = "$9.99"; ObjectID = "2t3-Tc-PQT"; */
+"2t3-Tc-PQT.text" = "$9.99";
+
+/* Class = "IBUILabel"; text = "Really Long Item"; ObjectID = "45v-ff-acc"; */
+"45v-ff-acc.text" = "Really Long Item";
+
+/* Class = "IBUILabel"; text = "Total:"; ObjectID = "5Rn-tz-XMI"; */
+"5Rn-tz-XMI.text" = "Total:";
+
+/* Class = "IBUILabel"; text = "123456"; ObjectID = "BXZ-xy-m4y"; */
+"BXZ-xy-m4y.text" = "123456";
+
+/* Class = "IBUITextField"; placeholder = "List name"; ObjectID = "EnL-e7-X8y"; */
+"EnL-e7-X8y.placeholder" = "List name";
+
+/* Class = "IBUILabel"; text = "Demo mode"; ObjectID = "H2p-aq-EBB"; */
+"H2p-aq-EBB.text" = "Demo mode";
+
+/* Class = "IBUITabBarItem"; title = "Profile"; ObjectID = "KjC-3W-MDt"; */
+"KjC-3W-MDt.title" = "Profile";
+
+/* Class = "IBUILabel"; text = "Membership ID #:"; ObjectID = "Pml-r5-fpA"; */
+"Pml-r5-fpA.text" = "Membership ID #:";
+
+/* Class = "IBUILabel"; text = "$9.99"; ObjectID = "TDq-7g-kMY"; */
+"TDq-7g-kMY.text" = "$9.99";
+
+/* Class = "IBUILabel"; text = "USER NAME"; ObjectID = "TOI-Ru-fVt"; */
+"TOI-Ru-fVt.text" = "USER NAME";
+
+/* Class = "IBUILabel"; text = "CREATE A NEW LIST"; ObjectID = "XsU-jX-kpO"; */
+"XsU-jX-kpO.text" = "CREATE A NEW LIST";
+
+/* Class = "IBUILabel"; text = "S U M M I T"; ObjectID = "aYk-pw-l3R"; */
+"aYk-pw-l3R.text" = "S U M M I T";
+
+/* Class = "IBUIButton"; normalTitle = "Don't have an Account? Sign Up."; ObjectID = "aoV-K5-FRj"; */
+"aoV-K5-FRj.normalTitle" = "Don't have an Account? Sign Up.";
+
+/* Class = "IBUILabel"; text = "Create a new list"; ObjectID = "b2w-AS-i7T"; */
+"b2w-AS-i7T.text" = "Create a new list";
+
+/* Class = "IBUILabel"; text = "CREATE A NEW LIST"; ObjectID = "fJm-Ni-pZv"; */
+"fJm-Ni-pZv.text" = "CREATE A NEW LIST";
+
+/* Class = "IBUILabel"; text = "CHOOSE A LIST"; ObjectID = "hiH-r0-prS"; */
+"hiH-r0-prS.text" = "CHOOSE A LIST";
+
+/* Class = "IBUILabel"; text = "Department"; ObjectID = "igK-S6-onp"; */
+"igK-S6-onp.text" = "Department";
+
+/* Class = "IBUIButton"; normalTitle = "Login"; ObjectID = "ktK-T5-jch"; */
+"ktK-T5-jch.normalTitle" = "Login";
+
+/* Class = "IBUITabBarItem"; title = "Shop"; ObjectID = "pYk-Pq-E4W"; */
+"pYk-Pq-E4W.title" = "Shop";
+
+/* Class = "IBUITabBarItem"; title = "Item 2"; ObjectID = "sXq-YH-XUR"; */
+"sXq-YH-XUR.title" = "Item 2";
+
+/* Class = "IBUITextField"; placeholder = "List name"; ObjectID = "umR-Hz-XKQ"; */
+"umR-Hz-XKQ.placeholder" = "List name";
+
+/* Class = "IBUITabBarItem"; title = "List"; ObjectID = "wVU-ci-lVz"; */
+"wVU-ci-lVz.title" = "List";

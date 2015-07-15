@@ -1,0 +1,37 @@
+{
+    "single_db": {
+        "ismini": false,
+        "location": {
+           "x": "600px",
+           "y": "220px"
+        },
+        "id": "MobileFirst Single DB"
+    },
+    
+    "runtime_db": {
+        "ismini": false,
+        "location": {
+           "x": "600px",
+           "y": "220px"
+        },
+        "id": "MobileFirst Runtime DB"
+    },
+    
+    "reports_db": {
+        "ismini": false,
+        "location": {
+           "x": "609px",
+           "y": "395px"
+        },
+        "id": "MobileFirst Reports DB"
+    },
+    
+    "admin_db": {
+        "ismini": false,
+        "location": {
+           "x": "606px",
+           "y": "44px"
+        },
+        "id": "MobileFirst Admin DB"
+    }
+}

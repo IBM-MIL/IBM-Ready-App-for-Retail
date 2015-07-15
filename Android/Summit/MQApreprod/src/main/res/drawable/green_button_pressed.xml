@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<shape xmlns:android="http://schemas.android.com/apk/res/android" 
+     android:shape="rectangle">
+    <gradient
+    	android:type="linear"
+    	android:startColor="#0c8200" android:endColor="#13c900"
+    	android:angle="-90" />
+    <corners android:bottomRightRadius="4dip" android:bottomLeftRadius="4dip" 
+     android:topLeftRadius="4dip" android:topRightRadius="4dip"/>
+    <stroke android:color="@color/outline_color" android:width="1dip" />
+</shape> <!-- From: file:/Users/rudy/dev/projects/AH-IBM-Android-Lib/apphance-lib/build/ibm%20qa/variants/qa/res/drawable/green_button_pressed.xml -->

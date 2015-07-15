@@ -1,0 +1,32 @@
+{
+   "tooling": {
+      "nodes": [
+         {
+            "ismini": false,
+            "location": {
+               "x": "335px",
+               "y": "219px"
+            },
+            "id": "MobileFirst Server"
+         },
+         {
+            "ismini": false,
+            "location": {
+               "x": "322px",
+               "y": "35px"
+            },
+            "id": "MobileFirst Configuration"
+         },
+         {
+            "ismini": false,
+            "location": {
+               "x": "343px",
+               "y": "453px"
+            },
+            "id": "MobileFirst TDS"
+         }
+      ],
+      "links": [
+      ]
+   }
+}

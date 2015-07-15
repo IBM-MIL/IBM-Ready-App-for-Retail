@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Summit</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- toolbar titles -->
+    <string name="landing_title">Home</string>
+    <string name="login_title">Login</string>
+    <string name="list_title">My Lists</string>
+    <string name="create_list_title">Create A New List</string>
+
+    <!-- accessibility strings -->
+    <string name="drawer_open">open drawer</string>
+    <string name="drawer_close">drawer_close</string>
+    <string name="image_description">Image Description</string>
+
+    <string-array name="menu_items">
+        <item>Shop</item>
+        <item>List</item>
+        <item>Profile</item>
+    </string-array>
+
+    <!-- temporary strings -->
+    <string name="hello_dashboard_fragment">Hello dashboard fragment</string>
+    <string name="hello_login_fragment">Hello login fragment</string>
+
+    <!-- dashboard strings -->
+    <string name="recommended_dashboard_fragment">Recommended</string>
+    <string name="shopall_dashboard_fragment">Shop All</string>
+
+    <!-- login strings -->
+    <string name="login_username">Username</string>
+    <string name="login_password">Password</string>
+    <string name="login_text">login</string>
+    <string name="login_hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- user list strings -->
+    <string name="create_new_list">Create a new list</string>
+    <string name="choose_list">Choose a list</string>
+    <string name="create_new_list_overlay">Create a new list</string>
+    <string name="list_name_hint">List name</string>
+    <string name="product_added">Product added to</string>
+    <string name="total">Total:</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="duplicate_item">Item already added to list!</string>
+
+    <!-- profile strings -->
+    <string name="profile_username">user name</string>
+    <string name="profile_memberidtext">Membership ID #: </string>
+    <string name="profile_member_id">123456</string>
+    <string name="profile_title">Profile</string>
+    <string name="profile_demo_text">Demo Mode</string>
+
+    <!-- product availability strings -->
+    <string name="in_stock">In Stock</string>
+    <string name="out_stock">Out of Stock</string>
+
+    <!-- error strings -->
+    <string name="worklight_failure">Worklight Connection Failed</string>
+    <string name="retry">Retry</string>
+    <string name="cancel">Cancel</string>
+    <string name="product_failure">Could not load product details.</string>
+
+</resources>

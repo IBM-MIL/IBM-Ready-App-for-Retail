@@ -1,0 +1,3 @@
+androidSdkHome=/Applications/adt-bundle-mac-x86_64-20131030/sdk
+androidSdkTarget=android-21
+androidSdkBuildToolsDir=build-tools/21.0.0

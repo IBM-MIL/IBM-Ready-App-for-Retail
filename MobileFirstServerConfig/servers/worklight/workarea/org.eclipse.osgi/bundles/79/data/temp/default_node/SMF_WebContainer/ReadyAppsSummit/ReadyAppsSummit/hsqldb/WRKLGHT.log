@@ -1,0 +1,397 @@
+/*C2*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C12*/SET SCHEMA PUBLIC
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787675286,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='factProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('factProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787675286,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787675286,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787675286,0)
+COMMIT
+/*C10*/SET SCHEMA PUBLIC
+DELETE FROM CLUSTER_SYNC WHERE ID='factProcessingTask'
+COMMIT
+/*C12*/INSERT INTO LICENSE_TERMS VALUES(9,0,0,0,'2015-01-20 15:01:15.334000',0)
+COMMIT
+ALTER SEQUENCE PUBLIC.LICENSETERMS_SEQ RESTART WITH 13
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787705304,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787705304,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787705304,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787735313,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787735313,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787735313,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787765322,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787765322,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787765322,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787795331,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787795332,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787795332,0)
+COMMIT
+/*C11*/SET SCHEMA PUBLIC
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787825338,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787825338,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787825338,0)
+COMMIT
+/*C12*/DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787855342,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787855342,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787855342,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787885349,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787885349,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787885349,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787915355,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787915355,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787915355,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787945360,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787945360,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787945360,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787975367,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787975367,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421787975367,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788005376,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788005376,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788005376,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788035388,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788035388,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788035388,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788065395,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788065395,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788065395,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788095405,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788095405,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788095405,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788125417,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788125417,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788125417,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788155424,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788155424,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788155424,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788185434,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788185434,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788185435,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788215443,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788215443,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788215444,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788245450,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788245451,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788245451,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788275463,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788275463,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788275463,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788305471,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788305471,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788305471,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788335481,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788335481,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788335481,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788365488,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788365488,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788365488,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788395496,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788395496,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788395496,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788425507,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788425507,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788425507,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788455516,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788455516,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788455516,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788485522,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788485522,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788485522,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788515531,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788515531,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788515531,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788545541,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788545541,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788545541,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788575549,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788575549,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788575549,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788605557,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788605557,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788605557,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788635563,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788635563,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788635563,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788665571,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788665572,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788665572,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788695581,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788695582,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788695582,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788725592,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788725592,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788725592,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788755601,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788755601,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788755601,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788785608,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788785609,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788785609,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788815616,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788815617,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788815617,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788845624,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788845624,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788845625,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788875631,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788875632,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788875632,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788905639,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788905639,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788905639,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788935649,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788935649,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788935649,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788965654,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788965654,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788965654,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788995663,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788995664,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421788995664,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789025671,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789025671,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789025671,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789055676,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789055676,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789055676,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789085685,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789085685,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789085685,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789115691,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789115691,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789115691,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789145700,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789145700,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789145700,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789175708,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789175708,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789175709,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789205716,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789205716,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789205716,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789235726,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789235726,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789235726,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789265732,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789265732,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789265732,0)
+COMMIT
+DELETE FROM CLUSTER_SYNC WHERE ID='PlatformUsageProcessingTask'
+INSERT INTO CLUSTER_SYNC VALUES('PlatformUsageProcessingTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789295741,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='notificationCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('notificationCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789295741,0)
+DELETE FROM CLUSTER_SYNC WHERE ID='ssoExpiredLoginContextsCleanupTask'
+INSERT INTO CLUSTER_SYNC VALUES('ssoExpiredLoginContextsCleanupTask','blakes-mbp.austin.ibm.com:177c6af9:14b0925ac50:-7ffe',1421789295741,0)
+COMMIT

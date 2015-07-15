@@ -1,0 +1,105 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.robolectric:robolectric-gradle-plugin:0.14.0'
+    }
+
+}
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'robolectric'
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.ibm.mil.readyapps.summit"
+        minSdkVersion 18
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            //runProguard true
+            proguardFiles 'proguard-rules.txt'
+            testCoverageEnabled = true
+        }
+    }
+    sourceSets {
+        main.setRoot('src/main')
+        androidTest.setRoot('src/androidTest')
+    }
+    lintOptions {
+        abortOnError false
+        disable 'InvalidPackage'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.+'
+    compile project(':ReadyAppsLibrary')
+    compile 'io.realm:realm-android:0.78.0'
+    // ================== TESTING LIBRARIES ======================
+    androidTestCompile 'junit:junit:4.10'
+    androidTestCompile 'org.robolectric:robolectric:2.4'
+    androidTestCompile 'org.bouncycastle:bcprov-jdk15on:1.50'
+    compile project(':MQA-Android-2.6.1')
+}
+robolectric {
+    // configure the set of classes for JUnit tests
+    include '**/*Test.class'
+    //Make sure you call all your test classes according to this expression!!!
+
+    // configure max heap size of the test JVM
+    maxHeapSize = "2048m"
+}
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = "0.7.1.201405082137"
+}
+
+def coverageSourceDirs = [
+        '../app/src/main/java'
+]
+
+task jacocoTestReport(type: JacocoReport, dependsOn: "testDebug") {
+    group = "Reporting"
+
+    description = "Generate Jacoco coverage reports"
+
+    classDirectories = fileTree(
+            dir: '../app/build/intermediates/classes/debug',
+            excludes: ['**/R.class',
+                       '**/R$*.class',
+                       '**/*$ViewInjector*.*',
+                       '**/BuildConfig.*',
+                       '**/Manifest*.*']
+    )
+
+    additionalSourceDirs = files(coverageSourceDirs)
+    sourceDirectories = files(coverageSourceDirs)
+    executionData = files('../app/build/jacoco/testDebug.exec')
+
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+}
+
+def isJenkins = java.lang.System.getProperty("IS_JENKINS", "false")
+if ("true".equals(isJenkins)) {
+    updateAndroid()
+}

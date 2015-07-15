@@ -1,0 +1,1 @@
+include ':app', ':ReadyAppsLibrary', ':MQA-Android-2.6.1'

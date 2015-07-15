@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="carouselcell" id="NPS-gB-43y" customClass="CarouselCollectionViewCell" customModule="ReadyAppRetail" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="241" height="157"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="241" height="157"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1me-n1-D5F">
+                        <rect key="frame" x="0.0" y="0.0" width="241" height="157"/>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="1me-n1-D5F" firstAttribute="leading" secondItem="NPS-gB-43y" secondAttribute="leading" id="7Lv-YL-OQw"/>
+                <constraint firstAttribute="bottom" secondItem="1me-n1-D5F" secondAttribute="bottom" id="JbY-JY-cgc"/>
+                <constraint firstItem="1me-n1-D5F" firstAttribute="top" secondItem="NPS-gB-43y" secondAttribute="top" id="iTy-kR-aKQ"/>
+                <constraint firstAttribute="trailing" secondItem="1me-n1-D5F" secondAttribute="trailing" id="rST-N4-5dD"/>
+            </constraints>
+            <size key="customSize" width="241" height="157"/>
+            <connections>
+                <outlet property="imageView" destination="1me-n1-D5F" id="d7r-8D-YWm"/>
+            </connections>
+            <point key="canvasLocation" x="331.5" y="364.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

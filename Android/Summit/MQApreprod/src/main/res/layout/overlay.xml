@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff7f7f7f" >
+
+    <com.apphance.android.ui.overlay.OverlayView
+        android:id="@+id/overlay"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/actionbar_bg"
+            android:gravity="center"
+            android:paddingLeft="10dp" >
+
+            <TextView
+                android:id="@+id/header_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="Screenshot Editor"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="26sp" />
+
+            <ImageButton
+                android:id="@+id/go_report"
+                android:layout_width="48dip"
+                android:layout_height="48dip"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/button_highlight"
+                android:src="@drawable/actionbar_done" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/top_bg" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/eraser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="5dip"
+        android:layout_marginRight="5dip"
+        android:background="@null"
+        android:src="@drawable/eraser" />
+
+    <ImageButton
+        android:id="@+id/pencil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|bottom"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="5dip"
+        android:background="@null"
+        android:src="@drawable/pencil" />
+
+    <ImageButton
+        android:id="@+id/spray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|bottom"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="45dip"
+        android:background="@null"
+        android:src="@drawable/spray" />
+
+</FrameLayout><!-- From: file:/Users/rudy/dev/projects/AH-IBM-Android-Lib/apphance-lib/build/ibm%20qa/variants/ibm%20qa/res/layout/overlay.xml -->

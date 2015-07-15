@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="uicandroid">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../ReadyAppsLibrary/src/main/assets/worklight/uicandroid.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

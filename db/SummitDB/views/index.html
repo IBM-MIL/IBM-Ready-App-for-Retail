@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Favorites Organizer powered by Cloudant</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" href="/style/style.css" />
+</head>
+<body>
+	<header>
+		<div class='title'>Favorites Organizer powered by Cloudant	
+		<button class='detailBtn' onclick="toggleAppInfo()" title='Application Information'>
+				<img height=\"60\" width=\"60\" src='images/info.png' alt='detail'/>		
+			<button class='addBtn' onclick="addItem()" title='Add a new category'><img src='images/add.png' alt='add'/></button>
+		</div>
+	</header>	
+	<section id='appinfo' style='display: none;'>
+		<table>
+			<tbody>
+				<tr><td>This application helps you organize your favorite files.</td></tr>
+				<tr><td>Supports all file types, like Audio, Video, Photos, Text etc.</td></tr>
+				<tr><td>Click on <img src='images/add.png' alt='add'/> icon to create a new category for your files. Provide a title and description for the category in the text fields.</td></tr>
+				<tr><td>To add a file to a given category, Click on 'Browse' button to select a file, and 'Upload' button to upload the file.</td></tr>
+				<tr><td>To modify a title or description, Edit the text and press Enter.</td></tr>
+				<tr><td>You can add multiple files (of any type) to a category.</td></tr>
+				<tr><td>Click on <img src='/public/images/remove.png' alt='delete'/> icon to delete the category.</td></tr>
+				
+				
+			</tbody>
+		</table>
+	</section>
+	<section>
+		<table id='notes' class='records' border='0' cellspacing='0' cellpadding='0'><tbody></tbody></table>
+	</section>
+	<section id='vcapservices' style='display: none;'>
+		<table>
+			<tbody>
+				<tr><td class='fieldname'>Service Name</td><td id='envServiceName'></td></tr>
+				<tr><td class='fieldname'>Host</td><td id='envHost'></td></tr>
+				<tr><td class='fieldname'>Port</td><td id='envPort'></td></tr>				
+			</tbody>
+		</table>
+	</section>
+	<footer>
+		<div class='tips'>Click the Add button to add a new category.
+			<button class='detailBtn' title='Service information'>
+				<img src='images/detail.png' alt='detail'/>
+			</button> <button class='addBtn' onclick="addItem()" title='Add a new category'><img src='images/add.png' alt='add'/></button>
+		</div>
+		<div id="loadingImage"></div>	
+	</footer>
+	<script type="text/javascript" src="/scripts/util.js"></script>
+	<script type="text/javascript" src="/scripts/index.js"></script>
+	<div id="myImage"><div id="innerImg"></div></div>
+	<br><br><br>	
+</body>
+</html>

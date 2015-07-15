@@ -1,0 +1,208 @@
+<project name="RAHybrid" default="build" basedir=".">
+    <description>
+        Ready Apps Hybrid build project
+    </description>
+  <!-- set global properties for this build -->
+  <property name="build" location="build"/>
+  <property name="dist" location="dist" />
+  <property name="src.html" location="html"/>
+  <property name="src.android" location="Android/Summit/app/src/main/assets/html"/>
+  <property name="src.ios" location="iOS/ReadyAppRetail/html"/>
+
+  <target name="build-android" description="compile and distribute the source for Android" >
+         
+         <!-- wipe out directories -->
+          <delete includeemptydirs="true" failonerror="false" dir="${src.android}">
+          </delete>  
+
+          <copy todir="${src.android}" flatten="false">  
+            <fileset dir="${src.html}" includes="**">
+                <exclude name="**/test/**" />
+                <exclude name="**/node_modules/**" />
+            </fileset>  
+          </copy>
+  </target>
+
+   <target name="build-ios" description="compile and distribute the source for iOS" >
+          
+          <mkdir dir="${build}"/>
+          <mkdir dir="${build}/iOS"/>
+
+          <copy todir="${build}/iOS" flatten="true">  
+            <fileset dir="${src.html}">
+                <include name="index.html" />
+                <include name="views/**" />
+                <include name="fonts/**" />
+                <include name="img/**" />
+                <include name="js/src/**" />
+                <include name="css/**" />
+                <include name="js/bower_components/angular/angular.js" />
+                <include name="js/bower_components/angular-route/angular-route.js" />
+                <include name="js/bower_components/angular-touch/angular-touch.js" />
+                <include name="js/bower_components/angular-animate/angular-animate.js" />
+                <include name="js/bower_components/jquery/dist/jquery.js" />
+                <include name="js/vendor/angular-translate.js" />
+            </fileset>
+          </copy>
+          
+          <replace value="" token="css/">
+            <fileset dir="${build}/iOS/">
+              <include name="*.html"/>
+            </fileset>
+          </replace>
+
+          <replace value="" token="./img/">
+            <fileset dir="${build}/iOS/">
+              <include name="*.html"/>
+              <include name="*.css"/>
+            </fileset>
+          </replace>
+
+          <replace value="" token="../img/">
+            <fileset dir="${build}/iOS/">
+              <include name="*.css"/>
+            </fileset>
+          </replace>
+
+          <replace value="" token="../../img/">
+            <fileset dir="${build}/iOS/">
+              <include name="*.css"/>
+            </fileset>
+          </replace>
+
+          <replace value="" token=".././img/">
+            <fileset dir="${build}/iOS/">
+              <include name="*.css"/>
+            </fileset>
+          </replace>
+
+          <replace value="" token="../fonts/">
+            <fileset dir="${build}/iOS/">
+              <include name="*.css"/>
+            </fileset>
+          </replace>
+
+         <replace value="" token="views/">
+            <fileset dir="${build}/iOS/">
+              <include name="*.js"/>
+            </fileset>
+          </replace>
+
+          <replace value="" token="../">
+            <fileset dir="${build}/iOS/">
+              <include name="*.html"/>
+              <include name="*.css"/>
+              <include name="*.js"/>
+            </fileset>
+          </replace>
+
+          <replace file="${build}/iOS/index.html" value="" token="js/bower_components/angular/"/>
+          <replace file="${build}/iOS/index.html" value="" token="js/bower_components/angular-route/"/>
+          <replace file="${build}/iOS/index.html" value="" token="js/bower_components/angular-touch/"/>
+          <replace file="${build}/iOS/index.html" value="" token="js/bower_components/angular-animate/"/>
+          <replace file="${build}/iOS/index.html" value="" token="js/bower_components/jquery/dist/"/>
+          <replace file="${build}/iOS/index.html" value="" token="js/vendor/"/>
+          <replace file="${build}/iOS/index.html" value="" token="js/src/config/"/>
+          <replace file="${build}/iOS/index.html" value="" token="views/templates/"/>
+          <replace file="${build}/iOS/index.html" value="" token="js/src/controllers/"/>
+          <replace file="${build}/iOS/index.html" value="" token="js/src/directives/"/>
+          <replace file="${build}/iOS/index.html" value="" token="js/src/providers/"/>
+          <replace file="${build}/iOS/index.html" value="" token="js/src/interfaces/"/>
+          <replace file="${build}/iOS/index.html" value="" token="js/test/"/>
+          <replace file="${build}/iOS/index.html" value="" token="js/src/"/>
+
+          <replace file="${build}/iOS/product-details.html" value="" token="img/"/>
+
+          <replace file="${build}/iOS/style.css" value="" token="../../img/"/>
+
+          <!--replace file="${build}/iOS/metrics.html" value="" token="./img/"/>
+          <replace file="${build}/iOS/style.css" value="" token="../../img/"/>
+          <replace file="${build}/iOS/style.css" value="" token=".././img/"/>
+          <replace file="${build}/iOS/style.css" value="" token="../img/"/>
+          <replace file="${build}/iOS/style.css" value="" token="../fonts/"/>
+
+          <replace file="${build}/iOS/index.js" value="" token="views/"/>
+          <replace file="${build}/iOS/metrics-steps.html" value="" token="./img/"/-->
+
+          <!--replaceregexp file="${build}/iOS/index.html" match="(?=\w+\.\w{3,4}$).+" replace="" flags="g" byline="true" flags="g" /-->
+              
+          <!-- wipe out directories -->
+          <delete includeemptydirs="true" failonerror="false" dir="${src.ios}" >
+          </delete>  
+
+          <copy todir="${src.ios}" includeemptydirs="false">  
+            <fileset dir="${build}/iOS" includes="**"/>  
+          </copy>
+
+          <delete dir="${build}"/>
+  </target>
+
+   <target name="build" depends="build-ios,build-android" description="compile and distribute the source for each OS" >
+  </target>
+
+  <target name="clean"
+        description="clean up" >
+    <delete dir="${build}"/>
+    <delete includeemptydirs="true" dir="${src.android}">
+    </delete>  
+    <delete includeemptydirs="true" dir="${src.ios}">
+    </delete>  
+  </target>
+
+ <target name="pkg-clean">
+    <delete dir="${dist}"/>
+ </target>
+ <target name="package-all" depends="pkg-clean,package-android,package-ios"
+    description="package Android and iOS files into a zip for distribution">
+  <mkdir dir="${build}"/>
+  <zip compress="true" level="9" destfile="${dist}/package-all.zip" encoding="UTF-8" >
+    <fileset dir="." >
+      <include name="**/*" />
+      <exclude name="dist/**" />
+      <exclude name="**/.git*" />
+      <exclude name="**/.DS_Store" />
+      <exclude name="iOS/build/**" />
+      <exclude name="Android/Summit/build/**" />
+      <exclude name="Android/Summit/app/build/**" />
+      <exclude name="Android/Summit/spinnerwheel/build/**" />
+      <exclude name="Android/Summit/ReadyAppsLibrary/build/**" />
+      <exclude name="iOS/upload-tmp/**" />
+    </fileset>
+  </zip>
+ </target>
+
+ <target name="package-android" description="package Android files into a zip for distribution" >
+  <mkdir dir="${build}"/>
+  <zip compress="true" level="9" destfile="${dist}/package-android.zip" encoding="UTF-8" >
+    <fileset dir="." >
+      <include name="**/*" />
+      <exclude name="dist/**" />
+      <exclude name="**/.git*" />
+      <exclude name="**/.DS_Store" />
+      <exclude name="iOS/**" />
+      <exclude name="Android/Summit/build/**" />
+      <exclude name="Android/Summit/app/build/**" />
+      <exclude name="Android/Summit/spinnerwheel/build/**" />
+      <exclude name="Android/Summit/ReadyAppsLibrary/build/**" />
+      <exclude name="automatedUITests/iOS_Automated_UI_Testing" />
+    </fileset>
+  </zip>
+ </target>
+
+ <target name="package-ios"  description="package iOS files into a zip for distribution" >
+  <mkdir dir="${build}"/>
+  <zip compress="true" level="9" destfile="${dist}/package-ios.zip" encoding="UTF-8" >
+    <fileset dir="." >
+      <include name="**/*" />
+      <exclude name="dist/**" />
+      <exclude name="**/.git*" />
+      <exclude name="**/.DS_Store" />
+      <exclude name="Android/**" />
+      <exclude name="iOS/build/**" />
+      <exclude name="iOS/upload-tmp/**" />
+      <exclude name="automatedUITests/Android_Automated_UI_Testing" />
+    </fileset>
+  </zip>
+ </target>
+
+</project>

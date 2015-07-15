@@ -1,0 +1,67 @@
+<!--
+    Licensed Materials - Property of IBM
+    © Copyright IBM Corporation 2015. All Rights Reserved.
+-->
+
+<!-- Scope tag -->
+<div id="scope"></div>
+
+<div class="availability-bar">
+    <span>{{availability}}</span>
+    <span>{{location}}</span>
+</div>
+
+<div class="image-section" ng-switch="imageIsLoading">
+    <div ng-switch-when="true">
+        <div class="feedback-frame"></div>
+    </div>
+    <div ng-switch-when="false" ng-switch="imageLoadWasSuccessful">
+        <div class="image-frame" ng-switch-when="true">
+            <img ng-src="{{src}} " />
+        </div>
+        <div ng-switch-when="false">
+            <div class="feedback-frame">
+                Error
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="thick-divider "></div>
+
+<div class="overview-section ">
+
+    <div class="name ">{{productName}}</div>
+
+    <div class="rating ">
+        <rating-viewer rating="rating " empty-path="img/star_lg_grey.png " full-path="img/star_lg_yellow.png "></rating-viewer>
+    </div>
+
+    <div class="price ">
+        <span class="old ">{{oldPrice}}</span>
+        <span class="current ">{{currentPrice}}</span>
+    </div>
+
+    <div class="color ">
+        <color-picker color-options="colorData " color-picked="fetchNewImage(color)" color-title="{{colorTitle}}"></color-picker>
+    </div>
+
+    <div class="option ">
+        <drop-down drop-data="optionsData " button-image="img/arrow-down.png "></drop-down>
+    </div>
+
+    <div class="buttons">
+        <button class="add-button list-button" ng-click="addToListClicked()">{{addToList}}</button>
+
+        <!--<button class="add-button cart-button disabled-button">{{addToCart}}</button>-->
+    </div>
+
+</div>
+
+<div class="thin-divider "></div>
+
+<div name="product-details " class="overview-section ">
+
+    <text-expander title="{{detailsTitle}} " text="{{detailsBody}} " button-image="img/arrow-down.png " button-rotation="-180 " <!--ng-class="{padbottom: shouldPadBottom}"-->></text-expander>
+
+</div>

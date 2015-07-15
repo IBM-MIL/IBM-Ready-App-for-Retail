@@ -1,0 +1,63 @@
+<!--
+    Licensed Materials - Property of IBM
+    © Copyright IBM Corporation 2015. All Rights Reserved.  
+-->
+
+<!DOCTYPE html>
+
+<html ng-app="ReadyAppSummit">
+
+<!-- Head -->
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <!-- Vendor -->
+    <script src="js/bower_components/angular/angular.js"></script>
+    <script src="js/bower_components/angular-route/angular-route.js"></script>
+    <script src="js/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="js/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="js/bower_components/jquery/dist/jquery.js"></script>
+    <script src="js/vendor/angular-translate.js"></script>
+
+    <!-- ReadyApp-->
+    <!-- <script src="js/vendor/readyapp.js"></script> -->
+
+    <!-- App -->
+    <script src="js/src/index.js"></script>
+
+    <!-- Config -->
+    <script src="js/src/config/routing.js"></script>
+    <script src="js/src/config/i18n.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/src/interfaces/mil-ctrl.js"></script>
+    <script src="js/src/controllers/product-details-ctrl.js"></script>
+
+    <!-- Directives -->
+    <script src="js/src/directives/color-picker.js"></script>
+    <script src="js/src/directives/rating-viewer.js"></script>
+    <script src="js/src/directives/drop-down.js"></script>
+    <script src="js/src/directives/text-expander.js"></script>
+
+    <!-- Services -->
+    <script src="js/src/providers/image-preloader-factory.js"></script>
+
+    <!-- Title -->
+    <title>Summit</title>
+</head>
+
+<!-- Body -->
+
+<body>
+    <div id="mainView" ng-view></div>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="trishas-mbp.austin.ibm.com" name="Testtest-uitests" tests="1" time="0.0" timestamp="2015-03-12T16:21:10">
+    <properties />
+    <testcase classname="Android Automated UI Test.test.Testtest" name="testTrue" time="0.0" />
+  </testsuite>
+</testsuites>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/textbox_focused" android:state_focused="true"/>
+    <item android:drawable="@drawable/textbox_normal"/>
+
+</selector><!-- From: file:/Users/rudy/dev/projects/AH-IBM-Android-Lib/apphance-lib/build/ibm%20qa/variants/qa/res/drawable/textbox.xml -->

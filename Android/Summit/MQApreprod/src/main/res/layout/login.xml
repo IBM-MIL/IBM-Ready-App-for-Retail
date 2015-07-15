@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffffff" >
+
+    <TextView
+        android:id="@+id/app_version"
+        android:layout_width="fill_parent"
+        android:layout_height="30dip"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:background="#fff3f3f3"
+        android:gravity="center"
+        android:textColor="#ff000000"
+        android:textSize="16sp"
+        android:typeface="sans"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/ibm_footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="23dp"
+        android:text="© IBM Corp. 2001, 2013"
+        android:textColor="#ff666666"
+        android:textSize="12sp" />
+
+    <FrameLayout
+        android:id="@+id/gray_line"
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:layout_above="@id/ibm_footer"
+        android:layout_marginTop="35dp"
+        android:background="#ffcccccc" />
+
+    <LinearLayout
+        android:id="@+id/quick_login_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/header_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_marginTop="67dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/ibm_logo" />
+
+        <TextView
+            android:id="@+id/header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="IBM Mobile Quality Assurance,"
+            android:textColor="#ff222222"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="13dp"
+            android:text="V 1.0"
+            android:textColor="#ff222222"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <ViewFlipper
+        android:id="@+id/layouts_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/gray_line"
+        android:layout_below="@id/quick_login_header" >
+
+        <ListView
+            android:id="@+id/users_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:cacheColorHint="#ffffffff"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="10.0sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:id="@+id/manual_login_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dip"
+                    android:text="@string/login_quickLoginHint2"
+                    android:textColor="@color/text_secondary"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/email_edit"
+                    android:layout_width="233dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/textbox"
+                    android:hint="Login"
+                    android:inputType="text|textEmailAddress"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="2dp"
+                    android:textColorHint="#ff777777"
+                    android:textColor="#000"
+                    android:textSize="13sp"
+                    android:typeface="sans" >
+
+                    <requestFocus />
+                </EditText>
+
+                <EditText
+                    android:id="@+id/password_edit"
+                    android:layout_width="233dp"
+                    android:layout_height="28dp"
+                    android:layout_marginBottom="35dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/textbox"
+                    android:hint="Password"
+                    android:inputType="text|textAutoComplete|textNoSuggestions"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="2dp"                    
+                    android:textColor="#000"
+                    android:textColorHint="#ff777777"
+                    android:textSize="13sp"
+                    android:typeface="sans" />
+
+                <LinearLayout
+                    android:id="@+id/login_buttons"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="2dip" >
+
+                    <Button
+                        android:id="@+id/btn_login"
+                        android:layout_width="74dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ibmbutton"
+                        android:gravity="center"
+                        android:minHeight="0dip"
+                        android:minWidth="0dip"
+                        android:text="@string/login_login_button"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+
+                    <Button
+                        android:id="@+id/btn_anon_login"
+                        android:layout_width="141dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="17dp"
+                        android:background="@drawable/ibmbutton"
+                        android:gravity="center"
+                        android:minHeight="0dip"
+                        android:minWidth="0dip"
+                        android:text="@string/login_anon_login_button"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </ViewFlipper>
+
+</RelativeLayout><!-- From: file:/Users/rudy/dev/projects/AH-IBM-Android-Lib/apphance-lib/build/ibm%20qa/variants/ibm%20qa/res/layout/login.xml -->

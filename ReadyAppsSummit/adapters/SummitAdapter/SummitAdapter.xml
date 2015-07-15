@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed Materials - Property of IBM
+    5725-I43 (C) Copyright IBM Corp. 2011, 2013. All Rights Reserved.
+    US Government Users Restricted Rights - Use, duplication or
+    disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<wl:adapter name="SummitAdapter"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:wl="http://www.ibm.com/mfp/integration"
+	xmlns:http="http://www.ibm.com/mfp/integration/http">
+
+	<displayName>SummitAdapter</displayName>
+	<description>SummitAdapter</description>
+	<connectivity>
+		<connectionPolicy xsi:type="http:HTTPConnectionPolicyType">
+			<protocol>https</protocol>
+			<domain>c38f4c98-da63-41be-b62f-48b5934da36d-bluemix.cloudant.com</domain>
+			<port>443</port>	
+			<connectionTimeoutInMilliseconds>30000</connectionTimeoutInMilliseconds>
+			<socketTimeoutInMilliseconds>30000</socketTimeoutInMilliseconds>
+			<maxConcurrentConnectionsPerNode>50</maxConcurrentConnectionsPerNode>
+			<!-- Following properties used by adapter's key manager for choosing specific certificate from key store  
+			<sslCertificateAlias></sslCertificateAlias> 
+			<sslCertificatePassword></sslCertificatePassword>
+			-->		
+		</connectionPolicy>
+	</connectivity>
+	
+	<procedure name="getAllStores"/>
+	<procedure name="submitAuthentication" />
+	<procedure name="getHomeViewMetadata" />
+	<procedure name="getProductById" />
+	<procedure name="getCouponById" />
+	<procedure name="getStoreById" />
+	<procedure name="getDepartmentById" />
+	<procedure name="getAllDepartments"/>
+	<procedure name="getDefaultList" securityTest="SingleStepAuthAdapter-securityTest" />
+	<procedure name="productIsAvailable" securityTest="SingleStepAuthAdapter-securityTest" />
+	
+</wl:adapter>

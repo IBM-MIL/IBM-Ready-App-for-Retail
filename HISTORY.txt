@@ -1,0 +1,10 @@
+Version History of ReadyApp Retail (Summit)
+
+iOS
+Version 1.0
+Version 1.1
+	- Added support for Apple Watch
+	- Added keychain support for logging in
+
+Android
+Version 1.0

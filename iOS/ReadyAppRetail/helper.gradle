@@ -1,0 +1,1914 @@
+
+import java.util.concurrent.ArrayBlockingQueue
+import java.util.concurrent.ThreadPoolExecutor
+import java.util.concurrent.TimeUnit
+import java.util.regex.Pattern
+import org.apache.commons.net.telnet.TelnetClient
+import org.apache.tools.ant.filters.*
+import groovy.io.FileType
+import java.nio.file.*
+import java.nio.file.attribute.*
+
+import javax.xml.parsers.DocumentBuilderFactory
+
+import org.w3c.dom.Node
+import org.w3c.dom.Document
+
+/**
+ * Adding dependencies for the build-libs directory.
+ */
+buildscript{
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath group: 'commons-net', name: 'commons-net', version: '3.3'
+	}
+}
+
+def threadPool = new ThreadPoolExecutor(5, 30, 5, TimeUnit.MINUTES, new ArrayBlockingQueue<Runnable>(30, true))
+project.ext.set('threadPool', threadPool)
+//The character set we use to open all files in this helper gradle file.
+project.ext.set('CHARSET', 'UTF-8')
+
+/**************************************************************************************************************
+ **************************************************************************************************************
+ *****************************                                                *********************************
+ *****************************             Generic Helper Functions           *********************************
+ *****************************                                                *********************************
+ **************************************************************************************************************
+ **************************************************************************************************************/
+
+/**
+ * Utility method used with the telnet function to sit and read data from a telnet connection until the given
+ * pattern is found.  The method will return all the text read from the telnet connection including the given pattern.
+ *
+ * @param reader The input stream to read until the 'pattern' string is found.
+ * @param pattern The pattern string to detect while reading data from the reader, which will step the read from the reader
+ * 					and retun all the output read up to the pattern found, inclusive.
+ */
+def readUntil(reader, pattern) {
+	return readUntil(reader, pattern, false)
+}
+
+/**
+ * Utility method used with the telnet function to sit and read data from a telnet connection until the given
+ * pattern is found.  The method will return all the text read from the telnet connection including the given pattern.
+ * If the excludePattern parameter is true, the returned string will not include the 'pattern' provided.
+ *
+ * @param reader The input stream to read until the 'pattern' string is found.
+ * @param pattern The pattern string to detect while reading data from the reader, which will step the read from the reader
+ * 					and retun all the output read up to and possibly including the pattern found.
+ * @param excludePatter boolean, if true, will exclude the 'pattern' specified from the string returned
+ */
+def readUntil( reader, pattern, excludePattern ) {
+	sb = new StringBuffer()
+	while ((ch = reader.read()) != -1) {
+		sb << (char) ch
+		if (sb.toString().endsWith(pattern)) {
+			def found = sb.toString()
+			if (excludePattern) {
+				found = found.replace(pattern, "")
+			}
+			sb = new StringBuffer()
+			return found
+		}
+	}
+	return null
+}
+
+/**
+ * Basic tests to ensure that the runtime for this test bucket is complete.  Currently the only thing that it checks is
+ * that the ANDROID_HOME environment variable is set.
+ *
+ * @param project The gradle project which we are a part of.
+ */
+void inittest() {
+	def keys_to_check = ['ANDROID_HOME', 'EMULATOR_FILE']
+	
+	//Lets delete the reports dir if it exists
+	delete './reports'
+	
+	for (def i = 0 ; i < keys_to_check.size() ; ++i ) {
+		def key = keys_to_check.get(i)
+		def errorStr = "Please set the " + key + " environemnt variable or system variable and try again"
+		if (!project.hasProperty(key)) {
+			throw new StopExecutionException(errorStr)
+		}
+		//If any of the keys we're looking for don't exist, lets just error out.
+		if (project.getProperty(key) == null || "".equals(project.getProperty(key))) {
+			throw new StopExecutionException(errorStr)
+		}
+	}
+}
+
+/**
+ * Given an xml node, this function will return the value of the the node. This is really meant to be used only with
+ * nodes returned when you use the node.getAttributes().getNamedItem() function. This getNamedItem function will actually
+ * return a node representing the attribute whose value you want to retrieve.  This method takes that node and returns
+ * the value for that attribute.
+ *
+ * @param node The attribute node whose value we want to get
+ * @param wrap Default is false (parameter does not actually have to be provided).  If true and the attributes value
+ * contains a space, the returned attribute value will actually be wrapped in double quotes.
+ * @return The value for this attribute, possibly wrapped in double quotes based on whether wrap is set to true and
+ * the value retrieved actually contains a space.
+ */
+String getNodeValue(node, wrap= false) {
+	def value = ""
+	if (node != null) {
+		value = node.getTextContent()
+		//we'll only wrap if they tell us to AND if the value contains a space in it
+		if (wrap && value.matches('.*\\s+.*') ) {
+			value = '"' + value + '"'
+		}
+	}
+	return value
+}
+
+/**
+ * Loads an Xml document and returns a Document object representing the xml file.  The xml file is normalized before
+ * being returned.  Should work fine with UTF-8 xml documents as long as the encodeing is specified in the xml file
+ * For example:
+ * 
+ * <?xml version="1.0" encoding="UTF-8"?>
+ * 
+ * @param filename
+ * @param normalize
+ * @return The xml Document that was loaded.
+ */
+Document loadXmlDocument(filename, normalize = true) {
+	def xmlFile = new File(filename)
+	def dbFactory = DocumentBuilderFactory.newInstance()
+	def dBuilder = dbFactory.newDocumentBuilder()
+	def doc = dBuilder.parse(new FileInputStream(xmlFile))
+	
+	if (normalize) {
+		//read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
+		doc.getDocumentElement().normalize()
+	}
+	return doc
+}
+
+/**
+ * Looks for the a build id as a system property or system environment variable with the given name.  If that is not set
+ * then the project looks at the project to see if it contains a property with that given name. If neither of these
+ * values is set, then a new build id is generated using the current time formatted as yyyyMMdd-HHmmss where
+ *
+ * MM = two digit month
+ * dd = two digit day
+ * yyyy - four digit year
+ * HH - two digit hours
+ * mm - two digit minutes
+ * ss - two digit seconds
+ */
+String getBuildID(name, project) {
+	def dtefrmt = new java.text.SimpleDateFormat('yyyyMMdd-HHmmss')
+	def bldid = dtefrmt.format(new Date())
+	
+	if (project.hasProperty(name)) {
+		bldid = project.BUILDID
+	} else {
+		/*
+		 * At this point, bldid should never be null or empty string as the defaultValue here will be set to the current
+		 * formatted date
+		 */
+		bldid = getSystemValue(name, bldid)
+	}
+	project.ext.set(name, bldid)
+	return bldid
+}
+
+
+/**
+ * Given a name, the function will look at both the system environment (environment variables) and system properties
+ * (for this jvm runtime) in that order, for either a variable or a property with that name.  If neither a system environment
+ * variable nor a system property is found, then the defaultValue is used. It is assumed that the defaultValue is a String
+ *
+ * param name  the name of the system environment variable or system property to look for
+ * param defaultValue if a system value is not found, this value should be returned
+ * returns An object of the correct type (String or Integer) that represents either the system value or default value that we are looking for
+ */
+String getSystemValue(name, defaultValue) {
+	return getSystemValue(name, defaultValue, false)
+}
+/**
+ * Given a name, the function will look at both the system environment (environment variables) and system properties
+ * (for this jvm runtime) in that order, for either a variable or a property with that name.  If neither a system environment
+ * variable nor a system property is found, then the defaultValue is used.  If isInteger is true, then a conversion is
+ * attempted to convert either the system value or defaultValue into an integer.  It is assumed that all values that
+ * are being worked with are Strings, so a conversion from String -> Integer is attempted.
+ *
+ * param name  the name of the system environment variable or system property to look for
+ * param defaultValue if a system value is not found, this value should be returned. Either a String or Integer
+ * param isInteger boolean that specifies whether the value returned should be an integer
+ * returns An object of the correct type (String or Integer) that represents either the system value or default value that we are looking for
+ */
+Object getSystemValue(name, defaultValue, isInteger) {
+	def value = java.lang.System.getenv(name)
+	if (value == null || "".equals(value)) {
+		value = java.lang.System.getProperty(name)
+		if (value == null || "".equals(value)) {
+			value = defaultValue
+		}
+	}
+	///Now if they tell us its supposed to be an int, lets attempt to convert it
+	if (isInteger) {
+		try {
+			value = new java.lang.Integer(value)
+		} catch(Exception ex) {
+			value = new java.lang.Integer(defaultValue)
+		}
+	}
+	
+	return value
+}
+
+/**
+ * Function that runs the provided command and waits for the command to complete before returning.  If the command fails
+ * the function will throw a StopExecutionException.  Will return the output generated and printed to standard out
+ * and standard error as a String.
+ *
+ * NOTE:  THIS IS A BLOCKING FUNCTION.  IF THE COMMAND DOES NOT RETURN, NEITHER WILL THIS FUNCTION.
+ * NOTE: IDEALLY THE COMMAND SHOULD BE SUPPLIED AS A STRING ARRAY.  YOU CAN OPTIONALLY PROVIDE A STRING BUT PARAMETERS
+ * 		PASSED USED IN THE STRING FORM CANNOT CONTAIN SPACES OTHERWISE THEY GET RECOGNIZED AS SEPARATE PARAMETERS WHICH
+ * 		IS DEFINITELY NOT THE EXPECTED BEHAVIOR
+ *
+ * For example:
+ *
+ * Do this:
+ *
+ * output = runCmd(['ls', '-l', 'My Directory'])
+ *
+ * Do not do this
+ *
+ * output = runCmd('ls -l "My Directory"')
+ *
+ * The first version does the right thing (runs the listing command against the "My Diretory" directory).
+ * The second version actually gets interpreted as 'ls -l My Directory'.  So it attempts
+ * 
+ * @param cmd String array representing the command that should be executed, possibly in its own unmanaged thread.
+ * @param shouldWait boolean that tells the function whether is should block and wait for the 'cmd' to complete before
+ * returning.  If true this spawns a new, unmonitored thread in which to run the command.  This is great for system
+ * commands that could be blocking and thus not let this function returned if set to wait for the command to complete.
+ * @param saveProcess Whether the function should attempt to save the started process into the projects SAVED_PROCESS
+ * property which is a HashMap<String, Process> of the saved processes.  This will only be used if shouldWait is set
+ * to false.
+ * @return A string representing all the output the command produced, both to standard out and standard error. Could be
+ * set to nothing (empty string) if the shouldWait flag is set to false.
+ */
+String runCmd(cmd, shouldWait, saveProcess, printCommand = true) {
+	if (cmd == null || "".equals(cmd)) {
+		return "No command specified, no command executed."
+	}
+	
+	if (printCommand) {
+		println "************************************************************"
+		println "Executing command: "  + cmd
+		println "************************************************************"
+	}
+	def allout = ''
+	/*
+	 * We either should be waiting for the command to complete (blocking process run) or we shouldn't.  If we are not
+	 * blocking, we should push the execution of the process to a threadpool and just forget about it.  Currently the
+	 * threadpool processes will interleave their output to the same console
+	 */
+	if (shouldWait) {
+		def cmdproc = cmd.execute()
+		def cmdout = new StringBuffer()
+		def cmderr = new StringBuffer()
+		
+		cmdproc.consumeProcessOutput(cmdout, cmderr)
+		def rc = 0
+		rc = cmdproc.waitFor()
+		allout = cmdout.toString() + cmderr.toString()
+		if (rc != 0) {
+			println "Return Code = " + rc
+			println ("Standard Out: " + cmdout.toString())
+			println ("Standard Error: " + cmderr.toString())
+			ant.fail(allout)
+		}
+	} else {
+		def env = System.getenv()
+		def pb = new ProcessBuilder(cmd)
+		pb.environment().putAll(env)
+		pb.directory(new File(getCurrentAbsolutePath()))
+		pb = pb.redirectErrorStream(true)
+		def process = pb.start()
+		def cmdout = new StringBuffer()
+		def cmderr = new StringBuffer()
+		process.consumeProcessOutput(cmdout)
+		def rc = process.waitFor()
+		println ("Standard Out: " + cmdout.toString())
+		if (rc != 0) {
+			println "Return Code = " + rc
+			println ("Standard Out: " + cmdout.toString())
+			println ("Standard Error: " + cmderr.toString())
+			ant.fail(allout)
+		}
+	}
+	
+	
+	return allout
+}
+
+/**
+ * Calls #runCmd(cmd, shouldWait, saveProcess) with the saveProcess parameter set to 'false'. 
+ *  
+ * @param cmd String array representing the command that should be executed, possibly in its own unmanaged thread.
+ * @param shouldWait boolean that tells the function whether is should block and wait for the 'cmd' to complete before
+ * returning.  If true this spawns a new, unmonitored thread in which to run the command.  This is great for system
+ * commands that could be blocking and thus not let this function returned if set to wait for the command to complete.
+ * @return A string representing all the output the command produced, both to standard out and standard error. Could be
+ * set to nothing (empty string) if the shouldWait flag is set to false.
+ */
+String runCmd(cmd, shouldWait) {
+	return runCmd(cmd, shouldWait, false)
+}
+
+/**
+ * Calls #runCmd(cmd, shouldWait) with the shouldWait parameter set to 'true'. Note that since we are waiting for this
+ * command to complete, the main process is blocked until the command completes.  If there is any possability the command
+ * could block and not return, then this function should not be used and one of the others should be used instead.
+ *  
+ * @param cmd String array representing the command that should be executed, possibly in its own unmanaged thread.
+ * @return A string representing all the output the command produced, both to standard out and standard error. Could be
+ * set to nothing (empty string) if the shouldWait flag is set to false.
+ */
+String runCmd(cmd) {
+	return runCmd(cmd, true)
+}
+
+/**
+ * Function that will attempt to open a standard text file.  The file will be opened assuming it contains UTF-8 data.
+ * The function will return the entire contents of the file, as it is read off of disk.  No attempt is made to filter
+ * the contents of the file.  
+ * 
+ * @param fileName String representing the qualified path to the file that needs to be opened
+ * @param shouldfail boolean that tells this function whether it should throw an exception if the file cannot be opened
+ * for read or whatever reason.
+ * @return String array representing each and every single line in the file.
+ */
+String[] loadTextFile(fileName, shouldfail) {
+	def file = new File(fileName)
+	def bufferedReader = ''
+	def lines = []
+	try {
+		bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file), CHARSET))
+		def line = ''
+		def lineCount = 0
+		while ((line = bufferedReader.readLine()) != null) {
+			lines[lineCount++] = line
+		}
+	} catch (Exception ex) {
+		println "WARNING! Could not load file: " + file.getAbsolutePath()
+		if (shouldfail) {
+			ant.fail(ex.getMessage())
+		}
+	} finally {
+		try {
+			bufferedReader.close()
+		} catch (Exception ex) {/*do nothing*/}
+	}
+	return lines
+}
+
+/**
+ * Loads an entire text file as a single string instead of an array of Strings
+ * 
+ * @param fileName String representing the qualified path to the file that needs to be opened
+ * @param shouldfail boolean that tells this function whether it should throw an exception if the file cannot be opened
+ * for read or whatever reason.
+ * @return String array representing each and every single line in the file.
+ */
+String loadTextFileAsString(fileName, shouldfail) {
+	return loadTextFile(fileName, shouldfail).join(System.getProperty('line.separator'))
+}
+
+/**
+ * Function that will load properties from a file and return the properties in a Properties object. The function will
+ * assume UTF-8 as the character set for the laod.
+ * 
+ * @param fileName String representing the qualified path to the file that needs to be opened
+ * @param shouldfail boolean that tells this function whether it should throw an exception if the file cannot be opened
+ * or read for whatever reason.
+ * @return Properties object containing all the properties in the file.
+ */
+Properties loadPropertiesFile(fileName, shouldfail) {
+	def file = new File(fileName)
+	def properties = new Properties()
+	try {
+		properties.load(new BufferedReader(new InputStreamReader(new FileInputStream(file), CHARSET)))
+	} catch (Exception ex) {
+		println "WARNING! Could not load file: "  + file.getAbsolutePath()
+		if (shouldfail) { 
+			ant.fail(ex.getMessage())
+		}
+	}
+	return properties
+}
+
+/**
+ * Takes a file name and a string array of data, and writes out the data in the string array to the file. Uses UTF-8 as
+ * the encoding for the file.
+ * 
+ * @param name The name of the file to create.  Ideally fully qualified file name
+ * @param data String array representing each line that should go into the file.
+ * @param append Whether to append to a file or overwrite. By default set to false so overwrites take place
+ */
+void writeFile(name, data, append=false) {
+	if (append) {
+		new File(name).withWriterAppend CHARSET, {  out ->
+			data.each {
+				out.println it
+			}
+		}
+	} else {
+		new File(name).withWriter CHARSET, {  out ->
+			data.each {
+				out.println it
+			}
+		}
+	}
+	
+}
+
+/**
+ * Given a string representing a file or directory, attempts to return the name of the parent directory for that file
+ * or directory.  If it can't resolve it for whatever reason, will return the empty string ('')
+ * 
+ * @param file The file or directory whose parent name we are trying to get.
+ */
+String getParentFileName(file) {
+	def myFile = new File(file)
+	def absFile = myFile.getAbsoluteFile()
+	def parent = ''
+	if (absFile != null) {
+		def parentFile = absFile.getParentFile()
+		if (parentFile != null) {
+			parent = parentFile.getName()
+		}
+	}
+	return parent
+}
+
+/**
+ * Attempts to read the file project.properties in the current directory and locate all of the projects this Android
+ * project is dependent on.
+ * 
+ * @return String array containing any dependent projects found in the project.properties file.
+ */
+String[] getDependentProjects(projectProperties = 'project.properties') {
+	def projProperties = loadPropertiesFile(projectProperties, true)
+	def propNames = projProperties.propertyNames()
+	def dependentProjects = []
+	if (propNames != null) {
+		def depCount = 0
+		for (def name : propNames) {
+			if (name.startsWith('android.library.reference')) {
+				/*
+				 * So project properties till now have looked like this:
+				 * target=android-19
+				 * android.library.reference.1=../foo1
+				 * android.library.reference.2=../foo2
+				 * .......
+				 * android.library.reference.N=../fooN
+				 * Trying to parse the directory names (foo1, foo2, ..., fooN) from these library references.
+				 */
+				def propVal = projProperties.get(name)
+				if (propVal.contains('/')) {
+					def parts = propVal.split('/')
+					//string we're looking for should be the second part of the list
+					if (parts.length > 1) {
+						dependentProjects[depCount++] = parts[1]
+					} 
+				}
+			}
+		}
+	}
+	return dependentProjects
+}
+
+/**
+ * This function basically adds the current project to the list of projects returned from #getDependentProjects()
+ * 
+ * @return String array of all the projects foudn in this directory
+ */
+String[] getAllProjects() {
+	def projSelf = getParentFileName('.')
+	//getDependentProjects should never return null
+	def allProjects = getDependentProjects()
+	allProjects[allProjects.length] = ':' + projSelf
+	return allProjects
+}
+
+/**
+ * Copies a file to the given destination with the given properties for the copy command.  Uses gradles copy task to
+ * perform the operation
+ * 
+ * @param srcFile The file we want to copy into some other location.
+ * @param trgtFile The qualified path to the target file
+ * @param overwrite Determines whether we should overwrite an existing file with the same name in the destination location
+ * @param verbose boolean. determines whether we should be verbose in logging the copy
+ * @param filterset A filter set.  Attempts to do a token replace based on this filterset
+ */
+void copyFile(srcFile, trgtDir, newFileName, filterset=[]) {
+	def trgt = new File(trgtDir)
+	if (!trgt.isDirectory()) {
+		trgt.mkdirs()
+	}
+	if (filterset.size() == 0) {
+		copy {
+			from srcFile
+			into trgtDir
+			rename '(.*)', newFileName
+		}
+	} else {
+		copy {
+			from srcFile
+			into trgtDir
+			rename '(.*)', newFileName
+			
+			filter(ReplaceTokens, tokens: filterset)
+		}
+	}
+}
+
+/**
+ * Copies a directory recursively.
+ *
+ * @param srcDir The directory we want to copy recursively
+ * @param targetDir The target location for the copy.
+ */
+void copyForBE(srcDir, targetDir) {
+	def trgt = new File (targetDir)
+	if (!trgt.isDirectory()) {
+		trgt.mkdirs()
+	}
+	//At some point could add excludes/includes as "include", "exclude{}" pieces 
+//	copy {
+//		from (srcDir) {
+//			exclude 'buildenvoy_temp'
+//			exclude 'MIL_Common_Assets'
+//			exclude 'upload-tmp'
+//		}
+//		into targetDir
+//	}
+	def trgtPath = FileSystems.getDefault().getPath(targetDir)
+	def target = FileSystems.getDefault().getPath(targetDir)
+	def source = FileSystems.getDefault().getPath(srcDir)
+	Files.walkFileTree(source, new SimpleFileVisitor<Path>() {
+			def IGNORE_DIRECTORY = 'upload-tmp'
+			public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
+				Path targetdir = target.resolve(source.relativize(dir))
+				def skip = dir.toString().contains(IGNORE_DIRECTORY) || dir.toString().contains('buildenvoy_temp') || dir.toString().contains('MIL_Common_Assets')
+				try {
+					if (!skip) {
+						Files.copy(dir, targetdir)
+					}
+				} catch (FileAlreadyExistsException e) {
+					 if (!skip && !Files.isDirectory(targetdir)) { throw e }
+				}
+				return FileVisitResult.CONTINUE
+			}
+
+			public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+				def relative = source.relativize(file)
+				def todir = target.resolve(relative)
+				if (!file.toString().contains(IGNORE_DIRECTORY) && !file.toString().contains('buildenvoy_temp') && !file.toString().contains('MIL_Common_Assets')) {
+					if (Files.isSymbolicLink(file)) {
+						def seed = Files.readSymbolicLink(file)
+						Files.createSymbolicLink(todir, seed)
+					} else {
+						Files.copy(file, todir)
+					}
+				}
+				return FileVisitResult.CONTINUE
+			}
+		})
+}
+
+/**
+ * Copies a directory recursively.
+ *
+ * @param srcDir The directory we want to copy recursively
+ * @param targetDir The target location for the copy.
+ */
+void copyDirectory(srcDir, targetDir, excludeDir='') {
+	def trgt = new File (targetDir)
+	if (!trgt.isDirectory()) {
+		trgt.mkdirs()
+	}
+	//At some point could add excludes/includes as "include", "exclude{}" pieces 
+//	copy {
+//		from (srcDir) {
+//			exclude 'buildenvoy_temp'
+//			exclude 'MIL_Common_Assets'
+//		}
+//		into targetDir
+//		exclude excludeDir
+//	}
+	def trgtPath = FileSystems.getDefault().getPath(targetDir)
+	def target = FileSystems.getDefault().getPath(targetDir)
+	def source = FileSystems.getDefault().getPath(srcDir)
+	Files.walkFileTree(source, new SimpleFileVisitor<Path>() {
+			def IGNORE_DIRECTORY = 'upload-tmp'
+			public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
+				Path targetdir = target.resolve(source.relativize(dir))
+				def skip = dir.toString().contains(IGNORE_DIRECTORY) || dir.toString().contains('buildenvoy_temp') || dir.toString().contains('MIL_Common_Assets')
+				try {
+					if (!skip) {
+						Files.copy(dir, targetdir)
+					}
+				} catch (FileAlreadyExistsException e) {
+					 if (!skip && !Files.isDirectory(targetdir)) { throw e }
+				}
+				return FileVisitResult.CONTINUE
+			}
+
+			public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+				def relative = source.relativize(file)
+				def todir = target.resolve(relative)
+				if (!file.toString().contains(IGNORE_DIRECTORY) && !file.toString().contains('buildenvoy_temp') && !file.toString().contains('MIL_Common_Assets')) {
+					if (Files.isSymbolicLink(file)) {
+						def seed = Files.readSymbolicLink(file)
+						Files.createSymbolicLink(todir, seed)
+					} else {
+						Files.copy(file, todir)
+					}
+				}
+				return FileVisitResult.CONTINUE
+			}
+		})
+}
+
+/**
+ * Takes a string that possibly has spaces in it, and replaces all the spaces it finds with dashes (-)
+ * @param The string that potentially contains spaces.
+ * @return The string with all spaces replaced by dashes.
+ */
+String sanitizeString(string) {
+	return string.replaceAll(' ', '-').replaceAll('-','')
+}
+
+/**
+ * Finds a task by name in the given project. This is helpful when we want to wrap the execution of gradle/ant tasks
+ * in a try/catch block, OR if the task name has a special characther (usually - or _).  Tasks with special characters
+ * in the name cannot be run by name and thus have to be found and the task object can have its execute function called.
+ * 
+ * @param project The gradle project to search
+ * @param name The name of the task to search for
+ * @return The Task object that has the given name, or null if no task object with that name was found.
+ */
+Task getTaskByName(project, name) {
+	def tasks = project.getTasksByName(name, true)
+	def theTask = null
+	for (def task : tasks) {
+		if (name.equals(task.getName())) {
+			theTask = task
+			break
+		}
+	}
+	return theTask
+}
+
+/**
+ * Uses the ant move functionality in order to move files from one location to another.
+ * Example:
+ * 
+ * moveFiles('output', 'binaries', '*.apk', '')
+ * 
+ * This will move all the *.apk files found in the output directory into the binaries diretory at the same level and 
+ * not exclude any files found that match the *.apk regular expression
+ * 
+ * @param srcDir The directory to move the files from
+ * @param trgtDir The directory to move files into
+ * @param includeFiles Regex representing the set of files to include
+ * @param excludeFiles the set of files to exclude
+ */
+void moveFiles(srcDir, trgtDir, includeFiles, excludeFiles) {
+	ant.move(todir: trgtDir, verbose: 'true') {
+		fileset(dir: srcDir) {
+			include(name: includeFiles)
+			exclude(name: excludeFiles)
+		}
+	}
+}
+
+/**
+ * Takes a String object and returns true if the object is null or equal to the empty string, a common check.
+ * 
+ * @param String to check
+ * @return True if string is empty (equals the empty string) or null
+ */
+boolean isEmptyOrNull(variable) {
+	return variable == null || "".equals(variable)
+}
+
+/**
+ * Looks within a string for another string (the regex) and if found, it will return the uknown portion of the string.
+ * This code is primarily used to find settings embedded in strings.  For example if you have settings like below embedded
+ * in your string somewhere:
+ *
+ * <start-string>
+ * some text...
+ * android:versionCode="5"
+ * more text...
+ * android:versionName="5.0"
+ * and a bunch more text
+ * <end-string>
+ * 
+ * using the following regular expressions:
+ *
+ * android:versionCode=".*"    <--- basically we'll return the regex part here...whatever was found for the '.*'
+ * 
+ * will return 
+ * 
+ * 5
+ * 
+ * and searching for the string 
+ * 
+ * android:versionName=".*"
+ *
+ * which will return
+ * 
+ * 5.0
+ *
+ * If the value on the right hand side of the = is surrounded in double quotes, an attempt to remove hte double 
+ * quotes is made.
+ *
+ * @param fileAsString The file as a string to search
+ * @param regex The regular expression to search for within the string.
+ * @return value of the given regular expression uknown string which was found.
+ */
+String getSetting(String fileAsString, String regex) {
+	def value = ''
+	if (fileAsString != null && regex != null) {
+		def nameValuePair = fileAsString.find(regex)
+		if (nameValuePair != null ) {
+			def token = '='
+			if (!nameValuePair.contains(token)) {
+				token = ' '
+			}
+			def parts = nameValuePair.split(token)
+			if (parts.size() > 1) {
+				def val = parts[1]
+				if (val != null && !"".equals(val)) {
+					val = val.trim()
+					if (val[0]== '"' && val[val.length()-1] == '"') {
+						//lets drop the leading and trailing double quotes
+						value = val.substring(1,val.length()-1)
+					} else {
+						value = val
+					}
+				}
+			} else {
+				value = parts[0]
+			}
+		}
+	}
+	
+	return value
+}
+
+/**
+ * This function will pretty much find all the files or directories that are a child of the given directory. By default
+ * the function will only look for children which are directories. If lookForFile is set to true, then the function
+ * will only look for children that are files.  This function will never look for both file and directory children, only
+ * one or the other.
+ *
+ * @param dir The directory whose children we want to find.
+ * @param lookForFile By default false, which means will only look for children which are directories. If true will only
+ * look for children which are files.
+ * @return String containing comma separated list of allthe children found of requested type. Or empty string if no children
+ * of that type were found.
+ */
+String findChildDirs(dir, lookForFile= false) {
+	def dirs = ""
+	if (dir != null) {
+		def children = new File(dir).list()
+		if(children != null) {
+			for (def child : children) {
+				def childDir = new File(dir + "/" + child)
+				if (!lookForFile && childDir.isDirectory()) {
+					if (dirs.equals('')) {
+						dirs += childDir.getAbsolutePath()
+					} else {
+						dirs += "," + childDir.getAbsolutePath()
+					}
+				} else if (lookForFile && childDir.isFile()) {
+					if (dirs.equals('')) {
+						dirs += childDir.getAbsolutePath()
+					} else {
+						dirs += "," + childDir.getAbsolutePath()
+					}
+				}
+			}
+		}
+	}
+	
+	return dirs
+}
+
+/**
+ * Will take a log file and create an out put file using uuencode that can be sent as an attachment via email. This
+ * will also convert the ocunit output from the xcode log into junit style for easier consumption.
+ * 
+ * @param logfile The build log file we want to encode to send as an attachment 
+ * @param outdir The output directory where the encoded email attachment will exist.
+ * @param outfile The name of the encoded output file.
+ */
+void encodeFileForEmail(logfile, outdir, outfile, test=false) {
+	def outFile = new File(outdir)
+	if (!outFile.isDirectory()) {
+		outFile.mkdirs()
+	}
+	def encoded = outdir + "/" + outfile
+	def encodeForEmail = ['uuencode','-o',encoded,logfile, outfile]
+	runCmd(encodeForEmail)
+	
+	if (test) {
+		def ocunit2junit = 'ocunit2junit'
+		
+		def convertToJunitCmd = ['/bin/sh','-c','cat "' + logfile + '"| ruby "' + ocunit2junit + '"']
+		runCmd(convertToJunitCmd)
+		println "moving files from test-reports to ${outdir}"
+		moveFiles('test-reports', outdir, '*.xml', '')
+	}
+}
+
+
+/**
+ * Searches the given directory for a file (or directory) with the given extension. The codes doesn't actually look
+ * for a true extension, rather it takes the file (or directory) name and does an "endsWith" so hopefully its slighly
+ * more powerful than a search for true extensions.
+ * 
+ * @param dir The directory to search
+ * @param extension The extension to look for in a file name.
+ * @param recurse Whether we should recurse into child directories when looking for files.  Default is true.
+ * @return List of all files that exist under the provided directory, whose names end with the given extension
+ */
+ArrayList<String> findFilesWithExtension(dir, extension, recurse=true) {
+	def list = getAllFiles(dir, null, extension, recurse)
+	return list
+}
+
+/*
+ * 
+ */
+ArrayList<String> findFilesContainsString(dir, containsString, recurse=true) {
+	def list = getAllFiles(dir, containsString, null, recurse)
+	return list
+}
+
+ArrayList<String> findDirsThatContainFilesWithExtension(dir, extension, recurse=true) {
+	def list = getAllFiles(dir, null, extension, recurse)
+	def myset = new HashSet<String>()
+	for (def f in list) {
+		def success = myset.add(f.getParent())
+		if (success) {
+	//		println "adding parent: " + f.getParent()
+		}
+	}
+	return new ArrayList<String> (myset)
+}
+
+/*
+ * 
+ */
+ArrayList<String> getAllFiles(dir, contains, extension, recurse=true) {
+	def list = []
+	def searchdir = new File(dir)
+	if (searchdir.isDirectory()) {
+		if (!recurse) {
+			searchdir.eachFile  { file ->
+				if (contains != null && extension ==null) {
+					if (file.getAbsolutePath().contains(contains)) {
+						list << file
+					}
+				} else if (contains ==null && extension != null) {
+					if (file.getAbsolutePath().endsWith(extension)) {
+						list << file
+					}
+				} else if (contains != null && extension != null) {
+					if (file.getAbsolutePath().contains(contains) && file.getAbsolutePath().endsWith(extension)) {
+						list << file
+					}
+				} else {
+					list << file
+				}
+			}
+		} else {
+			searchdir.eachFileRecurse  { file ->
+				if (contains != null && extension ==null) {
+					if (file.getAbsolutePath().contains(contains)) {
+						list << file
+					}
+				} else if (contains ==null && extension != null) {
+					if (file.getAbsolutePath().endsWith(extension)) {
+						list << file
+					}
+				} else if (contains != null && extension != null) {
+					if (file.getAbsolutePath().contains(contains) && file.getAbsolutePath().endsWith(extension)) {
+						list << file
+					}
+				} else {
+					list << file
+				}
+			}
+		}
+	}
+
+	return list
+}
+
+/**
+ * Searches the given directory for a file (or directory) with the given extension. The codes doesn't actually look
+ * for a true extension, rather it takes the file (or directory) name and does an "endsWith" so hopefully its slighly
+ * more powerful than a search for true extensions.
+ * 
+ * @param project The project where the ant task should live
+ * @param name The name of the Ant task to run
+ * @param properties Map of Ant properties to set before executing the ant task with the given name
+ */
+void runAntTask(project, name, Map<String, String> properties) {
+	def taskNameToRun = getTaskByName(project, name)
+	for (def key : properties.keySet()) {
+		ant.properties[key] = properties.get(key)
+	}
+	for (def dep : taskNameToRun.getTaskDependencies().getDependencies()) {
+		dep.execute()
+	}
+	taskNameToRun.executeAntTarget()
+}
+
+/**
+ * Runs a gradle task by name...dependencies and all.  Required for logic where you need to run a task inline
+ * instead of as a dependency.  Allows for finer grain control.
+ */
+void runTask(project, name) {
+	def taskNameToRun = getTaskByName(project, name)
+	for (def dep : taskNameToRun.getTaskDependencies().getDependencies()) {
+		dep.execute()
+	}
+	taskNameToRun.execute()
+}
+
+/**
+ * Returns fully qualified path to the current working directory.
+ */
+String getCurrentAbsolutePath() {
+	return new File(".").getAbsolutePath()
+}
+
+boolean isHybrid() {
+	def ishybrid = false
+	def hybridDir = new File("CordovaLib")
+	if (hybridDir.isDirectory()) {
+		ishybrid = true
+	}
+	return ishybrid;
+}
+
+void prepCordova() {
+	/*
+	 * if we're a cordova project, we might be using scss...if we are, there should be a scss directory under the root
+	 * www directory.
+	 */
+	def scss = new File("../../www/scss")
+	if (scss.isDirectory()) {
+		/*
+		 * Lets prep the scss directory so that scss files are in the parent www directory, which then gets copied into
+		 * the native app directory using the cordova prepare which comes afterwards.
+		 */
+		runCmd(['sass','-C','--style=compressed','--sourcemap=none','../../www/scss/main.scss','../../www/css/style.css'])
+	}
+	try {
+		runCmd(['cordova','prepare', '-d'])
+	} catch(Exception ex) {
+		//This only works if we're doing a cordova hybrid project (outside worklight).
+	}
+	
+}
+
+/**************************************************************************************************************
+ **************************************************************************************************************
+ *****************************                                                *********************************
+ *****************************              iOS Helper functions              *********************************
+ *****************************                                                *********************************
+ **************************************************************************************************************
+ **************************************************************************************************************/
+
+/**
+ * 
+ */
+String getMobileFirstProvProfile() {
+	def allProfiles = getAllFiles("../..", 'IBM_Mobile_First', ".mobileprovision", true)
+	def theProfile = ''
+	if (allProfiles.size() == 1) {
+		theProfile = allProfiles.get(0)
+	} else {
+		for (def prof: allProfiles) {
+			println "processing prof: ${prof}"
+			if (prof.getAbsolutePath().contains("_CI")) {
+				theProfile = prof
+				break
+			}
+		}
+	}
+	return theProfile
+}
+
+/**
+ * 
+ */
+String getCodeCoverageDir(String projectName, extension, testDir=false) {
+	def searchRoot = System.getenv("HOME") + "/Library/Developer/Xcode/DerivedData"
+	def listDirs = findDirsThatContainFilesWithExtension(searchRoot, extension, true)//findFilesContainsString(searchRoot, projectName, true)
+	def list = []
+	//println "listDirs: ${listDirs}"
+	listDirs.each() { dir ->
+		//Filter out anything that doesn't pertain to my current project
+		if (dir.contains(projectName)) {
+			//Then filter out anything that pertains to test, or anything that doesn't pertain to test target
+			if (testDir && dir.contains(projectName + "Test")) {
+				list << dir
+			} else if (!testDir && !dir.contains(projectName + "Test")) {
+				list << dir
+			}
+		}
+	}
+
+	def latest = ''
+	for (def dirStr in list) {
+		if (''.equals(latest)) {
+			latest = dirStr
+			continue
+		}
+		def timeStmp = Files.getLastModifiedTime(FileSystems.getDefault().getPath(dirStr))
+		def latestTimeStmp = Files.getLastModifiedTime(FileSystems.getDefault().getPath(latest))
+//		println "comparing dirstr timestamp: ${timeStmp} to latestTmstp: ${latestTimeStmp}"
+		if (timeStmp > latestTimeStmp) {
+			latest = dirStr
+//			println "setting ${dirStr} to latest"
+		}
+	}
+
+//	println "extension: ${extension}, latest: ${latest} "
+	return latest
+}
+
+/**
+ * Finds a .xcworkspace directory in the parent path.
+ */
+String getWorkspaceDir(parent) {
+	def list = findFilesWithExtension(parent, '.xcworkspace', false)
+	def xcodeworkspace = ''
+	if (list != null && list.size() > 0) {
+		xcodeworkspace = list.get(0)
+	}
+	println "returning: ${xcodeworkspace}"
+	return xcodeworkspace
+}
+
+/**
+ * Finds a shared .xcscheme file that can be used to build against.
+ */
+String getScheme(parent) {
+	def list = findFilesWithExtension(parent, '.xcscheme', true)
+	def scheme = ''
+	if (list != null) {
+		for (def sch : list) {
+			//This is a shared scheme, we can actually use this for building....
+			if (sch.getAbsolutePath().contains('xcshareddata')) {
+				def end = sch.getName().indexOf('.xcscheme')
+				scheme = sch.getName().substring(0, end)
+				break
+			}
+		}
+	}
+	return scheme
+}
+
+/**
+ * 
+ */
+void updateProjectSigner(String directory) {
+	def xcodeproj = findFilesWithExtension(new File(directory).getAbsolutePath(), '.xcodeproj', false)
+	xcodeproj = xcodeproj.get(0).getAbsolutePath()
+	def pbxproj = findFilesWithExtension(xcodeproj, '.pbxproj', false).get(0).getAbsolutePath()
+	def lines = loadTextFile(pbxproj, true)
+	def newFile = new ArrayList<String>()
+	for (def i = 0 ; i < lines.size() ; ++i) {
+		def line = lines[i]
+		if (line.contains('CODE_SIGN_IDEN')) {
+			def parts = line.split("=")
+			def newLine = parts[0]
+			if (line.contains('sdk=iphoneos')) {
+				newLine += '=' + parts[1] 
+			}
+			newLine += '= "iPhone Distribution: International Business Machines";'
+			line = newLine
+		}
+		newFile.add(line)
+	}
+	writeFile(pbxproj, newFile)
+}
+
+/**
+ * Looks for a file with an extension of .plist and has the string "Info" somewhere in the name
+ * inside of the <project-dir>/<product-name> directory.  This is used during the compliation of
+ * iOS apps and we should be able to auto-discover it.
+ *
+ * @param parsedArgs The map of parameter files read from the command line
+ * @param projectName The name of the ios project we are looking at.
+ * @return The name of the *Info.plist file we find for this project.
+ */
+String findPlistInfoFile(projectDirectory, projectName, getFullPath=false) {
+//	def proj = parsedArgs.get('Ppd')
+	def dirFilter = new FileFilter() {
+		public boolean accept(File pathname) {
+			return pathname.isDirectory()
+		}
+	}
+	def filter = new FilenameFilter() {
+		public boolean accept(File dir, String name) {
+			return name.endsWith('.plist')
+		}
+	}
+	
+	def projDir = new File(projectDirectory)
+	//def dirsToSearch = projDir.listFiles(dirFilter)
+	def dirsToSearch = findFilesWithExtension(projectDirectory, '.plist', true)
+//	println "dirsToSearch: ${dirsToSearch}"
+	
+	def infoChild = ''
+	
+	for (def child : dirsToSearch) {
+		if (child.getName().contains('Info') && !child.getAbsolutePath().contains("Frameworks")
+				 && !child.getAbsolutePath().contains("Tests") && !child.getAbsolutePath().contains("External") 
+				 && !child.getAbsolutePath().contains("Pods")) {
+			infoChild = child.getName()//child
+			if (getFullPath) {
+				infoChild = child.getAbsolutePath()//dirToSearch.getAbsolutePath() + "/${child}"
+			}
+			break
+		}
+	}
+	
+	return infoChild
+}
+
+/**
+ * Packages by the given name.  This function actually produces two files, a signed ipa file
+ * and an unsigned ipa file.  This is mainly because currently we only have an internal "developer" signing profile
+ * that we cannot use to publish, but that we use to send testable apps to the team.  The unsigned can then be sent
+ * to the people who can upload the file so they can be signed with the correct signing profiles.
+ *
+ * The ipa files are produced into an 'ipa' directory directly under the projects build directory (project['buildDir'])
+ * @param appname The name of the application to package and sign.  For example:
+ *
+ * appname = 'Ei!'
+ *
+ * will look for the output directory "Ei!.app" and package that into 'Ei!.ipa'
+ * 
+ * @param appname The name of the application being built.  For example "Ei!", which in turn will create the directory
+ * "Ei!.app" when compiled, and when this function runs, will produce "Ei!.ipa".  
+ * @param sdk The sdk to use when building the ipa file.  Example: 'iphoneos'
+ */
+void packageiOSApp(appname, sdk) {
+	//Now lets package this application
+	def outDir = "/Release-iphoneos/"
+	def ipaRoot = ROOT_BUILD_DIR.getAbsolutePath() + "/binaries/"
+	def ipaRootDir = new File(ipaRoot)
+	if (!ipaRootDir.isDirectory()) {
+		ipaRootDir.mkdirs()
+	}
+	
+	def src = project['buildDir'].getAbsolutePath() + outDir + appname + '.app'
+	def ipaTrgt = ipaRoot + appname + ".ipa"
+	
+	def cmdunsign = ['xcrun','-sdk', sdk ,'PackageApplication' ,'-v' ,src, "-o" , ipaTrgt]
+
+	def output = runCmd(cmdunsign)
+	println output
+
+	println ""
+	println "************************************************************"
+	println "Created signed .ipa file: " + ipaTrgt
+	println "************************************************************"
+}
+
+/**************************************************************************************************************
+ **************************************************************************************************************
+ *****************************                                                *********************************
+ *****************************            Android Helper Functions            *********************************
+ *****************************                                                *********************************
+ **************************************************************************************************************
+ **************************************************************************************************************/
+
+void replaceAndroidManifestVersion(version) {
+	def contents = new File( 'AndroidManifest.xml' ).getText( 'UTF-8' )
+	
+	contents = contents.replaceAll( Pattern.compile('android:versionCode=".*"'), 'android:versionCode="'+ version +'"' )
+	contents = contents.replaceAll( Pattern.compile('android:versionName=".*"'), 'android:versionName="'+ version +'.0"' )
+	
+	new File( 'AndroidManifest.xml' ).write( contents, 'UTF-8' )
+}
+
+/**
+ * Will take a host and port number and telnet to that port and run the command 'avd name' on that telnet connection
+ * and return the value from that command run.  This assumes that you are connecting to an android emulator
+ * which understands the "avd name" command.
+ * 
+ * @param host The host the emulator is running on (should usually be 'localhost')
+ * @param port The port number of the running emulator
+ * @return The name AVD template from which this emulator was created.
+ */
+String readAndroidNameFromEmulator(host, port) {
+	telnet = new TelnetClient()
+	telnet.connect( host, port )
+	def reader = telnet.inputStream.newReader()
+	writer = new PrintWriter(new OutputStreamWriter(telnet.outputStream),true)
+	//read until we get the first OK
+	readUntil( reader, "OK" )
+	//then send the avd name so it can gives us its name
+	writer.println("avd name")
+	//and then it ends that request with an OK, so lets read till there.  
+	avdName = readUntil( reader, "OK" , true)
+	//now we'll disconnect and trim any extra whitespace and return everythign the telnet session gave us.
+	telnet.disconnect()
+	avdName = avdName.trim()
+	return avdName
+}
+
+/**
+ * Given a "pretty" name of an AVD, it will look at running emulators to figure out if any of the running emulators
+ * were created from the AVD defition with that name and return the port number of a running instance of the emulator
+ * created from that definition.
+ * 
+ * Will call the command 'adb devices' and loop over the output, which will loop like the following:
+ * 
+ * List of devices attached
+ * emulator-5555	device
+ * emulator-5556	device
+ * 
+ * As it loops through the output, it will strip the port number from the 'emulator-<port>' portion of the output
+ * and telnet to this emulator port to figure out what that emulator instance "pretty" name is.  For instance when
+ * you create an emulator configuration, you can name them things like "nexus5' or 'nexus-10'.  WHen you start an
+ * instance of this definition, you can only see whats running by 'adb devices' but that doesn't actually tell you
+ * what definition this running emulator came from, so you have to telnet to the running emulator to figure out what
+ * definition it was created from.
+ * 
+ * @param name The 'pretty' name of the AVD definition that we are looking to see if there is a running instance of. If
+ * 				empty, will return all the ports currently being used.
+ * @return An array of ports found.  Could be sized 0 or more depending on what is found running (or not found).
+ */
+String[] findRunningAVDPort(name) {
+	/*
+	 * We'll start by restarting the adb server so we get a clean list of running devices.  If we don't do this, then we
+	 * more than likely won't get the right list of running devices
+	 */
+	runCmd([ANDROID_HOME+ "/platform-tools/adb" , 'kill-server'])
+	sleep(5000)
+	runCmd([ANDROID_HOME+ "/platform-tools/adb" , 'start-server'])
+	def cmd = [ANDROID_HOME + '/platform-tools/adb','devices']
+	def out = runCmd(cmd)
+	def devices = out.split(System.getProperty("line.separator"))
+	def idx = 0
+	def foundEmulators = []
+	for (int i = 0 ; i < devices.size() ; ++i) {
+		//Theres other gibberish in the output, lets filter only the lines we want
+		if (devices[i].startsWith('emulator-')) {
+			def dev = devices[i].split("\t")
+			def port = Integer.parseInt(dev[0].split('-')[1])
+			def avdname = readAndroidNameFromEmulator('localhost', port)
+			//if name is null or empty string we're just going to return all ports we get
+			if (name == null || "".equals(name) || avdname.equals(name)) {
+				foundEmulators[idx++] = port
+			}
+		}
+	}
+	return foundEmulators
+}
+
+/**
+ * Runs the 'android list avd' command to see what AVD's have been defined and returns the list found.
+ * 
+ * @return ArrayList representing all the avd's that currently exist.
+ */
+ArrayList<String> getExistingDefinedAVDs() {
+	def cmd = [ANDROID_HOME + '/tools/android', 'list', 'avd']
+	def out = runCmd(cmd)
+	def devices = out.split(System.getProperty("line.separator"))
+	def foundDevices = new ArrayList(devices.length)
+	for (def i = 0 ; i < devices.length ; ++i) {
+		def device = devices[i]
+		if (device == null) { continue }
+		device = device.trim()
+		if (device.startsWith('Name:')) {
+			def parts = device.split(' ', 2)
+			foundDevices.add(parts[1])
+		}
+	}
+	return foundDevices
+}
+
+/**
+ * Will get the list of currently existing AVD's (using getExistingDefinedAVDs()) and delete all of these existing AVD's.  This
+ * is done in order to ensure that the definitions used when starting this test bucket are exactly what is defined in
+ * the emulators.xml file.
+ */
+void tearDownEmulators() {
+	def devices = getExistingDefinedAVDs()
+	for (def i = 0 ; i < devices.size() ; ++i ) {
+		def cmd = [ANDROID_HOME + '/tools/android', 'delete', 'avd', '-n', devices.get(i)]
+		def out = runCmd(cmd)
+	}
+}
+
+/**
+ * Takes an xml node as a parameter (Ideally the node should be of type <emulator>) and search through all of the
+ * children of this xml node and find the <startoption> children and converts those <startoption> children into
+ * EmulatorOption instances and then puts them into a list which is returned.  This list are all the parameters that
+ * should be used when starting the given Android Emulator
+ * 
+ * @param node The node representing the android emlator definition.  Ideally should hve some set of <startoption> nodes
+ * 				as children...since things like gpu acceleration are not set by default.
+ * @return An ArrayList of EmulatorOption objects that represent the start options to be used when starting an instance
+ * 				of this android device.
+ */
+ArrayList<EmulatorOption> getEmulatorOptions(node) {
+	def myOptions = new ArrayList<EmulatorOption>()
+	if (node != null) {
+		def children = node.getChildNodes()
+		if (children != null) {
+			for(def i = 0 ; i < children.getLength() ; ++i) {
+				def childNode = children.item(i)
+				//Lets only worry about the <startoption> child nodes since thats what we're looking for.
+				if (childNode != null && childNode.getNodeType() == Node.ELEMENT_NODE && 'startoption'.equals(childNode.getNodeName())) {
+					def attrs = childNode.getAttributes()
+					def option = new EmulatorOption(getNodeValue(attrs.getNamedItem('name')), getNodeValue(attrs.getNamedItem('value'), true))
+					myOptions.add(option)
+				}
+			}
+		}
+	}
+
+	return myOptions
+}
+
+/**
+ * Reads an xml file and returns an ArrayList of AndroidEmulator objects which represent android virtual devices that
+ * need to be created, and the start options for each of those virtual devices.  The filename read is taken from a
+ * project property called EMULATOR_FILE.  This property is set in the parent test-(android|ios).gradle file as this
+ * is a value which can be passed in on te command line.
+ * 
+ * This function also sets a project property, TOTAL_EMULATORS_READ, that represents the total number of emulators
+ * read from the file.
+ * 
+ * The file read needs to have a structure as follows:
+ * 
+ * <emulators>
+ *   <emulator attr1='xx' attr2='yy' ...>
+ *     <startoption name='zz' value='11' />
+ *     ....
+ *     <startoption name='zz' value='11' />
+ *   </emulator>
+ *   .
+ *   .
+ *   .
+ *   <emulator attr1='xx' attr2='yy' ...>
+ *     <startoption name='zz' value='11' />
+ *     ....
+ *     <startoption name='zz' value='11' />
+ *   </emulator>
+ * </emulator>
+ * 
+ * @return An ArrayList of AndroidEmulator objects representing android virtual devices and their start options.
+ */
+ArrayList<AndroidEmulator> getEmulatorsFromFile() {
+	if (project.hasProperty("XML_DEFINED_AVDS")) {
+		return XML_DEFINED_AVDS
+	} else {
+		try {
+			def doc = loadXmlDocument(EMULATOR_FILE)
+			
+			def nodeList = doc.getElementsByTagName("emulator")
+			def myEmulators = new ArrayList<AndroidEmulator>()
+			for (def i = 0; i < nodeList.getLength(); ++i) {
+				def node = nodeList.item(i)
+		
+				if (node.getNodeType() == Node.ELEMENT_NODE) {
+					def attrs = node.getAttributes()
+					def emulator = new AndroidEmulator()
+					emulator.setName(getNodeValue(attrs.getNamedItem('name')))
+					emulator.setTarget(getNodeValue(attrs.getNamedItem('target')))
+					emulator.setAbi(getNodeValue(attrs.getNamedItem('abi')))
+					emulator.setDevice(getNodeValue(attrs.getNamedItem('device')))
+					emulator.setSkin(getNodeValue(attrs.getNamedItem('skin')))
+					emulator.setSdcard(getNodeValue(attrs.getNamedItem('sdcard')))
+					emulator.setForce(getNodeValue(attrs.getNamedItem('force')))
+					emulator.setOptions(getEmulatorOptions(node))
+					emulator.setHeap(getNodeValue(attrs.getNamedItem('heap')))
+					emulator.setRam(getNodeValue(attrs.getNamedItem('ram')))
+					myEmulators.add(emulator)
+				}
+			}
+			project.ext.set("XML_DEFINED_AVDS", myEmulators)
+			project.ext.set("TOTAL_EMULATORS_READ", myEmulators.size())
+			return myEmulators
+		} catch (Exception e) {
+			println e.getMessage()
+			e.printStackTrace();
+			throw new StopExecutionException(e)
+		}
+	}
+}
+
+/**
+ * Takes an AndroidEmulator object and generates the proper android command needed to create this virtual device
+ * on the command line.  
+ * 
+ * @param androidEmulator The object from which all the Android virtual device properties will be taken
+ * @return String array representing the full command needed to create this Android virtual device
+ */
+String[] getCreateEmulatorCMD(androidEmulator) {
+	def list = new ArrayList<String>()
+	list.add(ANDROID_HOME + '/tools/android')
+	list.add('create')
+	list.add('avd')
+	//Up to now, only name and target are required, you don't actually need the rest of the options.
+	def name = androidEmulator.getName()
+	if(name == null || "".equals(name)) {
+		def errorMsg = "Emulator name is a required parameter. Please specify the 'name' attribute for the emulator in the xml file"
+		println errorMsg
+		throw new StopExecutionException(new Exception(errorMsg))
+	} else {
+		list.add('--name')
+		list.add(name)
+	}
+	def target = androidEmulator.getTarget()
+	if(target == null || "".equals(target)) {
+		def errorMsg = "Emulator target is a required parameter. Please specify the 'target' attribute for the emulator in the xml file"
+		println errorMsg
+		throw new StopExecutionException(new Exception(errorMsg))
+	} else {
+		list.add('--target')
+		list.add(target)
+	}
+	if (androidEmulator.getAbi() != null && !"".equals(androidEmulator.getAbi())) {
+		list.add('--abi')
+		list.add(androidEmulator.getAbi())
+	}
+	if (androidEmulator.getDevice() != null && !"".equals(androidEmulator.getDevice())) {
+		list.add('--device')
+		list.add(androidEmulator.getDevice())
+	}
+	if (androidEmulator.getSkin() != null && !"".equals(androidEmulator.getSkin())) {
+		list.add('--skin')
+		list.add(androidEmulator.getSkin())
+	}
+	if (androidEmulator.getSdcard() != null && !"".equals(androidEmulator.getSdcard())) {
+		list.add("--sdcard") 
+		list.add(androidEmulator.getSdcard())
+	}
+	if (androidEmulator.getForce() != null && !"".equals(androidEmulator.getForce()) && androidEmulator.getForce().equalsIgnoreCase('true')) {
+		list.add("--force")
+		list.add('true')
+	}
+	
+	def cmd = []
+	for (def i = 0 ; i < list.size() ; ++i) {
+		cmd[i] = list.get(i)
+	}
+	return cmd
+}
+
+/**
+ * Takes an AndroidEmulator object and creates the full command line command required to start this Android
+ * virtual device.  
+ * 
+ * @param androidEmulator The android virtual device definition from which to pull the start options from.
+ * @return A String array representing the full start command for this android virtual device.
+ */
+String[] getStartEmulatorCMD(androidEmulator) {
+	def list = new ArrayList<String>()
+	list.add(ANDROID_HOME + '/tools/emulator')
+	//Up to now, only name is required, you don't actually any more options.
+	def name = androidEmulator.getName()
+	if(name == null || "".equals(name)) {
+		def errorMsg = "Emulator name is a required parameter. Please specify the 'name' attribute for the emulator in the xml file"
+		println errorMsg
+		throw new StopExecutionException(new Exception(errorMsg))
+	} else {
+		list.add('-avd')
+		list.add(name)
+	}
+
+	def options = androidEmulator.getOptions()
+	def isGpuSet = false
+	for (def i = 0 ; i < options.size() ; ++i) {
+		def opName = options.get(i).getName()
+		def opValue = options.get(i).getValue()
+		if (opName != null && opValue != null && !"".equals(opName)) {
+			if (opName.equalsIgnoreCase("-gpu")) {
+				isGpuSet = true
+				//always force it to be on
+				if (!opValue.equalsIgnoreCase('on')) {
+					opValue = 'on'
+				}
+			} 
+			
+			list.add(opName)
+			//Only if the value is non-empty should we add it. Otherwise assume its a parameter with no values
+			if (!"".equals(opValue)) {
+				list.add(opValue)
+			}
+		}
+	}
+	if (!isGpuSet) {
+		//Not set, lets set it.
+		list.add('-gpu')
+		list.add('on')
+	}
+	
+	def cmd = []
+	for (def i = 0 ; i < list.size() ; ++i) {
+		cmd[i] = list.get(i)
+	}
+	return cmd
+}
+
+/**
+ * This method discovers all the running Andriod virtual devices, and stops them. This is pretty much a clean up
+ * function for when we no longer need the virtual devices to be running because, lets say, all test cases have been 
+ * run.
+ */
+void stopRunningEmulators() {
+	def findEmus = ['/bin/sh','-c', "ps -ef | grep emulator "]
+	def output = runCmd(findEmus)
+	def lines = output.split(System.getProperty('line.separator'))
+	for (def i = 0 ; i < lines.length ; ++ i) {
+		if (!lines[i].contains('grep')) {
+			def parts = lines[i].split('\\s')
+			def killcmd = ['kill', parts[3]]
+			runCmd(killcmd)
+		}
+	}
+}
+
+/**
+ * This function organizes the flow of other functions.  It calls a function to parse the emulator definitions from the
+ * xml file and then generates the command required to create the emulator from the definition, then actually runs that
+ * generated command to create the android virtual device.
+ */
+void createEmulators() {
+	def emulators = getEmulatorsFromFile()
+	for (def i = 0 ; i < emulators.size() ; ++i ) { 
+		def emu = emulators.get(i)
+		def cmd = getCreateEmulatorCMD(emu)
+		def output = runCmd(cmd)
+		updateEmulatorMemory(emu)
+	}
+}
+
+/**
+ * This method will open up the config.ini for the generated emulator and update it so that it contains some values for
+ * RAM and HEAP so that the emulator does not act erratic.  It looks at the emulator definition for the heap and ram
+ * sizes to use. If not given, will default RAM size to 2048 and heap size to 64
+ * 
+ * @param emulatorDefinition An AndroidEmulator object representing the emulator to create
+ */
+void updateEmulatorMemory(emulatorDefinition) {
+	def file = System.getenv("HOME") + '/.android/avd/' + emulatorDefinition.getName() + '.avd/config.ini'
+	def emuIni = loadPropertiesFile(file, false)
+	def heapSize = emulatorDefinition.getHeap()
+	def ramSize = emulatorDefinition.getRam()
+	if (isEmptyOrNull(ramSize)) { ramSize = '2048' }
+	if (isEmptyOrNull(heapSize)) { heapSize = '64' }
+	println ("Updating emulator defintion with Heap Size '" + heapSize + "' and RAM size '" + ramSize + "'")
+	emuIni.put('vm.heapSize', heapSize)
+	emuIni.put('hw.ramSize', ramSize)
+	try {
+		def buff = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), CHARSET))
+		emuIni.store(buff, '')
+	} catch(Exception ex) {
+		println "issue: " + ex.getMessage()
+		ant.fail(ex.getLocalizedMessage())
+	}
+}
+
+/**
+ * This method simply sleeps for some specified amount of time based on the number of emulators started to allow 
+ * the emulators to start up and be responsive so we can install the app on it and push the test files to it.
+ */
+void waitForEmulatorsToStart() {
+	def sleepTime = 25000
+	/*
+	 * For every emulator over 1, add 5 seconds to the wait time...This property is set by the getEmulatorsFromFile() 
+	 * method...this is just a guesstimate...but assuming that the more emulators we start the more resources we consume
+	 * and the longer it'll take for each one to start.
+	 */
+	if (project.hasProperty('TOTAL_EMULATORS_READ')) {
+		sleepTime += (TOTAL_EMULATORS_READ - 1) * 5000
+	}
+	println "Sleeping for " + (sleepTime/1000) + " seconds to give the emulators time to start up."
+	sleep sleepTime
+}
+
+/**
+ * This function takes the apk specified on the command line, and installs it into all the emulators started for this
+ * test run.  The file passed in on the command line is stored in a project property called APK_FILE, which is where the
+ * value is taken from.  The method queries the system for all the running emulators and then loops over those and
+ * installs the app into each one.
+ */
+void installAPKToEmulators() {
+	def ports = getRunningAVDPorts()
+	for (def i = 0 ; i < ports.size() ; ++i ) {
+		def installCmd = [ANDROID_HOME+ "/platform-tools/adb", '-s', 'emulator-' + ports.get(i) , '-e', 'install', '-r' , APK_FILE]
+		def output = runCmd(installCmd)
+		print output
+	}
+}
+
+/**
+ * This function opens the test case file (which is stored in the TEST_CASE_FILE project property) and reads in the 
+ * contents into memory.  The function will return a String array where each entry in the array represents a single
+ * line from the file. Each line in the file SHOULD represent a test case that needs to be executed.  The function
+ * will automatically filter out the following:
+ * 
+ * 1) Empty lines (lines that contain only white space characters
+ * 2) Lines that start with a Java style single line comment (//)
+ * 3) Lines that start with a Perl style single line comment (#)
+ * 
+ * Any leading or trailing whitespace is also trimmed from the lines stored in the array.
+ * 
+ * @return A String array representing non-blank, non-commented lines in the test case file.
+ */
+String[] loadAndroidTestFile() {
+	//def testFile = new File(TEST_CASE_FILE).text
+	def lines = loadTextFile(TEST_CASE_FILE, true)//testFile.split(System.getProperty("line.separator"))
+	def count = 0
+	def realLines = []
+	if (lines != null) {
+		for (def i =0 ; i < lines.length ; ++i) {
+			def line = lines[i]
+			if (line != null) {
+				line = line.trim()
+				//we'll only add lines that are not empty, or comments
+				if (!"".equals(line) && !line.startsWith('#') && !line.startsWith('//')) {
+					realLines[count] = line
+					count++
+				}
+			}
+		}
+	}
+	
+	return realLines
+}
+
+/**
+ * Function runs all the defined UI tests run.  CURRENTLY the function finds all running emulators and runs the entire
+ * test bucket against each emulator serially.
+ * 
+ * This then takes the uiautomator output and converts it to junit html files for easy consumption :)
+ * 
+ */
+void runUITests() {
+	def ports = getRunningAVDPorts()
+	def antProjectName = ant.getProject().getProperty('ant.project.name')
+	def testFile = loadAndroidTestFile()
+	def outputFiles = new ArrayList<String>()
+	def logsuffix = '.log'
+	def xmlsuffix = '.xml'
+	//First lets run through each emulator
+	def htmlReports = new File('./reports/html')
+	htmlReports.mkdirs()
+	def reportsDir = './reports/'
+	for (def i = 0 ; i < ports.size(); ++i) {
+		//Then lets run through all test cases
+		def myCmd = [ANDROID_HOME+ "/platform-tools/adb",'-s', 'emulator-' + ports.get(i), 'shell',
+			'uiautomator', 'runtest',antProjectName + ".jar"]
+		def mySize = myCmd.size()
+		for (def test : testFile) {
+			myCmd[mySize++] = '-c'
+			myCmd[mySize++] = test
+		}
+		
+		def output = runCmd(myCmd)
+		print output
+		def emuPrettyName = readAndroidNameFromEmulator('localhost', Integer.parseInt(ports.get(i)))
+		def logName = reportsDir + emuPrettyName + "-uitests"
+		writeFile(logName + logsuffix, [output])
+		outputFiles.add(logName)
+	}
+	for (def outFile : outputFiles) {
+		def cmd = ['java','-jar', 'libs/uiautomator2junit-0.2.jar', outFile + logsuffix]
+		runCmd(cmd)
+	}
+	
+	ant.taskdef(name: 'junitreport', classname: 'org.apache.tools.ant.taskdefs.optional.junit.XMLResultAggregator') {
+		classpath {
+			fileset(dir: 'libs', includes: '*.jar')
+		}
+	}
+	ant.junitreport(todir: './reports') {
+		fileset(dir: reportsDir) {
+			include(name: '*-uitests.xml')
+		}
+		report(format: 'frames', todir: htmlReports.getAbsolutePath())
+	}
+	
+	/* 
+	<junitreport todir="./reports">
+		<fileset dir="./reports">
+		  <include name="TEST-*.xml"/>
+		</fileset>
+		<report format="frames" todir="./report/html"/>
+	  </junitreport>
+	This code was an attempt to run all the tests in parallel and then do a join at then end when they were all done
+	 * running, but this code wasnt working.  Didn't spend too much time on it.
+	 * 
+	def keys = SAVED_PROCESSES.keySet()
+	def done = 0
+	while (done < keys.size()) {
+		def process = SAVED_PROCESSES.get(key)
+		try {
+			def returnCode = process.exitValue()
+			done ++
+		} catch (Exception ex) {
+			//basically just catching the IllegalThreadStateException thrown cause the process hasnt completed yet
+		}
+		sleep(1000)
+	}*/
+}
+
+/**
+ * Call the build target against the build.xml in this Android UI test project to build the jar which will contain the
+ * test case classes we will run on the emulator.  
+ */
+void buildTestJars() {
+	ant.getProject().executeTarget('build')
+}
+
+/**
+ * Pushes the jar file produced when building the test cases onto the emulator, so the test cases are available when
+ * testing the application
+ */
+void pushTestJarToEmulators() {
+	def ports = getRunningAVDPorts()
+	def antProjectName = ant.getProject().getProperty('ant.project.name')
+	for (def i = 0 ; i < ports.size(); ++i) {
+		def pushCmd = [ANDROID_HOME + '/platform-tools/adb', '-s', 'emulator-' + ports.get(i), 'push', 'bin/' + antProjectName + ".jar", '/data/local/tmp']
+		def output = runCmd(pushCmd)
+		println output
+	}
+}
+
+/**
+ * Starts all the emulators defined in the emulators.xml file (default file). 
+ */
+void startEmulators() {
+	def emulators = getEmulatorsFromFile()
+	for (def i = 0 ; i < emulators.size() ; ++i ) {
+		def emu = emulators.get(i)
+		def cmd = getStartEmulatorCMD(emu)
+		def output = runCmd(cmd, false)
+	}
+}
+
+/**
+ * Finds all the running Android emulators and returns an ArrayList of ports on which the emulators are listening
+ * 
+ * @return ArrayList<String> of ports the emulators are listening on.
+ */
+ArrayList<String> getRunningAVDPorts() {
+	def ports = new ArrayList<String>()
+	if (project.hasProperty('RUNNING_AVD_PORTS')) {
+		ports = RUNNING_AVD_PORTS
+	} else {
+		def foundPorts = findRunningAVDPort('')
+		//converting from array to ArrayList<String>
+		for (def i = 0 ; i < foundPorts.length ; ++i) {
+			ports.add(foundPorts[i])
+		}
+		//Lets cache the ports we found since we won't be starting more emulators later in the test runtime
+		project.ext.set('RUNNING_AVD_PORTS', ports)
+	}
+	return ports
+}
+
+/**
+ * Class that represents an AndroidEmulator definition. Each class property represents a flag that can be passed
+ * to the AVD creation command on the command line 
+ * 
+ * @author jesusalva
+ *
+ */
+class AndroidEmulator {
+	def name = ''
+	def target = ''
+	def abi = ''
+	def device = ''
+	def skin = 'None'
+	def sdcard = '300M'
+	def force = "true"
+	def options = new ArrayList<EmulatorOption>()
+	def heap = ''
+	def ram = ''
+	
+	public AndroidEmulator() {}
+	public AndroidEmulator(name, target, abi, device, skin, sdcard, force, options, heap, ram) {
+		this.name = name
+		this.target = target
+		this.abi = abi
+		this.device = device
+		this.skin = skin
+		this.sdcard = sdcard
+		this.force = force
+		this.options.addAll( options)
+		this.heap = heap
+		this.ram = ram 
+	}
+	
+	public void setName(name) { this.name = name }
+	public String getName() { return this.name }
+	public void setTarget(target) { this.target = target }
+	public String getTarget() { return this.target }
+	public void setAbi(abi) { this.abi = abi }
+	public String getAbi() { return this.abi }
+	public void setDevice(device) { this.device = device }
+	public String getDevice() { return this.device }
+	public void setSkin(skin) { this.skin = skin }
+	public String getSkin() { return this.skin }
+	public void setSdcard( sdcard) { this.sdcard = sdcard }
+	public String getSdcard() { return this.sdcard }
+	public void setForce(force) { this.force = force }
+	public String getForce() { return this.force }
+	public void setOptions(options) { 
+		this.options.clear()
+		this.options.addAll(options)
+	}
+	public ArrayList<EmulatorOption> getOptions() { return this.options }
+	public void setHeap(heap) { this.heap = heap }
+	public String getHeap() { return this.heap }
+	public void setRam(ram) { this.ram = ram }
+	public String getRam() { return this.ram }
+	
+	public String toString() {
+		def strBuffer = new StringBuffer()
+		strBuffer.append("AndroidEmulator{")
+		strBuffer.append("name=")
+		strBuffer.append(name)
+		strBuffer.append(", target=")
+		strBuffer.append(target)
+		strBuffer.append(", abi=")
+		strBuffer.append(abi)
+		strBuffer.append(", device=")
+		strBuffer.append(device)
+		strBuffer.append(", skin=")
+		strBuffer.append(skin)
+		strBuffer.append(", sdcard=")
+		strBuffer.append(sdcard)
+		strBuffer.append(", force")
+		strBuffer.append(force)
+		strBuffer.append(", options = ")
+		strBuffer.append(options)
+		strBuffer.append(", heap = ")
+		strBuffer.append(heap)
+		strBuffer.append(", ram = ")
+		strBuffer.append(ram)
+		strBuffer.append("}")
+	}
+}
+
+/**
+ * Represents a single start option (name/value pair) for the defined Android virtual device.
+ * 
+ * @author jesusalva
+ *
+ */
+class EmulatorOption {
+	def name
+	def value
+	public EmulatorOption(name, value) {
+		this.name = name
+		this.value = value
+	}
+	
+	public void setName(name) { this.name = name }
+	public String getName() { return this.name }
+	public void setValue(value) { this.value = value }
+	public String getValue() { return this.value }
+	
+	public String toString() {
+		def strBuffer = new StringBuffer()
+		strBuffer.append("EmulatorOption{")
+		strBuffer.append("name=")
+		strBuffer.append(name)
+		strBuffer.append(", value=")
+		strBuffer.append(value)
+		strBuffer.append("}")
+	}
+}

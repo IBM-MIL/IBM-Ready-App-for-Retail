@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <!-- Title -->
+        <title>ReadyApp Summit Docs</title>
+        
+        <!-- Style -->
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+    </head>
+    
+    <body>
+        
+        <div class="header">        
+            <img class="logo" src="../img/logo.png" />
+            <span class="header-text">Design Guidelines</span>
+            
+            <div class="header-link-container">
+                <a href="../index.html"><span class="header-link" id="home"><img src="../img/Home.png" class="home-icon"/></span></a>
+                
+                <span class="header-link" id="start">Start<img src="../img/Menu.png" class="icon"/>
+                    <ul>
+                        <a href="../assets/IBM_dl_v1.pdf" target="_blank"><li><span>IBM Design Language <img src="../img/Tab.png" class="icon"/></span></li></a>
+                        <a href="dg.html"><li><span>Design Guidelines</span></li></a>
+                        <a href="arch.html"><li><span>Summit Architecture</span></li></a>
+                        <a href="igs.html"><li><span>Installation &amp; Getting Started</span></li></a>
+                    </ul>
+                </span>
+                
+                <span class="header-link" id="frontend">App<img src="../img/Menu.png" class="icon"/>
+                    <ul>
+                        <a href="../gen/Swift/index.html" target="_blank"><li><span>iOS</span> <img src="../img/Tab.png" class="icon"/></li></a>
+                        <a href="../gen/Java/html/index.html" target="_blank"><li><span>Android</span> <img src="../img/Tab.png" class="icon"/></li></a>
+                        <a href="../gen/JavaScript/index.html" target="_blank"><li><span>Hybrid</span> <img src="../img/Tab.png" class="icon"/></li></a>
+                    </ul>
+                </span>
+                
+                <span class="header-link" id="middleware">Middleware<img src="../img/Menu.png" class="icon"/>
+                    <ul>
+                        <a href="../MobileFirst/gen/Java/html/index.html" target="_blank"><li><span>Java</span> <img src="../img/Tab.png" class="icon"/></li></a>
+                        <a href="../MobileFirst/gen/Javascript/global.html" target="_blank"><li><span>JavaScript</span> <img src="../img/Tab.png" class="icon"/></li></a>
+                    </ul>
+                </span>
+            </div>
+        </div>
+        
+        <div class="container">
+        
+            <h1>Design Guidelines</h1>
+
+            <p>Summit was created following the IBM Design Language V1 guidelines. You can see the PDF <a href="../assets/IBM_dl_v1.pdf" target="_blank">here</a>.</p>
+            
+            <h2>Home</h2>
+            
+            <div class="column-container">
+                
+                <div class="left">
+                    <img src="../img/summit_home.png" style="height:300px;margin-top:25px;" />
+                </div>
+                
+                <div class="right">
+                    <p>The home screen’s top section should show featured images or special sales. Below, the "Recommended" section should show recommended and popular products. Lastly, the “Shop All” section should show the user products or store departments.  </p>
+
+                    <p>Each department should be given a square image that fits in this section. If a department is featured it will appear in the featured images section at the top and not in "Shop All." Upon selection, a user should see products within that department.</p>
+            
+    
+                </div>
+                
+            </div>
+
+            <br />
+            
+            <h2>Lists</h2>
+            
+            <div class="column-container">
+                
+                <div class="left" style="width:40%;">
+                    <img src="../img/summit_list.png" style="height:300px;margin-top:25px;" />
+                    <img src="../img/summit_list_notification.png" style="height:300px;margin-top:25px;" />
+                </div>
+                
+                <div class="right" style="width:60%;">
+                    
+                    <p>After logging into the app, a user can create and manage multiple lists. A cumulative total should appear at the bottom showing how much each list will cost. On the right of each product users can see in which department they are located. Each store department will have its own beacon so the app can recognize a product’s location. </p>
+
+                    <p>As a user moves throughout the store, their lists should update and reorder based on whichever department is closest to the user. After their list reorders, the user should be greeted with an in-app notification.</p>
+                        
+                </div>
+                
+            </div>
+
+            <br />
+            
+            <h2>Log In</h2>
+            
+            <div class="column-container">
+                
+                <div class="left" style="width:40%;">
+                    <img src="../img/summit_login.png" style="height:300px;margin-top:25px;" />
+                    <img src="../img/summit_profile.png" style="height:300px;margin-top:25px;" />
+                </div>
+                
+                <div class="right" style="width:60%;">
+                    <p>After logging in, a user should be able to see their list information. Without an account, a user will not be able to save any products to lists. However, they will have access to browse products in the app.</p>
+                </div>
+                
+            </div>
+
+            <br />
+            
+            <h2>Product Detail Page</h2>
+            
+            <div class="column-container">
+                
+                <div class="left">
+                    <img src="../img/summit_productdetails_top.png" style="height:300px;margin-top:25px;margin-right:5px;" />
+                </div>
+                
+                <div class="right">
+                    <p>On this screen a user can learn more information about a product. Product images should either fit the width of the screen or have a white background. A user can see a product’s name, price, rating, details, color, and size options. If there is only one option for size the dropdown should not be displayed.</p> 
+                </div>
+                
+            </div>
+
+            <br />
+            
+            <h2>Notifications</h2>
+            
+            <div class="column-container">
+                
+                <div class="left">
+                    <img src="../img/summit_notification.png" style="height:300px;margin-top:25px;" />
+                </div>
+                
+                <div class="right">
+                    <p>Notifications should appear when a user has entered a store to welcome them and encourage phone use while shopping. Users should also receive notifications when a saved item becomes available or on sale.</p>  
+                </div>
+                
+            </div>
+
+            <br /><br /><br /><br />
+
+            <div class="line" style="border-bottom: solid 2px #00b2ef;">
+
+            </div>
+
+            <h1>Additional Screens</h1>
+
+            <p>Here are some additional designs for the app, which could add value and functionality.</p>
+            
+            <h2>Search</h2>
+            
+            <div class="column-container">
+                
+                <div class="left">
+                    <img src="../img/summit_search.png" style="height:300px;margin-top:25px;" />
+                </div>
+                
+                <div class="right">
+                    <p>A user could access “Search” at the top of every screen by selecting a search icon.  A user could either filter by category or type in a desired product. The search will break down the store’s inventory into departments and categories.</p>
+                </div>
+                
+            </div>
+
+            <br />
+
+            <h2>Search Results</h2>
+            
+            <div class="column-container">
+                
+                <div class="left" style="width:40%;">
+                    <img src="../img/summit_search_results_grid.png" style="height:300px;margin-top:25px;" />
+                    <img src="../img/summit_search_results_list.png" style="height:300px;margin-top:25px;" />
+                </div>
+                
+                <div class="right" style="width:60%;">
+                    <p>After searching for a product, a user could be greeted with this search results page. They could view this page as a two column grid, allowing for faster viewing, or in list view, for closer examination of products. A yellow dot could indicate whether the product is currently available at their store. </p>
+
+                    <p>Users could also edit their search by selecting the refine button. This would pull up the search screen, complete with all categories and sub-categories.</p>
+                </div>
+                
+            </div>
+
+            <br />
+
+            <h2>My Store</h2>
+            
+            <div class="column-container">
+                
+                <div class="left" style="width:100%;">
+                    <img src="../img/summit_store_1.png" style="height:300px;margin-top:25px;" />
+                    <img src="../img/summit_store_2.png" style="height:300px;margin-top:25px;" />
+                    <img src="../img/summit_store_3.png" style="height:300px;margin-top:25px;" />
+                    <img src="../img/summit_store_4.png" style="height:300px;margin-top:25px;" />
+                </div>
+
+                <div class="left" style="width:100%;">
+                <brv/> <br />
+                </div>
+                
+                <div class="left" style="width:100%;">
+                    <p>On this screen, users could search for nearby store locations and set their favorite as their preferred store. By setting their preferred store, users will be able to see when products are available at that specific store. They can also see basic information like a store’s address, phone number, store-specific sales, or store events.</p>
+                </div>
+                
+            </div>
+
+            <h2>Cart</h2>
+            
+            <div class="column-container">
+                
+                <div class="left" style="width:55%;">
+                    <img src="../img/summit_cart_1.png" style="height:300px;margin-top:25px;" />
+                    <img src="../img/summit_cart_2.png" style="height:300px;margin-top:25px;" />
+                    <img src="../img/summit_cart_3.png" style="height:300px;margin-top:25px;" />
+                </div>
+                
+                <div class="right" style="width:45%;">         
+                    <p>When a user adds a product to their cart they can either purchase it then or save it for later. If a store allows for phone purchases a user can scan their products and check out right from their phone, without having to wait in line. If a product is out of stock at their store, they can have it shipped to the store for pick up, or shipped to their home. They can also apply digital coupons that are synced with their account from this screen.</p>                  
+                </div>
+                
+            </div>
+
+            <br />
+
+            
+            <h2>Product Detail Page Expansion </h2>
+            
+            <div class="column-container">
+                
+                <div class="left" style="width:55%;">
+                    <img src="../img/summit_productdetail_main.png" style="height:300px;margin-top:25px;" />
+                    <img src="../img/summit_productdetails_reviews.png" style="height:300px;margin-top:25px;" />
+                    <img src="../img/summit_productdetail_similaritems.png" style="height:300px;margin-top:25px;" />
+                </div>
+                
+                <div class="right" style="width:45%;">
+                    <p>Besides a basic description found under product details, a user could also see reviews about a product and similar items. After a user has purchased a product, they can write a review and rate it in the review section.</p>      
+                </div>
+                
+            </div>
+
+
+        </div>
+        
+        <div class="footer">
+            <div class="footer-container">
+                <h1>Where To?</h1>
+                
+                <ul>
+                    <li>Previously...<br /><a href="../assets/IBM_dl_v1.pdf" target="_blank">IBM Design Language</a> <img src="../img/Tab.png" class="icon"/></li>
+                    <li>Up next...<br /><a href="arch.html">Summit Architecture</a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </body>
+
+</html>

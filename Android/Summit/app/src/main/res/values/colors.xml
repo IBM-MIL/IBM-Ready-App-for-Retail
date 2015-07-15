@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="summit_translucent_black">#E6404041</color>
+    <color name="summit_translucent_white">#CCEAEAEA</color>
+    <color name="summit_title_color">#f0f0db</color>
+
+    <color name="main_text">#404041</color>
+    <color name="dark_grey_elem">#959F9F</color>
+    <color name="disabled_elem">#C8D2D2</color>
+    <color name="background">#EAEAEA</color>
+    <color name="green">#005448</color>
+    <color name="yellow">#EFC100</color>
+    <color name="bronze">#BE9B00</color>
+
+    <color name="old_green">#949448</color>
+
+    <color name="dark_mask">#59000000</color>
+    <color name="toast_color">#E6959F9F</color>
+</resources>

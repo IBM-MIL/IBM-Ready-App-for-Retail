@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/scrolled_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#ffffffff"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/message_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="3dip"
+            android:layout_weight="1"
+            android:background="@drawable/textbox"
+            android:gravity="top|left"
+            android:hint="@string/problem_hint"
+            android:inputType="text|textMultiLine|textCapSentences"
+            android:padding="10dp"
+            android:textColor="#ff000000"
+            android:textSize="18sp"
+            android:typeface="sans" />
+
+        <TextView
+            android:id="@+id/problem_includes_screen"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/problem_includes"
+            android:textColor="#ff7f7f7f"
+            android:typeface="sans" />
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/Users/rudy/dev/projects/AH-IBM-Android-Lib/apphance-lib/build/ibm%20qa/variants/ibm%20qa/res/layout/problem.xml -->

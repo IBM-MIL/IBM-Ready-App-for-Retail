@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+		<!-- Licensed Materials - Property of IBM
+			 5725-I43 (C) Copyright IBM Corp. 2006, 2013. All Rights Reserved.
+			 US Government Users Restricted Rights - Use, duplication or
+             disclosure restricted by GSA ADP Schedule Contract with IBM Corp. -->
+
+<!-- Attribute "id" must be identical to application folder name -->
+<application id="SummitHtml" platformVersion="6.3.0.00.20141127-1357"
+	xmlns="http://www.worklight.com/application-descriptor" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<displayName>SummitHtml</displayName>
+	<description>SummitHtml</description>
+	<author>
+		<name>application's author</name>
+		<email>application author's e-mail</email>
+		<copyright>Copyright My Company</copyright>
+		<homepage>http://mycompany.com</homepage>
+	</author>
+	<mainFile>index.html</mainFile>
+	<thumbnailImage>common/images/thumbnail.png</thumbnailImage>
+	<features>
+	</features>
+</application>

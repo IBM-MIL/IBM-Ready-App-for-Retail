@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ibm.mil.readyapps.summit.fragments.CreateListFragment">
+
+    <RelativeLayout
+        android:id="@+id/overlay_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-45dp">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="25dp"
+            android:src="@drawable/arrow_backward"
+            android:contentDescription="@string/image_description"
+            android:background="@android:color/transparent" />
+
+        <TextView
+            android:id="@+id/create_new_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/create_new_list_overlay"
+            android:textSize="20sp"
+            android:textColor="@color/main_text"
+            android:textAllCaps="true" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/enter_list_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="25dp"
+        android:padding="@dimen/list_item_padding_large"
+        android:hint="@string/list_name_hint"
+        android:inputType="textAutoCorrect|textCapSentences"
+        android:singleLine="true"
+        android:background="@android:color/white">
+
+        <requestFocus />
+
+    </EditText>
+
+</LinearLayout>

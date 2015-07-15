@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="android-async-http">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../ReadyAppsLibrary/src/main/assets/worklight/android-async-http.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

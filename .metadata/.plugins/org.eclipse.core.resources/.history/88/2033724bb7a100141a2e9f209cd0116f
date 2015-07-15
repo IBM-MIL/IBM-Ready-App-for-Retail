@@ -1,0 +1,5 @@
+APPLICATION_PATH=/Users/atcabral/Ready.App.2.Summit/Android/Summit/app/build/outputs/apk/app-debug.apk
+APP_NAME=com.ibm.mil.readyapps.summit
+APP_VERSION=1.0
+PORT=4444
+SHOULD_START_SERVER=false

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/users_list_item_background_selector"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:duplicateParentState="true"
+        android:focusable="false"
+        android:gravity="left|center_vertical"
+        android:minHeight="48dip"
+        android:text="TextView"
+        android:textColor="@color/text_secondary"
+        android:textSize="18sp"
+        android:typeface="sans" />
+
+</LinearLayout><!-- From: file:/Users/rudy/dev/projects/AH-IBM-Android-Lib/apphance-lib/build/ibm%20qa/variants/qa/res/layout/testcycle.xml -->
