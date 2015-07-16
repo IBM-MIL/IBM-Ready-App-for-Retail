@@ -22,11 +22,11 @@
 #define DEV 1
 
 #ifdef DEV
-#define xAppKey @"17e736b0-0a70-488c-8bee-6dc19ba97824" // development
+#define xAppKey @"Your-Xtify-Development-Key" // development
 #endif
 
 #ifndef DEV
-#define xAppKey @"a0ca7bfb-0157-49c5-b525-0e76dc33e6c3" // production
+#define xAppKey @"Your-Xtify-Production-Key" // production
 #endif
 //
 // Location updates

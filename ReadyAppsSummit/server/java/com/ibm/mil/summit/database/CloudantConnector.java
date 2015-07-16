@@ -44,9 +44,9 @@ public class CloudantConnector {
 	// single instance of CloudantConnector
 	private static CloudantConnector cloudantConnector;
 	private static final Double UNAVAILABLE = new Double(0.0);
-	private String username = "c38f4c98-da63-41be-b62f-48b5934da36d-bluemix";
-	private String password = "92fd5f89e181388e381055501d3d894212c02efd017e2551fed276f4d8feefba";
-	private String dbName = "retail_db";
+	private String username = "<Your-Cloudant-Username>";
+	private String password = "<Your-Cloudant-Password>";
+	private String dbName = "<Your-Cloudant-Database-Name>";
 	private CloudantClient cloudant;
 	private Database db;
 	public static String DEFAULT_LOCALE = "en";
