@@ -11,4 +11,4 @@ To login into IBM Ready App for Retail, the following credentials are:
 | user1   | password1 |
 
 ##Documentation
-For access to the full documentation please visit http://lexdcy040194.ecloud.edst.ibm.com/hatch_1_0_0/home
+For access to the full documentation please visit http://lexdcy040194.ecloud.edst.ibm.com/summit_1_1_0/home
