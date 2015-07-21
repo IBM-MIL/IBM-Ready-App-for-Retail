@@ -4,7 +4,7 @@
 
 IBM Ready App for Retail is the second of the IBM ReadyApp series. It seeks to reshape the specialty retail store shopping experience by opening up a direct line of communication with shoppers to personalize their experience. IBM Ready App for Retail utilizes the MobileFirst Platform Foundation, Cloudant, Xtify, and Estimote Beacon technology.
 
-To login into IBM Ready App for Retail, the following credentials are:
+The credentials to login into IBM Ready App for Retail are:
 
 | Username | Password |
 |---------|----------|
