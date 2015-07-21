@@ -13,7 +13,7 @@ allprojects {
     }
 }
 apply plugin: 'com.android.application'
-apply plugin: 'robolectric'
+
 android {
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
@@ -56,14 +56,6 @@ dependencies {
     androidTestCompile 'org.robolectric:robolectric:2.4'
     androidTestCompile 'org.bouncycastle:bcprov-jdk15on:1.50'
     compile project(':MQA-Android-2.6.1')
-}
-robolectric {
-    // configure the set of classes for JUnit tests
-    include '**/*Test.class'
-    //Make sure you call all your test classes according to this expression!!!
-
-    // configure max heap size of the test JVM
-    maxHeapSize = "2048m"
 }
 apply plugin: 'jacoco'
 
