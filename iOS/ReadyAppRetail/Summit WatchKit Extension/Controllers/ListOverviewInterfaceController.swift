@@ -155,7 +155,7 @@ class ListOverviewInterfaceController: WKInterfaceController {
     }
     
     private func setUpWormhole() {
-        self.wormhole = MMWormhole(applicationGroupIdentifier: "group.ibm.mil.readyapp", optionalDirectory: nil)
+        self.wormhole = MMWormhole(applicationGroupIdentifier: GroupDataAccess.sharedInstance.groupAppID, optionalDirectory: nil)
         self.wormhole!.listenForMessageWithIdentifier("loginNotification", listener: { (messageObject) -> Void in
             
             if let message: Dictionary<String, AnyObject> = messageObject as? Dictionary<String, AnyObject> {
@@ -179,7 +179,7 @@ class ListOverviewInterfaceController: WKInterfaceController {
     
     private func setUpRealm() {
         // Tell Realm to install in the app group
-        let directory: NSURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.ibm.mil.readyapp")!
+        let directory: NSURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(GroupDataAccess.sharedInstance.groupAppID)!
         let realmPath = directory.path!.stringByAppendingPathComponent("db.realm")
         RLMRealm.setDefaultRealmPath(realmPath)
         
@@ -250,15 +250,15 @@ class ListOverviewInterfaceController: WKInterfaceController {
         if (NSUserDefaults.standardUserDefaults().objectForKey("summitFirstRun") == nil) {
             KeychainWrapper.removeObjectForKey("summit_username")
             KeychainWrapper.removeObjectForKey("summit_password")
-            NSUserDefaults(suiteName: "group.ibm.mil.readyapp")!.removeObjectForKey("userID")
-            NSUserDefaults(suiteName: "group.ibm.mil.readyapp")!.synchronize()
+            NSUserDefaults(suiteName: GroupDataAccess.sharedInstance.groupAppID)!.removeObjectForKey("userID")
+            NSUserDefaults(suiteName: GroupDataAccess.sharedInstance.groupAppID)!.synchronize()
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "summitFirstRun")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
     }
     
     private func isLoggedIn() -> Bool {
-        if let name = NSUserDefaults(suiteName: "group.ibm.mil.readyapp")!.stringForKey("userID") {
+        if let name = NSUserDefaults(suiteName: GroupDataAccess.sharedInstance.groupAppID)!.stringForKey("userID") {
             if(count(name) > 0) {
                 return true
             } else {

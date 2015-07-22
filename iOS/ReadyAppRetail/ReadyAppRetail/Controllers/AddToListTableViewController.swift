@@ -17,7 +17,7 @@ class AddToListTableViewController: UITableViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            self.wormhole = MMWormhole(applicationGroupIdentifier: "group.ibm.mil.readyapp", optionalDirectory: nil)
+            self.wormhole = MMWormhole(applicationGroupIdentifier: GroupDataAccess.sharedInstance.groupAppID, optionalDirectory: nil)
             
             // Set realm notification block
             notificationToken = RLMRealm.defaultRealm().addNotificationBlock { note, realm in

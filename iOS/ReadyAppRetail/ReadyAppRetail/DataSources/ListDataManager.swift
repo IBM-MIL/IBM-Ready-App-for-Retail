@@ -26,7 +26,7 @@ public class ListDataManager: NSObject {
         
         self.callback = callback
         
-        var sharedDefaults = NSUserDefaults(suiteName: "group.ibm.mil.readyapp")!
+        var sharedDefaults = NSUserDefaults(suiteName: GroupDataAccess.sharedInstance.groupAppID)!
         var userID: String = sharedDefaults.stringForKey("userID")!
 
         let params = [userID]
