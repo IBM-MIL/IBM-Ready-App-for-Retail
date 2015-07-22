@@ -36,7 +36,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.wormhole = MMWormhole(applicationGroupIdentifier: "group.ibm.mil.readyapp", optionalDirectory: nil)
+        self.wormhole = MMWormhole(applicationGroupIdentifier: GroupDataAccess.sharedInstance.groupAppID, optionalDirectory: nil)
         
         setUpLoginBoxView()
         setUpLoginButton()
