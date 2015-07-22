@@ -19,3 +19,18 @@ let WatchKitNotAuthenticated: String = "User not logged in"
 let HandoffListsID: String = "com.ibm.mil.summit.lists"
 let HandoffProductID: String = "com.ibm.mil.summit.product"
 let HandoffProductIDSubKey: String = "summit.productID"
+
+// Plist Data Handler
+
+class GroupDataAccess  {
+    static let sharedInstance = GroupDataAccess()
+    
+    var groupAppID: String {
+        if let path = NSBundle.mainBundle().pathForResource("Config", ofType: "plist") {
+            var configuration = NSDictionary(contentsOfFile: path)!
+            return (configuration["sharedAppGroupID"] as? String)!
+        } else {
+            return ""
+        }
+    }
+}

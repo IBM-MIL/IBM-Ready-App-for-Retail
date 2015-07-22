@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // Tell Realm to install in the app group
-        let directory: NSURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.ibm.mil.readyapp")!
+        let directory: NSURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(GroupDataAccess.sharedInstance.groupAppID)!
         let realmPath = directory.path!.stringByAppendingPathComponent("db.realm")
         RLMRealm.setDefaultRealmPath(realmPath)
         
@@ -66,8 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (NSUserDefaults.standardUserDefaults().objectForKey("summitFirstRun") == nil) {
             KeychainWrapper.removeObjectForKey("summit_username")
             KeychainWrapper.removeObjectForKey("summit_password")
-            NSUserDefaults(suiteName: "group.ibm.mil.readyapp")!.removeObjectForKey("userID")
-            NSUserDefaults(suiteName: "group.ibm.mil.readyapp")!.synchronize()
+            NSUserDefaults(suiteName: GroupDataAccess.sharedInstance.groupAppID)!.removeObjectForKey("userID")
+            NSUserDefaults(suiteName: GroupDataAccess.sharedInstance.groupAppID)!.synchronize()
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "summitFirstRun")
             NSUserDefaults.standardUserDefaults().synchronize()
             

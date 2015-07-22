@@ -143,6 +143,7 @@
 		2E27C4071B2B41FD00A24CFB /* WKProcedures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E27C4061B2B41FD00A24CFB /* WKProcedures.swift */; };
 		2E2E7C441B17D54E005225B4 /* WLProcedureCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E7C431B17D54E005225B4 /* WLProcedureCaller.swift */; };
 		2E44B8751B1E109F00685AB0 /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E44B8741B1E109F00685AB0 /* ListRow.swift */; };
+		2E499BF91B60346400A0823B /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = A21C032E1A698785003A9548 /* Config.plist */; };
 		2E6363741B1F976C0031F31F /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6363701B1F976C0031F31F /* InterfaceController.swift */; };
 		2E6363751B1F976C0031F31F /* ListOverviewInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6363711B1F976C0031F31F /* ListOverviewInterfaceController.swift */; };
 		2E6363761B1F976C0031F31F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6363721B1F976C0031F31F /* NotificationController.swift */; };
@@ -1614,6 +1615,7 @@
 				EB82356A1B3DE80200FA9FC7 /* Images.xcassets in Resources */,
 				EB394CFE1B27952500B5BF4B /* Oswald-Bold.ttf in Resources */,
 				EB394CFF1B27952500B5BF4B /* Oswald-Light.ttf in Resources */,
+				2E499BF91B60346400A0823B /* Config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
