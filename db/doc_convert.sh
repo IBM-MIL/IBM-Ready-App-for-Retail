@@ -15,7 +15,10 @@ output_file=$1; shift
 
 # Did they ask for help?
 if [[ "$input_file" == "-h" ]] || [[ "$output_file" == "-h" ]] ; then
+  echo ""
   echo "Usage: ./doc_convert.sh [input file] [output file]"
+  echo ""
+  exit 1
 fi
 
 # Track the last line.
@@ -31,7 +34,7 @@ while read -r json_line; do
     # Handle the last line, if we can.
     elif [[ "${json_line:0:2}" == "]}" ]] ; then
         last_line="]}"
-        echo -n "$last_line" > $output_file
+        echo -n "$last_line" >> $output_file
         
     # Standard case.
     else
