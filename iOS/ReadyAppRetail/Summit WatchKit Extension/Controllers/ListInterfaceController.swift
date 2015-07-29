@@ -25,7 +25,7 @@ class ListInterfaceController: WKInterfaceController {
             self.list = nil
         }
         
-        self.wormhole = MMWormhole(applicationGroupIdentifier: "group.ibm.mil.readyapp", optionalDirectory: nil)
+        self.wormhole = MMWormhole(applicationGroupIdentifier: GroupDataAccess.sharedInstance.groupAppID, optionalDirectory: nil)
         self.wormhole!.listenForMessageWithIdentifier("refreshProducts", listener: { (messageObject) -> Void in
             self.reloadTable()
         })

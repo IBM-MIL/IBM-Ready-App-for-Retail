@@ -49,7 +49,7 @@ extension LoginDataManager: WLDataDelegate {
         
         //UserAuthHelper.saveUser(userID)
         
-        var sharedDefaults = NSUserDefaults(suiteName: "group.ibm.mil.readyapp")!
+        var sharedDefaults = NSUserDefaults(suiteName: GroupDataAccess.sharedInstance.groupAppID)!
         sharedDefaults.setObject(userID, forKey: "userID")
         sharedDefaults.synchronize()
         
