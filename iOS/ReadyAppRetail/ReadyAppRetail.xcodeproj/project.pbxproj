@@ -2035,35 +2035,6 @@
 			};
 			name = Debug;
 		};
-		2EF449551B161E2600F3576A /* Distribution */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Summit WatchKit Extension/Summit WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/ReadyAppRetail/ExternalLibraries",
-					"$(PROJECT_DIR)/ReadyAppRetail/ExternalLibraries/WorklightAPI/Frameworks",
-				);
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Summit WatchKit Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/ReadyAppRetail/ExternalLibraries/WorklightAPI",
-				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "ReadyAppRetail/ReadyAppRetail-Bridging-Header.h";
-			};
-			name = Distribution;
-		};
 		2EF449561B161E2600F3576A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2116,26 +2087,6 @@
 			};
 			name = Debug;
 		};
-		2EF449581B161E2600F3576A /* Distribution */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				IBSC_MODULE = Summit_WatchKit_Extension;
-				INFOPLIST_FILE = "Summit WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
-			};
-			name = Distribution;
-		};
 		2EF449591B161E2600F3576A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2156,106 +2107,6 @@
 			};
 			name = Release;
 		};
-		80BD8CD61AA8C53F008CB350 /* Distribution */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Distribution;
-		};
-		80BD8CD71AA8C53F008CB350 /* Distribution */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = ReadyAppRetail/ReadyAppRetail.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_RESOURCE_RULES_PATH = "${SDKROOT}/ResourceRules.plist";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/ReadyAppRetail/ExternalLibraries/XtifyLib/XtifyPush.embeddedframework",
-					"$(PROJECT_DIR)/ReadyAppRetail/Frameworks",
-					"$(PROJECT_DIR)/ReadyAppRetail/ExternalLibraries/WorklightAPI/Frameworks",
-					"$(PROJECT_DIR)/ReadyAppRetail/ExternalLibraries",
-				);
-				INFOPLIST_FILE = ReadyAppRetail/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/ReadyAppRetail/ExternalLibraries/WorklightAPI",
-					"$(PROJECT_DIR)/ReadyAppRetail/ExternalLibraries/EstimoteSDK",
-				);
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "ReadyAppRetail/ReadyAppRetail-Bridging-Header.h";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/ReadyAppRetail/ExternalLibraries/WorklightAPI/include";
-			};
-			name = Distribution;
-		};
-		80BD8CD81AA8C53F008CB350 /* Distribution */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ReadyAppRetailTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c6ff8dcf-7c11-443e-b8ca-f0f744c2fec8";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReadyAppRetail.app/ReadyAppRetail";
-			};
-			name = Distribution;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2263,7 +2114,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B5533D71A5EF9A1006DAECE /* Debug */,
-				80BD8CD61AA8C53F008CB350 /* Distribution */,
 				1B5533D81A5EF9A1006DAECE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -2273,7 +2123,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B5533DA1A5EF9A1006DAECE /* Debug */,
-				80BD8CD71AA8C53F008CB350 /* Distribution */,
 				1B5533DB1A5EF9A1006DAECE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -2283,7 +2132,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B5533DD1A5EF9A1006DAECE /* Debug */,
-				80BD8CD81AA8C53F008CB350 /* Distribution */,
 				1B5533DE1A5EF9A1006DAECE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -2293,7 +2141,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2EF449571B161E2600F3576A /* Debug */,
-				2EF449581B161E2600F3576A /* Distribution */,
 				2EF449591B161E2600F3576A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -2303,7 +2150,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2EF449541B161E2600F3576A /* Debug */,
-				2EF449551B161E2600F3576A /* Distribution */,
 				2EF449561B161E2600F3576A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
