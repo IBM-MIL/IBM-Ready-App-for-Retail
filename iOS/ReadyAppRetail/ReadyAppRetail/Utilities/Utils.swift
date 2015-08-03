@@ -56,8 +56,7 @@ class Utils {
     This method shows a progress hud using SVProgressHUD
     */
     class func showProgressHud(){
-        SVProgressHUD.setForegroundColor(SummitColor())
-        //SVProgressHUD.setBackgroundColor(UIColor.lightGrayColor())
+        SVProgressHUD.setForegroundColor(UIColor.summitMainColor())
         SVProgressHUD.show()
     
     }

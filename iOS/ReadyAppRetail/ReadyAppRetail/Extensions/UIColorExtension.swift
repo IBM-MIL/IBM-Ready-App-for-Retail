@@ -9,7 +9,7 @@ import UIKit
 extension UIColor {
     class func summitMainColor() -> UIColor{return UIColor(hex:"129552")}
     
-    class func summitSecondaryColor() -> UIColor{return UIColor(hex:"B5C34A")}
+    class func summitSecondaryColor() -> UIColor{return UIColor(hex:"EFC100")}
 }
 
 extension UIColor {
