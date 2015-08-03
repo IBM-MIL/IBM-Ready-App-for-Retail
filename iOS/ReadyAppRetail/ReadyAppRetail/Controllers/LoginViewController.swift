@@ -113,7 +113,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
         //*****set up usernameTextField*****
         
         //make cursor color summit green
-        usernameTextField.tintColor = Utils.UIColorFromHex(0x005448, alpha: 1)
+        usernameTextField.tintColor = UIColor.summitMainColor()
         
         //create imageView of usernameIcon
         var usernameIconImageView = UIImageView(frame: CGRectMake(13, 12, 16, 20))
@@ -139,7 +139,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
         //*****set up passwordTextField****
         
         //make cursor color summit green
-        passwordTextField.tintColor = Utils.UIColorFromHex(0x005448, alpha: 1)
+        passwordTextField.tintColor = UIColor.summitMainColor()
         //create imageView for passwordIcon
         var passwordIconImageView = UIImageView(frame: CGRectMake(13, 10, 18, 22))
         passwordIconImageView.image = UIImage(named: "password")

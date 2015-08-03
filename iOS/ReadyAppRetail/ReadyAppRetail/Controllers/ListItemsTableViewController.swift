@@ -197,10 +197,10 @@ class ListItemsTableViewController: UITableViewController {
             var attributedString = NSMutableAttributedString(string: string as String)
             
             // create font descriptor for bold and italic font
-            let fontDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
+            let fontDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody) //0xBE9B00
             
             //Create attributes for two parts of the string
-            let firstAttributes = [NSFontAttributeName: UIFont(name: "Oswald-Regular", size: 18)!, NSForegroundColorAttributeName: Utils.UIColorFromHex(0xBE9B00, alpha: 1)]
+            let firstAttributes = [NSFontAttributeName: UIFont(name: "Oswald-Regular", size: 18)!, NSForegroundColorAttributeName: UIColor.summitSecondaryColor()]
             
             var firstString : NSString = "\(moneySignLocalizedString)\(product.price)"
             
@@ -221,7 +221,7 @@ class ListItemsTableViewController: UITableViewController {
         //Create attributes for two parts of the string
             //d1d3d4
         let firstAttributes = [NSFontAttributeName: UIFont(name: "Oswald-Regular", size: 18)!, NSForegroundColorAttributeName: Utils.UIColorFromHex(0xd1d3d4, alpha: 1)]
-        let secondAttributes = [NSFontAttributeName: UIFont(name: "Oswald-Regular", size: 18)!, NSForegroundColorAttributeName: Utils.UIColorFromHex(0xBE9B00, alpha: 1)]
+        let secondAttributes = [NSFontAttributeName: UIFont(name: "Oswald-Regular", size: 18)!, NSForegroundColorAttributeName: UIColor.summitSecondaryColor()]
         let strikeThroughAttributes = [NSStrikethroughStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue]
         
         var firstString : String = "\(moneySignLocalizedString)\(product.price)"
