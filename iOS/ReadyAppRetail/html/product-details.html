@@ -33,14 +33,15 @@
 
     <div class="name ">{{productName}}</div>
 
-    <div class="rating ">
-        <rating-viewer rating="rating " empty-path="star_lg_grey.png " full-path="star_lg_yellow.png "></rating-viewer>
-    </div>
-
     <div class="price ">
         <span class="old ">{{oldPrice}}</span>
         <span class="current ">{{currentPrice}}</span>
     </div>
+    
+    <div class="rating ">
+        <rating-viewer rating="rating " empty-path="star_lg_grey.png " full-path="star_lg_yellow.png "></rating-viewer>
+    </div>
+
 
     <div class="color ">
         <color-picker color-options="colorData " color-picked="fetchNewImage(color)" color-title="{{colorTitle}}"></color-picker>
