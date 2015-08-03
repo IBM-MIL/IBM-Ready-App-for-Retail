@@ -23,6 +23,7 @@
 		1B455BD31AA53013005A22B6 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B455BCE1AA53013005A22B6 /* SVIndefiniteAnimatedView.m */; };
 		1B455BD41AA53013005A22B6 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1B455BD01AA53013005A22B6 /* SVProgressHUD.bundle */; };
 		1B455BD51AA53013005A22B6 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B455BD21AA53013005A22B6 /* SVProgressHUD.m */; };
+		1B45E5FA1B70016A00B1B093 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B45E5F91B70016A00B1B093 /* UIColorExtension.swift */; };
 		1B54D82C1A7C28110055C9AA /* ReadyAppsChallengeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B54D82B1A7C28110055C9AA /* ReadyAppsChallengeHandler.swift */; };
 		1B5533C01A5EF9A1006DAECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5533BF1A5EF9A1006DAECE /* AppDelegate.swift */; };
 		1B5533C71A5EF9A1006DAECE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B5533C61A5EF9A1006DAECE /* Images.xcassets */; };
@@ -297,6 +298,7 @@
 		1B455BD01AA53013005A22B6 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		1B455BD11AA53013005A22B6 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		1B455BD21AA53013005A22B6 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		1B45E5F91B70016A00B1B093 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1B54D82B1A7C28110055C9AA /* ReadyAppsChallengeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ReadyAppsChallengeHandler.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1B5533BA1A5EF9A1006DAECE /* ReadyAppRetail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadyAppRetail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B5533BE1A5EF9A1006DAECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -917,6 +919,7 @@
 		1B5533E81A5F16DA006DAECE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1B45E5F91B70016A00B1B093 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1678,6 +1681,7 @@
 				1BC5E0EF1A89D401003C59D8 /* UIImage+MultiFormat.m in Sources */,
 				1BC5E0BA1A899F3D003C59D8 /* List.swift in Sources */,
 				1BC5E0F01A89D401003C59D8 /* UIImage+WebP.m in Sources */,
+				1B45E5FA1B70016A00B1B093 /* UIColorExtension.swift in Sources */,
 				1B256CE41A6F061700FB4E1E /* CarouselCollectionViewController.swift in Sources */,
 				A21C032D1A6985DB003A9548 /* MQAExceptionHandler.m in Sources */,
 				1B5533C01A5EF9A1006DAECE /* AppDelegate.swift in Sources */,

@@ -16,7 +16,7 @@ class CreateListInAddToListHierarchyViewController: UIViewController, UITextFiel
         listNameTextField.delegate = self
         
         //make cursor color summit green
-        self.listNameTextField.tintColor = Utils.UIColorFromHex(0x005448, alpha: 1)
+        self.listNameTextField.tintColor = UIColor.summitMainColor()
         // Do any additional setup after loading the view.
     }
     

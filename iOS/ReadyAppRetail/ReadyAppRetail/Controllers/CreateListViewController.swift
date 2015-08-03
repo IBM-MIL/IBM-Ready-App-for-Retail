@@ -17,7 +17,7 @@ class CreateListViewController: UIViewController, UITextFieldDelegate{
         listNameTextField.delegate = self
         
         //make cursor color summit green
-        self.listNameTextField.tintColor = Utils.UIColorFromHex(0x005448, alpha: 1)
+        self.listNameTextField.tintColor = UIColor.summitMainColor()
         
         self.wormhole = MMWormhole(applicationGroupIdentifier: GroupDataAccess.sharedInstance.groupAppID, optionalDirectory: nil)
     }
