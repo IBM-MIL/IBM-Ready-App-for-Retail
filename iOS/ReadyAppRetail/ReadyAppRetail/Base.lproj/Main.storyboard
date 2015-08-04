@@ -732,11 +732,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4S-JV-hGY">
-                                        <rect key="frame" x="329" y="16" width="46" height="45"/>
+                                        <rect key="frame" x="339" y="28" width="22" height="22"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="a4S-JV-hGY" secondAttribute="height" multiplier="40:39" id="LPw-nO-lBC"/>
+                                            <constraint firstAttribute="height" constant="22" id="cP5-Bv-YxP"/>
+                                            <constraint firstAttribute="width" constant="22" id="xmP-pR-hOc"/>
                                         </constraints>
-                                        <state key="normal" image="add-new-01">
+                                        <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -751,9 +752,8 @@
                                     <constraint firstAttribute="centerX" secondItem="hiH-r0-prS" secondAttribute="centerX" constant="-2" id="Qbc-nr-qQr"/>
                                     <constraint firstAttribute="width" constant="376" id="aN7-MR-Z3b"/>
                                     <constraint firstAttribute="centerY" secondItem="hl4-yk-fFo" secondAttribute="centerY" constant="-1.5" id="jPc-oT-1Zw"/>
-                                    <constraint firstAttribute="trailing" secondItem="a4S-JV-hGY" secondAttribute="trailing" constant="1" id="jc7-4j-YpR"/>
+                                    <constraint firstAttribute="trailing" secondItem="a4S-JV-hGY" secondAttribute="trailing" constant="15" id="jc7-4j-YpR"/>
                                     <constraint firstAttribute="height" constant="74" id="nTd-By-uRa"/>
-                                    <constraint firstItem="a4S-JV-hGY" firstAttribute="top" secondItem="a0p-ie-er4" secondAttribute="top" constant="16" id="vUN-sF-VUL"/>
                                     <constraint firstAttribute="centerY" secondItem="hiH-r0-prS" secondAttribute="centerY" constant="-1" id="wvx-4o-JNX"/>
                                     <constraint firstAttribute="centerY" secondItem="a4S-JV-hGY" secondAttribute="centerY" constant="-1.5" id="zgj-yZ-Qtg"/>
                                 </constraints>
@@ -771,6 +771,9 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="addButton" destination="a4S-JV-hGY" id="j7b-o3-pRK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Dt-eL-MF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -836,26 +839,27 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ota-gz-PdM">
-                                            <rect key="frame" x="328" y="13" width="40" height="40"/>
+                                            <rect key="frame" x="345" y="21" width="22" height="22"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="TLO-jq-aKn"/>
+                                                <constraint firstAttribute="height" constant="22" id="s6M-6Z-46x"/>
+                                                <constraint firstAttribute="width" constant="22" id="zr3-ZM-dHZ"/>
                                             </constraints>
-                                            <state key="normal" image="add-new-01">
+                                            <state key="normal">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="Ota-gz-PdM" secondAttribute="centerY" id="2Gl-V9-17d"/>
                                         <constraint firstItem="b2w-AS-i7T" firstAttribute="leading" secondItem="x1t-G3-Yzk" secondAttribute="leadingMargin" constant="11" id="6F8-Lq-c9f"/>
-                                        <constraint firstItem="Ota-gz-PdM" firstAttribute="top" secondItem="x1t-G3-Yzk" secondAttribute="topMargin" constant="5" id="B1P-cu-fz7"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Ota-gz-PdM" secondAttribute="trailing" constant="-1" id="GRI-xE-x8d"/>
                                         <constraint firstItem="b2w-AS-i7T" firstAttribute="centerY" secondItem="x1t-G3-Yzk" secondAttribute="centerY" id="Qge-P9-xKQ"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Ota-gz-PdM" secondAttribute="bottom" constant="3.5" id="mqG-fN-mkQ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Ota-gz-PdM" secondAttribute="trailing" id="U6R-G0-jt6"/>
                                         <constraint firstItem="b2w-AS-i7T" firstAttribute="top" secondItem="x1t-G3-Yzk" secondAttribute="topMargin" constant="14" id="vFl-9a-Wcc"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
+                                    <outlet property="addButton" destination="Ota-gz-PdM" id="vBt-mF-eaT"/>
                                     <segue destination="9sd-id-jEh" kind="presentation" identifier="createList" id="kpr-h8-rg1"/>
                                 </connections>
                             </tableViewCell>
@@ -1310,15 +1314,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DemoProfile-Background" width="640" height="1136"/>
+        <image name="DemoProfile-Background" width="320" height="568"/>
         <image name="DemoProfileLogo" width="50" height="50"/>
         <image name="Location-Icon-White2" width="84" height="105"/>
-        <image name="add-new-01" width="21" height="21"/>
         <image name="arrow-back_grey" width="10" height="17"/>
         <image name="check_sm_white" width="22" height="21"/>
         <image name="flag_sm" width="9" height="12"/>
         <image name="list" width="18" height="16"/>
-        <image name="login-background" width="640" height="1136"/>
+        <image name="login-background" width="320" height="568"/>
         <image name="loginbackground" width="245" height="137"/>
         <image name="profile" width="12" height="16"/>
         <image name="shop" width="17" height="20"/>

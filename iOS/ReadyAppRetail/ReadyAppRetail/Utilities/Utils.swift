@@ -133,6 +133,26 @@ class Utils {
         }
     }
     
+    
+    class func setUpAddButton(button : UIButton) {
+        
+        button.layer.cornerRadius = button.frame.size.width/2
+        button.clipsToBounds = true
+        
+       // button.layer.borderWidth = 5.0
+        
+        button.backgroundColor = UIColor.summitSecondaryColor()
+        
+        var plusImage = UIImage(named: "AddIcon")
+        
+        var plusImageView = UIImageView(frame: CGRectMake(0,0,button.frame.size.width, button.frame.size.height))
+        plusImageView.image = plusImage
+        plusImageView.contentMode = UIViewContentMode.ScaleAspectFit
+        
+        button.addSubview(plusImageView)
+        
+    }
+    
 
     
 }
