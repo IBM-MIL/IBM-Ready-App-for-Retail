@@ -37,7 +37,7 @@ public class MILWLHelper: NSObject {
         var adapterName : String = "SummitAdapter"
         
         let invocationData = WLProcedureInvocationData(adapterName: adapterName, procedureName: "getHomeViewMetadata")
-         invocationData.parameters = []
+        invocationData.parameters = ["es"]
         
         var number : NSNumber = NSNumber(double: 30000)
         

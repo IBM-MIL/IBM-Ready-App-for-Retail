@@ -15,6 +15,9 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         self.loginButton.hidden = false
         self.loginButton.layer.cornerRadius = 10
+        
+        self.demoToggle.onTintColor = UIColor.summitSecondaryColor()
+        self.loginButton.backgroundColor = UIColor.summitSecondaryColor()
 
         // Do any additional setup after loading the view.
     }

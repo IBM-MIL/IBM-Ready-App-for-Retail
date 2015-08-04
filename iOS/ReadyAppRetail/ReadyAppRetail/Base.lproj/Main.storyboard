@@ -513,7 +513,7 @@
         <!--List-->
         <scene sceneID="fEV-Vp-7Ab">
             <objects>
-                <navigationController id="bdv-DL-oDG" sceneMemberID="viewController">
+                <navigationController id="bdv-DL-oDG" customClass="ListNavigationController" customModule="ReadyAppRetail" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" image="list" id="wVU-ci-lVz"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="141-2i-Hpa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -951,7 +951,7 @@
         <!--Shop-->
         <scene sceneID="sAY-ZO-oBn">
             <objects>
-                <navigationController id="zdh-C5-DhU" sceneMemberID="viewController">
+                <navigationController id="zdh-C5-DhU" customClass="ShopNavigationController" customModule="ReadyAppRetail" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Shop" image="shop" id="pYk-Pq-E4W"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="GYR-KL-mrL">
@@ -971,7 +971,7 @@
         <!--Profile-->
         <scene sceneID="Kqp-7h-WuI">
             <objects>
-                <navigationController id="XyW-QE-cGt" sceneMemberID="viewController">
+                <navigationController id="XyW-QE-cGt" customClass="ProfileNavigationController" customModule="ReadyAppRetail" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="profile" id="KjC-3W-MDt"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FvH-rR-1Gn">
@@ -1310,7 +1310,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DemoProfile-Background" width="1242" height="2208"/>
+        <image name="DemoProfile-Background" width="640" height="1136"/>
         <image name="DemoProfileLogo" width="50" height="50"/>
         <image name="Location-Icon-White2" width="84" height="105"/>
         <image name="add-new-01" width="21" height="21"/>
@@ -1318,7 +1318,7 @@
         <image name="check_sm_white" width="22" height="21"/>
         <image name="flag_sm" width="9" height="12"/>
         <image name="list" width="18" height="16"/>
-        <image name="login-background" width="1242" height="2208"/>
+        <image name="login-background" width="640" height="1136"/>
         <image name="loginbackground" width="245" height="137"/>
         <image name="profile" width="12" height="16"/>
         <image name="shop" width="17" height="20"/>

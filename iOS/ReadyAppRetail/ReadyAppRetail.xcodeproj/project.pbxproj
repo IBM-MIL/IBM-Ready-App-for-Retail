@@ -24,6 +24,11 @@
 		1B455BD41AA53013005A22B6 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1B455BD01AA53013005A22B6 /* SVProgressHUD.bundle */; };
 		1B455BD51AA53013005A22B6 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B455BD21AA53013005A22B6 /* SVProgressHUD.m */; };
 		1B45E5FA1B70016A00B1B093 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B45E5F91B70016A00B1B093 /* UIColorExtension.swift */; };
+		1B45E6281B701FC600B1B093 /* star_lg_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B45E6261B701FC600B1B093 /* star_lg_green.png */; };
+		1B45E6291B701FC600B1B093 /* star_sm_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B45E6271B701FC600B1B093 /* star_sm_green.png */; };
+		1B45E6AA1B711FB000B1B093 /* ShopNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B45E6A91B711FB000B1B093 /* ShopNavigationController.swift */; };
+		1B45E6AC1B71214400B1B093 /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B45E6AB1B71214400B1B093 /* ProfileNavigationController.swift */; };
+		1B45E6AE1B71221E00B1B093 /* ListNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B45E6AD1B71221E00B1B093 /* ListNavigationController.swift */; };
 		1B54D82C1A7C28110055C9AA /* ReadyAppsChallengeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B54D82B1A7C28110055C9AA /* ReadyAppsChallengeHandler.swift */; };
 		1B5533C01A5EF9A1006DAECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5533BF1A5EF9A1006DAECE /* AppDelegate.swift */; };
 		1B5533C71A5EF9A1006DAECE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B5533C61A5EF9A1006DAECE /* Images.xcassets */; };
@@ -299,6 +304,11 @@
 		1B455BD11AA53013005A22B6 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		1B455BD21AA53013005A22B6 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		1B45E5F91B70016A00B1B093 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		1B45E6261B701FC600B1B093 /* star_lg_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_lg_green.png; sourceTree = "<group>"; };
+		1B45E6271B701FC600B1B093 /* star_sm_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_sm_green.png; sourceTree = "<group>"; };
+		1B45E6A91B711FB000B1B093 /* ShopNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNavigationController.swift; sourceTree = "<group>"; };
+		1B45E6AB1B71214400B1B093 /* ProfileNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
+		1B45E6AD1B71221E00B1B093 /* ListNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListNavigationController.swift; sourceTree = "<group>"; };
 		1B54D82B1A7C28110055C9AA /* ReadyAppsChallengeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ReadyAppsChallengeHandler.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1B5533BA1A5EF9A1006DAECE /* ReadyAppRetail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadyAppRetail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B5533BE1A5EF9A1006DAECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -733,6 +743,16 @@
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
+		1B45E6A81B711F9000B1B093 /* NavigationControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B45E6A91B711FB000B1B093 /* ShopNavigationController.swift */,
+				1B45E6AB1B71214400B1B093 /* ProfileNavigationController.swift */,
+				1B45E6AD1B71221E00B1B093 /* ListNavigationController.swift */,
+			);
+			path = NavigationControllers;
+			sourceTree = "<group>";
+		};
 		1B5533B11A5EF9A1006DAECE = {
 			isa = PBXGroup;
 			children = (
@@ -938,6 +958,7 @@
 		1B5533EA1A5F16EC006DAECE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1B45E6A81B711F9000B1B093 /* NavigationControllers */,
 				1BE914BB1A97A02A00421004 /* TabBarViewController.swift */,
 				1BE914B91A97A02100421004 /* ProfileViewController.swift */,
 				1B256CEC1A6F074900FB4E1E /* HorizontalPagedCollectionViewController.swift */,
@@ -1340,6 +1361,8 @@
 		34D21B2F1A8021010085138E /* html */ = {
 			isa = PBXGroup;
 			children = (
+				1B45E6261B701FC600B1B093 /* star_lg_green.png */,
+				1B45E6271B701FC600B1B093 /* star_sm_green.png */,
 				1B931F9D1AB1F45600E4A5CF /* angular-animate.js */,
 				1B931F9E1AB1F45600E4A5CF /* angular-route.js */,
 				1B931F9F1AB1F45600E4A5CF /* angular-touch.js */,
@@ -1550,6 +1573,7 @@
 				1B256CEA1A6F071F00FB4E1E /* CarouselCollectionViewCell.xib in Resources */,
 				1B9A85BE1A6441170061F729 /* silence.caf in Resources */,
 				1B931FC31AB1F45600E4A5CF /* color-picker.js in Resources */,
+				1B45E6281B701FC600B1B093 /* star_lg_green.png in Resources */,
 				1B931FD61AB1F45600E4A5CF /* star_sm_yellow.png in Resources */,
 				1BDE25631A782A0B0061332B /* OFL.txt in Resources */,
 				1B931FBF1AB1F45600E4A5CF /* angular.js in Resources */,
@@ -1570,6 +1594,7 @@
 				1B931FC61AB1F45600E4A5CF /* image-preloader-factory.js in Resources */,
 				1B931FC71AB1F45600E4A5CF /* index.html in Resources */,
 				1B5533C71A5EF9A1006DAECE /* Images.xcassets in Resources */,
+				1B45E6291B701FC600B1B093 /* star_sm_green.png in Resources */,
 				1B931FC91AB1F45600E4A5CF /* jquery.js in Resources */,
 				1BDE25641A782A0B0061332B /* Oswald-Bold.ttf in Resources */,
 				1B931FD31AB1F45600E4A5CF /* star_lg_grey.png in Resources */,
@@ -1648,6 +1673,7 @@
 				EBC5171D1B1CE369006FDB4E /* KeychainWrapper.swift in Sources */,
 				1BC5E0F11A89D401003C59D8 /* UIImageView+HighlightedWebCache.m in Sources */,
 				1BE914BA1A97A02100421004 /* ProfileViewController.swift in Sources */,
+				1B45E6AA1B711FB000B1B093 /* ShopNavigationController.swift in Sources */,
 				EBEA7E2F1B2B872700D8132E /* MMWormholeFileTransiting.m in Sources */,
 				1B455BD51AA53013005A22B6 /* SVProgressHUD.m in Sources */,
 				340D77ED1A8A7B4900AD967C /* ListItemTableViewCell.swift in Sources */,
@@ -1711,6 +1737,7 @@
 				34B5D8BD1A9CEAA700A799AE /* BeaconManager.swift in Sources */,
 				34D21B5B1A802FC00085138E /* Utils.swift in Sources */,
 				34D2E38C1A853A2900DF2927 /* AddToListViewController.swift in Sources */,
+				1B45E6AE1B71221E00B1B093 /* ListNavigationController.swift in Sources */,
 				1BC5E0F21A89D401003C59D8 /* UIImageView+WebCache.m in Sources */,
 				340D77F11A8BA52300AD967C /* TotalTableViewCell.swift in Sources */,
 				1BDE25541A781AEB0061332B /* SyntaxChecker.swift in Sources */,
@@ -1718,6 +1745,7 @@
 				1BE914BC1A97A02A00421004 /* TabBarViewController.swift in Sources */,
 				34E005251AA4FDD100992104 /* ListItemsViewController.swift in Sources */,
 				1B256CE91A6F071F00FB4E1E /* CarouselCollectionViewCell.swift in Sources */,
+				1B45E6AC1B71214400B1B093 /* ProfileNavigationController.swift in Sources */,
 				34D21B5F1A812FF60085138E /* RLMSupport.swift in Sources */,
 				2E228F9D1B1CFA7600003ADA /* SharedConstants.swift in Sources */,
 			);
