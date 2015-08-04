@@ -7,8 +7,14 @@ import UIKit
 
 class CreateNewListTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var addButton: UIButton!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        Utils.setUpAddButton(addButton)
         // Initialization code
     }
 
