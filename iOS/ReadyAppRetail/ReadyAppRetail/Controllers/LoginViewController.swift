@@ -103,6 +103,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
     */
     func setUpLoginButton(){
         loginButton.setTitle(NSLocalizedString("L O G I N", comment: "Another word for sign in"), forState: UIControlState.Normal)
+        self.loginButton.backgroundColor = UIColor.summitSecondaryColor()
+        self.loginButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
     }
     
     /**
@@ -117,7 +119,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
         
         //create imageView of usernameIcon
         var usernameIconImageView = UIImageView(frame: CGRectMake(13, 12, 16, 20))
-        usernameIconImageView.image = UIImage(named: "profile_selected")
+        usernameIconImageView.image = UIImage(named: "Username")
         
         //create paddingView that will be added to the usernameTextField. This paddingView will hold the usernameIconImageView
         var usernamePaddingView = UIView(frame: CGRectMake(0, 0,usernameTextField.frame.size.height - 10, usernameTextField.frame.size.height))
@@ -142,7 +144,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
         passwordTextField.tintColor = UIColor.summitMainColor()
         //create imageView for passwordIcon
         var passwordIconImageView = UIImageView(frame: CGRectMake(13, 10, 18, 22))
-        passwordIconImageView.image = UIImage(named: "password")
+        passwordIconImageView.image = UIImage(named: "Password")
         
         //create paddingView that will be added to the passwordTextField. This paddingView will hold the passwordIconImageView
         var passwordPaddingView = UIView(frame: CGRectMake(0, 0,usernameTextField.frame.size.height - 10, usernameTextField.frame.size.height))

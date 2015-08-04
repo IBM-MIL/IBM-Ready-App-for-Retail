@@ -31,6 +31,15 @@
 
             color: "Color"
         });
+                          
+//                        $translateProvider.translations('es_US', {
+//                                                          addToCart: "Add to Cart",
+//                                                          addToList: "Add to List",
+//                                                          
+//                                                          detailsTitle: "Product Details",
+//                                                          
+//                                                          color: "Color"
+//                                                          });
 
         $translateProvider.preferredLanguage('en');
 

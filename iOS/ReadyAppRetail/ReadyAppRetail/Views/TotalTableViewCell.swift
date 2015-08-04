@@ -11,6 +11,8 @@ class TotalTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.totalPriceLabel.textColor = UIColor.summitSecondaryColor()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
