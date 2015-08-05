@@ -32,8 +32,8 @@
 /* Class = "IBUILabel"; text = "CREATE A NEW LIST"; ObjectID = "XsU-jX-kpO"; */
 "XsU-jX-kpO.text" = "CREATE A NEW LIST";
 
-/* Class = "IBUILabel"; text = "S U M M I T"; ObjectID = "aYk-pw-l3R"; */
-"aYk-pw-l3R.text" = "S U M M I T";
+/* Class = "IBUILabel"; text = "Summit"; ObjectID = "aYk-pw-l3R"; */
+"aYk-pw-l3R.text" = "Summit";
 
 /* Class = "IBUIButton"; normalTitle = "Don't have an Account? Sign Up."; ObjectID = "aoV-K5-FRj"; */
 "aoV-K5-FRj.normalTitle" = "Don't have an Account? Sign Up.";
