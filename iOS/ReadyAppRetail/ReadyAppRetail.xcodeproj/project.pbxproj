@@ -1518,6 +1518,7 @@
 					};
 					1B5533CE1A5EF9A1006DAECE = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = PP64RT7P8Z;
 						TestTargetID = 1B5533B91A5EF9A1006DAECE;
 					};
 					2EF449351B161E2500F3576A = {
@@ -1999,6 +2000,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -2012,7 +2015,7 @@
 				INFOPLIST_FILE = ReadyAppRetailTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c6ff8dcf-7c11-443e-b8ca-f0f744c2fec8";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReadyAppRetail.app/ReadyAppRetail";
 			};
 			name = Debug;
@@ -2021,6 +2024,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -2030,7 +2035,7 @@
 				INFOPLIST_FILE = ReadyAppRetailTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c6ff8dcf-7c11-443e-b8ca-f0f744c2fec8";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReadyAppRetail.app/ReadyAppRetail";
 			};
 			name = Release;
