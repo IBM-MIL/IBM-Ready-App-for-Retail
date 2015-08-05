@@ -99,7 +99,7 @@
     clear: left;
     -webkit-border-radius: 6px;
     border-radius: 6px;
-    background: #b5c34a;
+    background: #efc100;
     font-family: 'OpenSansRegular';
     color: #fff;
     font-size: 11pt;
@@ -108,7 +108,7 @@
     outline: none
 }
 .overview-section .list-button {
-    background: #b5c34a
+    background: #efc100
 }
 .overview-section .list-button:active {
     background: #8b7100
