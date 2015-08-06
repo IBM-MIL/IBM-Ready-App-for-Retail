@@ -7,6 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B194C591B73CAFA00CF6516 /* angular-animate.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C3B1B73CAFA00CF6516 /* angular-animate.js */; };
+		1B194C5A1B73CAFA00CF6516 /* angular-route.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C3C1B73CAFA00CF6516 /* angular-route.js */; };
+		1B194C5B1B73CAFA00CF6516 /* angular-touch.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C3D1B73CAFA00CF6516 /* angular-touch.js */; };
+		1B194C5C1B73CAFA00CF6516 /* angular-translate.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C3E1B73CAFA00CF6516 /* angular-translate.js */; };
+		1B194C5D1B73CAFA00CF6516 /* angular.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C3F1B73CAFA00CF6516 /* angular.js */; };
+		1B194C5E1B73CAFA00CF6516 /* arrow-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C401B73CAFA00CF6516 /* arrow-down.png */; };
+		1B194C5F1B73CAFA00CF6516 /* arrow-forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C411B73CAFA00CF6516 /* arrow-forward.png */; };
+		1B194C601B73CAFA00CF6516 /* arrow-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C421B73CAFA00CF6516 /* arrow-up.png */; };
+		1B194C611B73CAFA00CF6516 /* color-picker.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C431B73CAFA00CF6516 /* color-picker.js */; };
+		1B194C621B73CAFA00CF6516 /* drop-down.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C441B73CAFA00CF6516 /* drop-down.js */; };
+		1B194C631B73CAFA00CF6516 /* i18n.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C451B73CAFA00CF6516 /* i18n.js */; };
+		1B194C641B73CAFA00CF6516 /* image-preloader-factory.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C461B73CAFA00CF6516 /* image-preloader-factory.js */; };
+		1B194C651B73CAFA00CF6516 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C471B73CAFA00CF6516 /* index.html */; };
+		1B194C661B73CAFA00CF6516 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C481B73CAFA00CF6516 /* index.js */; };
+		1B194C671B73CAFA00CF6516 /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C491B73CAFA00CF6516 /* jquery.js */; };
+		1B194C681B73CAFA00CF6516 /* mil-ctrl.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C4A1B73CAFA00CF6516 /* mil-ctrl.js */; };
+		1B194C691B73CAFA00CF6516 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C4B1B73CAFA00CF6516 /* OpenSans-Regular.ttf */; };
+		1B194C6A1B73CAFA00CF6516 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C4C1B73CAFA00CF6516 /* OpenSans-Semibold.ttf */; };
+		1B194C6B1B73CAFA00CF6516 /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C4D1B73CAFA00CF6516 /* Oswald-Regular.ttf */; };
+		1B194C6C1B73CAFA00CF6516 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C4E1B73CAFA00CF6516 /* placeholder.png */; };
+		1B194C6D1B73CAFA00CF6516 /* product-details-ctrl.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C4F1B73CAFA00CF6516 /* product-details-ctrl.js */; };
+		1B194C6F1B73CAFA00CF6516 /* rating-viewer.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C511B73CAFA00CF6516 /* rating-viewer.js */; };
+		1B194C701B73CAFA00CF6516 /* routing.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C521B73CAFA00CF6516 /* routing.js */; };
+		1B194C711B73CAFA00CF6516 /* star_lg_grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C531B73CAFA00CF6516 /* star_lg_grey.png */; };
+		1B194C721B73CAFA00CF6516 /* star_lg_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C541B73CAFA00CF6516 /* star_lg_yellow.png */; };
+		1B194C731B73CAFA00CF6516 /* star_sm_grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C551B73CAFA00CF6516 /* star_sm_grey.png */; };
+		1B194C741B73CAFA00CF6516 /* star_sm_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C561B73CAFA00CF6516 /* star_sm_yellow.png */; };
+		1B194C751B73CAFA00CF6516 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C571B73CAFA00CF6516 /* style.css */; };
+		1B194C761B73CAFA00CF6516 /* text-expander.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C581B73CAFA00CF6516 /* text-expander.js */; };
+		1B194C781B73CB7800CF6516 /* product-details.html in Resources */ = {isa = PBXBuildFile; fileRef = 1B194C771B73CB7800CF6516 /* product-details.html */; };
 		1B1D44191A8A77E6007AE636 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D44181A8A77E6007AE636 /* RealmHelper.swift */; };
 		1B228C461AAF4AE700D61FDE /* xtify.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B228C451AAF4AE700D61FDE /* xtify.plist */; };
 		1B228C481AAFE02E00D61FDE /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B228C471AAFE02E00D61FDE /* SwiftyJSON.swift */; };
@@ -24,8 +54,6 @@
 		1B455BD41AA53013005A22B6 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1B455BD01AA53013005A22B6 /* SVProgressHUD.bundle */; };
 		1B455BD51AA53013005A22B6 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B455BD21AA53013005A22B6 /* SVProgressHUD.m */; };
 		1B45E5FA1B70016A00B1B093 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B45E5F91B70016A00B1B093 /* UIColorExtension.swift */; };
-		1B45E6281B701FC600B1B093 /* star_lg_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B45E6261B701FC600B1B093 /* star_lg_green.png */; };
-		1B45E6291B701FC600B1B093 /* star_sm_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B45E6271B701FC600B1B093 /* star_sm_green.png */; };
 		1B45E6AA1B711FB000B1B093 /* ShopNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B45E6A91B711FB000B1B093 /* ShopNavigationController.swift */; };
 		1B45E6AC1B71214400B1B093 /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B45E6AB1B71214400B1B093 /* ProfileNavigationController.swift */; };
 		1B45E6AE1B71221E00B1B093 /* ListNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B45E6AD1B71221E00B1B093 /* ListNavigationController.swift */; };
@@ -40,36 +68,6 @@
 		1B5DD9471A70413400DCB413 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5DD9461A70413400DCB413 /* libz.1.dylib */; };
 		1B5DD9491A70416E00DCB413 /* libc++.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5DD9481A70416E00DCB413 /* libc++.1.dylib */; };
 		1B5DD94B1A70418C00DCB413 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5DD94A1A70418C00DCB413 /* libstdc++.6.0.9.dylib */; };
-		1B931FBB1AB1F45600E4A5CF /* angular-animate.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B931F9D1AB1F45600E4A5CF /* angular-animate.js */; };
-		1B931FBC1AB1F45600E4A5CF /* angular-route.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B931F9E1AB1F45600E4A5CF /* angular-route.js */; };
-		1B931FBD1AB1F45600E4A5CF /* angular-touch.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B931F9F1AB1F45600E4A5CF /* angular-touch.js */; };
-		1B931FBE1AB1F45600E4A5CF /* angular-translate.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FA01AB1F45600E4A5CF /* angular-translate.js */; };
-		1B931FBF1AB1F45600E4A5CF /* angular.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FA11AB1F45600E4A5CF /* angular.js */; };
-		1B931FC01AB1F45600E4A5CF /* arrow-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FA21AB1F45600E4A5CF /* arrow-down.png */; };
-		1B931FC11AB1F45600E4A5CF /* arrow-forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FA31AB1F45600E4A5CF /* arrow-forward.png */; };
-		1B931FC21AB1F45600E4A5CF /* arrow-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FA41AB1F45600E4A5CF /* arrow-up.png */; };
-		1B931FC31AB1F45600E4A5CF /* color-picker.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FA51AB1F45600E4A5CF /* color-picker.js */; };
-		1B931FC41AB1F45600E4A5CF /* drop-down.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FA61AB1F45600E4A5CF /* drop-down.js */; };
-		1B931FC51AB1F45600E4A5CF /* i18n.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FA71AB1F45600E4A5CF /* i18n.js */; };
-		1B931FC61AB1F45600E4A5CF /* image-preloader-factory.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FA81AB1F45600E4A5CF /* image-preloader-factory.js */; };
-		1B931FC71AB1F45600E4A5CF /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FA91AB1F45600E4A5CF /* index.html */; };
-		1B931FC81AB1F45600E4A5CF /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FAA1AB1F45600E4A5CF /* index.js */; };
-		1B931FC91AB1F45600E4A5CF /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FAB1AB1F45600E4A5CF /* jquery.js */; };
-		1B931FCA1AB1F45600E4A5CF /* mil-ctrl.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FAC1AB1F45600E4A5CF /* mil-ctrl.js */; };
-		1B931FCB1AB1F45600E4A5CF /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FAD1AB1F45600E4A5CF /* OpenSans-Regular.ttf */; };
-		1B931FCC1AB1F45600E4A5CF /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FAE1AB1F45600E4A5CF /* OpenSans-Semibold.ttf */; };
-		1B931FCD1AB1F45600E4A5CF /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FAF1AB1F45600E4A5CF /* Oswald-Regular.ttf */; };
-		1B931FCE1AB1F45600E4A5CF /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FB01AB1F45600E4A5CF /* placeholder.png */; };
-		1B931FCF1AB1F45600E4A5CF /* product-details-ctrl.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FB11AB1F45600E4A5CF /* product-details-ctrl.js */; };
-		1B931FD01AB1F45600E4A5CF /* product-details.html in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FB21AB1F45600E4A5CF /* product-details.html */; };
-		1B931FD11AB1F45600E4A5CF /* rating-viewer.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FB31AB1F45600E4A5CF /* rating-viewer.js */; };
-		1B931FD21AB1F45600E4A5CF /* routing.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FB41AB1F45600E4A5CF /* routing.js */; };
-		1B931FD31AB1F45600E4A5CF /* star_lg_grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FB51AB1F45600E4A5CF /* star_lg_grey.png */; };
-		1B931FD41AB1F45600E4A5CF /* star_lg_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FB61AB1F45600E4A5CF /* star_lg_yellow.png */; };
-		1B931FD51AB1F45600E4A5CF /* star_sm_grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FB71AB1F45600E4A5CF /* star_sm_grey.png */; };
-		1B931FD61AB1F45600E4A5CF /* star_sm_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FB81AB1F45600E4A5CF /* star_sm_yellow.png */; };
-		1B931FD71AB1F45600E4A5CF /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FB91AB1F45600E4A5CF /* style.css */; };
-		1B931FD81AB1F45600E4A5CF /* text-expander.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B931FBA1AB1F45600E4A5CF /* text-expander.js */; };
 		1B931FDC1AB2347000E4A5CF /* Q4M-Production.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B931FDB1AB2347000E4A5CF /* Q4M-Production.framework */; };
 		1B9794761A69ED90003E8DAE /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9794751A69ED90003E8DAE /* BrowseViewController.swift */; };
 		1B9A85AE1A6441170061F729 /* CompanyCustomInbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A858A1A6441170061F729 /* CompanyCustomInbox.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -287,6 +285,36 @@
 		1B194BC01B72D52300CF6516 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		1B194BC11B72D52300CF6516 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Interface.strings; sourceTree = "<group>"; };
 		1B194BC21B72D52300CF6516 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1B194C3B1B73CAFA00CF6516 /* angular-animate.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "angular-animate.js"; sourceTree = "<group>"; };
+		1B194C3C1B73CAFA00CF6516 /* angular-route.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "angular-route.js"; sourceTree = "<group>"; };
+		1B194C3D1B73CAFA00CF6516 /* angular-touch.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "angular-touch.js"; sourceTree = "<group>"; };
+		1B194C3E1B73CAFA00CF6516 /* angular-translate.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "angular-translate.js"; sourceTree = "<group>"; };
+		1B194C3F1B73CAFA00CF6516 /* angular.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = angular.js; sourceTree = "<group>"; };
+		1B194C401B73CAFA00CF6516 /* arrow-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-down.png"; sourceTree = "<group>"; };
+		1B194C411B73CAFA00CF6516 /* arrow-forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-forward.png"; sourceTree = "<group>"; };
+		1B194C421B73CAFA00CF6516 /* arrow-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-up.png"; sourceTree = "<group>"; };
+		1B194C431B73CAFA00CF6516 /* color-picker.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "color-picker.js"; sourceTree = "<group>"; };
+		1B194C441B73CAFA00CF6516 /* drop-down.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "drop-down.js"; sourceTree = "<group>"; };
+		1B194C451B73CAFA00CF6516 /* i18n.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = i18n.js; sourceTree = "<group>"; };
+		1B194C461B73CAFA00CF6516 /* image-preloader-factory.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "image-preloader-factory.js"; sourceTree = "<group>"; };
+		1B194C471B73CAFA00CF6516 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		1B194C481B73CAFA00CF6516 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
+		1B194C491B73CAFA00CF6516 /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
+		1B194C4A1B73CAFA00CF6516 /* mil-ctrl.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "mil-ctrl.js"; sourceTree = "<group>"; };
+		1B194C4B1B73CAFA00CF6516 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		1B194C4C1B73CAFA00CF6516 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		1B194C4D1B73CAFA00CF6516 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Regular.ttf"; sourceTree = "<group>"; };
+		1B194C4E1B73CAFA00CF6516 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		1B194C4F1B73CAFA00CF6516 /* product-details-ctrl.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "product-details-ctrl.js"; sourceTree = "<group>"; };
+		1B194C511B73CAFA00CF6516 /* rating-viewer.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "rating-viewer.js"; sourceTree = "<group>"; };
+		1B194C521B73CAFA00CF6516 /* routing.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = routing.js; sourceTree = "<group>"; };
+		1B194C531B73CAFA00CF6516 /* star_lg_grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_lg_grey.png; sourceTree = "<group>"; };
+		1B194C541B73CAFA00CF6516 /* star_lg_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_lg_yellow.png; sourceTree = "<group>"; };
+		1B194C551B73CAFA00CF6516 /* star_sm_grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_sm_grey.png; sourceTree = "<group>"; };
+		1B194C561B73CAFA00CF6516 /* star_sm_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_sm_yellow.png; sourceTree = "<group>"; };
+		1B194C571B73CAFA00CF6516 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		1B194C581B73CAFA00CF6516 /* text-expander.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "text-expander.js"; sourceTree = "<group>"; };
+		1B194C771B73CB7800CF6516 /* product-details.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "product-details.html"; sourceTree = "<group>"; };
 		1B1D44181A8A77E6007AE636 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		1B228C451AAF4AE700D61FDE /* xtify.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xtify.plist; sourceTree = "<group>"; };
 		1B228C471AAFE02E00D61FDE /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -307,8 +335,6 @@
 		1B455BD11AA53013005A22B6 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		1B455BD21AA53013005A22B6 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		1B45E5F91B70016A00B1B093 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		1B45E6261B701FC600B1B093 /* star_lg_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_lg_green.png; sourceTree = "<group>"; };
-		1B45E6271B701FC600B1B093 /* star_sm_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_sm_green.png; sourceTree = "<group>"; };
 		1B45E6A91B711FB000B1B093 /* ShopNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNavigationController.swift; sourceTree = "<group>"; };
 		1B45E6AB1B71214400B1B093 /* ProfileNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
 		1B45E6AD1B71221E00B1B093 /* ListNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListNavigationController.swift; sourceTree = "<group>"; };
@@ -410,36 +436,6 @@
 		1B5DD9481A70416E00DCB413 /* libc++.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.1.dylib"; path = "usr/lib/libc++.1.dylib"; sourceTree = SDKROOT; };
 		1B5DD94A1A70418C00DCB413 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		1B5DD94C1A70483B00DCB413 /* ReadyAppRetail.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ReadyAppRetail.entitlements; sourceTree = "<group>"; };
-		1B931F9D1AB1F45600E4A5CF /* angular-animate.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "angular-animate.js"; sourceTree = "<group>"; };
-		1B931F9E1AB1F45600E4A5CF /* angular-route.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "angular-route.js"; sourceTree = "<group>"; };
-		1B931F9F1AB1F45600E4A5CF /* angular-touch.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "angular-touch.js"; sourceTree = "<group>"; };
-		1B931FA01AB1F45600E4A5CF /* angular-translate.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "angular-translate.js"; sourceTree = "<group>"; };
-		1B931FA11AB1F45600E4A5CF /* angular.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = angular.js; sourceTree = "<group>"; };
-		1B931FA21AB1F45600E4A5CF /* arrow-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-down.png"; sourceTree = "<group>"; };
-		1B931FA31AB1F45600E4A5CF /* arrow-forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-forward.png"; sourceTree = "<group>"; };
-		1B931FA41AB1F45600E4A5CF /* arrow-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-up.png"; sourceTree = "<group>"; };
-		1B931FA51AB1F45600E4A5CF /* color-picker.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "color-picker.js"; sourceTree = "<group>"; };
-		1B931FA61AB1F45600E4A5CF /* drop-down.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "drop-down.js"; sourceTree = "<group>"; };
-		1B931FA71AB1F45600E4A5CF /* i18n.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = i18n.js; sourceTree = "<group>"; };
-		1B931FA81AB1F45600E4A5CF /* image-preloader-factory.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "image-preloader-factory.js"; sourceTree = "<group>"; };
-		1B931FA91AB1F45600E4A5CF /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		1B931FAA1AB1F45600E4A5CF /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
-		1B931FAB1AB1F45600E4A5CF /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
-		1B931FAC1AB1F45600E4A5CF /* mil-ctrl.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "mil-ctrl.js"; sourceTree = "<group>"; };
-		1B931FAD1AB1F45600E4A5CF /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
-		1B931FAE1AB1F45600E4A5CF /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
-		1B931FAF1AB1F45600E4A5CF /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Regular.ttf"; sourceTree = "<group>"; };
-		1B931FB01AB1F45600E4A5CF /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
-		1B931FB11AB1F45600E4A5CF /* product-details-ctrl.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "product-details-ctrl.js"; sourceTree = "<group>"; };
-		1B931FB21AB1F45600E4A5CF /* product-details.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "product-details.html"; sourceTree = "<group>"; };
-		1B931FB31AB1F45600E4A5CF /* rating-viewer.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "rating-viewer.js"; sourceTree = "<group>"; };
-		1B931FB41AB1F45600E4A5CF /* routing.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = routing.js; sourceTree = "<group>"; };
-		1B931FB51AB1F45600E4A5CF /* star_lg_grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_lg_grey.png; sourceTree = "<group>"; };
-		1B931FB61AB1F45600E4A5CF /* star_lg_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_lg_yellow.png; sourceTree = "<group>"; };
-		1B931FB71AB1F45600E4A5CF /* star_sm_grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_sm_grey.png; sourceTree = "<group>"; };
-		1B931FB81AB1F45600E4A5CF /* star_sm_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_sm_yellow.png; sourceTree = "<group>"; };
-		1B931FB91AB1F45600E4A5CF /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
-		1B931FBA1AB1F45600E4A5CF /* text-expander.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "text-expander.js"; sourceTree = "<group>"; };
 		1B931FDB1AB2347000E4A5CF /* Q4M-Production.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "Q4M-Production.framework"; sourceTree = "<group>"; };
 		1B9794751A69ED90003E8DAE /* BrowseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BrowseViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1B9A85891A6441170061F729 /* CompanyCustomInbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyCustomInbox.h; sourceTree = "<group>"; };
@@ -1364,38 +1360,36 @@
 		34D21B2F1A8021010085138E /* html */ = {
 			isa = PBXGroup;
 			children = (
-				1B45E6261B701FC600B1B093 /* star_lg_green.png */,
-				1B45E6271B701FC600B1B093 /* star_sm_green.png */,
-				1B931F9D1AB1F45600E4A5CF /* angular-animate.js */,
-				1B931F9E1AB1F45600E4A5CF /* angular-route.js */,
-				1B931F9F1AB1F45600E4A5CF /* angular-touch.js */,
-				1B931FA01AB1F45600E4A5CF /* angular-translate.js */,
-				1B931FA11AB1F45600E4A5CF /* angular.js */,
-				1B931FA21AB1F45600E4A5CF /* arrow-down.png */,
-				1B931FA31AB1F45600E4A5CF /* arrow-forward.png */,
-				1B931FA41AB1F45600E4A5CF /* arrow-up.png */,
-				1B931FA51AB1F45600E4A5CF /* color-picker.js */,
-				1B931FA61AB1F45600E4A5CF /* drop-down.js */,
-				1B931FA71AB1F45600E4A5CF /* i18n.js */,
-				1B931FA81AB1F45600E4A5CF /* image-preloader-factory.js */,
-				1B931FA91AB1F45600E4A5CF /* index.html */,
-				1B931FAA1AB1F45600E4A5CF /* index.js */,
-				1B931FAB1AB1F45600E4A5CF /* jquery.js */,
-				1B931FAC1AB1F45600E4A5CF /* mil-ctrl.js */,
-				1B931FAD1AB1F45600E4A5CF /* OpenSans-Regular.ttf */,
-				1B931FAE1AB1F45600E4A5CF /* OpenSans-Semibold.ttf */,
-				1B931FAF1AB1F45600E4A5CF /* Oswald-Regular.ttf */,
-				1B931FB01AB1F45600E4A5CF /* placeholder.png */,
-				1B931FB11AB1F45600E4A5CF /* product-details-ctrl.js */,
-				1B931FB21AB1F45600E4A5CF /* product-details.html */,
-				1B931FB31AB1F45600E4A5CF /* rating-viewer.js */,
-				1B931FB41AB1F45600E4A5CF /* routing.js */,
-				1B931FB51AB1F45600E4A5CF /* star_lg_grey.png */,
-				1B931FB61AB1F45600E4A5CF /* star_lg_yellow.png */,
-				1B931FB71AB1F45600E4A5CF /* star_sm_grey.png */,
-				1B931FB81AB1F45600E4A5CF /* star_sm_yellow.png */,
-				1B931FB91AB1F45600E4A5CF /* style.css */,
-				1B931FBA1AB1F45600E4A5CF /* text-expander.js */,
+				1B194C771B73CB7800CF6516 /* product-details.html */,
+				1B194C3B1B73CAFA00CF6516 /* angular-animate.js */,
+				1B194C3C1B73CAFA00CF6516 /* angular-route.js */,
+				1B194C3D1B73CAFA00CF6516 /* angular-touch.js */,
+				1B194C3E1B73CAFA00CF6516 /* angular-translate.js */,
+				1B194C3F1B73CAFA00CF6516 /* angular.js */,
+				1B194C401B73CAFA00CF6516 /* arrow-down.png */,
+				1B194C411B73CAFA00CF6516 /* arrow-forward.png */,
+				1B194C421B73CAFA00CF6516 /* arrow-up.png */,
+				1B194C431B73CAFA00CF6516 /* color-picker.js */,
+				1B194C441B73CAFA00CF6516 /* drop-down.js */,
+				1B194C451B73CAFA00CF6516 /* i18n.js */,
+				1B194C461B73CAFA00CF6516 /* image-preloader-factory.js */,
+				1B194C471B73CAFA00CF6516 /* index.html */,
+				1B194C481B73CAFA00CF6516 /* index.js */,
+				1B194C491B73CAFA00CF6516 /* jquery.js */,
+				1B194C4A1B73CAFA00CF6516 /* mil-ctrl.js */,
+				1B194C4B1B73CAFA00CF6516 /* OpenSans-Regular.ttf */,
+				1B194C4C1B73CAFA00CF6516 /* OpenSans-Semibold.ttf */,
+				1B194C4D1B73CAFA00CF6516 /* Oswald-Regular.ttf */,
+				1B194C4E1B73CAFA00CF6516 /* placeholder.png */,
+				1B194C4F1B73CAFA00CF6516 /* product-details-ctrl.js */,
+				1B194C511B73CAFA00CF6516 /* rating-viewer.js */,
+				1B194C521B73CAFA00CF6516 /* routing.js */,
+				1B194C531B73CAFA00CF6516 /* star_lg_grey.png */,
+				1B194C541B73CAFA00CF6516 /* star_lg_yellow.png */,
+				1B194C551B73CAFA00CF6516 /* star_sm_grey.png */,
+				1B194C561B73CAFA00CF6516 /* star_sm_yellow.png */,
+				1B194C571B73CAFA00CF6516 /* style.css */,
+				1B194C581B73CAFA00CF6516 /* text-expander.js */,
 			);
 			path = html;
 			sourceTree = SOURCE_ROOT;
@@ -1573,60 +1567,58 @@
 				1B9A85B91A6441170061F729 /* chime.caf in Resources */,
 				1B9A85B51A6441170061F729 /* CompanyInboxVC.xib in Resources */,
 				1BB0B0801A61FF6700BB699F /* Localizable.strings in Resources */,
-				1B931FD81AB1F45600E4A5CF /* text-expander.js in Resources */,
-				1B931FBB1AB1F45600E4A5CF /* angular-animate.js in Resources */,
+				1B194C761B73CAFA00CF6516 /* text-expander.js in Resources */,
+				1B194C591B73CAFA00CF6516 /* angular-animate.js in Resources */,
 				1B256CEA1A6F071F00FB4E1E /* CarouselCollectionViewCell.xib in Resources */,
 				1B9A85BE1A6441170061F729 /* silence.caf in Resources */,
-				1B931FC31AB1F45600E4A5CF /* color-picker.js in Resources */,
-				1B45E6281B701FC600B1B093 /* star_lg_green.png in Resources */,
-				1B931FD61AB1F45600E4A5CF /* star_sm_yellow.png in Resources */,
+				1B194C611B73CAFA00CF6516 /* color-picker.js in Resources */,
+				1B194C741B73CAFA00CF6516 /* star_sm_yellow.png in Resources */,
 				1BDE25631A782A0B0061332B /* OFL.txt in Resources */,
-				1B931FBF1AB1F45600E4A5CF /* angular.js in Resources */,
+				1B194C5D1B73CAFA00CF6516 /* angular.js in Resources */,
 				1B455BD41AA53013005A22B6 /* SVProgressHUD.bundle in Resources */,
-				1B931FCB1AB1F45600E4A5CF /* OpenSans-Regular.ttf in Resources */,
-				1B931FCD1AB1F45600E4A5CF /* Oswald-Regular.ttf in Resources */,
+				1B194C691B73CAFA00CF6516 /* OpenSans-Regular.ttf in Resources */,
+				1B194C6B1B73CAFA00CF6516 /* Oswald-Regular.ttf in Resources */,
 				1B9A85BC1A6441170061F729 /* richnotification.mom in Resources */,
-				1B931FCE1AB1F45600E4A5CF /* placeholder.png in Resources */,
-				1B931FBC1AB1F45600E4A5CF /* angular-route.js in Resources */,
-				1B931FD11AB1F45600E4A5CF /* rating-viewer.js in Resources */,
-				1B931FC81AB1F45600E4A5CF /* index.js in Resources */,
-				1B931FCF1AB1F45600E4A5CF /* product-details-ctrl.js in Resources */,
-				1B931FD71AB1F45600E4A5CF /* style.css in Resources */,
+				1B194C6C1B73CAFA00CF6516 /* placeholder.png in Resources */,
+				1B194C5A1B73CAFA00CF6516 /* angular-route.js in Resources */,
+				1B194C6F1B73CAFA00CF6516 /* rating-viewer.js in Resources */,
+				1B194C661B73CAFA00CF6516 /* index.js in Resources */,
+				1B194C6D1B73CAFA00CF6516 /* product-details-ctrl.js in Resources */,
+				1B194C751B73CAFA00CF6516 /* style.css in Resources */,
 				1BD9F9A91A9926D100FB9690 /* ListTableViewCell.xib in Resources */,
 				1B9A85B71A6441170061F729 /* CompanyInboxViewCell.xib in Resources */,
 				1BD9F9A71A9926C500FB9690 /* BlankTableViewCell.xib in Resources */,
-				1B931FC21AB1F45600E4A5CF /* arrow-up.png in Resources */,
-				1B931FC61AB1F45600E4A5CF /* image-preloader-factory.js in Resources */,
-				1B931FC71AB1F45600E4A5CF /* index.html in Resources */,
+				1B194C601B73CAFA00CF6516 /* arrow-up.png in Resources */,
+				1B194C641B73CAFA00CF6516 /* image-preloader-factory.js in Resources */,
+				1B194C651B73CAFA00CF6516 /* index.html in Resources */,
 				1B5533C71A5EF9A1006DAECE /* Images.xcassets in Resources */,
-				1B45E6291B701FC600B1B093 /* star_sm_green.png in Resources */,
-				1B931FC91AB1F45600E4A5CF /* jquery.js in Resources */,
+				1B194C671B73CAFA00CF6516 /* jquery.js in Resources */,
 				1BDE25641A782A0B0061332B /* Oswald-Bold.ttf in Resources */,
-				1B931FD31AB1F45600E4A5CF /* star_lg_grey.png in Resources */,
-				1B931FC51AB1F45600E4A5CF /* i18n.js in Resources */,
+				1B194C711B73CAFA00CF6516 /* star_lg_grey.png in Resources */,
+				1B194C631B73CAFA00CF6516 /* i18n.js in Resources */,
 				1B5DD9451A7040C600DCB413 /* worklight.plist in Resources */,
-				1B931FC11AB1F45600E4A5CF /* arrow-forward.png in Resources */,
+				1B194C5F1B73CAFA00CF6516 /* arrow-forward.png in Resources */,
 				1B9A85B01A6441170061F729 /* CompanyDetailsVC.xib in Resources */,
 				1BB0B0791A61FAF300BB699F /* Main.storyboard in Resources */,
-				1B931FD01AB1F45600E4A5CF /* product-details.html in Resources */,
-				1B931FD51AB1F45600E4A5CF /* star_sm_grey.png in Resources */,
+				1B194C731B73CAFA00CF6516 /* star_sm_grey.png in Resources */,
 				1B256CF31A6F078100FB4E1E /* HorizontalPagedCollectionViewCell.xib in Resources */,
-				1B931FCA1AB1F45600E4A5CF /* mil-ctrl.js in Resources */,
+				1B194C681B73CAFA00CF6516 /* mil-ctrl.js in Resources */,
 				1B9A85BA1A6441170061F729 /* ding.caf in Resources */,
-				1B931FC01AB1F45600E4A5CF /* arrow-down.png in Resources */,
-				1B931FD21AB1F45600E4A5CF /* routing.js in Resources */,
+				1B194C5E1B73CAFA00CF6516 /* arrow-down.png in Resources */,
+				1B194C701B73CAFA00CF6516 /* routing.js in Resources */,
 				1B9A85B31A6441170061F729 /* CompanyInboxVC-pad.xib in Resources */,
 				1B9A85BD1A6441170061F729 /* richnotificationV1.15.mom in Resources */,
 				A21C032F1A698785003A9548 /* Config.plist in Resources */,
-				1B931FC41AB1F45600E4A5CF /* drop-down.js in Resources */,
+				1B194C621B73CAFA00CF6516 /* drop-down.js in Resources */,
 				1B5DD9431A7040B700DCB413 /* Localizations.bundle in Resources */,
 				1B9A85BB1A6441170061F729 /* expireMsgTemplate.html in Resources */,
-				1B931FBD1AB1F45600E4A5CF /* angular-touch.js in Resources */,
-				1B931FBE1AB1F45600E4A5CF /* angular-translate.js in Resources */,
-				1B931FD41AB1F45600E4A5CF /* star_lg_yellow.png in Resources */,
+				1B194C5B1B73CAFA00CF6516 /* angular-touch.js in Resources */,
+				1B194C5C1B73CAFA00CF6516 /* angular-translate.js in Resources */,
+				1B194C721B73CAFA00CF6516 /* star_lg_yellow.png in Resources */,
 				1B228C461AAF4AE700D61FDE /* xtify.plist in Resources */,
+				1B194C781B73CB7800CF6516 /* product-details.html in Resources */,
 				1BDE25651A782A0B0061332B /* Oswald-Light.ttf in Resources */,
-				1B931FCC1AB1F45600E4A5CF /* OpenSans-Semibold.ttf in Resources */,
+				1B194C6A1B73CAFA00CF6516 /* OpenSans-Semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
