@@ -26,11 +26,9 @@ var defaultLocale = "en";
  * @return the "recommended" items for the home view
  */
 function getHomeViewMetadata(locale) {
-	WL.Logger.info("locale: " + locale);
 	if (!locale) {
 		locale = defaultLocale;	
 	}
-	WL.Logger.info("locale2: " + locale);
 	queryResult = cloudantConnector.getHomeViewMetaData(locale);	
 		
 	var success = true;
@@ -222,37 +220,28 @@ function onAuthRequired(headers, errorMessage) {
  */
 function submitAuthentication(username, password) {
 	var validUser = cloudantConnector.verifyUser(username, password);
-	WL.Logger.info("validUser: " + validUser);
 	if (validUser == 1) {
-
-		WL.Logger.info("validUser1: ");
 		var userID = cloudantConnector.getUserID(username);
 
-		WL.Logger.info("validUser2: ");
 		var userIdentity = {
 			userId : username,
 			displayName : username,
 			userId: userID
 		};
-		WL.Logger.info("validUser3: ");
 
 		WL.Server.setActiveUser("SingleStepAuthRealm", userIdentity);
-		WL.Logger.info("validUser4: ");
 		return {
 			isSuccessful : true,
 			authRequired : false,
 			result : userID
-
 		};
 	}
-	WL.Logger.info("validUser5: ");
 	if (validUser == 2) {
 		return {
 			onAuthRequired : onAuthRequired(null, "Invalid password"),
 			isSuccessful : false,
 		};
 	}
-	WL.Logger.info("validUser6: ");
 	return {
 		onAuthRequired : onAuthRequired(null, "Invalid username"),
 		isSuccessful : false
@@ -264,7 +253,6 @@ function submitAuthentication(username, password) {
  * Logs out the user due to inactivity or app termination
  */
 function onLogout() {
-	// TODO
 	WL.Logger.info("Logged out");
 	WL.Server.setActiveUser("SingleStepAuthRealm", null);
 }
