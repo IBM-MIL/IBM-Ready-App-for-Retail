@@ -378,7 +378,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
         var alert = UIAlertView()
         alert.title = alertTitle
         alert.message = NSLocalizedString("Please Try Again", comment:"")
-        alert.addButtonWithTitle("OK")
+        alert.addButtonWithTitle(NSLocalizedString("OK", comment: ""))
         alert.show()
         Utils.dismissProgressHud()
     }

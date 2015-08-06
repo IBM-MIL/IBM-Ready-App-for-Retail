@@ -89,9 +89,9 @@ class CreateListViewController: UIViewController, UITextFieldDelegate{
     */
     func listAlreadyExists(){
         var alert = UIAlertView()
-        alert.title = "List Aleady Exists"
-        alert.message = "Please try a different name"
-        alert.addButtonWithTitle("OK")
+        alert.title = NSLocalizedString("List Already Exists", comment: "")
+        alert.message = NSLocalizedString("Please try a different name", comment: "")
+        alert.addButtonWithTitle(NSLocalizedString("OK", comment: ""))
         alert.show()
     }
     
