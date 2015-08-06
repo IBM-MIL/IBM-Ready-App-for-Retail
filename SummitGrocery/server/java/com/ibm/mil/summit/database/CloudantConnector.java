@@ -332,7 +332,9 @@ public class CloudantConnector {
 				.includeDocs(true).query(DepartmentDB.class);
 		List<DepartmentClient> allDepartments = new ArrayList<DepartmentClient>();
 		for (DepartmentDB department : departments) {
-			allDepartments.add(new DepartmentClient(department, userLocale));
+			if (userLocale.equals(department.getLocale())) {
+				allDepartments.add(new DepartmentClient(department, userLocale));
+			}
 		}
 
 		/*

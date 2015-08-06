@@ -8,12 +8,21 @@ public class CloudantObject {
 	private String type;
 	private String _rev;
 	private String image;
+	private String locale;
 
 	public CloudantObject(String type) {
 		super();
 		this.type = type;
 	}
 
+	public String getLocale() {
+		return locale;
+	}
+	
+	public void setLocale(String locale) {
+		this.locale = locale;
+	}
+	
 	public String getId() {
 		return _id;
 	}
