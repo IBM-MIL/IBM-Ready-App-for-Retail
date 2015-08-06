@@ -64,6 +64,7 @@ var readyAppSummit, angular;
         $scope.colorTitle = $filter("translate")("colorTitle");
 
         $scope.shouldPadBottom = $scope.agent.indexOf('chrome') < 0;
+        $scope.setLanguage('en');
         //console.log($scope.shouldPadBottom);
 
         $scope.$on('raOnData', function () {

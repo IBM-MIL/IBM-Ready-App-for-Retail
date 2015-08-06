@@ -159,3 +159,13 @@
 /* No comment provided by engineer. */
 
 "Welcome to " = "Bienvenido ";
+
+
+/* No comment provided by engineer. */
+
+"In Stock" = "En Existencia";
+
+
+/* No comment provided by engineer. */
+
+"Out Stock" = "Agotado";
