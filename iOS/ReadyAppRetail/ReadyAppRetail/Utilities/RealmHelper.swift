@@ -70,9 +70,9 @@ class RealmHelper: NSObject {
     */
     class func productAlreadyExistsInList(){
         var alert = UIAlertView()
-        alert.title = "Product Aleady In List"
-        alert.message = "Please choose a different list"
-        alert.addButtonWithTitle("OK")
+        alert.title = NSLocalizedString("Product Already In List", comment:"")
+        alert.message = NSLocalizedString("Please choose a different list", comment:"")
+        alert.addButtonWithTitle(NSLocalizedString("OK", comment:""))
         alert.show()
     }
     
