@@ -66,9 +66,10 @@ var readyAppSummit;
          *  @param {string} lang The locale code for the language to be used. (Ex: en, fr, es, de, etc.)
          */
         $scope.setLanguage = function (lang) {
-            $translate.use(lang);
+            // $translate.use(lang);
             // Reload
-            $route.reload();
+            // $route.reload();
+            console.log('Hello world');
         };
 
         /**
@@ -80,6 +81,7 @@ var readyAppSummit;
         $scope.injectData = function (data) {
             injectedJSON = data;
             $scope.$broadcast('raOnData');
+            console.log('Hello world');
         };
 
         /**

@@ -24,23 +24,24 @@
          *  English US
          */
         $translateProvider.translations('en_US', {
-            addToCart: "Add to Cart",
-            addToList: "Add to List",
+            addToCart: "Add to Cartzzzzz",
+            addToList: "Add to Listzzzzz",
 
             detailsTitle: "Product Details",
 
             color: "Color"
         });
                           
+        $translateProvider.translations('es', {
+            addToCart: "Add to Cart",
+            addToList: "Agregar a Lista",
+                                                          
+            detailsTitle: "Detalle de Producto",
+                                                          
+            color: "Color"
+        });
                           
-                          $translateProvider.translations('es', {
-                                                          addToCart: "es-Add to Cart",
-                                                          addToList: "Agregar a Lista",
-                                                          
-                                                          detailsTitle: "Detalle de Producto",
-                                                          
-                                                          color: "es-Color"
-                                                          });
+                
 
         $translateProvider.preferredLanguage('es');
 

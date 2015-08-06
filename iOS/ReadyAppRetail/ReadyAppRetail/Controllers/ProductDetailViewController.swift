@@ -270,6 +270,11 @@ class ProductDetailViewController: MILWebViewController, MILWebViewDelegate, UIA
         var injectData : String = "injectData(\(self.jsonString))";
         var inject : String = Utils.prepareCodeInjectionString(injectData);
         self.webView.stringByEvaluatingJavaScriptFromString(inject);
+        
+        /*injectData  = "setLanguage('en_US')";
+        inject  = Utils.prepareCodeInjectionString(injectData);
+        self.webView.stringByEvaluatingJavaScriptFromString(inject);*/
+        
         Utils.dismissProgressHud()
     }
     
@@ -321,11 +326,15 @@ class ProductDetailViewController: MILWebViewController, MILWebViewDelegate, UIA
     */
     func recieveProductAvailability(availability : Int){
     
+        var inStock = NSLocalizedString("In Stock", comment:"")
+        
+        var outOfStock = NSLocalizedString("Out Stock", comment:"")
+        
         if(availability == 1){
-            self.json!["availability"] = "In Stock"
+            self.json!["availability"] = JSON("\(inStock)")
         }
         else if (availability == 0){
-            self.json!["availability"] = "Out of Stock"
+            self.json!["availability"] = JSON("\(outOfStock)")
         }
         else if (availability == 2){
             self.json!["availability"] = ""

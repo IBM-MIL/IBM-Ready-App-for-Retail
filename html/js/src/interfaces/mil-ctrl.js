@@ -80,6 +80,7 @@ var readyAppSummit;
         $scope.injectData = function (data) {
             injectedJSON = data;
             $scope.$broadcast('raOnData');
+            console.log('Hello world');
         };
 
         /**
