@@ -1,0 +1,45 @@
+
+/* Class = "WKInterfaceButton"; title = "Retry?"; ObjectID = "0tb-G9-BVk"; */
+"0tb-G9-BVk.title" = "Retry?";
+
+/* Class = "WKInterfaceLabel"; text = "List Title"; ObjectID = "1R8-TS-hEy"; */
+"1R8-TS-hEy.text" = "List Title";
+
+/* Class = "WKInterfaceLabel"; text = "Department"; ObjectID = "BNe-3F-6sg"; */
+"BNe-3F-6sg.text" = "Department";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "D0Y-3a-VBm"; */
+"D0Y-3a-VBm.text" = "Label";
+
+/* Class = "WKInterfaceLabel"; text = "You have no items in the list. Add some on your iPhone."; ObjectID = "FwR-6u-zSg"; */
+"FwR-6u-zSg.text" = "You have no items in the list. Add some on your iPhone.";
+
+/* Class = "WKInterfaceLabel"; text = "Product Name"; ObjectID = "MFc-QB-XaR"; */
+"MFc-QB-XaR.text" = "Product Name";
+
+/* Class = "WKInterfaceLabel"; text = "Item Name"; ObjectID = "QrG-NS-HdK"; */
+"QrG-NS-HdK.text" = "Item Name";
+
+/* Class = "WKInterfaceLabel"; text = "You have no lists. Add some on your iPhone."; ObjectID = "Tc2-nf-O4K"; */
+"Tc2-nf-O4K.text" = "You have no lists. Add some on your iPhone.";
+
+/* Class = "WKInterfaceLabel"; text = "You must be logged in on the Summit iPhone app to see your lists"; ObjectID = "VfZ-Lx-qml"; */
+"VfZ-Lx-qml.text" = "You must be logged in on the Summit iPhone app to see your lists";
+
+/* Class = "WKInterfaceLabel"; text = "View Details on iPhone"; ObjectID = "WbG-HN-7hN"; */
+"WbG-HN-7hN.text" = "View Details on iPhone";
+
+/* Class = "WKInterfaceLabel"; text = "This is a test"; ObjectID = "XkS-y5-khE"; */
+"XkS-y5-khE.text" = "This is a test";
+
+/* Class = "WKInterfaceLabel"; text = "Austin, TX"; ObjectID = "YNO-Zk-3Yd"; */
+"YNO-Zk-3Yd.text" = "Austin, TX";
+
+/* Class = "WKInterfaceLabel"; text = "Department"; ObjectID = "dpx-gi-pYR"; */
+"dpx-gi-pYR.text" = "Department";
+
+/* Class = "WKInterfaceLabel"; text = "Price"; ObjectID = "qzc-fC-hC1"; */
+"qzc-fC-hC1.text" = "Price";
+
+/* Class = "WKInterfaceLabel"; text = "Original"; ObjectID = "u2w-fD-Sqo"; */
+"u2w-fD-Sqo.text" = "Original";
