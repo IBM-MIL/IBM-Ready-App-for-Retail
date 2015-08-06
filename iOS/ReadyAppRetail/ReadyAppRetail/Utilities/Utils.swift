@@ -153,6 +153,13 @@ class Utils {
         
     }
     
+    
+    class func getDeviceLanguageLocale() -> String {
+        var language = NSLocale.preferredLanguages()[0] as! String
+        
+        return language
+    }
+    
 
     
 }

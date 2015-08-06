@@ -37,7 +37,8 @@ public class MILWLHelper: NSObject {
         var adapterName : String = "SummitAdapter"
         
         let invocationData = WLProcedureInvocationData(adapterName: adapterName, procedureName: "getHomeViewMetadata")
-        invocationData.parameters = ["es"]
+        var locale = Utils.getDeviceLanguageLocale()
+        invocationData.parameters = [locale]
         
         var number : NSNumber = NSNumber(double: 30000)
         
@@ -65,7 +66,8 @@ public class MILWLHelper: NSObject {
         getProductByIdDataManager.callBack = callBack
         
         let invocationData = WLProcedureInvocationData(adapterName: adapterName, procedureName: "getProductById")
-        invocationData.parameters = [id]
+        var locale = Utils.getDeviceLanguageLocale()
+        invocationData.parameters = [id, locale]
         
         var number : NSNumber = NSNumber(double: 30000)
         
@@ -92,7 +94,8 @@ public class MILWLHelper: NSObject {
         
         let invocationData = WLProcedureInvocationData(adapterName: adapterName, procedureName: "getDefaultList")
         var userId : String = NSUserDefaults.standardUserDefaults().stringForKey("userID")!
-        invocationData.parameters = [userId]
+        var locale = Utils.getDeviceLanguageLocale()
+        invocationData.parameters = [userId, locale]
         
         var number : NSNumber = NSNumber(double: 70000)
         
@@ -123,7 +126,8 @@ public class MILWLHelper: NSObject {
         
             let invocationData = WLProcedureInvocationData(adapterName: adapterName, procedureName: "productIsAvailable")
             var userId : String = NSUserDefaults.standardUserDefaults().stringForKey("userID")!
-            invocationData.parameters = [userId, productId]
+            var locale = Utils.getDeviceLanguageLocale()
+            invocationData.parameters = [userId, productId, locale]
         
             var number : NSNumber = NSNumber(double: 30000)
         
@@ -153,6 +157,8 @@ public class MILWLHelper: NSObject {
         getAllDepartmentsDataManager.callBack = callback
         
         let invocationData = WLProcedureInvocationData(adapterName: adapterName, procedureName: "getAllDepartments")
+        var locale = Utils.getDeviceLanguageLocale()
+        invocationData.parameters = [locale]
         
         var number : NSNumber = NSNumber(double: 30000)
         
@@ -295,6 +301,11 @@ class GetDefaultListDataManager: NSObject, WLDelegate {
     :param: response the response data recieved from Worklight
     */
     func onFailure(response: WLFailResponse!) {
+        
+        
+        println("DEFAULT LIST RESPONE")
+        println(response)
+        println("end of response")
         
         self.callback(false)
     }

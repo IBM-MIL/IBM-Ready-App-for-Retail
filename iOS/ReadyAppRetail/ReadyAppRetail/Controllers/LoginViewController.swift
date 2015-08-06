@@ -324,6 +324,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
     This method is called by the GetDefaultListDataManager when the onFailure was called by Worklight. It first dismisses the progressHud and then shows the server error alert
     */
     func failureDownloadingDefaultLists(){
+        
+        println("FAILED DEFAULT LIST")
         Utils.dismissProgressHud()
         Utils.showServerErrorAlert(self, tag: 1)
     }
