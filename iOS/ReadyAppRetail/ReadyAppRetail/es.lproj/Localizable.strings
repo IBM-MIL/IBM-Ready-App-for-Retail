@@ -1,0 +1,112 @@
+/* 
+  Localizable.strings
+  ReadyAppRetail
+
+  Created by Alex Buck on 1/10/15.
+  Copyright (c) 2015 IBM. All rights reserved.
+*/
+
+
+/* A secret phrase that allows you to login to a service */
+
+" Sign Up." = " Sign Up.";
+
+
+/* Currency Symbol, for example $ */
+
+"$" = "$";
+
+
+/* No comment provided by engineer. */
+
+"Can't Connect To Server" = "No se puede conectar al Servidor";
+
+
+/* A secret phrase that allows you to login to a service */
+
+"Don't have an Account?" = "Don't have an Account?";
+
+
+/* No comment provided by engineer. */
+
+"HOME" = "Hogar";
+
+
+/* No comment provided by engineer. */
+
+"Invalid Password" = "Invalid Password";
+
+
+/* No comment provided by engineer. */
+
+"Invalid Username" = "Invalid Username";
+
+
+/* No comment provided by engineer. */
+
+"Invalid username" = "Invalid username";
+
+
+/* Another word for sign in */
+
+"L O G I N" = "L O G I N";
+
+
+/* No comment provided by engineer. */
+
+"LOGIN" = "LOGIN";
+
+
+/* No comment provided by engineer. */
+
+"MY LISTS" = "MY LISTS";
+
+
+/* A secret phrase that allows you to login to a service */
+
+"Password" = "Clave";
+
+
+/* No comment provided by engineer. */
+
+"Please Try Again" = "Por favor intente de nuevo";
+
+
+/* No comment provided by engineer. */
+
+"Product added to \(listName)!" = "Producto añadido \(listName)!";
+
+
+/* No comment provided by engineer. */
+
+"PROFILE" = "PERFIL";
+
+
+/* A word for suggesting things that would be of interest to a person */
+
+"Recommended" = "Recomendado";
+
+
+/* No comment provided by engineer. */
+
+"Server error" = "Server error";
+
+
+/* Shop All */
+
+"Shop All" = "Comprar Todo";
+
+
+/* No comment provided by engineer. */
+
+"userId" = "userId";
+
+
+/* A word for mail over the internet */
+
+"Username" = "Usuario";
+
+
+/* No comment provided by engineer. */
+
+"Welcome to \(departmentName)!" = "Welcome to \(departmentName)!";

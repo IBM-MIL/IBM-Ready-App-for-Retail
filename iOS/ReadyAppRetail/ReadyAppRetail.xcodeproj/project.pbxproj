@@ -284,6 +284,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1B194BC01B72D52300CF6516 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		1B194BC11B72D52300CF6516 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Interface.strings; sourceTree = "<group>"; };
+		1B194BC21B72D52300CF6516 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1B1D44181A8A77E6007AE636 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		1B228C451AAF4AE700D61FDE /* xtify.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xtify.plist; sourceTree = "<group>"; };
 		1B228C471AAFE02E00D61FDE /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -1547,6 +1550,7 @@
 				en,
 				Base,
 				"es-MX",
+				es,
 			);
 			mainGroup = 1B5533B11A5EF9A1006DAECE;
 			productRefGroup = 1B5533BB1A5EF9A1006DAECE /* Products */;
@@ -1821,6 +1825,7 @@
 			children = (
 				1BB0B07A1A61FAF300BB699F /* Base */,
 				A2BE322E1AB0981F0025FA8F /* en */,
+				1B194BC01B72D52300CF6516 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1830,6 +1835,7 @@
 			children = (
 				1BB0B0811A61FF6700BB699F /* en */,
 				1BB0B0831A61FF6A00BB699F /* Base */,
+				1B194BC21B72D52300CF6516 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1838,6 +1844,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2EF4494D1B161E2600F3576A /* Base */,
+				1B194BC11B72D52300CF6516 /* es */,
 			);
 			name = Interface.storyboard;
 			sourceTree = "<group>";
