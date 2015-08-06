@@ -32,18 +32,18 @@
             color: "Color"
         });
                           
-    $translateProvider.translations('es', {
-                                            addToCart: "Add to Cart",
-                                            addToList: "Agregar a Lista",
-                                                          
-                                            detailsTitle: "Detalle de Producto",
-                                                          
-                                            color: "Color"
-    });
+        $translateProvider.translations('es', {
+                                                addToCart: "Add to Cart",
+                                                addToList: "Agregar a Lista",
+                                                              
+                                                detailsTitle: "Detalle de Producto",
+                                                              
+                                                color: "Color"
+        });
                           
 
-        $translateProvider.preferredLanguage('es');
+        $translateProvider.preferredLanguage('en_US');
 
-        $translateProvider.fallbackLanguage('es');
+        $translateProvider.fallbackLanguage('en');
     });
 }());

@@ -76,8 +76,8 @@ class ListItemsViewController: UIViewController {
     func showPopup(departmentName: String) {
         self.view.bringSubviewToFront(self.sortedListPopup)
         // create attributed string
-        let localizedString = NSLocalizedString("Welcome to \(departmentName)!", comment: "")
-        let string = localizedString as NSString
+        let localizedString = NSLocalizedString("Welcome to ", comment: "")
+        let string = localizedString + departmentName + "!" as NSString
         var attributedString = NSMutableAttributedString(string: string as String)
         
         //Add attributes to two parts of the string

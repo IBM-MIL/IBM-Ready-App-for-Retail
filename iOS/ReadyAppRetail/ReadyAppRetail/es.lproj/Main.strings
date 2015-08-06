@@ -27,7 +27,7 @@
 "Pml-r5-fpA.text" = "Id de miembro:";
 
 /* Class = "UILabel"; text = "F O R  G R O C E R Y"; ObjectID = "Rtc-Bq-VcA"; */
-"Rtc-Bq-VcA.text" = "F O R  G R O C E R Y";
+"Rtc-Bq-VcA.text" = "P A R A  D E S P E N S A";
 
 /* Class = "UILabel"; text = "USER NAME"; ObjectID = "TOI-Ru-fVt"; */
 "TOI-Ru-fVt.text" = "NOMBER USUARIO";
@@ -39,7 +39,7 @@
 "aYk-pw-l3R.text" = "Summit";
 
 /* Class = "UIButton"; normalTitle = "Don't have an Account? Sign Up."; ObjectID = "aoV-K5-FRj"; */
-"aoV-K5-FRj.normalTitle" = "Don't have an Account? Sign Up.";
+"aoV-K5-FRj.normalTitle" = "No tiene cuenta ? Cree una.";
 
 /* Class = "UILabel"; text = "Create a new list"; ObjectID = "b2w-AS-i7T"; */
 "b2w-AS-i7T.text" = "Crear nueva lista";
@@ -51,7 +51,7 @@
 "hiH-r0-prS.text" = "SELECCIONAR LISTA";
 
 /* Class = "UILabel"; text = "F O R  G R O C E R Y"; ObjectID = "i14-yW-bvl"; */
-"i14-yW-bvl.text" = "F O R  G R O C E R Y";
+"i14-yW-bvl.text" = "P A R A  D E S P E N S A";
 
 /* Class = "UILabel"; text = "Department"; ObjectID = "igK-S6-onp"; */
 "igK-S6-onp.text" = "Departamento";

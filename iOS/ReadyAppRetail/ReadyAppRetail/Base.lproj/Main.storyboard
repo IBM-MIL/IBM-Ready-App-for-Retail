@@ -309,11 +309,11 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F O R  G R O C E R Y" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i14-yW-bvl">
-                                        <rect key="frame" x="78" y="187" width="137" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F O R  G R O C E R Y" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i14-yW-bvl">
+                                        <rect key="frame" x="45" y="187" width="183" height="26"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="26" id="Myy-Mg-wuB"/>
-                                            <constraint firstAttribute="width" constant="137" id="gT6-GC-Abd"/>
+                                            <constraint firstAttribute="width" constant="183" id="gT6-GC-Abd"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -331,7 +331,7 @@
                                     <constraint firstAttribute="height" constant="443" id="4y3-HJ-Lq6"/>
                                     <constraint firstItem="vjq-eX-LHb" firstAttribute="top" secondItem="KRE-DR-Bre" secondAttribute="top" constant="27" id="C0P-7Q-AgN"/>
                                     <constraint firstAttribute="centerX" secondItem="Jpw-gh-IDc" secondAttribute="centerX" constant="-11.5" id="F09-YG-wkC"/>
-                                    <constraint firstAttribute="centerX" secondItem="i14-yW-bvl" secondAttribute="centerX" constant="-10.5" id="Tft-W9-BH3"/>
+                                    <constraint firstAttribute="centerX" secondItem="i14-yW-bvl" secondAttribute="centerX" id="Tft-W9-BH3"/>
                                     <constraint firstAttribute="centerX" secondItem="vjq-eX-LHb" secondAttribute="centerX" id="oHc-CC-3bF"/>
                                     <constraint firstItem="Jpw-gh-IDc" firstAttribute="top" secondItem="vjq-eX-LHb" secondAttribute="bottom" constant="-5" id="pbv-he-FWS"/>
                                     <constraint firstAttribute="width" constant="272" id="qJs-BZ-Daa"/>

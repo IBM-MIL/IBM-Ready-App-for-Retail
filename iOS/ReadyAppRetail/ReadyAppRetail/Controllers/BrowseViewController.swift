@@ -30,6 +30,7 @@ class BrowseViewController: UIViewController, UIAlertViewDelegate {
        self.setUpSectionLabels()
        self.getHomeViewMetadata()
        self.prepareLogoForNavigationBar()
+        
     }
     
     
