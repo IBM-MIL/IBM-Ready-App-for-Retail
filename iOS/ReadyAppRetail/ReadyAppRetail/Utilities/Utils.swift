@@ -80,7 +80,7 @@ class Utils {
         alert.delegate = delegate
         alert.tag = tag
         alert.title = NSLocalizedString("Can't Connect To Server", comment:"")
-        alert.addButtonWithTitle("Retry")
+        alert.addButtonWithTitle(NSLocalizedString("Retry", comment: ""))
         alert.show()
     }
     
@@ -96,8 +96,8 @@ class Utils {
         alert.delegate = delegate
         alert.tag = tag
         alert.title = NSLocalizedString("Can't Connect To Server", comment:"")
-        alert.addButtonWithTitle("Cancel")
-        alert.addButtonWithTitle("Retry")
+        alert.addButtonWithTitle(NSLocalizedString("Cancel", comment: ""))
+        alert.addButtonWithTitle(NSLocalizedString("Retry", comment: ""))
         alert.show()
     }
     

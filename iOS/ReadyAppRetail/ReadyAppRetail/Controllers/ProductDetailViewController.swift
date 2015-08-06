@@ -436,8 +436,8 @@ class ProductDetailViewController: MILWebViewController, MILWebViewDelegate, UIA
     */
     func showPopup(listName: String) {
         // create attributed string
-        let localizedString = NSLocalizedString("Product added to \(listName)!", comment: "")
-        let string = localizedString as NSString
+        let localizedString = NSLocalizedString("Product added to ", comment: "")
+        let string = localizedString + "\(listName)" + "!" as NSString
         var attributedString = NSMutableAttributedString(string: string as String)
  
         //Add attributes to two parts of the string

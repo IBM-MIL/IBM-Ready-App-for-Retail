@@ -37,7 +37,7 @@ public class SyntaxChecker {
         else{
             var alert = UIAlertView()
             alert.title = NSLocalizedString("Invalid Username", comment: "")
-            alert.message =  NSLocalizedString("You must enter a username ", comment: "")
+            alert.message =  NSLocalizedString("You must enter a username", comment: "")
             alert.addButtonWithTitle( NSLocalizedString("OK", comment: ""))
             alert.show()
             return false
