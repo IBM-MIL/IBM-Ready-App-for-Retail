@@ -13,7 +13,7 @@
          */
         $translateProvider.translations('en', {
             addToCart: "Add to Cart",
-            addToList: "Add to Listkk",
+            addToList: "Add to List",
 
             detailsTitle: "Product Details",
 
@@ -32,18 +32,18 @@
             color: "Color"
         });
                           
-        $translateProvider.translations('es', {
-                                                addToCart: "Add to Cart",
-                                                addToList: "Agregar a Lista",
-                                                              
-                                                detailsTitle: "Detalle de Producto",
-                                                              
-                                                color: "Color"
-        });
                           
+                          $translateProvider.translations('es', {
+                                                          addToCart: "es-Add to Cart",
+                                                          addToList: "Agregar a Lista",
+                                                          
+                                                          detailsTitle: "Detalle de Producto",
+                                                          
+                                                          color: "es-Color"
+                                                          });
 
-        $translateProvider.preferredLanguage('en_US');
+        $translateProvider.preferredLanguage('es');
 
-        $translateProvider.fallbackLanguage('en');
+        $translateProvider.fallbackLanguage('es');
     });
 }());

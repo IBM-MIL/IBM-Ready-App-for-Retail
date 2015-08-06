@@ -52,8 +52,6 @@ var readyAppSummit, angular;
         angular.extend(this, $controller('milCtrl', {
             $scope: $scope
         }));
-                              
-                              //$scope.setLanguage('es');
 
         var loader = new imagePreloader();
 
