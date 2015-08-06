@@ -129,6 +129,9 @@ class JSONParseHelper: NSObject {
         //parse departmentName
         var json = createJSONObject(response)
         
+        println("product json is")
+        println(json)
+        
         if let departmentName = json["departmentObj"]["title"].string {
             json["location"] = JSON(departmentName)
         }

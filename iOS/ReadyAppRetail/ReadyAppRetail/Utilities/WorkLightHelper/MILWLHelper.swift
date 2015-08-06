@@ -302,11 +302,6 @@ class GetDefaultListDataManager: NSObject, WLDelegate {
     */
     func onFailure(response: WLFailResponse!) {
         
-        
-        println("DEFAULT LIST RESPONE")
-        println(response)
-        println("end of response")
-        
         self.callback(false)
     }
     
