@@ -93,6 +93,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.registerChallengeHander()
         
+        Utils.checkIfLocaleWasSetPreviously()
+        
         return true
     }
     

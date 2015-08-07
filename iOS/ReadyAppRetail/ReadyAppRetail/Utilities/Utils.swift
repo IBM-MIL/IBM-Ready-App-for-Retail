@@ -4,7 +4,7 @@ Licensed Materials - Property of IBM
 */
 
 import Foundation
-
+import Realm
 /**
 *  Utility class primarily for formatting data to be sent to a hyrbrid view.
 */
@@ -159,6 +159,28 @@ class Utils {
         
         return language
     }
+    
+    
+    class func checkIfLocaleWasSetPreviously(){
+    
+        if (NSUserDefaults.standardUserDefaults().objectForKey("locale") == nil) {
+             NSUserDefaults.standardUserDefaults().setObject(Utils.getDeviceLanguageLocale(), forKey: "locale")
+             NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else{
+            var prevSetLocale = NSUserDefaults.standardUserDefaults().objectForKey("locale") as! String
+            if(prevSetLocale != Utils.getDeviceLanguageLocale()){
+                let realm = RLMRealm.defaultRealm()
+                realm.beginWriteTransaction()
+                realm.deleteAllObjects()
+                realm.commitWriteTransaction()
+                
+                NSUserDefaults.standardUserDefaults().setObject(Utils.getDeviceLanguageLocale(), forKey: "locale")
+                NSUserDefaults.standardUserDefaults().synchronize()
+            }
+        }
+    }
+    
     
 
     
