@@ -139,13 +139,15 @@ class Utils {
         button.layer.cornerRadius = button.frame.size.width/2
         button.clipsToBounds = true
         
-       // button.layer.borderWidth = 5.0
-        
         button.backgroundColor = UIColor.summitSecondaryColor()
         
         var plusImage = UIImage(named: "AddIcon")
         
-        var plusImageView = UIImageView(frame: CGRectMake(0,0,button.frame.size.width, button.frame.size.height))
+        var plusImageView = UIImageView(frame: CGRectMake(0,0, button.frame.size.width - 10, button.frame.size.height - 10))
+        
+        plusImageView.center.x = button.frame.size.width/2
+        plusImageView.center.y = button.frame.size.height/2
+
         plusImageView.image = plusImage
         plusImageView.contentMode = UIViewContentMode.ScaleAspectFit
         
