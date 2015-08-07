@@ -33,13 +33,13 @@
 
     <div class="name ">{{productName}}</div>
 
-    <div class="rating ">
-        <rating-viewer rating="rating " empty-path="img/star_lg_grey.png " full-path="img/star_lg_yellow.png "></rating-viewer>
-    </div>
-
     <div class="price ">
         <span class="old ">{{oldPrice}}</span>
         <span class="current ">{{currentPrice}}</span>
+    </div>
+    
+    <div class="rating ">
+        <rating-viewer rating="rating " empty-path="star_lg_grey.png " full-path="star_lg_yellow.png "></rating-viewer>
     </div>
 
     <div class="color ">
@@ -47,7 +47,7 @@
     </div>
 
     <div class="option ">
-        <drop-down drop-data="optionsData " button-image="img/arrow-down.png "></drop-down>
+        <drop-down drop-data="optionsData " button-image="arrow-down.png "></drop-down>
     </div>
 
     <div class="buttons">
@@ -62,6 +62,6 @@
 
 <div name="product-details " class="overview-section ">
 
-    <text-expander title="{{detailsTitle}} " text="{{detailsBody}} " button-image="img/arrow-down.png " button-rotation="-180 " <!--ng-class="{padbottom: shouldPadBottom}"-->></text-expander>
+    <text-expander title="{{detailsTitle}} " text="{{detailsBody}} " button-image="arrow-down.png " button-rotation="-180 " <!--ng-class="{padbottom: shouldPadBottom}"-->></text-expander>
 
 </div>
