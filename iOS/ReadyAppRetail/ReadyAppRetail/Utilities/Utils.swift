@@ -172,7 +172,7 @@ class Utils {
     
     
     /**
-    This method checks to see if the locale has been saved to NSUserDefaults in the past. If it has, it checks to see if the locale saved in NSUserDefaults is the same locale as what the device is currently set as. If it is the same, then nothing happens, if it is different, then it deletes all the persisted objects in realm and saves the new current device locale to NSUserDefaults. 
+    This method checks to see if the locale has been saved to NSUserDefaults in the past. If it has, it checks to see if the locale saved in NSUserDefaults is the same locale as what the device is currently set as. If it is the same, then nothing happens, if it is different, then it deletes all the persisted objects in realm and saves the new current device locale to NSUserDefaults.
     */
     class func checkIfLocaleWasSetPreviously(){
     
