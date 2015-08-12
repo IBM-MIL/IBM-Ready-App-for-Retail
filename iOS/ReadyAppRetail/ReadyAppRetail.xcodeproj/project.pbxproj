@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1B1D44191A8A77E6007AE636 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D44181A8A77E6007AE636 /* RealmHelper.swift */; };
-		1B228C461AAF4AE700D61FDE /* xtify.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B228C451AAF4AE700D61FDE /* xtify.plist */; };
 		1B228C481AAFE02E00D61FDE /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B228C471AAFE02E00D61FDE /* SwiftyJSON.swift */; };
 		1B256CE41A6F061700FB4E1E /* CarouselCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B256CE31A6F061700FB4E1E /* CarouselCollectionViewController.swift */; };
 		1B256CE91A6F071F00FB4E1E /* CarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B256CE61A6F071F00FB4E1E /* CarouselCollectionViewCell.swift */; };
@@ -279,7 +278,6 @@
 
 /* Begin PBXFileReference section */
 		1B1D44181A8A77E6007AE636 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
-		1B228C451AAF4AE700D61FDE /* xtify.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xtify.plist; sourceTree = "<group>"; };
 		1B228C471AAFE02E00D61FDE /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		1B256CE31A6F061700FB4E1E /* CarouselCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewController.swift; sourceTree = "<group>"; };
 		1B256CE61A6F071F00FB4E1E /* CarouselCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -960,7 +958,6 @@
 			isa = PBXGroup;
 			children = (
 				1B5533BE1A5EF9A1006DAECE /* Info.plist */,
-				1B228C451AAF4AE700D61FDE /* xtify.plist */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -1591,7 +1588,6 @@
 				1B931FBD1AB1F45600E4A5CF /* angular-touch.js in Resources */,
 				1B931FBE1AB1F45600E4A5CF /* angular-translate.js in Resources */,
 				1B931FD41AB1F45600E4A5CF /* star_lg_yellow.png in Resources */,
-				1B228C461AAF4AE700D61FDE /* xtify.plist in Resources */,
 				1BDE25651A782A0B0061332B /* Oswald-Light.ttf in Resources */,
 				1B931FCC1AB1F45600E4A5CF /* OpenSans-Semibold.ttf in Resources */,
 			);
@@ -1980,7 +1976,7 @@
 				INFOPLIST_FILE = ReadyAppRetailTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c6ff8dcf-7c11-443e-b8ca-f0f744c2fec8";
+				PROVISIONING_PROFILE = "9872228c-d2a4-4fcf-bccf-3a374cf4b08c";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReadyAppRetail.app/ReadyAppRetail";
 			};
 			name = Debug;
@@ -1998,7 +1994,7 @@
 				INFOPLIST_FILE = ReadyAppRetailTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c6ff8dcf-7c11-443e-b8ca-f0f744c2fec8";
+				PROVISIONING_PROFILE = "9872228c-d2a4-4fcf-bccf-3a374cf4b08c";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReadyAppRetail.app/ReadyAppRetail";
 			};
 			name = Release;
