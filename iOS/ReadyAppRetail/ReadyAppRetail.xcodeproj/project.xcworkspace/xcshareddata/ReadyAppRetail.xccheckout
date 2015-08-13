@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A7169B80-972A-41C4-AA1E-5815DFE1A36B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ReadyAppRetail</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E301D107D24123322446BAF2617E7AE764115C4D</key>
+		<string>https://github.com/IBM-MIL/IBM-Ready-App-for-Retail.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iOS/ReadyAppRetail/ReadyAppRetail.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E301D107D24123322446BAF2617E7AE764115C4D</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/IBM-MIL/IBM-Ready-App-for-Retail.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E301D107D24123322446BAF2617E7AE764115C4D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E301D107D24123322446BAF2617E7AE764115C4D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>IBM-Ready-App-for-Retail</string>
+		</dict>
+	</array>
+</dict>
+</plist>
