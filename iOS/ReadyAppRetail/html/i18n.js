@@ -24,8 +24,8 @@
          *  English US
          */
         $translateProvider.translations('en_US', {
-            addToCart: "Add to Cartzzzzz",
-            addToList: "Add to Listzzzzz",
+            addToCart: "Add to Cart",
+            addToList: "Add to List",
 
             detailsTitle: "Product Details",
 
