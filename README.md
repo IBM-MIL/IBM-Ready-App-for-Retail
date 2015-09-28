@@ -8,6 +8,9 @@ IBM Ready App for Retail is the second of the IBM ReadyApp Series. This app
 * understands consumer behavior in the context of the customer's journey
 * focuses on real time personalization and engagement
 
+
+IBM Ready App for Retail utilizes the MobileFirst Platform Foundation, Cloudant, Xtify, and Estimote Beacon technology.
+
 ### Getting Started
 Please visit the [Getting Started page](http://lexdcy040194.ecloud.edst.ibm.com/summit_1_1_0/getting_started) to set up the project. 
 
