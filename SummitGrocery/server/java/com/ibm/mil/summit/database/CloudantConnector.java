@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.cloudant.client.api.CloudantClient;
 import com.cloudant.client.api.Database;
 import com.google.gson.Gson;
+import com.ibm.mil.summit.model.ColorOption;
 import com.ibm.mil.summit.model.CouponClient;
 import com.ibm.mil.summit.model.CouponDB;
 import com.ibm.mil.summit.model.DepartmentClient;
@@ -42,9 +44,9 @@ public class CloudantConnector {
 	// single instance of CloudantConnector
 	private static CloudantConnector cloudantConnector;
 	private static final Double UNAVAILABLE = new Double(0.0);
-	private String username = "c38f4c98-da63-41be-b62f-48b5934da36d-bluemix";
-	private String password = "92fd5f89e181388e381055501d3d894212c02efd017e2551fed276f4d8feefba";
-	private String dbName = "grocery_db";
+	private String username = "<your-cloudant-username>";
+	private String password = "<your-cloudant-password>";
+	private String dbName = "<your-cloudant-database-name>";
 	private CloudantClient cloudant;
 	private Database db;
 	public static String DEFAULT_LOCALE = "en";
@@ -66,19 +68,55 @@ public class CloudantConnector {
 	}
 
 	/**
+	 * For testing only
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		CloudantConnector cc = CloudantConnector.getInstance();
+
+		// cc.connect();
+		// List<ProductClient> featuredProducts = cc.getFeaturedProducts();
+		// for (ProductClient pc : featuredProducts) {
+		// System.out.println(pc);
+
+		cc.productIsAvailable("580ababd18def4f7c9aafa4bd2b73ffc",
+				"01f31c48b90899b93e65be6913888c70", "en");
+		// String allprods = cc.getHomeViewAll(null);
+		Gson gson = new Gson();
+		// Map<String, Object> response = jp.fromJson(allprods, Map.class);
+		// Map<String, Object> = jp.fromJson(response, classOfT);
+		// Map<String, Object> homeViewData = cc.getHomeViewData(null);
+
+		// }
+
+		// int rc = cc.verifyUser("fofiase", "oifjea");
+		// System.out.println("Return code: " + rc + " (Should return 0)");
+		// rc = cc.verifyUser("user1", "foo");
+		// System.out.println("Return Code: " + rc + " (Should return 2)");
+		// rc = cc.verifyUser("user1", "password1");
+		// System.out.println("Return Code: " + rc + " (Should return 1)");
+
+	}
+
+	/**
 	 * Get user ID by username.
 	 * 
 	 * @return User ID by username.
 	 * @param username
 	 */
-	public String getUserID(String username) {
-		List<UserDB> users = db.view("retailDesignDoc/userInfo").key(username)
+	private String getUserID(String username) {
+		List<UserDB> users = db.view("retailDesignDoc/userInfo")
 				.includeDocs(true).query(UserDB.class);
 		String userID = null;
-		if (users != null && users.size() > 0 ) {
-			userID = users.get(0).getId();
+		for (UserDB user : users) {
+			if (user.getUsername() != null
+					&& user.getUsername().equals(username)) {
+				userID = user.getId();
+
+				break;
+			}
 		}
-		
 		return userID;
 
 	}
@@ -88,15 +126,30 @@ public class CloudantConnector {
 	 * 
 	 * @return all stores in the database.
 	 */
-	public String getAllStores(String userLocale) {
+	private String getAllStores(String userLocale) {
 		List<StoreDB> stores = db.view("retailDesignDoc/storeData")
 				.includeDocs(true).query(StoreDB.class);
 		List<StoreClient> allStores = new ArrayList<StoreClient>();
 		for (StoreDB store : stores) {
-			allStores.add(new StoreClient(store));
-		}
+			StoreClient clientSideStore = new StoreClient(store);
 
-		return new Gson().toJson(allStores);
+			allStores.add(clientSideStore);
+		}
+		Gson gson = new Gson();
+
+		return gson.toJson(allStores);
+	}
+
+	/**
+	 * Get time difference from start to end. For performance testing.
+	 * 
+	 */
+	private String getTimeDifference(long start, long end) {
+		long diff = end - start;
+		int millis = (int) diff % 1000;
+		int sec = (int) diff / 1000;
+		int min = (int) diff / 1000 / 60;
+		return min + " minutes " + sec + " seconds " + millis + " milliseconds";
 	}
 
 	/**
@@ -105,13 +158,12 @@ public class CloudantConnector {
 	 * @return meta data for the landing page.
 	 * @param userLocale
 	 */
-	public String getHomeViewMetaData(String userLocale) {
+	private String getHomeViewMetaData(String userLocale) {
 		Map<String, Object> lists = new HashMap<String, Object>();
 
-		LOGGER.info("userLocale: " + userLocale);
 		List<HomeView> homeScreenData = db
 		// what database to look at
-				.view("retailDesignDoc/homeViewData").includeDocs(true).key(userLocale)
+				.view("retailDesignDoc/homeViewData").includeDocs(true)
 				// actually runs the query - inject each result into a Product
 				// object
 				.query(HomeView.class);
@@ -135,9 +187,7 @@ public class CloudantConnector {
 				if (homeView.isFeatured()) {
 					featured.add(new MinMetaData(homeView, userLocale));
 				} else {
-					if (homeView.getImage() != null) {
-						all.add(new MinMetaData(homeView, userLocale));
-					}
+					all.add(new MinMetaData(homeView, userLocale));
 				}
 			}
 			/*
@@ -164,7 +214,9 @@ public class CloudantConnector {
 		lists.put("recommended", recommended);
 		lists.put("all", all);
 
-		return new Gson().toJson(lists);
+		Gson gson = new Gson();
+		String json = gson.toJson(lists);
+		return json;
 	}
 
 	/**
@@ -180,20 +232,38 @@ public class CloudantConnector {
 	private Object getProductObjectById(String productId, String userLocale) {
 		Object productObject = null;
 		if (productId != null && !"".equals(productId)) {
-			List<ProductDB> products2 = db.view("retailDesignDoc/products").key(productId, userLocale)
-					.includeDocs(true).query(ProductDB.class);
-			//ProductDB product = db.find(ProductDB.class, productId);
-			if (products2 != null && products2.size() > 0) {
-				ProductDB product = products2.get(0);
+			ProductDB product = db.find(ProductDB.class, productId);
+			if (product != null && "product".equals(product.getType())) {
 				Gson gson = new Gson();
-				//ArrayList<ColorOption> options = new ArrayList<ColorOption>();
+				ArrayList<ColorOption> options = new ArrayList<ColorOption>();
 				// 1. Query for all product from cloudant
+				List<ProductDB> products = db.view("retailDesignDoc/products")
+						.includeDocs(true).query(ProductDB.class);
+				if (products != null) {
+					for (ProductDB prod : products) {
+						// If the product is a similar type but not the same
+						// product...
+						if (prod != null
+								&& prod.getName().equals(product.getName())
+								&& !prod.getId().equals(product.getId())) {
+							// If we have more than one color option, we should
+							// include the default color option as the
+							// first option
+							if (options.size() == 0) {
+								options.add(new ColorOption(product, userLocale));
+							}
+							options.add(new ColorOption(prod, userLocale));
+						}
+					}
+				}
+				// 2. Loop over all products looking for products with a
+				// different id but same name, add these to list
 				// 3. Create productClient object from product object
 				// 4. Add list of "optional"fields to product client object
 				ProductClient pc = new ProductClient(product, gson.fromJson(
 						getDepartmentById(product.getDepartment(), userLocale),
 						DepartmentClient.class), userLocale);
-				//pc.setColorOptions(options);
+				pc.setColorOptions(options);
 				// 5. jsonify productclient and send to client.
 				productObject = pc;
 			}
@@ -213,7 +283,8 @@ public class CloudantConnector {
 	 * @return The product with the corresponding productId, or null if no
 	 *         product was found with that id.
 	 */
-	public String getProductById(String productId, String userLocale) {
+	private String getProductById(String productId, String userLocale) {
+
 		Gson gson = new Gson();
 		return gson.toJson(getProductObjectById(productId, userLocale));
 	}
@@ -228,13 +299,13 @@ public class CloudantConnector {
 	 * @return The product with the corresponding storeId, or null if no store
 	 *         was found with that id.
 	 */
-	public String getStoreById(String storeId, String userLocale) {
+	private String getStoreById(String storeId, String userLocale) {
 		String storeJson = null;
 		if (storeId != null && !"".equals(storeId)) {
-			List<StoreDB> stores = db.view("retailDesignDoc/storeData").key(storeId)
-					.includeDocs(true).query(StoreDB.class);
-			if (stores != null && stores.size() > 0) {
-				storeJson = new Gson().toJson(new StoreClient(stores.get(0)));
+			StoreDB store = db.find(StoreDB.class, storeId);
+			if (store != null && "store".equals(store.getType())) {
+				Gson gson = new Gson();
+				storeJson = gson.toJson(new StoreClient(store));
 			}
 		}
 
@@ -251,15 +322,13 @@ public class CloudantConnector {
 	 * @return The product with the corresponding productId, or null if no
 	 *         product was found with that id.
 	 */
-	public String getCouponById(String couponId, String userLocale) {
+	private String getCouponById(String couponId, String userLocale) {
 		String json = null;
 		if (couponId != null && !"".equals(couponId)) {
-			List<CouponDB> coupons = db.view("retailDesignDoc/Coupons")
-					.key(couponId, userLocale).includeDocs(true).
-					query(CouponDB.class);
-			if (coupons != null && coupons.size() > 0) {
-				json = new Gson().toJson(new CouponClient(coupons.get(0), 
-						userLocale));
+			CouponDB coupon = db.find(CouponDB.class, couponId);
+			if (coupon != null && "coupon".equals(coupon.getType())) {
+				Gson gson = new Gson();
+				json = gson.toJson(new CouponClient(coupon, userLocale));
 			}
 		}
 
@@ -276,14 +345,13 @@ public class CloudantConnector {
 	 * @return The product with the corresponding productId, or null if no
 	 *         product was found with that id.
 	 */
-	public String getDepartmentById(String departmentId, String userLocale) {
+	private String getDepartmentById(String departmentId, String userLocale) {
 		String json = null;
 		if (departmentId != null && !"".equals(departmentId)) {
-			List<DepartmentDB> departments = db.view("retailDesignDoc/departments").key(departmentId, userLocale)
-					.includeDocs(true).query(DepartmentDB.class);
-			if (departments != null && departments.size() > 0) {
-				json = new Gson().toJson(new DepartmentClient(
-						departments.get(0), userLocale));
+			DepartmentDB department = db.find(DepartmentDB.class, departmentId);
+			if (department != null && "department".equals(department.getType())) {
+				Gson gson = new Gson();
+				json = gson.toJson(new DepartmentClient(department, userLocale));
 			}
 		}
 
@@ -297,29 +365,70 @@ public class CloudantConnector {
 	 * @param password
 	 * @return valid DBObject
 	 */
-	public int verifyUser(String username, String password) {
+	private int verifyUser(String username, String password) {
 		// Sanity check for: null, empty, sql query, etc
-		boolean sanityVerificationforUsername = sanityCheck(username);
+		try {
+			boolean sanityVerificationforUsername;
+			sanityVerificationforUsername = sanityCheck(username);
+			if (sanityVerificationforUsername != true) {
+				throw new IllegalArgumentException();
+			}
+		} catch (Exception IllegalArgumentException) {
+			LOGGER.log(Level.SEVERE, "Error");
+		}
 
 		// Sanity check for: null, empty, sql query, etc
-		boolean sanityVerificationforPassword = sanityCheck(password);
-		LOGGER.info("username: " + username + ", pass: " + password +", sanity1: " + sanityVerificationforUsername + ", sanity2: " + sanityVerificationforPassword);
+		try {
+			boolean sanityVerificationforPassword;
+			sanityVerificationforPassword = sanityCheck(password);
+			if (sanityVerificationforPassword != true) {
+				throw new IllegalArgumentException();
+			}
+		} catch (Exception IllegalArgumentException) {
+			LOGGER.log(Level.SEVERE, "Error");
+		}
+
 		int validUser = 0;
-		if (sanityVerificationforUsername && sanityVerificationforPassword) {
-			List<UserDB> users = db.view("retailDesignDoc/userInfo").key(username).includeDocs(true).query(UserDB.class);
-			if (users != null && users.size() > 0) {
-				UserDB user = users.get(0);
-				LOGGER.info("user: " + user + ", up: '" + user.getPassword() + "', form: '" + password + "'");
-					
-				if (password.equals(user.getPassword())) {
+		List<UserDB> users = db.view("retailDesignDoc/userInfo")
+				.includeDocs(true).query(UserDB.class);
+
+		for (UserDB user : users) {
+			if (user.getUsername() != null
+					&& user.getUsername().equals(username)) {
+				if (user.getPassword() != null
+						&& user.getPassword().equals(password)) {
 					validUser = 1;
-				} else {
-					validUser = 2;
+					break;
 				}
+				validUser = 2;
+				break;
 			}
 		}
-		
+
+		// DBCollection patientsCollection =
+		// readyAppsDB.getCollection("patients");
+		// BasicDBObject patientQueryUsername = new BasicDBObject();
+		// patientQueryUsername.put("username", username);
+		// BasicDBObject patientQuery = new BasicDBObject();
+		// patientQuery.put("userID", username);
+		// DBCursor cursorPatient =
+		// patientsCollection.find(patientQueryUsername);
+
+		// while (cursorPatient.hasNext()) {
+		// DBObject document = cursorPatient.next();
+		// String patientPassword = (String) document.get("password");
+		// if (patientPassword.equals(password)) {
+		// LOGGER.log(Level.INFO, "valid passcode");
+		// validUser = true;
+		// break;
+		// }
+		// }
 		return validUser;
+	}
+
+	private static class UserList {
+		String name;
+		List<ProductClient> products;
 	}
 
 	/**
@@ -327,20 +436,22 @@ public class CloudantConnector {
 	 * 
 	 * @return all departments in the database.
 	 */
-	public String getAllDepartments(String userLocale) {
+	private String getAllDepartments(String userLocale) {
 		List<DepartmentDB> departments = db.view("retailDesignDoc/departments")
 				.includeDocs(true).query(DepartmentDB.class);
 		List<DepartmentClient> allDepartments = new ArrayList<DepartmentClient>();
 		for (DepartmentDB department : departments) {
-			if (userLocale.equals(department.getLocale())) {
-				allDepartments.add(new DepartmentClient(department, userLocale));
-			}
+			DepartmentClient clientSideDepartment = new DepartmentClient(
+					department, userLocale);
+
+			allDepartments.add(clientSideDepartment);
 		}
 
 		/*
 		 * Rearranging departments so that we can demo beacons better.
 		 */
-		DepartmentClient mensBoots = allDepartments.remove(allDepartments.size() - 1);
+		DepartmentClient mensBoots = allDepartments.remove(allDepartments
+				.size() - 1);
 		DepartmentClient winterSports = allDepartments.remove(3);
 		DepartmentClient campingEssentials = allDepartments.remove(2);
 
@@ -348,14 +459,11 @@ public class CloudantConnector {
 		allDepartments.add(0, winterSports);
 		allDepartments.add(0, campingEssentials);
 
-		return new Gson().toJson(allDepartments);
+		Gson gson = new Gson();
+
+		return gson.toJson(allDepartments);
 	}
 
-	private static class UserList {
-		String name;
-		List<ProductClient> products;
-	}
-	
 	/**
 	 * Get the lists associated with a given user
 	 * 
@@ -364,10 +472,20 @@ public class CloudantConnector {
 	 * 
 	 * @return defaultList - the list of products for user by ID.
 	 */
-	public String getDefaultList(String userId, String userLocale) {
+	private String getDefaultList(String userId, String userLocale) {
+
 		List<ListDB> userListObject = new ArrayList<ListDB>();
+
 		UserDB user = db.find(UserDB.class, userId);
+		ListDB items = db.find(ListDB.class, userId);
+
+		String userListObjectJson = null;
+		String productListObjectJson = null;
+
 		List<String> userListIds;
+		List<String> productListIds = null;
+		List<Object> productObjects = null;
+		Map<String, Object> listObjectWithProductObjects = new HashMap<String, Object>();
 		List<UserList> userLists = new ArrayList<UserList>();
 
 		if (user.getList() != null) {
@@ -375,14 +493,17 @@ public class CloudantConnector {
 
 			for (String userList : userListIds) {
 				userListObject.add(db.find(ListDB.class, userList));
+
 			}
 			// insert product object in each object in items array
 			for (ListDB listObject : userListObject) {
 				List<String> prodIds = listObject.getItems();
+
 				List<ProductClient> prods = new ArrayList<ProductClient>();
 
 				for (String prodId : prodIds) {
-					ProductClient p = (ProductClient) this.getProductObjectById(prodId, userLocale);
+					ProductClient p = (ProductClient) this
+							.getProductObjectById(prodId, userLocale);
 					prods.add(p);
 				}
 
@@ -390,6 +511,7 @@ public class CloudantConnector {
 				userList.name = listObject.getTitle();
 				userList.products = prods;
 				userLists.add(userList);
+
 			}
 		}
 
@@ -408,33 +530,44 @@ public class CloudantConnector {
 	 */
 	private boolean productIsAvailable(String userid, String productID,
 			String userLocale) {
-//		Object entryValue = null;
-		boolean availability = false;
+		Object entryValue = null;
+		boolean availability = true;
 		// get the users store
 		// query data
-		List<UserDB> userData = db.view("retailDesignDoc/userById").key(userid)
-				.includeDocs(true).query(UserDB.class);
+		List<UserDB> userData = db
+		// what designdoc to look at
+				.view("retailDesignDoc/userInfo").includeDocs(true)
+				// actually runs the query
+				.query(UserDB.class);
 		// traverse the users to get the right one out
 		String userStoreId = null;
-		if (userData != null && userData.size() > 0) {
-			userStoreId = userData.get(0).getMystore();
-			LOGGER.info("users storeid: " + userStoreId);
+		for (UserDB userDB : userData) {
+			String userID = userDB.getId();
+			// if its the userid that was passed
+			if (userid.equals(userID)) {
+				// get out their store
+				userStoreId = userDB.getMystore();
+				System.out.println("users storeid: " + userStoreId);
+			}
 		}
 
 		// get the products info
-		List<ProductDB> productData = db.view("retailDesignDoc/products").key(productID, userLocale)
+		List<ProductDB> productData = db.view("retailDesignDoc/products")
 				.includeDocs(true).query(ProductDB.class);
 		// traverse the products to get the right one out
 		for (ProductDB productDB : productData) {
+			String productid = productDB.getId();
 			// if its the productid that was passed
-			// Check to see if any stores have availability by checking quantities at all stores listed.
-			Map<String, Map<String, Double>> prodAvailability = productDB.getAvailability();
-			if (prodAvailability.containsKey(userStoreId)) {
-				Map<String, Double> optionAvailability = prodAvailability.get(userStoreId);
-				//There should only be one option for the products so this should be 
-				for (Double value : optionAvailability.values()) {
-					if (UNAVAILABLE.doubleValue() != value.doubleValue()) {
-						availability = true;
+			if (productid.equals(productID)) {
+				// compare the store ids to that of the users
+				for (Object obj : productDB.getAvailability().values()) {
+					// iterate over optionAvailability values
+					Map<String, Double> optionAvailability = (Map<String, Double>) obj;
+					for (Double value : optionAvailability.values()) {
+						// see if extracted double value is zero (unavailable)
+						if (value.equals(UNAVAILABLE)) {
+							return false;
+						}
 					}
 				}
 			}
@@ -443,19 +576,52 @@ public class CloudantConnector {
 	}
 
 	/*
-	 * Ensures that the data sent from the client is correct...right now only checking that the parameters are not
-	 * null and that they do not contain the empty string.
+	 * Ensures that the data sent from the client is correct.
 	 */
 	private boolean sanityCheck(String argument) {
 		// check for null, empty, sql query, etc
-		boolean isValid = true;
-		if (argument == null) {
-			isValid = false;
-		} else if (argument.equals("")) {
-			isValid = false;
+		try {
+			if (argument == null) {
+				throw new IllegalArgumentException("Argument cannot be null.");
+			} else if (argument.equals("")) {
+				throw new IllegalArgumentException("Argument cannot be empty.");
+			} else if (argument.length() == 0) {
+				throw new IllegalArgumentException("Argument cannot be empty.");
+			} else if (argument.contains(" ")) {
+				throw new IllegalArgumentException(
+						"Argument cannot contain a space.");
+			} else if (argument.toLowerCase().contains("show".toLowerCase())) {
+				throw new IllegalArgumentException(
+						"Cannot perform database queries.");
+			} else if (argument.toLowerCase().contains("update".toLowerCase())) {
+				throw new IllegalArgumentException(
+						"Cannot perform database queries.");
+			} else if (argument.toLowerCase().contains("db".toLowerCase())) {
+				throw new IllegalArgumentException(
+						"Cannot perform database queries.");
+			} else if (argument.toLowerCase().contains("insert".toLowerCase())) {
+				throw new IllegalArgumentException(
+						"Cannot perform database queries.");
+			} else if (argument.toLowerCase().contains("save".toLowerCase())) {
+				throw new IllegalArgumentException(
+						"Cannot perform database queries.");
+			} else if (argument.toLowerCase().contains("remove".toLowerCase())) {
+				throw new IllegalArgumentException(
+						"Cannot perform database queries.");
+			} else if (argument.toLowerCase().contains("drop".toLowerCase())) {
+				throw new IllegalArgumentException(
+						"Cannot perform database queries.");
+			} else if (argument.toLowerCase().contains(
+					"collection".toLowerCase())) {
+				throw new IllegalArgumentException(
+						"Cannot perform database queries.");
+			}
+		} catch (Exception IllegalArgumentException) {
+			LOGGER.log(Level.SEVERE,
+					"Exception: " + IllegalArgumentException.getMessage());
 		}
 
-		return isValid;
+		return true;
 	}
 
 	/**
@@ -467,6 +633,7 @@ public class CloudantConnector {
 		if (cloudantConnector == null) {
 			cloudantConnector = new CloudantConnector();
 		}
+		// cloudantConnector.connect();
 		return CloudantConnector.cloudantConnector;
 	}
 };
