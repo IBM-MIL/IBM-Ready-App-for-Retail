@@ -23,6 +23,8 @@ import com.ibm.mil.summit.model.ProductDB;
 import com.ibm.mil.summit.model.StoreClient;
 import com.ibm.mil.summit.model.StoreDB;
 import com.ibm.mil.summit.model.UserDB;
+import com.ibm.mil.summit.util.Constants;
+import com.ibm.mil.summit.util.AppPropertiesReader;
 
 /**
  **************************************************************************************************************** 
@@ -44,9 +46,9 @@ public class CloudantConnector {
 	// single instance of CloudantConnector
 	private static CloudantConnector cloudantConnector;
 	private static final Double UNAVAILABLE = new Double(0.0);
-	private String username = "<your-cloudant-username";
-	private String password = "<your-cloudant-password>";
-	private String dbName = "<your-db-name>";
+	private String username = AppPropertiesReader.getStringProperty(Constants.USERNAME_KEY);
+	private String password = AppPropertiesReader.getStringProperty(Constants.PASSWORD_KEY);
+	private String dbName = AppPropertiesReader.getStringProperty(Constants.DB_KEY;
 	private CloudantClient cloudant;
 	private Database db;
 	public static String DEFAULT_LOCALE = "en";
