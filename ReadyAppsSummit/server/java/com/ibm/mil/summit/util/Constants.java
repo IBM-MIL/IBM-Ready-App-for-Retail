@@ -8,7 +8,7 @@
  * products.
  */
 
-package com.ibm.mil.ready.app.perch.utils;
+package com.ibm.mil.summit.util;
 
 public class Constants {
 	/******* Constants for the CloudantService class ******/

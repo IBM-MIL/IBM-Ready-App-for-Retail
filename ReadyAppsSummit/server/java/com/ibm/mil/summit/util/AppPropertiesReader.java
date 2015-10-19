@@ -7,7 +7,7 @@
  * redistribution by customer, as part of such an application, in customer's own
  * products.
  */
-package com.ibm.mil.util;
+package com.ibm.mil.summit.util;
 
 import java.io.IOException;
 import java.io.InputStream;

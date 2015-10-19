@@ -48,7 +48,7 @@ public class CloudantConnector {
 	private static final Double UNAVAILABLE = new Double(0.0);
 	private String username = AppPropertiesReader.getStringProperty(Constants.USERNAME_KEY);
 	private String password = AppPropertiesReader.getStringProperty(Constants.PASSWORD_KEY);
-	private String dbName = AppPropertiesReader.getStringProperty(Constants.DB_KEY;
+	private String dbName = AppPropertiesReader.getStringProperty(Constants.DB_KEY);
 	private CloudantClient cloudant;
 	private Database db;
 	public static String DEFAULT_LOCALE = "en";
