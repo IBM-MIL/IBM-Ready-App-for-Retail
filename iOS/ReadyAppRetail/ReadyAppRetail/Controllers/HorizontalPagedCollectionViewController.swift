@@ -29,7 +29,7 @@ class HorizontalPagedCollectionViewController: UICollectionViewController {
     /**
     This method is called when there has been data recieved and parsed from Worklight. It sets up the collectionview to handle this new data.
     
-    :param: newDataArray
+    - parameter newDataArray:
     */
     func refresh(newDataArray : [ItemMetaDataObject]){
         
@@ -51,11 +51,11 @@ class HorizontalPagedCollectionViewController: UICollectionViewController {
     private func setUpCollectionView(){
         self.collectionView!.showsHorizontalScrollIndicator = false;
         
-        var collectionPageViewLayout : HorizontalPagedCollectionViewFlowLayout = HorizontalPagedCollectionViewFlowLayout()
+        let collectionPageViewLayout : HorizontalPagedCollectionViewFlowLayout = HorizontalPagedCollectionViewFlowLayout()
         
         self.collectionView!.setCollectionViewLayout(collectionPageViewLayout, animated: false);
         
-        var nib : UINib = UINib(nibName: "HorizontalPagedCollectionViewCell", bundle:nil)
+        let nib : UINib = UINib(nibName: "HorizontalPagedCollectionViewCell", bundle:nil)
         
         self.collectionView!.registerNib(nib,
             forCellWithReuseIdentifier: "horizontalpagedcell");
@@ -79,16 +79,16 @@ class HorizontalPagedCollectionViewController: UICollectionViewController {
     /**
     This method generates the cell for item at indexPath
     
-    :param: collectionView
-    :param: indexPath
+    - parameter collectionView:
+    - parameter indexPath:
     
-    :returns:
+    - returns:
     */
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("horizontalpagedcell", forIndexPath: indexPath) as! HorizontalPagedCollectionViewCell
         
-        var itemMetaDataObject : ItemMetaDataObject = dataArray[indexPath.row] as ItemMetaDataObject
+        let itemMetaDataObject : ItemMetaDataObject = dataArray[indexPath.row] as ItemMetaDataObject
     
         let url = NSURL(string: itemMetaDataObject.imageUrl as String)
     
@@ -101,14 +101,14 @@ class HorizontalPagedCollectionViewController: UICollectionViewController {
     /**
     This method determines the action that is taken when an items is tapped. It tells the browseViewController what item was tapped. 
     
-    :param: collectionView
-    :param: indexPath
+    - parameter collectionView:
+    - parameter indexPath:
     */
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
-        var browseViewController : BrowseViewController = self.parentViewController as! BrowseViewController
+        let browseViewController : BrowseViewController = self.parentViewController as! BrowseViewController
         
-        var itemMetaDataObject : ItemMetaDataObject = dataArray[indexPath.row] as ItemMetaDataObject
+        let itemMetaDataObject : ItemMetaDataObject = dataArray[indexPath.row] as ItemMetaDataObject
         
         if(itemMetaDataObject.type == "product"){
             browseViewController.showProductDetail(itemMetaDataObject.id)

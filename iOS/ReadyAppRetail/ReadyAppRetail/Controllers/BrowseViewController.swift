@@ -78,7 +78,7 @@ class BrowseViewController: UIViewController, UIAlertViewDelegate {
     */
     func allowTapsOnTabBar(){
         self.view.userInteractionEnabled = true
-        var tabVC : TabBarViewController = self.parentViewController!.parentViewController as! TabBarViewController
+        let tabVC : TabBarViewController = self.parentViewController!.parentViewController as! TabBarViewController
         tabVC.tabBar.userInteractionEnabled = true
     }
     
@@ -87,7 +87,7 @@ class BrowseViewController: UIViewController, UIAlertViewDelegate {
     */
     func disableTapsOnTabBar(){
         self.view.userInteractionEnabled = false
-        var tabVC : TabBarViewController = self.parentViewController!.parentViewController as! TabBarViewController
+        let tabVC : TabBarViewController = self.parentViewController!.parentViewController as! TabBarViewController
         tabVC.tabBar.userInteractionEnabled = false
     }
     
@@ -104,18 +104,18 @@ class BrowseViewController: UIViewController, UIAlertViewDelegate {
     /**
     This method is called from the HomeViewMetadataManager. It is called when the HomeViewMetadataManager has recieved data back from Worklight.
     
-    :param: parsedDictionary a dictionary with keys "featured", "recommended", and "all" for the respective collectionviews
+    - parameter parsedDictionary: a dictionary with keys "featured", "recommended", and "all" for the respective collectionviews
     */
     func refreshCollectionViews(parsedDictionary : Dictionary<String, [ItemMetaDataObject]>){
         Utils.dismissProgressHud()
         self.allowTapsOnTabBar()
-        var featuredDataArray = parsedDictionary["featured"]!
+        let featuredDataArray = parsedDictionary["featured"]!
         self.featuredCarouselCollectionViewController.refresh(featuredDataArray)
 
-        var recommendedDataArray = parsedDictionary["recommended"]!
+        let recommendedDataArray = parsedDictionary["recommended"]!
         self.recommendedHorizontalPagedCollectionViewController.refresh(recommendedDataArray)
         
-        var allDataArray = parsedDictionary["all"]!
+        let allDataArray = parsedDictionary["all"]!
         self.shopAllHorizontalPagedCollectionViewController.refresh(allDataArray)
         
         self.getAllDepartments()
@@ -154,8 +154,8 @@ class BrowseViewController: UIViewController, UIAlertViewDelegate {
     /**
     This method is called when the user presses the "Retry" button on the server error alert. If the alert has a tag of 1 then the user is responding to a server error alert with respect to getting the home view data, else if the alert has a tag of 2 then the user is responding to a server error alert with respect to getting the default lists. For either tags, the progress hud is shown and the getHomeViewMetadata or getAllDepartments methods are respectively called.
     
-    :param: alertView
-    :param: buttonIndex
+    - parameter alertView:
+    - parameter buttonIndex:
     */
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if(alertView.tag == 1){
@@ -173,7 +173,7 @@ class BrowseViewController: UIViewController, UIAlertViewDelegate {
     /**
     This method is invoked by GetDefaultListDataManager when it recieves data from Worklight
     
-    :param: departmentArray an array of Department Id's recieved from Worklight
+    - parameter departmentArray: an array of Department Id's recieved from Worklight
     */
     func receiveDepartments(departmentArray : Array<String>){
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -185,7 +185,7 @@ class BrowseViewController: UIViewController, UIAlertViewDelegate {
     /**
     This method calls the scrollViewContentViewHeight() method when the view appears
     
-    :param: animated
+    - parameter animated:
     */
     override func viewDidAppear(animated: Bool) {
        self.updateScrollViewContentViewHeight()
@@ -226,7 +226,7 @@ class BrowseViewController: UIViewController, UIAlertViewDelegate {
     /**
     This method is called by the HorizontalPagedViewController. It is passed the productId of the item tapped. It then performs a segue to the ProductDetailViewController.
     
-    :param: productId the product id of the product tapped. 
+    - parameter productId: the product id of the product tapped. 
     */
     func showProductDetail(productId : NSString){
         
@@ -239,8 +239,8 @@ class BrowseViewController: UIViewController, UIAlertViewDelegate {
     /**
     This method is called right before the embeded segues are called for the 3 container subviews. It checks to see what the segue indentifier is then sets up the destinationViewController's dataArray by passing in the data queried for
     
-    :param: segue  The segue about to be performed
-    :param: sender
+    - parameter segue:  The segue about to be performed
+    - parameter sender:
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "recommended"){

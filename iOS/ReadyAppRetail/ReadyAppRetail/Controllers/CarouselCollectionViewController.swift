@@ -5,7 +5,7 @@ Licensed Materials - Property of IBM
 
 import UIKit
 
-class CarouselCollectionViewController: UICollectionViewController, UIScrollViewDelegate {
+class CarouselCollectionViewController: UICollectionViewController {
 
     var dataArray : [ItemMetaDataObject] = []
     var currentIndex : CGFloat = 0
@@ -30,7 +30,7 @@ class CarouselCollectionViewController: UICollectionViewController, UIScrollView
     /**
     This method sets up the collectionView by calling the setUpCollectionView() method when the view is about to appear
     
-    :param: animated
+    - parameter animated:
     */
     override func viewWillAppear(animated: Bool) {
         
@@ -51,7 +51,7 @@ class CarouselCollectionViewController: UICollectionViewController, UIScrollView
     /**
     This method stops the timer whenever the view disappears.
     
-    :param: animated
+    - parameter animated:
     */
     override func viewDidDisappear(animated: Bool) {
         self.stopTimer()
@@ -69,7 +69,7 @@ class CarouselCollectionViewController: UICollectionViewController, UIScrollView
     /**
     This method is called when there has been data recieved and parsed from Worklight. It sets up the collectionview to handle this new data.
     
-    :param: newDataArray the new dataArray to populate the collectionView with
+    - parameter newDataArray: the new dataArray to populate the collectionView with
     */
     func refresh(newDataArray : [ItemMetaDataObject]){
         if(newDataArray.count > 0){
@@ -94,9 +94,9 @@ class CarouselCollectionViewController: UICollectionViewController, UIScrollView
         var workingArray = self.dataArray
         
         if(workingArray.count > 0){
-            var arraySize = workingArray.count
-            var firstItem = workingArray[0]
-            var lastItem  = workingArray[arraySize - 1]
+            let arraySize = workingArray.count
+            let firstItem = workingArray[0]
+            let lastItem  = workingArray[arraySize - 1]
         
             workingArray.insert(lastItem, atIndex: 0)
             workingArray.append(firstItem)
@@ -115,13 +115,13 @@ class CarouselCollectionViewController: UICollectionViewController, UIScrollView
         self.collectionView!.showsHorizontalScrollIndicator = false;
         
         //create new instance of CarouselCollectionViewFlowLayout (needed to set up the carouselCollectionView's unique characteristics)
-        var carouselCollectionViewFlowLayout : CarouselCollectionViewFlowLayout = CarouselCollectionViewFlowLayout()
+        let carouselCollectionViewFlowLayout : CarouselCollectionViewFlowLayout = CarouselCollectionViewFlowLayout()
         
         //set the collectionView's collectionViewLayout to the carouselCollectionViewFlowLayout
         self.collectionView!.setCollectionViewLayout(carouselCollectionViewFlowLayout, animated: false)
         
         //create an instance of the CarouselCollectionViewCell.xib file
-        var nib : UINib = UINib(nibName: "CarouselCollectionViewCell", bundle:nil)
+        let nib : UINib = UINib(nibName: "CarouselCollectionViewCell", bundle:nil)
         
         //register the collectionview with this nib file
         self.collectionView!.registerNib(nib,
@@ -152,15 +152,13 @@ class CarouselCollectionViewController: UICollectionViewController, UIScrollView
     */
     func nextItem(){
         
-        var nextIndex : CGFloat = self.currentIndex + 1.0
+        let pageWidth :CGFloat = self.collectionView!.frame.size.width;
         
-        var pageWidth :CGFloat = self.collectionView!.frame.size.width;
-        
-        var contentOffset : CGFloat = self.collectionView!.contentOffset.x;
+        let contentOffset : CGFloat = self.collectionView!.contentOffset.x;
    
-        var nextPage : CGFloat = (contentOffset / pageWidth) + 1;
+        let nextPage : CGFloat = (contentOffset / pageWidth) + 1;
         
-        var newOffset : CGPoint = CGPointMake(pageWidth * nextPage, 0);
+        let newOffset : CGPoint = CGPointMake(pageWidth * nextPage, 0);
         
         //update the collectionView's contentOffset.x to the newly calculated offset.
         self.collectionView!.setContentOffset(newOffset, animated: true);
@@ -201,7 +199,7 @@ class CarouselCollectionViewController: UICollectionViewController, UIScrollView
     /**
     This method is called everytime the scrollView scrolls. It first resets the timer. Then it calls the checkPage method to check what page the UIPageControl should be set to and then it calls the checkContentOffsetXForCircularCarouselLogic method to check to see if any special logic needs to be handled to make the carousel collectionView circular
     
-    :param: scrollView
+    - parameter scrollView:
     */
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         
@@ -217,17 +215,17 @@ class CarouselCollectionViewController: UICollectionViewController, UIScrollView
     /**
     This method is called within the scrollViewDidScroll method. This method checks to see if any special logic needs to be handled to make the carousel collectionView circular
     
-    :param: scrollView the scrollView of the collectionView
+    - parameter scrollView: the scrollView of the collectionView
     */
     private func checkContentOffsetXForCiruclarCarouselLogic(scrollView: UIScrollView){
         var lastContentOffsetX : CGFloat =  0
         
         //grab the current X and Y offsets of the collectionView's scrollView
-        var currentOffsetX = scrollView.contentOffset.x
-        var currentOffsetY = scrollView.contentOffset.y
+        let currentOffsetX = scrollView.contentOffset.x
+        let currentOffsetY = scrollView.contentOffset.y
         
-        var pageWidth = scrollView.frame.size.width
-        var offset = pageWidth * CGFloat(self.dataArray.count - 2)
+        let pageWidth = scrollView.frame.size.width
+        let offset = pageWidth * CGFloat(self.dataArray.count - 2)
         
         
         if(currentOffsetX < pageWidth && lastContentOffsetX > currentOffsetX){
@@ -247,12 +245,12 @@ class CarouselCollectionViewController: UICollectionViewController, UIScrollView
     /**
     This method checks to see if the UIPageControl needs to be updated. If it does, then it updates the UIPageControl's currentPage
     
-    :param: scrollView the scrollView of the collectionView
+    - parameter scrollView: the scrollView of the collectionView
     */
     func checkPage(scrollView: UIScrollView){
-        var pageWidth = scrollView.frame.size.width
-        var currentPageFloat = scrollView.contentOffset.x / pageWidth;
-        var currentPageInt = Int(round(currentPageFloat - 1))
+        let pageWidth = scrollView.frame.size.width
+        let currentPageFloat = scrollView.contentOffset.x / pageWidth;
+        let currentPageInt = Int(round(currentPageFloat - 1))
         
         //If the current page isn't a duplicated item from the dataArray
         if(currentPageInt >= 0){
@@ -275,9 +273,9 @@ class CarouselCollectionViewController: UICollectionViewController, UIScrollView
     /**
     This method sets the number of sections in the collection view. Since the carouselCollectionView is a single horizontal row, we only want one section
     
-    :param: collectionView
+    - parameter collectionView:
     
-    :returns:
+    - returns:
     */
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         //#warning Incomplete method implementation -- Return the number of sections
@@ -288,10 +286,10 @@ class CarouselCollectionViewController: UICollectionViewController, UIScrollView
     /**
     This method sets the number of items in a section, in this case, its the number of items in the dataArray
     
-    :param: collectionView
-    :param: section
+    - parameter collectionView:
+    - parameter section:
     
-    :returns:
+    - returns:
     */
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //#warning Incomplete method implementation -- Return the number of items in the section
@@ -301,16 +299,16 @@ class CarouselCollectionViewController: UICollectionViewController, UIScrollView
     /**
     This method prepares the current cell for item at the current indexPath.
     
-    :param: collectionView
-    :param: indexPath
+    - parameter collectionView:
+    - parameter indexPath:
     
-    :returns: 
+    - returns: 
     */
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("carouselcell", forIndexPath: indexPath) as! CarouselCollectionViewCell
         
-        var itemMetaDataObject : ItemMetaDataObject = dataArray[indexPath.row] as ItemMetaDataObject
+        let itemMetaDataObject : ItemMetaDataObject = dataArray[indexPath.row] as ItemMetaDataObject
        
         let url = NSURL(string: itemMetaDataObject.imageUrl as String)
         cell.imageView.sd_setImageWithURL(url, placeholderImage: UIImage(named: "Featured-PlaceHolder"))

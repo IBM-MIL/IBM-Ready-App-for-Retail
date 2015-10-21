@@ -11,9 +11,9 @@ class JSONParseHelper: NSObject {
     /**
     This method takes the response data from Worklight and creates and returns a Swifty JSON Object
     
-    :param: response the response data from Worklight
+    - parameter response: the response data from Worklight
     
-    :returns: The swift JSON objects created
+    - returns: The swift JSON objects created
     */
     class func createJSONObject(response: WLResponse!) -> JSON{
         
@@ -46,18 +46,18 @@ class JSONParseHelper: NSObject {
     /**
     This method is called by the HomeViewMetadataManager class. It calls the parseJSON method to get respective ItemMetaDataObject arrays based on the key it provides to this method. It then creates a dictionary with keys that correspeond to the ItemMetaDataObject arrays.
     
-    :param: json the json received from the Worklight call.
+    - parameter json: the json received from the Worklight call.
     
-    :returns: a dictionary with keys, featured, recommended, and all that correspond to ItemMetaDataObject arrays for those respective collectionviews.
+    - returns: a dictionary with keys, featured, recommended, and all that correspond to ItemMetaDataObject arrays for those respective collectionviews.
     */
     class func parseHomeViewMetadataJSON(response: WLResponse!) -> Dictionary<String, [ItemMetaDataObject]> {
         
-        var json = createJSONObject(response)
+        let json = createJSONObject(response)
     
         var parsedDictionary = Dictionary<String, [ItemMetaDataObject]>()
-        var featuredItemsArray : [ItemMetaDataObject] = parseHomeJSON(json, key: "featured")
-        var recommendedItemsArray : [ItemMetaDataObject] = parseHomeJSON(json, key: "recommended")
-        var allItemsArray : [ItemMetaDataObject] = parseHomeJSON(json, key: "all")
+        let featuredItemsArray : [ItemMetaDataObject] = parseHomeJSON(json, key: "featured")
+        let recommendedItemsArray : [ItemMetaDataObject] = parseHomeJSON(json, key: "recommended")
+        let allItemsArray : [ItemMetaDataObject] = parseHomeJSON(json, key: "all")
         
         parsedDictionary["featured"] = featuredItemsArray
         parsedDictionary["recommended"] = recommendedItemsArray
@@ -70,9 +70,9 @@ class JSONParseHelper: NSObject {
     /**
     This method parses the json received from a Worklight call. It uses the SwiftyJSON framework to help with the parsing of the json. After it is finished parsing the json it returns an array of ItemMetaDataObject objects to be used as data for the featured carousel collection view of the browse view controller.
     
-    :param: json the swifyy json object created by the method that called this method
+    - parameter json: the swifyy json object created by the method that called this method
     
-    :returns: an array of ItemMetaDataObject objects parsed from the received json
+    - returns: an array of ItemMetaDataObject objects parsed from the received json
     */
     class func parseHomeJSON(json: JSON, key : NSString) -> [ItemMetaDataObject]{
         var itemsArray = [ItemMetaDataObject]()
@@ -89,12 +89,12 @@ class JSONParseHelper: NSObject {
     /**
     This method creates an ItemMetaDataObject based on the json parameter it recieves. This method is called from the parseJSON method.
     
-    :param: item a parse json item from the parseJSON method.
+    - parameter item: a parse json item from the parseJSON method.
     
-    :returns: an ItemMetaDataObject created from the item json parameter
+    - returns: an ItemMetaDataObject created from the item json parameter
     */
     class private func createItemMetaDataObject(item : JSON) -> ItemMetaDataObject{
-        var itemMetaDataObject = ItemMetaDataObject()
+        let itemMetaDataObject = ItemMetaDataObject()
         
         if let id  = item["_id"].string{
             itemMetaDataObject.id = id
@@ -120,9 +120,9 @@ class JSONParseHelper: NSObject {
     /**
     This method is used to massage the data received from Worklight to prepare it for the format of json that the hybrid view is expecting
     
-    :param: response the response from Worklight
+    - parameter response: the response from Worklight
     
-    :returns: the massaged json that the hybrid view is expecting
+    - returns: the massaged json that the hybrid view is expecting
     */
     class func massageProductDetailJSON(response: WLResponse!) -> JSON{
         
@@ -138,35 +138,35 @@ class JSONParseHelper: NSObject {
         
         if let imagePath = json["imageUrl"].string {
             path = imagePath
-            var imageUrl = WLProcedureCaller.createImageUrl(path)
+            let imageUrl = WLProcedureCaller.createImageUrl(path)
             json["imageUrl"] = JSON(imageUrl)
             
         }
         
         
         //parse price
-        var currencySymbol = NSLocalizedString("$", comment: "Currency Symbol, for example $")
+        let currencySymbol = NSLocalizedString("$", comment: "Currency Symbol, for example $")
         
         if let priceRaw = json["priceRaw"].double {
-            var price = "\(currencySymbol)\(priceRaw)"
+            let price = "\(currencySymbol)\(priceRaw)"
             json["price"] = JSON(price)
         }
         
         //parse salePrice
         if let salePriceRaw = json["salePriceRaw"].double {
             
-            var salePrice = "\(currencySymbol)\(salePriceRaw)"
+            let salePrice = "\(currencySymbol)\(salePriceRaw)"
             json["salePrice"] = JSON(salePrice)
         }
 
         //parse colorOptions
         if let colorOptionsArray = json["colorOptions"].array {
-            var numberOfColorOptions = colorOptionsArray.count
+            let numberOfColorOptions = colorOptionsArray.count
             
             for(var i : Int = 0; i<numberOfColorOptions; i++){
                 
                 if let path = json["colorOptions"][i]["url"].string{
-                    var imageUrl = WLProcedureCaller.createImageUrl(path)
+                    let imageUrl = WLProcedureCaller.createImageUrl(path)
                     json["colorOptions"][i]["url"] = JSON(imageUrl)
                 }
             }
@@ -182,10 +182,10 @@ class JSONParseHelper: NSObject {
     /**
     This method parses the json that represents the default lists received from Worklight. It first calls the createJSON object to create a swifty json object, it then loops through and parses each list in the json by calling the parseList method.
     
-    :param: response the response json received from Worklight
+    - parameter response: the response json received from Worklight
     */
     class func parseDefaultListJSON(response: WLResponse!){
-        var json = createJSONObject(response)
+        let json = createJSONObject(response)
         
         if let listArray = json.array {
             for listJSON in listArray{
@@ -199,22 +199,20 @@ class JSONParseHelper: NSObject {
     /**
     This method parses a swifty json object that represents a list that has products. It first parses the name of the list and adds a list with this name to Realm by calling the createList method of RealmHelper. It then goes through each product of the list and calls the parseProduct method to create a realm product object from the product swifty json. It then adds this realm product object to the Realm list object.
     
-    :param: listJSON the json representing the list being parsed.
+    - parameter listJSON: the json representing the list being parsed.
     */
     class private func parseList(listJSON : JSON){
-        
-        var list : List = List()
         
         if let name = listJSON["name"].string{
             
             if(RealmHelper.createList(name) == true){
             
-                var list = RealmHelper.getListWithName(name)
+                let list = RealmHelper.getListWithName(name)
             
                 if let productsArray = listJSON["products"].array{
                     for productJSON in productsArray{
                     
-                        var product = parseProduct(productJSON)
+                        let product = parseProduct(productJSON)
                         RealmHelper.addProductToList(list, product: product)
                     }
                 }
@@ -227,13 +225,13 @@ class JSONParseHelper: NSObject {
     /**
     This method takes a switfy json object that represents a product and parses this json into a Realm product object
     
-    :param: productJSON the swifty json that represents a product
+    - parameter productJSON: the swifty json that represents a product
     
-    :returns: the Realm product object parsed from the switfy json
+    - returns: the Realm product object parsed from the switfy json
     */
      class func parseProduct(productJSON : JSON) -> Product{
         
-        var product : Product = Product()
+        let product : Product = Product()
     
         if let id  = productJSON["_id"].string{
             product.id = id
@@ -276,9 +274,9 @@ class JSONParseHelper: NSObject {
     /**
     This method parses the response json received from Worklight and returns an array of department id's
     
-    :param: response the response json received from Worklight
+    - parameter response: the response json received from Worklight
     
-    :returns: an array of department id's parsed from the response json
+    - returns: an array of department id's parsed from the response json
     */
     class func parseAllDepartments(response: WLResponse!)->Array<String> {
         
@@ -304,9 +302,9 @@ class JSONParseHelper: NSObject {
     /**
     This method parses the response json received from Worklight and returns a Bool representing if a product is available or not
     
-    :param: response the response json received
+    - parameter response: the response json received
     
-    :returns: a Bool representing if a product is available or not
+    - returns: a Bool representing if a product is available or not
     */
     class func parseAvailabilityJSON(response: WLResponse!) -> Int{
     
@@ -326,9 +324,9 @@ class JSONParseHelper: NSObject {
     /**
     This method takes in response Json receieved from the "submitAuthentication" Worklight procedure call when the call succeeded and parses the userId from the response json and then returns this userId as a string
     
-    :param: response
+    - parameter response:
     
-    :returns:
+    - returns:
     */
     class func parseUserId(response : WLResponse) -> String{
         
@@ -352,9 +350,9 @@ class JSONParseHelper: NSObject {
     /**
     This method parses the response JSON recieved from the "submitAuthentication" Worklight procedure call when the call failed and then parses this response to figure out why the call failed. It returns a string representing an error message. 
     
-    :param: response
+    - parameter response:
     
-    :returns:
+    - returns:
     */
     class func parseLoginFailureResponse(response : WLResponse!) -> String{
         

@@ -89,7 +89,7 @@ class ListInterfaceController: WKInterfaceController {
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
         
         if segueIdentifier == "productSegue" {
-            var productData : AnyObject = self.sortedProducts!.objectAtIndex(UInt(rowIndex))
+            let productData : AnyObject = self.sortedProducts!.objectAtIndex(UInt(rowIndex))
             return productData
         }
         

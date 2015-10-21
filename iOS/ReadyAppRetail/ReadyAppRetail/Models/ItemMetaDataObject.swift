@@ -15,7 +15,7 @@ class ItemMetaDataObject: NSObject {
     /**
     This method creates the imageURL for the ItemMetaDataObject using the path parameter and calling the milWLHelper getServerURL method
     
-    :param: path the path recieved from Worklight
+    - parameter path: the path recieved from Worklight
     */
     func determineImageUrl(path : NSString){
         

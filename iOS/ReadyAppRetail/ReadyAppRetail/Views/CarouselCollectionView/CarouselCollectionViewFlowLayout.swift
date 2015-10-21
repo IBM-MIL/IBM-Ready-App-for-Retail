@@ -11,7 +11,7 @@ class CarouselCollectionViewFlowLayout: UICollectionViewFlowLayout {
         super.init()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
@@ -32,7 +32,7 @@ class CarouselCollectionViewFlowLayout: UICollectionViewFlowLayout {
     /**
     This method sets the item size for each cell of the carousel collectionview.
     
-    :param: viewSize <#viewSize description#>
+    - parameter viewSize: <#viewSize description#>
     */
     private func setItemSize(viewSize: CGSize){
         let itemSize = CGSize(width: viewSize.width - minimumLineSpacing, height: viewSize.height)

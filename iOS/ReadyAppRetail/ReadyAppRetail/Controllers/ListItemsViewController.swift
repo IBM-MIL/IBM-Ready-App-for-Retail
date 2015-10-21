@@ -71,14 +71,14 @@ class ListItemsViewController: UIViewController {
     /**
     func to show the toast/popup when a list is reordered based on closest department
     
-    :param: departmentName -- closest department
+    - parameter departmentName: -- closest department
     */
     func showPopup(departmentName: String) {
         self.view.bringSubviewToFront(self.sortedListPopup)
         // create attributed string
         let localizedString = NSLocalizedString("Welcome to \(departmentName)!", comment: "")
         let string = localizedString as NSString
-        var attributedString = NSMutableAttributedString(string: string as String)
+        let attributedString = NSMutableAttributedString(string: string as String)
         
         //Add attributes to two parts of the string
         attributedString.addAttributes([NSFontAttributeName: UIFont(name: "OpenSans", size: 14)!,  NSForegroundColorAttributeName: UIColor.whiteColor()], range: string.rangeOfString("Welcome to "))
@@ -87,7 +87,7 @@ class ListItemsViewController: UIViewController {
         //set label to be attributed string and present popup
         self.sortedListPopupLabel.attributedText = attributedString
         self.fadeInSortedListPopup()
-        var timer = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: Selector("fadeOutSortedListPopup"), userInfo: nil, repeats: false)
+       // var timer = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: Selector("fadeOutSortedListPopup"), userInfo: nil, repeats: false)
     }
 
     
@@ -96,7 +96,7 @@ class ListItemsViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "containerForListItems") {
-            var listItemsTableViewController: ListItemsTableViewController = segue.destinationViewController as! ListItemsTableViewController
+            let listItemsTableViewController: ListItemsTableViewController = segue.destinationViewController as! ListItemsTableViewController
             listItemsTableViewController.list = self.list
         }
         
@@ -107,7 +107,7 @@ class ListItemsViewController: UIViewController {
     /**
     called when user taps back, will pop to previous view controller
     
-    :param: sender
+    - parameter sender:
     */
     @IBAction func tappedBackButton(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)

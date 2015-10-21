@@ -59,7 +59,7 @@ class ListOverviewInterfaceController: WKInterfaceController {
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
         
         if segueIdentifier == "listSegue" {
-            var listData: AnyObject = self.realmLists!.objectAtIndex(UInt(rowIndex))
+            let listData: AnyObject = self.realmLists!.objectAtIndex(UInt(rowIndex))
             return listData
         }
         return nil
@@ -70,10 +70,10 @@ class ListOverviewInterfaceController: WKInterfaceController {
     // ------------------
     
     private func authenticate() {
-        var usr : String? = KeychainWrapper.stringForKey("summit_username")
-        var pswd : String? = KeychainWrapper.stringForKey("summit_password")
+        let usr : String? = KeychainWrapper.stringForKey("summit_username")
+        let pswd : String? = KeychainWrapper.stringForKey("summit_password")
         
-        var shouldBeAbleToLogin = false
+        _ = false
         
         if (usr != nil && pswd != nil) {
             
@@ -84,21 +84,21 @@ class ListOverviewInterfaceController: WKInterfaceController {
                 }
                 else {
                     self.failedToAuth()
-                    println("Keychain credentials were stale... not authenticiated")
+                    print("Keychain credentials were stale... not authenticiated")
                 }
             })
         }
         else {
             self.failedToAuth()
-            println("No keychain data was found... not authenticiated")
+            print("No keychain data was found... not authenticiated")
         }
     }
     
     private func fetchLists() {
         ListDataManager.sharedInstance.getDefaultList({ done in
         
-            var usr : String? = KeychainWrapper.stringForKey("summit_username")
-            var pswd : String? = KeychainWrapper.stringForKey("summit_password")
+            _ = KeychainWrapper.stringForKey("summit_username")
+            _ = KeychainWrapper.stringForKey("summit_password")
             
             if done {
                 self.realmLists = List.allObjects().sortedResultsUsingProperty("name", ascending: true)
@@ -106,7 +106,7 @@ class ListOverviewInterfaceController: WKInterfaceController {
                 self.createTable()
                 self.presentLists()
             } else {
-                println("Failed to fetch the lists... Perhaps the authentication is dead? Reattempting auth...")
+                print("Failed to fetch the lists... Perhaps the authentication is dead? Reattempting auth...")
 
                 // Reattempt an authenticiation
                 if (!self.isLoggedIn()) {
@@ -120,9 +120,9 @@ class ListOverviewInterfaceController: WKInterfaceController {
     private func createTable() {
         dispatch_async(dispatch_get_main_queue(),{
             
-            var font = UIFont.systemFontOfSize(14)
-            var attributeData = [NSFontAttributeName : font]
-            var count = 0
+            let font = UIFont.systemFontOfSize(14)
+            let attributeData = [NSFontAttributeName : font]
+            _ = 0
             
             var imgNames: [String] = ["List_Background_A", "List_Background_B", "List_Background_C", "List_Background_D"]
             
@@ -134,7 +134,7 @@ class ListOverviewInterfaceController: WKInterfaceController {
                     
                     let list : List? = self.realmLists!.objectAtIndex(UInt(i)) as? List
                     
-                    var labelText = NSAttributedString(string: list!.name as String, attributes: attributeData)
+                    let labelText = NSAttributedString(string: list!.name as String, attributes: attributeData)
                     row.titleLabel.setAttributedText(labelText)
                     
                     // Set background image
@@ -180,7 +180,7 @@ class ListOverviewInterfaceController: WKInterfaceController {
     private func setUpRealm() {
         // Tell Realm to install in the app group
         let directory: NSURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(GroupDataAccess.sharedInstance.groupAppID)!
-        let realmPath = directory.path!.stringByAppendingPathComponent("db.realm")
+        let realmPath = (directory.path! as NSString).stringByAppendingPathComponent("db.realm")
         RLMRealm.setDefaultRealmPath(realmPath)
         
         // Do Realm migration
@@ -259,7 +259,7 @@ class ListOverviewInterfaceController: WKInterfaceController {
     
     private func isLoggedIn() -> Bool {
         if let name = NSUserDefaults(suiteName: GroupDataAccess.sharedInstance.groupAppID)!.stringForKey("userID") {
-            if(count(name) > 0) {
+            if(name.characters.count > 0) {
                 return true
             } else {
                 return false

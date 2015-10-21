@@ -25,7 +25,7 @@ class Product: RLMObject {
     /**
     Method to convert Realm object to a more primitive type, useful in transferring data to iOS extensions
     
-    :returns: Dictionary of Product data
+    - returns: Dictionary of Product data
     */
     func encodeToDictionary() -> Dictionary<String, AnyObject> {
         
@@ -48,7 +48,7 @@ class Product: RLMObject {
     /**
     This method sets the imageUrl of the product. It first checks to see if the passed in parameter has "http" already in it. If it does it means the path is already a full imageUrl. Else if it doesn't have "http" then it calls MILWLHelper's createImageUrl method to create the full imageUrl of the product image.
     
-    :param: path 
+    - parameter path: 
     */
     func determineImageUrl(path : NSString){
         

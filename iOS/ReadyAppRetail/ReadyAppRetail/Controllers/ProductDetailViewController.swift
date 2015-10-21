@@ -61,7 +61,7 @@ class ProductDetailViewController: MILWebViewController, MILWebViewDelegate, UIA
     /**
     When the view disappears it hides the progress hud
     
-    :param: animated
+    - parameter animated:
     */
     override func viewWillDisappear(animated: Bool) {
        Utils.dismissProgressHud()
@@ -111,8 +111,8 @@ class ProductDetailViewController: MILWebViewController, MILWebViewDelegate, UIA
     /**
     This method is called when the user clicks a button on the alert view. If the user clicks a button with index 1 then it shows the progress hud and then retries either the getProductById method or the queryProductIsAvailable method. If the butten clicked is index 0 then it pops the view controller to go back to the browseViewController.
     
-    :param: alertView
-    :param: buttonIndex
+    - parameter alertView:
+    - parameter buttonIndex:
     */
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if(alertView.tag == 1){
@@ -215,7 +215,7 @@ class ProductDetailViewController: MILWebViewController, MILWebViewDelegate, UIA
     This method is called if the callback changes. If pathComponents[2] is set to "Ready
      then it sets the webViewReady instance variable to true and it then calls the tryToInjectData method. If both the webView and data are ready then it will inject the data.
     
-    :param: pathComponents
+    - parameter pathComponents:
     */
     func callBackHasChanged(pathComponents: Array<String>) {
         if (pathComponents[2] == "Ready") {
@@ -229,7 +229,7 @@ class ProductDetailViewController: MILWebViewController, MILWebViewDelegate, UIA
     /**
     This method takes care of if the addToList Button was pressed on the hybrid side. It calls the addToListTapped method to show the modal popup of the addToListContainer
     
-    :param: pathComponents
+    - parameter pathComponents:
     */
     func nativeViewHasChanged(pathComponents: Array<String>) {
         if (pathComponents[2] == "AddToList") {
@@ -251,7 +251,7 @@ class ProductDetailViewController: MILWebViewController, MILWebViewDelegate, UIA
     /**
     This method checks if data can be injected. It does this by checking if the jsonDataReady and webViewReady are both set to true. If it is set to true, then it returns true, else false.
     
-    :returns: A Bool representing if data can be injected
+    - returns: A Bool representing if data can be injected
     */
     private func canInjectData() -> Bool{
         if(self.jsonDataReady == true && self.webViewReady == true){
@@ -267,8 +267,8 @@ class ProductDetailViewController: MILWebViewController, MILWebViewDelegate, UIA
     This method injects data into the web view by injecting the jsonString instance variable.
     */
     private func injectData(){
-        var injectData : String = "injectData(\(self.jsonString))";
-        var inject : String = Utils.prepareCodeInjectionString(injectData);
+        let injectData : String = "injectData(\(self.jsonString))";
+        let inject : String = Utils.prepareCodeInjectionString(injectData);
         self.webView.stringByEvaluatingJavaScriptFromString(inject);
         Utils.dismissProgressHud()
     }
@@ -277,7 +277,7 @@ class ProductDetailViewController: MILWebViewController, MILWebViewDelegate, UIA
     /**
     This method is called by the GetProductByIdDataManager when it has finished massaging the product detail json. It sets the json instance variable to the json parameter. It then calls parseProduct of JSONParseHelper and sets the currentProduct instance variable to the return value of this method. After it calls the queryProductIsAvailable method to query for product availabilty.
     
-    :param: json the massaged product detail json the webview expects
+    - parameter json: the massaged product detail json the webview expects
     */
     func receiveProductDetailJSON(json : JSON){
         
@@ -317,7 +317,7 @@ class ProductDetailViewController: MILWebViewController, MILWebViewDelegate, UIA
     /**
     This method is called by the ProductIsAvailableDataManager when it is ready to send the product availability information to the ProductDetailViewController. It will recieve a 1 for In Stock, 0 for out of stock, or a 2 for no information available. When this method receives this information, it adds it to the json instance variable and then updates to the jsonString instance variable and sets the jsonDataReady instance variable to true. After it trys to inject data by calling the tryToInjectData method.
     
-    :param: availability 1 for In Stock, 0 for out of stock, or a 2 for no information available
+    - parameter availability: 1 for In Stock, 0 for out of stock, or a 2 for no information available
     */
     func recieveProductAvailability(availability : Int){
     
@@ -355,7 +355,6 @@ class ProductDetailViewController: MILWebViewController, MILWebViewDelegate, UIA
     calls the UserAuthHelper's checkIfLoggedIn method, and shows login view if not logged in. If logged in, shows choose list view
     */
     func addToListTapped(){
-        var utils: Utils = Utils()
         if (UserAuthHelper.checkIfLoggedIn(self)) {
             self.addToListVisible = true
             self.dimViewButton.hidden = false
@@ -397,7 +396,7 @@ class ProductDetailViewController: MILWebViewController, MILWebViewDelegate, UIA
     /**
     dismiss add to list container if user taps outside of it
     
-    :param: sender 
+    - parameter sender: 
     */
     @IBAction func tappedOutsideOfListContainer(sender: AnyObject) {
         if(self.canInjectData() == true){
@@ -432,13 +431,13 @@ class ProductDetailViewController: MILWebViewController, MILWebViewDelegate, UIA
     /**
     function to show grey popup on bottom of screen saying that the item was added to a particular list after tapping that list. includes fade in/out
     
-    :param: listName - name of the list the item was added to
+    - parameter listName: - name of the list the item was added to
     */
     func showPopup(listName: String) {
         // create attributed string
         let localizedString = NSLocalizedString("Product added to \(listName)!", comment: "")
         let string = localizedString as NSString
-        var attributedString = NSMutableAttributedString(string: string as String)
+        let attributedString = NSMutableAttributedString(string: string as String)
  
         //Add attributes to two parts of the string
         attributedString.addAttributes([NSFontAttributeName: UIFont(name: "OpenSans", size: 14)!,  NSForegroundColorAttributeName: UIColor.whiteColor()], range: string.rangeOfString("Product added to "))
@@ -447,7 +446,7 @@ class ProductDetailViewController: MILWebViewController, MILWebViewDelegate, UIA
         //set label to be attributed string and present popup
         self.addedToListPopupLabel.attributedText = attributedString
         self.fadeInAddedToListPopup()
-        var timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: Selector("fadeOutAddedToListPopup"), userInfo: nil, repeats: false)
+        _ = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: Selector("fadeOutAddedToListPopup"), userInfo: nil, repeats: false)
     }
 
     
@@ -465,7 +464,7 @@ class ProductDetailViewController: MILWebViewController, MILWebViewDelegate, UIA
     /**
     This method is called when the tappedBackButton is pressed.
     
-    :param: sender
+    - parameter sender:
     */
     @IBAction func tappedBackButton(sender: AnyObject) {
     self.navigationController?.popViewControllerAnimated(true)

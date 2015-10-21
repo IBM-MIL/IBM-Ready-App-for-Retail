@@ -44,7 +44,7 @@ class ListItemsTableViewController: UITableViewController {
     */
    func setNumberOfItemsInSection(){
         if(list.products.count > 0){
-            var number = Int(self.list.products.count + self.list.products.count)
+            let number = Int(self.list.products.count + self.list.products.count)
             if(number % 2 == 1){ //odd
                 self.numberOfItemsInSection = number + 2
             }
@@ -97,10 +97,10 @@ class ListItemsTableViewController: UITableViewController {
     /**
     This method is needed to determine the height in respect to the current indexPath being generated.
     
-    :param: tableView
-    :param: indexPath
+    - parameter tableView:
+    - parameter indexPath:
     
-    :returns:
+    - returns:
     */
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) ->CGFloat
     {
@@ -118,10 +118,10 @@ class ListItemsTableViewController: UITableViewController {
     /**
     This method is used to determine what cell is generated for the specific indexPathj
     
-    :param: tableView
-    :param: indexPath
+    - parameter tableView:
+    - parameter indexPath:
     
-    :returns:
+    - returns:
     */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if(indexPath.row == self.numberOfItemsInSection - 1){ //display total cell since this is the last cell of the table
@@ -138,13 +138,13 @@ class ListItemsTableViewController: UITableViewController {
     /**
     This method is called in the cellForRowAtIndexPath method. It is used to create and setUp the TotalCell
     
-    :param: tableView
-    :param: indexPath
+    - parameter tableView:
+    - parameter indexPath:
     
-    :returns:
+    - returns:
     */
     private func createTotalCell(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("TotalCell", forIndexPath: indexPath) as! TotalTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("TotalCell", forIndexPath: indexPath) as! TotalTableViewCell
         
         let moneySignLocalizedString = NSLocalizedString("$", comment: "")
         
@@ -166,10 +166,10 @@ class ListItemsTableViewController: UITableViewController {
     /**
     This method is called in the cellForRowAtIndexPath method. It is used to create and setUp the SpaceCell by calling ListTableViewControllerHelper's createSpaceCell method. 
     
-    :param: tableView
-    :param: indexPath
+    - parameter tableView:
+    - parameter indexPath:
     
-    :returns:
+    - returns:
     */
     private func createSpaceCell(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         return ListTableViewControllerHelper.createSpaceCell(self.tableView, cellForRowAtIndexPath: indexPath)
@@ -178,13 +178,13 @@ class ListItemsTableViewController: UITableViewController {
     /**
     This method is called in the cellForRowAtIndexPath method. It is used to create and setUp the ListItemCell
     
-    :param: tableView
-    :param: indexPath
+    - parameter tableView:
+    - parameter indexPath:
     
-    :returns:
+    - returns:
     */
     private func createListItemCell(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("ListItemCell", forIndexPath: indexPath) as! ListItemTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ListItemCell", forIndexPath: indexPath) as! ListItemTableViewCell
         let product = dataArray[UInt(indexPath.row/2)] as! Product   //indexPath.row/2 - 1 to handle mismatch between the indexPath and dataArray indexing
         
         cell.itemNameLabel.text = product.name as String
@@ -194,15 +194,15 @@ class ListItemsTableViewController: UITableViewController {
             // create attributed string
             let moneySignLocalizedString = NSLocalizedString("$", comment: "")
             let string : NSString = "\(moneySignLocalizedString)\(product.price)"
-            var attributedString = NSMutableAttributedString(string: string as String)
+            let attributedString = NSMutableAttributedString(string: string as String)
             
             // create font descriptor for bold and italic font
-            let fontDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
+            _ = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
             
             //Create attributes for two parts of the string
             let firstAttributes = [NSFontAttributeName: UIFont(name: "Oswald-Regular", size: 18)!, NSForegroundColorAttributeName: Utils.UIColorFromHex(0xBE9B00, alpha: 1)]
             
-            var firstString : NSString = "\(moneySignLocalizedString)\(product.price)"
+            let firstString : NSString = "\(moneySignLocalizedString)\(product.price)"
             
             //Add attributes to two parts of the string
             attributedString.addAttributes(firstAttributes, range: string.rangeOfString(firstString as String))
@@ -213,10 +213,10 @@ class ListItemsTableViewController: UITableViewController {
         // create attributed string
         let moneySignLocalizedString = NSLocalizedString("$", comment: "")
             let string : NSString = "\(moneySignLocalizedString)\(product.price)   \(moneySignLocalizedString)\(product.salePrice)"
-        var attributedString = NSMutableAttributedString(string: string as String)
+        let attributedString = NSMutableAttributedString(string: string as String)
         
         // create font descriptor for bold and italic font
-        let fontDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
+        _ = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
         
         //Create attributes for two parts of the string
             //d1d3d4
@@ -224,8 +224,8 @@ class ListItemsTableViewController: UITableViewController {
         let secondAttributes = [NSFontAttributeName: UIFont(name: "Oswald-Regular", size: 18)!, NSForegroundColorAttributeName: Utils.UIColorFromHex(0xBE9B00, alpha: 1)]
         let strikeThroughAttributes = [NSStrikethroughStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue]
         
-        var firstString : String = "\(moneySignLocalizedString)\(product.price)"
-        var secondString : String = "   \(moneySignLocalizedString)\(product.salePrice)"
+        let firstString : String = "\(moneySignLocalizedString)\(product.price)"
+        let secondString : String = "   \(moneySignLocalizedString)\(product.salePrice)"
         
         //Add attributes to two parts of the string
         attributedString.addAttributes(firstAttributes, range: string.rangeOfString(firstString))
@@ -248,13 +248,13 @@ class ListItemsTableViewController: UITableViewController {
     /**
     This method is used to determine what happens when you click on a tableRow. In this case it pushes to the productDetail and determines what product row was tapped.
     
-    :param: tableView
-    :param: indexPath
+    - parameter tableView:
+    - parameter indexPath:
     */
      override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         self.performSegueWithIdentifier("showProductDetail", sender: self)
-         var product : Product = dataArray[UInt(indexPath.row/2)] as! Product
+         let product : Product = dataArray[UInt(indexPath.row/2)] as! Product
          self.productDetailViewController.productId = product.id
         
     }
@@ -277,7 +277,7 @@ class ListItemsTableViewController: UITableViewController {
     func reorderList() {
         self.setNumberOfItemsInSection()
         self.tableView.reloadData()
-        var listItemsViewController: ListItemsViewController = self.parentViewController! as! ListItemsViewController
+        let listItemsViewController: ListItemsViewController = self.parentViewController! as! ListItemsViewController
         listItemsViewController.showPopup(self.departmentSortedBy)
     }
     
@@ -285,7 +285,7 @@ class ListItemsTableViewController: UITableViewController {
     /**
     called when user taps back, will pop to previous view controller
     
-    :param: sender 
+    - parameter sender: 
     */
     @IBAction func tappedBackButton(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)

@@ -55,15 +55,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
     /**
     This method calls the registerForKeyboardNotifications when the viewWillAppear
     
-    :param: animated
+    - parameter animated:
     */
     override func viewWillAppear(animated: Bool) {
         self.registerForKeyboardNotifications()
         
         // Attempt to fetch login details from the keychain
         
-        var usr : String? = KeychainWrapper.stringForKey("summit_username")
-        var pswd : String? = KeychainWrapper.stringForKey("summit_password")
+        let usr : String? = KeychainWrapper.stringForKey("summit_username")
+        let pswd : String? = KeychainWrapper.stringForKey("summit_password")
         
         if (usr != nil && pswd != nil) {
             Utils.showProgressHud()
@@ -78,7 +78,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
     /**
     This method calls the deregisterFromKeyboardNotifications when the viewWillDisappear
     
-    :param: animated
+    - parameter animated:
     */
     override func viewWillDisappear(animated: Bool) {
         self.deregisterFromKeyboardNotifications()
@@ -116,11 +116,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
         usernameTextField.tintColor = Utils.UIColorFromHex(0x005448, alpha: 1)
         
         //create imageView of usernameIcon
-        var usernameIconImageView = UIImageView(frame: CGRectMake(13, 12, 16, 20))
+        let usernameIconImageView = UIImageView(frame: CGRectMake(13, 12, 16, 20))
         usernameIconImageView.image = UIImage(named: "profile_selected")
         
         //create paddingView that will be added to the usernameTextField. This paddingView will hold the usernameIconImageView
-        var usernamePaddingView = UIView(frame: CGRectMake(0, 0,usernameTextField.frame.size.height - 10, usernameTextField.frame.size.height))
+        let usernamePaddingView = UIView(frame: CGRectMake(0, 0,usernameTextField.frame.size.height - 10, usernameTextField.frame.size.height))
         usernamePaddingView.addSubview(usernameIconImageView)
         
         //add usernamePaddingView to usernameTextField.leftView
@@ -141,11 +141,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
         //make cursor color summit green
         passwordTextField.tintColor = Utils.UIColorFromHex(0x005448, alpha: 1)
         //create imageView for passwordIcon
-        var passwordIconImageView = UIImageView(frame: CGRectMake(13, 10, 18, 22))
+        let passwordIconImageView = UIImageView(frame: CGRectMake(13, 10, 18, 22))
         passwordIconImageView.image = UIImage(named: "password")
         
         //create paddingView that will be added to the passwordTextField. This paddingView will hold the passwordIconImageView
-        var passwordPaddingView = UIView(frame: CGRectMake(0, 0,usernameTextField.frame.size.height - 10, usernameTextField.frame.size.height))
+        let passwordPaddingView = UIView(frame: CGRectMake(0, 0,usernameTextField.frame.size.height - 10, usernameTextField.frame.size.height))
         passwordPaddingView.addSubview(passwordIconImageView)
         
         //add passwordPaddingView to the passwordTextField.left
@@ -170,11 +170,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
         // create attributed string
         let localizedString = NSLocalizedString("Don't have an Account?", comment: "A secret phrase that allows you to login to a service")
         let string = localizedString
-        var attributedString = NSMutableAttributedString(string: string)
+        let attributedString = NSMutableAttributedString(string: string)
         
         let localizedString2 = NSLocalizedString(" Sign Up.", comment: "A secret phrase that allows you to login to a service")
         let string2 = localizedString2
-        var attributedString2 = NSMutableAttributedString(string: string2)
+        let attributedString2 = NSMutableAttributedString(string: string2)
         
         // create font descriptor for bold and italic font
         let fontDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
@@ -182,11 +182,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
         
         //Create attributes for two parts of the string
         let firstAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        let secondAttributes = [NSFontAttributeName: UIFont(descriptor: boldItalicFontDescriptor!, size: 12), NSForegroundColorAttributeName: UIColor.whiteColor()]
+        let secondAttributes = [NSFontAttributeName: UIFont(descriptor: boldItalicFontDescriptor, size: 12), NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         //Add attributes to two parts of the string
-        attributedString.addAttributes(firstAttributes, range: NSRange(location: 0,length: count(string)))
-        attributedString2.addAttributes(secondAttributes, range: NSRange(location: 0, length: count(string2)))
+        attributedString.addAttributes(firstAttributes, range: NSRange(location: 0,length: string.characters.count))
+        attributedString2.addAttributes(secondAttributes, range: NSRange(location: 0, length: string2.characters.count))
         
         attributedString.appendAttributedString(attributedString2)
         
@@ -221,11 +221,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
     /**
     This method is called when the loginButton is pressed. This method checks to see if the username and password entered in the textfields are of valid syntax. It does this by calling the checkEmail and checkPassword methods of the utility class SyntaxChecker.swift. This class assumes that the following regular expression is allowed for an email [A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4} and for a password [A-Z0-9a-z_@!&%$#*?]+. This method also calls the login method
     
-    :param: sender
+    - parameter sender:
     */
     @IBAction func loginButtonAction(sender: UIButton) {
         
-        if(SyntaxChecker.checkUserName(usernameTextField.text) == true && SyntaxChecker.checkPassword(passwordTextField.text) == true){
+        if(SyntaxChecker.checkUserName(usernameTextField.text!) == true && SyntaxChecker.checkPassword(passwordTextField.text!) == true){
                 self.login()
         }
         
@@ -244,7 +244,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
     */
     func login(){
         Utils.showProgressHud()
-        MILWLHelper.login(self.usernameTextField.text, password: self.passwordTextField.text, callBack: self.loginCallback)
+        MILWLHelper.login(self.usernameTextField.text!, password: self.passwordTextField.text!, callBack: self.loginCallback)
     }
     
     func loginCallback(success: Bool, errorMessage: String?) {
@@ -267,8 +267,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
         
         // Store username and password in the keychain
         if (noKeychainItems == true) {
-            KeychainWrapper.setString(self.usernameTextField.text, forKey: "summit_username")
-            KeychainWrapper.setString(self.passwordTextField.text, forKey: "summit_password")
+            KeychainWrapper.setString(self.usernameTextField.text!, forKey: "summit_username")
+            KeychainWrapper.setString(self.passwordTextField.text!, forKey: "summit_password")
         }
         
         // Let the Watch know that it can log in
@@ -294,7 +294,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
         self.dismissViewControllerAnimated(true, completion:{(Bool) in
             
             if (self.presentingVC.isKindOfClass(ProductDetailViewController)) {
-                var detailVC: ProductDetailViewController = self.presentingVC as! ProductDetailViewController
+                let detailVC: ProductDetailViewController = self.presentingVC as! ProductDetailViewController
                 detailVC.queryProductIsAvailable() //refresh product availability
                 detailVC.addToListTapped() //show add to list view
                 
@@ -302,7 +302,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
             }
             
             if (self.presentingVC.isKindOfClass(ListTableViewController)) {
-                var detailVC: ListTableViewController = self.presentingVC as! ListTableViewController
+                let detailVC: ListTableViewController = self.presentingVC as! ListTableViewController
                 detailVC.performSegueWithIdentifier("createList", sender: self) //show create a list view
             }
             
@@ -329,8 +329,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
     /**
     This method is called when the Retry button is pressed from the server error alert. It first shows the progressHud and then retrys to call MILWLHelper's getDefaultList method
     
-    :param: alertView
-    :param: buttonIndex
+    - parameter alertView:
+    - parameter buttonIndex:
     */
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if(alertView.tag == 1){
@@ -373,7 +373,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
             alertTitle = NSLocalizedString("Can't Connect To Server", comment:"")
         }
         
-        var alert = UIAlertView()
+        let alert = UIAlertView()
         alert.title = alertTitle
         alert.message = NSLocalizedString("Please Try Again", comment:"")
         alert.addButtonWithTitle("OK")
@@ -385,7 +385,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
     /**
     This method is called when the signUpButton is pressed
     
-    :param: sender
+    - parameter sender:
     */
     @IBAction func signUpButtonAction(sender: UIButton) {
    
@@ -394,10 +394,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
     /**
     This method is called when the user touches anywhere on the view that is not a textfield. This method triggers the keyboard to go down, which triggers the keyboardWillHide method to be called, thus bringing the loginBoxView and the logoHolderView back to their original positions
     
-    :param: touches
-    :param: event
+    - parameter touches:
+    - parameter event:
     */
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         usernameTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }
@@ -405,7 +405,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
     /**
     This method is called when the keyboard shows. Its main purpose is to adjust the logoHolderView and the loginBoxView's constraints to raise these views up vertically to make room for the keyboard
     
-    :param: notification
+    - parameter notification:
     */
     func keyboardWillShow(notification : NSNotification){
         
@@ -413,9 +413,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
         if(loginBoxViewBottomSpace.constant == loginBoxViewOriginalBottomSpace){
             //if the iPhone's height is less than kFourInchIphoneHeight (568)
             if(UIScreen.mainScreen().bounds.height <= kFourInchIphoneHeight){
-                var info : NSDictionary = notification.userInfo!
+                let info : NSDictionary = notification.userInfo!
                 //grab the size of the keyboard that has popped up
-                var keyboardSize = info.objectForKey(UIKeyboardFrameBeginUserInfoKey)?.CGRectValue().size
+                let keyboardSize = info.objectForKey(UIKeyboardFrameBeginUserInfoKey)?.CGRectValue.size
                 
                 //adjust the top space constraint for the logoHolder
                 logoHolderTopSpace.constant = kFourInchIphoneLogoHolderNewTopSpace
@@ -428,9 +428,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
                 })
             
             }else{
-                var info : NSDictionary = notification.userInfo!
+                let info : NSDictionary = notification.userInfo!
                 //grab the size of the keyboard
-                var keyboardSize = info.objectForKey(UIKeyboardFrameBeginUserInfoKey)?.CGRectValue().size
+                let keyboardSize = info.objectForKey(UIKeyboardFrameBeginUserInfoKey)?.CGRectValue.size
         
                 self.view.layoutIfNeeded()
             
@@ -444,7 +444,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
     /**
     This method is called when the keyboard hides. It sets the logoHolderView and the loginBoxView's constraints to their original positions
     
-    :param: notification
+    - parameter notification:
     */
     func keyboardWillHide(notification : NSNotification){
         self.view.layoutIfNeeded()
@@ -461,9 +461,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
     /**
     If the user presses the return key while the passwordTextField is selected, it will call the login method
     
-    :param: textField
+    - parameter textField:
     
-    :returns:
+    - returns:
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if(textField == passwordTextField){
@@ -475,7 +475,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDel
     /**
     This method is called when the user presses the x in the top left corner
     
-    :param: sender
+    - parameter sender:
     */
     @IBAction func cancelLoginScreen(sender: AnyObject) {
         self.dismissViewControllerAnimated(false, completion: nil)

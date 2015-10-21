@@ -13,9 +13,9 @@ class Utils {
     /**
     This method creates a short angular script to alter data in a hybrid view
     
-    :param: functionCall the function to be called in the javascript with arguments included in the string
+    - parameter functionCall: the function to be called in the javascript with arguments included in the string
     
-    :returns: a clean script to inject into the javascript
+    - returns: a clean script to inject into the javascript
     */
     class func prepareCodeInjectionString(functionCall: String) -> String {
         return "var scope = angular.element(document.getElementById('scope')).scope(); scope." + functionCall + ";" 
@@ -25,10 +25,10 @@ class Utils {
     /**
     function to produce UIColor from hex values
     
-    :param: rgbValue
-    :param: alpha
+    - parameter rgbValue:
+    - parameter alpha:
     
-    :returns: UIColor
+    - returns: UIColor
     */
     class func UIColorFromHex(rgbValue:UInt32, alpha:Double=1.0)->UIColor {
         let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
@@ -42,11 +42,11 @@ class Utils {
     /**
     This method returns the green summit color
     
-    :returns: the green summit UIColor
+    - returns: the green summit UIColor
     */
     class func SummitColor()->UIColor{
         
-        var hexColor = UInt32(0x005448)
+        let hexColor = UInt32(0x005448)
         
         return UIColorFromHex(hexColor, alpha: 1.0)
     }
@@ -73,11 +73,11 @@ class Utils {
     /**
     This method shows a server error alert
     
-    :param: delegate
-    :param: tag
+    - parameter delegate:
+    - parameter tag:
     */
     class func showServerErrorAlert(delegate : UIViewController, tag : Int){
-        var alert = UIAlertView()
+        let alert = UIAlertView()
         alert.delegate = delegate
         alert.tag = tag
         alert.title = NSLocalizedString("Can't Connect To Server", comment:"")
@@ -89,11 +89,11 @@ class Utils {
     /**
     This method shows a server error alert with a cancel button option on the alert
     
-    :param: delegate
-    :param: tag      
+    - parameter delegate:
+    - parameter tag:      
     */
     class func showServerErrorAlertWithCancel(delegate : UIViewController, tag : Int){
-        var alert = UIAlertView()
+        let alert = UIAlertView()
         alert.delegate = delegate
         alert.tag = tag
         alert.title = NSLocalizedString("Can't Connect To Server", comment:"")
@@ -106,14 +106,14 @@ class Utils {
     /**
     This method reads from info.plist to find out of the app is in development mode or not. This is needed to disable MQA
     
-    :returns: whether the app is in development mode or not
+    - returns: whether the app is in development mode or not
     */
     class func isDevelopment() -> Bool{
         
-        var configurationPath = NSBundle.mainBundle().pathForResource("Info", ofType: "plist")
+        let configurationPath = NSBundle.mainBundle().pathForResource("Info", ofType: "plist")
         
         if((configurationPath) != nil) {
-            var configuration = NSDictionary(contentsOfFile: configurationPath!)!
+            let configuration = NSDictionary(contentsOfFile: configurationPath!)!
             
             if let isDevelopment = configuration["isDevelopment"] as? NSString{
                 

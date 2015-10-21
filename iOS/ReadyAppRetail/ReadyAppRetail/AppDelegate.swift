@@ -16,25 +16,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
    
     override init() {
-        var anXtifyOptions = XLXtifyOptions.getXtifyOptions()
+        let anXtifyOptions = XLXtifyOptions.getXtifyOptions()
         XLappMgr.get().initilizeXoptions(anXtifyOptions)
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        println("Succeeded registering for push notifications. Dev Token: \(deviceToken)")
+        print("Succeeded registering for push notifications. Dev Token: \(deviceToken)")
         XLappMgr.get().registerWithXtify(deviceToken)
         
         
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        println("Receiving notification, app is running")
-        var launchOptions = userInfo
+        print("Receiving notification, app is running")
+        let launchOptions = userInfo
         self.handleAnyNotification(launchOptions)
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        println("Failed to register with error: \(error)")
+        print("Failed to register with error: \(error)")
         XLappMgr.get().registerWithXtify(nil)
     }
     
@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Tell Realm to install in the app group
         let directory: NSURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(GroupDataAccess.sharedInstance.groupAppID)!
-        let realmPath = directory.path!.stringByAppendingPathComponent("db.realm")
+        let realmPath = (directory.path! as NSString).stringByAppendingPathComponent("db.realm")
         RLMRealm.setDefaultRealmPath(realmPath)
         
         // Do Realm migration
@@ -102,19 +102,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     */
     private func setUpMQA(){
         if(Utils.isDevelopment() != true){
-        var configurationPath = NSBundle.mainBundle().pathForResource("Config", ofType: "plist")
+        let configurationPath = NSBundle.mainBundle().pathForResource("Config", ofType: "plist")
         var mqaApplicationKey : String = ""
         
         var hasValidConfiguation = true
-        var errorMessage = ""
         
         if((configurationPath) != nil) {
-            var configuration = NSDictionary(contentsOfFile: configurationPath!)!
+            let configuration = NSDictionary(contentsOfFile: configurationPath!)!
             
             mqaApplicationKey = configuration["mqaApplicationKey"] as! String
             if(mqaApplicationKey == ""){
                 hasValidConfiguation = false
-                errorMessage = "Open the Config.plist file and set the mqaId to the MQA application key"
+                _ = "Open the Config.plist file and set the mqaId to the MQA application key"
             }
         }
         if(hasValidConfiguation){
@@ -142,7 +141,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     This method registers the challenge handler needed for worklight when a user times out
     */
     private func registerChallengeHander(){
-        var challengeHandler = ReadyAppsChallengeHandler()
+        let challengeHandler = ReadyAppsChallengeHandler()
         WLClient.sharedInstance().registerChallengeHandler(challengeHandler)
     }
     
@@ -155,7 +154,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /**
     If demo mode is one, an xtify notification will be sent to the user when the user puts the app in the background
     
-    :param: application 
+    - parameter application: 
     */
     func applicationDidEnterBackground(application: UIApplication) {
         XLappMgr.get().appEnterBackground()
@@ -195,7 +194,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: WatchKit related methods
     
-    func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
+    func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]?) -> Void)) {
 
         if let infoDictionary = userInfo as? [String: AnyObject], dataAction = infoDictionary[WatchKitRequestIdentifierKey] as? String {
             
@@ -211,7 +210,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Handoff Communication
     
-    func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]!) -> Void) -> Bool {
+    func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
         
         if let userInfo = userActivity.userInfo {
         
@@ -226,13 +225,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                     if let tabBarVC = window.rootViewController as? UITabBarController {
                         // This activity navigates to a product page
-                        var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-                        var productDetailVC = storyboard.instantiateViewControllerWithIdentifier("ProductDetailViewController") as? ProductDetailViewController
+                        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+                        let productDetailVC = storyboard.instantiateViewControllerWithIdentifier("ProductDetailViewController") as? ProductDetailViewController
                         productDetailVC?.productId = userInfo[HandoffProductIDSubKey] as! NSString
                         
                         tabBarVC.selectedIndex = 0
-                        tabBarVC.viewControllers?.first!.popToRootViewControllerAnimated(false)
-                        tabBarVC.viewControllers?.first!.pushViewController(productDetailVC!, animated: false)
+                        tabBarVC.viewControllers?.first!.navigationController!.popToRootViewControllerAnimated(false)
+                        tabBarVC.viewControllers?.first!.navigationController!.pushViewController(productDetailVC!, animated: false)
                         
                     }
                     

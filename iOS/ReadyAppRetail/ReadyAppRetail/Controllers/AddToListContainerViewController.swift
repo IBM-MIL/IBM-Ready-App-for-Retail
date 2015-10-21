@@ -35,20 +35,20 @@ class AddToListContainerViewController: UIViewController {
         
         if (segue.identifier == "chooseAList") { //show choose a list view controller
             if (self.childViewControllers.count > 0) {
-                self.swapFromViewController(self.childViewControllers[0] as! UIViewController, toViewController: segue.destinationViewController as! UIViewController, flip: false)
+                self.swapFromViewController(self.childViewControllers[0] , toViewController: segue.destinationViewController , flip: false)
                 
             }
             else {
                 //If no, add that view to child view controllers.
-                self.addChildViewController(segue.destinationViewController as! UIViewController)
-                (segue.destinationViewController as! UIViewController).view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
-                self.view.addSubview((segue.destinationViewController as! UIViewController).view)
+                self.addChildViewController(segue.destinationViewController )
+                (segue.destinationViewController ).view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
+                self.view.addSubview((segue.destinationViewController ).view)
                 segue.destinationViewController.didMoveToParentViewController(self)
             }
         }
         
         if (segue.identifier == "createAList") { //show create a list view controller
-            self.swapFromViewController(self.childViewControllers[0] as! UIViewController, toViewController: segue.destinationViewController as! UIViewController, flip: true)
+            self.swapFromViewController(self.childViewControllers[0] , toViewController: segue.destinationViewController , flip: true)
             
         }
     }
@@ -57,15 +57,15 @@ class AddToListContainerViewController: UIViewController {
     /**
     Performs the transition from one ViewController to the other. Has option to allow for flip animation.
     
-    :param: fromViewController
-    :param: toViewController
-    :param: flip               
+    - parameter fromViewController:
+    - parameter toViewController:
+    - parameter flip:               
     */
     func swapFromViewController(fromViewController: UIViewController, toViewController: UIViewController, flip: Bool)
     {
         toViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
-        var width: CGFloat = self.view.frame.size.width;
-        var height: CGFloat = self.view.frame.size.height;
+        let width: CGFloat = self.view.frame.size.width;
+        let height: CGFloat = self.view.frame.size.height;
         
         fromViewController.willMoveToParentViewController(nil)
         self.addChildViewController(toViewController)

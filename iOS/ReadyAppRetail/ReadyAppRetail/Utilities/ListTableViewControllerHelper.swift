@@ -12,15 +12,15 @@ class ListTableViewControllerHelper: NSObject {
     /**
     This method registers the tableView parameter with the ListCell and SpaceCell Nib files
     
-    :param: tableView
+    - parameter tableView:
     */
     class func registerNibFile(tableView : UITableView){
-        var nib : UINib = UINib(nibName: "ListTableViewCell", bundle:nil)
+        let nib : UINib = UINib(nibName: "ListTableViewCell", bundle:nil)
         
         //register the tableView with this nib file
         tableView.registerNib(nib, forCellReuseIdentifier: "ListCell")
         
-        var nib2 : UINib = UINib(nibName: "BlankTableViewCell", bundle: nil)
+        let nib2 : UINib = UINib(nibName: "BlankTableViewCell", bundle: nil)
         
         tableView.registerNib(nib2, forCellReuseIdentifier: "SpaceCell")
     }
@@ -29,11 +29,11 @@ class ListTableViewControllerHelper: NSObject {
     /**
     This method registers the tableView parameter with the SpaceCell Nib file
     
-    :param: tableView 
+    - parameter tableView: 
     */
     class func registerSpaceCellNibFile(tableView : UITableView){
         
-        var nib : UINib = UINib(nibName: "BlankTableViewCell", bundle: nil)
+        let nib : UINib = UINib(nibName: "BlankTableViewCell", bundle: nil)
         
         //register the tableView with this nib file
         tableView.registerNib(nib, forCellReuseIdentifier: "SpaceCell")
@@ -43,16 +43,16 @@ class ListTableViewControllerHelper: NSObject {
     /**
     This method creates the attributed string for the label of the list name
     
-    :param: listName
-    :param: listItemCount
+    - parameter listName:
+    - parameter listItemCount:
     
-    :returns:
+    - returns:
     */
     class func createListAttributedString(listName : NSString, listItemCount : Int) -> NSAttributedString {
         
         let string : NSString = "\(listName) (\(listItemCount))"
         // let string = localizedString as NSString
-        var attributedString = NSMutableAttributedString(string: string as String)
+        let attributedString = NSMutableAttributedString(string: string as String)
         
         //Add attributes to two parts of the string
         attributedString.addAttributes([NSFontAttributeName: UIFont(name: "OpenSans-Semibold", size: 16)!,  NSForegroundColorAttributeName: UIColor.blackColor()], range: string.rangeOfString("\(listName) "))
@@ -65,14 +65,14 @@ class ListTableViewControllerHelper: NSObject {
     /**
     This method creates a list cell for the cellForRowAtIdexPath method
     
-    :param: list
-    :param: tableView
-    :param: indexPath
+    - parameter list:
+    - parameter tableView:
+    - parameter indexPath:
     
-    :returns:
+    - returns:
     */
     class func createListCell(list : List, tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("ListCell", forIndexPath: indexPath) as! ListTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ListCell", forIndexPath: indexPath) as! ListTableViewCell
         cell.listName.attributedText = self.createListAttributedString(list.name, listItemCount: Int(list.products.count))
         
         let url = NSURL(string: RealmHelper.getListPhoto(list) as String)
@@ -84,13 +84,13 @@ class ListTableViewControllerHelper: NSObject {
     /**
     This method creates a space cell for the cellForRowAtIndexPath
     
-    :param: tableView
-    :param: indexPath
+    - parameter tableView:
+    - parameter indexPath:
     
-    :returns:
+    - returns:
     */
     class func createSpaceCell(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("SpaceCell", forIndexPath: indexPath) as! BlankTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("SpaceCell", forIndexPath: indexPath) as! BlankTableViewCell
         cell.userInteractionEnabled = false
         return cell
     }
@@ -99,13 +99,13 @@ class ListTableViewControllerHelper: NSObject {
     /**
     This method creates a "createNewListCell" for the cellForRowAtIndexPath
     
-    :param: tableView
-    :param: indexPath
+    - parameter tableView:
+    - parameter indexPath:
     
-    :returns:
+    - returns:
     */
     class func createCreateNewListCell(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("createNewListCell", forIndexPath: indexPath) as! CreateNewListTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("createNewListCell", forIndexPath: indexPath) as! CreateNewListTableViewCell
         return cell
     }
     

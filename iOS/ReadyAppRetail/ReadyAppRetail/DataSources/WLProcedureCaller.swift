@@ -26,10 +26,10 @@ class WLProcedureCaller: NSObject {
     /**
     Constructor to initialize the procedure caller with both the adapter name and procedure name.
     
-    :param: adapterName
-    :param: procedureName
+    - parameter adapterName:
+    - parameter procedureName:
     
-    :returns: WLProcedureCaller
+    - returns: WLProcedureCaller
     */
     init(adapterName : String, procedureName: String){
         self.adapterName = adapterName
@@ -40,8 +40,8 @@ class WLProcedureCaller: NSObject {
     This function will execute the adapter procedure and invoke the appropriate functions of the
     WLDataDelegate that is passed in.
     
-    :param: dataDelegate
-    :param: params   Procedure parameters
+    - parameter dataDelegate:
+    - parameter params:   Procedure parameters
     */
     func invokeWithResponse(dataDelegate: WLDataDelegate, params: Array<String>?){
         self.dataDelegate = dataDelegate
@@ -63,24 +63,24 @@ class WLProcedureCaller: NSObject {
     /**
     This method creates the server URL
     
-    :returns: the server url
+    - returns: the server url
     */
     class func getServerURL() -> NSString{
         
-        var configurationPath = NSBundle.mainBundle().pathForResource("worklight", ofType: "plist")
+        let configurationPath = NSBundle.mainBundle().pathForResource("worklight", ofType: "plist")
         
         if((configurationPath) != nil){
-            var configuration = NSDictionary(contentsOfFile: configurationPath!)!
+            let configuration = NSDictionary(contentsOfFile: configurationPath!)!
             
-            var serverProtocol = configuration["protocol"] as! String
+            let serverProtocol = configuration["protocol"] as! String
             
-            var serverHost = configuration["host"] as! String
+            let serverHost = configuration["host"] as! String
             
-            var serverPort = configuration["port"] as! String
+            let serverPort = configuration["port"] as! String
             
-            var serverContext = configuration["wlServerContext"] as! String
+            let serverContext = configuration["wlServerContext"] as! String
             
-            var serverUrl = serverProtocol + "://" + serverHost + ":" + serverPort + serverContext
+            let serverUrl = serverProtocol + "://" + serverHost + ":" + serverPort + serverContext
             
             return serverUrl
         }
@@ -93,9 +93,9 @@ class WLProcedureCaller: NSObject {
     /**
     This method recieves a image path as a parameter and appends to the server url.
     
-    :param: path the path to the image
+    - parameter path: the path to the image
     
-    :returns: the full image url
+    - returns: the full image url
     */
     class func createImageUrl(path : NSString) -> NSString{
         
@@ -105,7 +105,6 @@ class WLProcedureCaller: NSObject {
 
 extension WLProcedureCaller: WLDelegate {
     func onSuccess(response: WLResponse!) {
-        let elapsedTime = NSDate().timeIntervalSinceDate(logWLStartTime)
         dataDelegate.onSuccess(response)
         dataDelegate.onPostExecute()
     }
@@ -114,7 +113,7 @@ extension WLProcedureCaller: WLDelegate {
         var resultText : String = "Invocation Failure"
         if(response.responseText != nil) {
             resultText = "\(resultText): \(response.responseText)"
-            println(resultText)
+            print(resultText)
             //MQALogger.log("\(resultText)", withLevel: MQALogLevelWarning)
         }
         dataDelegate.onFailure(response)

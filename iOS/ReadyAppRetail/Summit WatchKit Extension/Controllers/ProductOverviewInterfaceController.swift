@@ -62,11 +62,10 @@ class ProductOverviewInterfaceController: WKInterfaceController {
             // Code to handle star rating; Rating should be at most 5
             starArray = [star1, star2, star3, star4, star5]
             
-            if let productRev = self.product!.rev as? String {
-                if let productRating = productRev.toInt() {
-                    for index in 0..<productRating {
-                        starArray[index].setImageNamed("Yellow_Star_Icon")
-                    }
+            let productRev = self.product!.rev as String
+            if let productRating = Int(productRev) {
+                for index in 0..<productRating {
+                    starArray[index].setImageNamed("Yellow_Star_Icon")
                 }
             }
             
@@ -78,11 +77,11 @@ class ProductOverviewInterfaceController: WKInterfaceController {
                 addMenuItemWithItemIcon(WKMenuItemIcon.Accept, title: "Mark complete", action: "doCheckOffItemAction")
             }
             
-            var dispatchQueue : dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, CUnsignedLong(0))
+            let dispatchQueue : dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, CUnsignedLong(0))
             dispatch_async(dispatchQueue) { ()
                 in
                 
-                var data : NSData? = NSData(contentsOfURL:
+                let data : NSData? = NSData(contentsOfURL:
                     NSURL(string: self.productUrl!)!)
                 
                 if (data != nil) {
@@ -91,7 +90,7 @@ class ProductOverviewInterfaceController: WKInterfaceController {
                     self.loadingImageView.setHidden(true)
                     self.imageView.setHidden(false)
                 } else {
-                    println("No image data was returned from the server")
+                    print("No image data was returned from the server")
                 }
             }
             self.loadingImageView.setImageNamed("Activity")
@@ -115,7 +114,7 @@ class ProductOverviewInterfaceController: WKInterfaceController {
     }
     
     func doCheckOffItemAction() {
-        let id: AnyObject! = self.product!["id"]
+        _ = self.product!["id"]
         let realm = RLMRealm.defaultRealm()
         
         realm.beginWriteTransaction()

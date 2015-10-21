@@ -15,15 +15,15 @@ class List: RLMObject {
     /**
     Method to convert Realm object to a more primitive type, useful in transferring data to iOS extensions
     
-    :returns: Dictionary of List object
+    - returns: Dictionary of List object
     */
     func encodeToDictionary() ->  Dictionary<String, AnyObject> {
      
         var jsonDictionary = ["name" : self.name] as  Dictionary<String, AnyObject>
         var jsonArray = [Dictionary<String, AnyObject>]()
         
-        for (index, product) in enumerate(self.products) {
-            var productObject = product as! Product
+        for (_, product) in self.products.enumerate() {
+            let productObject = product as! Product
             jsonArray.append(productObject.encodeToDictionary())
         }
         

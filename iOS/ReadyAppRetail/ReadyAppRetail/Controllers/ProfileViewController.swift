@@ -39,7 +39,7 @@ class ProfileViewController: UIViewController {
     /**
     func to hide the login button after logging in
     
-    :param: sender
+    - parameter sender:
     */
     @IBAction func loginButtonTapped(sender: AnyObject) {
         if (UserAuthHelper.checkIfLoggedIn(self)) {
@@ -52,7 +52,7 @@ class ProfileViewController: UIViewController {
     /**
     func to show notification from xtify once the user minimizes the app
     
-    :param: sender
+    - parameter sender:
     */
     @IBAction func toggleDemoMode(sender: AnyObject) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate

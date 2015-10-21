@@ -34,17 +34,17 @@ class AddToListViewController: UIViewController {
     /**
     dismiss add to list view if user cancels
     
-    :param: sender
+    - parameter sender:
     */
     @IBAction func cancelAddToList(sender: AnyObject) {
-        var productDetailViewController: ProductDetailViewController = self.parentViewController!.parentViewController as! ProductDetailViewController
+        let productDetailViewController: ProductDetailViewController = self.parentViewController!.parentViewController as! ProductDetailViewController
         productDetailViewController.dismissAddToListContainer()
     }
 
     /**
     show create new list view if user taps the plus button
     
-    :param: sender 
+    - parameter sender: 
     */
     @IBAction func createNewList(sender: AnyObject) {
         (self.parentViewController as! AddToListContainerViewController).swapViewControllers()

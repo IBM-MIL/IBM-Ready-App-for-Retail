@@ -34,9 +34,9 @@ class CreateListInAddToListHierarchyViewController: UIViewController, UITextFiel
     /**
     When "Done"/Return key on keyboard is pressed, save new list item to Realm and dismiss modal
     
-    :param: textField
+    - parameter textField:
     
-    :returns:
+    - returns:
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
         //save new list to realm
@@ -47,18 +47,17 @@ class CreateListInAddToListHierarchyViewController: UIViewController, UITextFiel
     /**
     This method is used to create a list. It is called when the return key of the keyboard is pressed.
     
-    :returns: A Bool representing if the creation of the list was a success or not.
+    - returns: A Bool representing if the creation of the list was a success or not.
     */
     func createAndAddProductToList() -> Bool{
-        var syntaxChecker : SyntaxChecker = SyntaxChecker()
         
-        if(SyntaxChecker.checkListName(self.listNameTextField.text)){
+        if(SyntaxChecker.checkListName(self.listNameTextField.text!)){
             
-            if(RealmHelper.createList(self.listNameTextField.text)){
+            if(RealmHelper.createList(self.listNameTextField.text!)){
                 //dismiss VC
                 self.listNameTextField.resignFirstResponder()
                 
-                self.addProductToListWithNameHelper(self.listNameTextField.text)
+                self.addProductToListWithNameHelper(self.listNameTextField.text!)
                 dismissAddToListViewController()
                 return true
             }
@@ -76,12 +75,12 @@ class CreateListInAddToListHierarchyViewController: UIViewController, UITextFiel
     /**
     This method is a helper method that gets reference to the productDetailViewController to get the current Product the user is looking at and then calls RealmHelper's addProductToListWithName method to add the product to the list
     
-    :param: listName the list the product should be added too.
+    - parameter listName: the list the product should be added too.
     */
     private func addProductToListWithNameHelper(listName : String){
         
         let productDetailViewController: ProductDetailViewController = self.parentViewController!.parentViewController as! ProductDetailViewController
-        var product = productDetailViewController.currentProduct
+        let product = productDetailViewController.currentProduct
         
         RealmHelper.addProductToListWithName(product, listName: listName)
         
@@ -104,7 +103,7 @@ class CreateListInAddToListHierarchyViewController: UIViewController, UITextFiel
     /**
     This method gets reference to the current productDetailViewController and then calls the productDetailViewController's showPopup method.
     
-    :param: listName the listName to display in the popup
+    - parameter listName: the listName to display in the popup
     */
     private func showAddToListPopUp(listName : String){
         
@@ -117,7 +116,7 @@ class CreateListInAddToListHierarchyViewController: UIViewController, UITextFiel
     This method is used to show an alert if a list already exists.
     */
     func listAlreadyExists(){
-        var alert = UIAlertView()
+        let alert = UIAlertView()
         alert.title = "List Aleady Exists"
         alert.message = "Please try a different name"
         alert.addButtonWithTitle("OK")
@@ -128,7 +127,7 @@ class CreateListInAddToListHierarchyViewController: UIViewController, UITextFiel
     /**
     Minimizes keyboard and dismiss modal if X button is pressed (cancel)
     
-    :param: sender
+    - parameter sender:
     */
     @IBAction func dismissCreateListView(sender: AnyObject) {
         //dismiss VC

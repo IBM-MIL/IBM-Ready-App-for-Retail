@@ -12,9 +12,9 @@ class UserAuthHelper: NSObject {
     /**
     This method checks to see if a user is logged in by calling the isLoggedIn method. If a user is logged in it returns true. If a user isn't logged in, it presents the loginViewController and returns false.
     
-    :param: fromViewController the view controller that will present the loginViewController if a user isn't logged in
+    - parameter fromViewController: the view controller that will present the loginViewController if a user isn't logged in
     
-    :returns: bool true - user is logged in, false - user isn't logged in
+    - returns: bool true - user is logged in, false - user isn't logged in
     */
     class func checkIfLoggedIn(fromViewController:UIViewController) -> Bool {
         
@@ -29,12 +29,12 @@ class UserAuthHelper: NSObject {
     /**
     This method checks to see if a user is logged in by checking NSUserDefaults to see if there is a string for key "userID". If there is a value for this key, it checks to see if the value is greated than 0. If it isn't greater than 0 then it returns false, else true. If there is no string for Key "userID" then it returns false.
     
-    :returns: bool true - user is logged in, false - user isn't logged in
+    - returns: bool true - user is logged in, false - user isn't logged in
     */
     class func isLoggedIn() -> Bool {
         if let name = NSUserDefaults.standardUserDefaults().stringForKey("userID")
         {
-            if(count(name) > 0){
+            if(name.characters.count > 0){
                 return true
             }
             else{
@@ -51,7 +51,7 @@ class UserAuthHelper: NSObject {
     /**
     This method saves the userID parameter to NSUserDefaults for the key "userID"
     
-    :param: userID the userID to be saved to NSUSerDefaults for key "userID"
+    - parameter userID: the userID to be saved to NSUSerDefaults for key "userID"
     */
     class func saveUser(userID : String){
         NSUserDefaults.standardUserDefaults().setObject(userID, forKey: "userID")
@@ -72,7 +72,7 @@ class UserAuthHelper: NSObject {
     /**
     This method checks to see if a user has downloaded the defaultLists yet.
     
-    :returns: bool true - user has downloaded default lists, false - user hasn't downloaded default lists
+    - returns: bool true - user has downloaded default lists, false - user hasn't downloaded default lists
     */
     class func hasDownloadedDefaultLists() -> Bool{
         if let hasDownloadedDefaultLists = NSUserDefaults.standardUserDefaults().stringForKey("hasDownloadedDefaultLists")
@@ -103,10 +103,10 @@ class UserAuthHelper: NSObject {
     /**
     This method is called by the checkIfLogged method. It is called when the user isn't logged in and the loginViewController should be presented.
     
-    :param: fromViewController the view controller that will be presenting the loginViewController.
+    - parameter fromViewController: the view controller that will be presenting the loginViewController.
     */
     private class func presentLoginViewController(fromViewController:UIViewController) {
-        var vc = fromViewController.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+        let vc = fromViewController.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
         vc.presentingVC = fromViewController
         fromViewController.presentViewController(vc, animated: true, completion: nil)
     }

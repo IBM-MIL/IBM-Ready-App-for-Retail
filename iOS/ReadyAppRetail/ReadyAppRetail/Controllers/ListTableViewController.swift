@@ -50,10 +50,10 @@ class ListTableViewController: UITableViewController {
     /**
     If no data, still show "create list" cell. If data, return correct number of cells (add dataArray.count + dataArray.count because for each data element there is a blank cell as well. Add 1 to take into account the "create list" cell)
     
-    :param: tableView
-    :param: section
+    - parameter tableView:
+    - parameter section:
     
-    :returns:
+    - returns:
     */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -71,10 +71,10 @@ class ListTableViewController: UITableViewController {
     /**
     If first cell, just show "create list" cell. If an odd cell/indexPath, show blank cell (space every other cell). If any other indexPath, cell should be a ListTableView cell and contain data.
     
-    :param: tableView
-    :param: indexPath
+    - parameter tableView:
+    - parameter indexPath:
     
-    :returns:
+    - returns:
     */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if (indexPath.row == 0) {
@@ -95,10 +95,10 @@ class ListTableViewController: UITableViewController {
     /**
     This method is used to determine the height for the specific indexPath being generated
     
-    :param: tableView
-    :param: indexPath
+    - parameter tableView:
+    - parameter indexPath:
     
-    :returns:
+    - returns:
     */
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) ->CGFloat
     {
@@ -115,8 +115,8 @@ class ListTableViewController: UITableViewController {
     /**
     This method determines the action to be taken when a cell at indexPath has been tapped
     
-    :param: tableView
-    :param: indexPath 
+    - parameter tableView:
+    - parameter indexPath: 
     */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.row == 0) {

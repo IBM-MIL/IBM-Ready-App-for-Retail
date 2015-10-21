@@ -43,9 +43,9 @@ class CreateListViewController: UIViewController, UITextFieldDelegate{
     /**
     When "Done"/Return key on keyboard is pressed, save new list item to Realm and dismiss modal only if the list name the user has entered is a valid list name using SyntaxChecker's checkListName method.
     
-    :param: textField
+    - parameter textField:
     
-    :returns:
+    - returns:
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
         return createList()
@@ -55,15 +55,15 @@ class CreateListViewController: UIViewController, UITextFieldDelegate{
     /**
     This method is used to create a list. It is called when the return key of the keyboard is pressed.
     
-    :returns: A Bool representing if the creation of the list was a success or not.
+    - returns: A Bool representing if the creation of the list was a success or not.
     */
     func createList() -> Bool{
         
         //Check if the list name starts with letter or number
-        if(SyntaxChecker.checkListName(self.listNameTextField.text)){
+        if(SyntaxChecker.checkListName(self.listNameTextField.text!)){
             
             //create a list in realm, this checks if a list in realm with this name already exists
-            if(RealmHelper.createList(self.listNameTextField.text)){
+            if(RealmHelper.createList(self.listNameTextField.text!)){
                 //dismiss VC
                 self.listNameTextField.resignFirstResponder()
                 self.dismissViewControllerAnimated(true, completion: nil)
@@ -88,7 +88,7 @@ class CreateListViewController: UIViewController, UITextFieldDelegate{
     This method is used to show an alert if a list already exists.
     */
     func listAlreadyExists(){
-        var alert = UIAlertView()
+        let alert = UIAlertView()
         alert.title = "List Aleady Exists"
         alert.message = "Please try a different name"
         alert.addButtonWithTitle("OK")
@@ -99,7 +99,7 @@ class CreateListViewController: UIViewController, UITextFieldDelegate{
     /**
     Minimizes keyboard and dismiss modal if X button is pressed (cancel)
     
-    :param: sender 
+    - parameter sender: 
     */
     @IBAction func dismissCreateListView(sender: AnyObject) {
         //dismiss VC

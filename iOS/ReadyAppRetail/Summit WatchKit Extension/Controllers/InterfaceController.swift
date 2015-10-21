@@ -22,9 +22,9 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
 
-        println("WatchKit App is open")
-        var font = UIFont.systemFontOfSize(12)
-        var attirbuteData = [NSFontAttributeName : font]
+        print("WatchKit App is open")
+        let font = UIFont.systemFontOfSize(12)
+        let attirbuteData = [NSFontAttributeName : font]
         
         var labelText = NSAttributedString(string: "View Lists", attributes: attirbuteData)
         self.listLabel.setAttributedText(labelText)
@@ -46,9 +46,9 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func requestData() {
-        var request = ProductDataRequest(productId: "0000000002")
+        let request = ProductDataRequest(productId: "0000000002")
         ParentAppDataManager.sharedInstance.execute(request, retry: true, result: { (resultDictionary) -> () in
-          println("REsults: \(resultDictionary)")
+          print("REsults: \(resultDictionary)")
         })
     }
 

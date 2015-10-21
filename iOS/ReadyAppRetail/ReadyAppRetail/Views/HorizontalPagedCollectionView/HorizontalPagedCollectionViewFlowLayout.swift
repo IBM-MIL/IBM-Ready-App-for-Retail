@@ -11,7 +11,7 @@ class HorizontalPagedCollectionViewFlowLayout: UICollectionViewFlowLayout {
         
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -34,7 +34,7 @@ class HorizontalPagedCollectionViewFlowLayout: UICollectionViewFlowLayout {
     /**
     This method defines the size of each item in the horizontal paged collection view
     
-    :param: viewSize 
+    - parameter viewSize: 
     */
     private func setItemSize(viewSize: CGSize){
         
@@ -46,7 +46,7 @@ class HorizontalPagedCollectionViewFlowLayout: UICollectionViewFlowLayout {
     /**
     This method defines the flick velocity
     
-    :returns:
+    - returns:
     */
     func flickVelocity() -> CGFloat{
         return 0.0
@@ -55,7 +55,7 @@ class HorizontalPagedCollectionViewFlowLayout: UICollectionViewFlowLayout {
     /**
     This method defines the size of each page needed for the  targetContentOffsetForProposedContentOffset
     
-    :returns:
+    - returns:
     */
     func pageWidth() ->CGFloat{
         return self.itemSize.width + self.minimumLineSpacing;
@@ -66,12 +66,12 @@ class HorizontalPagedCollectionViewFlowLayout: UICollectionViewFlowLayout {
     */
     override func targetContentOffsetForProposedContentOffset(var proposedContentOffset: CGPoint, withScrollingVelocity  velocity: CGPoint) -> CGPoint {
         
-        var rawPageValue : CGFloat = self.collectionView!.contentOffset.x / self.pageWidth();
-        var currentPage : CGFloat = (velocity.x > 0.0) ? floor(rawPageValue) : ceil(rawPageValue);
-        var nextPage : CGFloat = (velocity.x > 0.0) ? ceil(rawPageValue) : floor(rawPageValue);
+        let rawPageValue : CGFloat = self.collectionView!.contentOffset.x / self.pageWidth();
+        let currentPage : CGFloat = (velocity.x > 0.0) ? floor(rawPageValue) : ceil(rawPageValue);
+        let nextPage : CGFloat = (velocity.x > 0.0) ? ceil(rawPageValue) : floor(rawPageValue);
         
-        var pannedLessThanAPage : Bool = fabs(1 + currentPage - rawPageValue) > 0.5;
-        var flicked : Bool = fabs(velocity.x) > self.flickVelocity();
+        let pannedLessThanAPage : Bool = fabs(1 + currentPage - rawPageValue) > 0.5;
+        let flicked : Bool = fabs(velocity.x) > self.flickVelocity();
         if (pannedLessThanAPage && flicked) {
             proposedContentOffset.x = nextPage * self.pageWidth();
         } else {

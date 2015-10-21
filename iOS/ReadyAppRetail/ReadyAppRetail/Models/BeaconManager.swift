@@ -28,7 +28,7 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
     /**
     override the init method to set up locationManager, delegate, beaconRegion, and present popup to request location usage from user
     
-    :returns:
+    - returns:
     */
     override init() {
         super.init()
@@ -37,7 +37,7 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
         self.locationManager!.delegate = self
         
         //set beacon region
-        self.beaconRegion = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D"), identifier: "MIL_Lab")
+        self.beaconRegion = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!, identifier: "MIL_Lab")
         
         
         self.beaconRegion!.notifyOnEntry = true
@@ -48,7 +48,7 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
     /**
     function to receive departments and set departmentsArray
     
-    :param: departmentArray -- array to be passed in
+    - parameter departmentArray: -- array to be passed in
     */
     func receiveDepartments(departmentArray : Array<String>){
         
@@ -72,16 +72,16 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
     */
     func startBeaconDetection() {
         // - Start monitoring
-        self.locationManager!.startMonitoringForRegion(self.beaconRegion)
+        self.locationManager!.startMonitoringForRegion(self.beaconRegion!)
     }
     
     /**
     start ranging beacons once it started monitoring
     
-    :param: manager
-    :param: region
+    - parameter manager:
+    - parameter region:
     */
-    func locationManager(manager: CLLocationManager!, didStartMonitoringForRegion region: CLRegion!) {
+    func locationManager(manager: CLLocationManager, didStartMonitoringForRegion region: CLRegion) {
         NSLog("Scanning for beacons in region --> %@...", region.identifier)
         self.locationManager!.startRangingBeaconsInRegion(region as! CLBeaconRegion)
     }
@@ -90,10 +90,10 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
     /**
     func to be called upon entering given region (with beacons)
     
-    :param: manager
-    :param: region
+    - parameter manager:
+    - parameter region:
     */
-    func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
+    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
         // - Start ranging beacons
         NSLog("You entered the region --> %@ - starting scan for beacons", region.identifier)
         //self.delegate!.didEnterRegion(region as CLBeaconRegion)
@@ -107,10 +107,10 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
     /**
     func to be called upon exiting given region
     
-    :param: manager
-    :param: region
+    - parameter manager:
+    - parameter region:
     */
-    func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
+    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
         // - Stop ranging beacons
         NSLog("You exited the region --> %@ - stopping scan for beacons", region)
         //self.delegate!.didExitRegion(region as CLBeaconRegion)
@@ -121,28 +121,28 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
     /**
     func to be called upon a failure in monitoring beacons
     
-    :param: manager
-    :param: region
-    :param: error
+    - parameter manager:
+    - parameter region:
+    - parameter error:
     */
-    func locationManager(manager: CLLocationManager!, monitoringDidFailForRegion region: CLRegion!, withError error: NSError!) {
+    func locationManager(manager: CLLocationManager, monitoringDidFailForRegion region: CLRegion?, withError error: NSError) {
         NSLog("Error monitoring \(error)")
     }
     
     /**
     func to be called approx once per second while ranging beacons. assigns newly discovered beacons to a department in the order given to departmentsArray
     
-    :param: manager
-    :param: beacons
-    :param: region
+    - parameter manager:
+    - parameter beacons:
+    - parameter region:
     */
-    func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
+    func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
         var knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown } //filter out unknown beacons
          //let knownBeacons = beacons.filter{$0.proximity == CLProximity.Immediate}
         //if beacons are found at all, continue
         if (knownBeacons.count > 0) {
-            let closestBeacon = knownBeacons[0] as! CLBeacon //save closest Beacon for sorting later
-            var newBeaconID = closestBeacon.major.stringValue + closestBeacon.minor.stringValue
+            let closestBeacon = knownBeacons[0] //save closest Beacon for sorting later
+            let newBeaconID = closestBeacon.major.stringValue + closestBeacon.minor.stringValue
             
             if (newBeaconID != self.closestBeaconID) { //if new closest beacon
                 self.closestBeaconID = newBeaconID
@@ -174,17 +174,17 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
     /**
     func containing the algorithm to assign beacons to departments if they haven't been assigned yet. assigns departments in order they are received from Worklight (in departmentsArray)
     
-    :param: closeBeaconID  -- the id of the closest beacon
+    - parameter closeBeaconID:  -- the id of the closest beacon
     */
     func addBeaconsToDepartments(closeBeaconID: String!){
-        if contains(self.allBeacons, closeBeaconID) { //if beacon has already been assigned, don't do anything!
+        if self.allBeacons.contains(closeBeaconID) { //if beacon has already been assigned, don't do anything!
             return
         }
         
         if (self.departments[self.departmentsArray[self.departmentsCount]] == "") { //if department not been assigned a beacon yet
             self.allBeacons.append(closeBeaconID) //make note that we've assigned this beacon now
             self.departments[self.departmentsArray[self.departmentsCount]] = closeBeaconID
-            println("Beacon \(closeBeaconID) assigned to Department \(self.departmentsArray[self.departmentsCount])")
+            print("Beacon \(closeBeaconID) assigned to Department \(self.departmentsArray[self.departmentsCount])")
             self.departmentsCount++ //assign next department next time
         }
         
@@ -195,10 +195,10 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
     /**
     func to sort an array of products in a given list, and return a List object in the new order based on closest beacon/department
     
-    :param: dataArray -- data array of products passed in from ListItemsTableViewController
-    :param: list      -- list these products belong to
+    - parameter dataArray: -- data array of products passed in from ListItemsTableViewController
+    - parameter list:      -- list these products belong to
     
-    :returns: same list with new order based on proximity
+    - returns: same list with new order based on proximity
     */
     func sortListByLocation(dataArray: RLMArray!, list: List) {
         var refresh: Bool = false  //only reorder list if at least one department has been detected as closest
@@ -228,9 +228,9 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
     /**
     returns the string for proximity of a beacon
     
-    :param: proximity
+    - parameter proximity:
     
-    :returns: 
+    - returns: 
     */
     class func proximityAsString(proximity: CLProximity) -> String {
         switch proximity {

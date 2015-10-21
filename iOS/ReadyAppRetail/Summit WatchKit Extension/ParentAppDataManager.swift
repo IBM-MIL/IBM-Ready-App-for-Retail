@@ -19,7 +19,7 @@ public class ParentAppDataManager: NSObject {
     
     func retryRequest(request: ParentDataRequest, retry: Bool) -> Bool {
         if retry {
-            println("retrying request")
+            print("retrying request")
             self.execute(request, retry: false, result: self.callback)
             return false
         }
@@ -39,22 +39,17 @@ public class ParentAppDataManager: NSObject {
         let sent = WKInterfaceController.openParentApplication(userInfo, reply: { (replyDictionary, error) -> Void in
             
             if let error = error {
-                println("Error in grabbing WatchKit Data: \(error)")
+                print("Error in grabbing WatchKit Data: \(error)")
                 
                 // Parent calls usually fail the first time, not sure why. So we retry once
                 if self.retryRequest(request, retry: retry) {
                     self.callback(nil)
                 }
                 
-            } else if let response = replyDictionary {
-                
-                println("Response: \(response)")
-                self.callback(response)
             } else {
                 
-                if self.retryRequest(request, retry: retry) {
-                    self.callback(nil)
-                }
+                print("Response: \(replyDictionary)")
+                self.callback(replyDictionary)
             }
             
         })

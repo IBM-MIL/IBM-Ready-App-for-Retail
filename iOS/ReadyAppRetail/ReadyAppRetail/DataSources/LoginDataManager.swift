@@ -17,12 +17,12 @@ public class LoginDataManager: NSObject {
     /**
     This method is invoked by the loginViewController. It makes a call to Worklight for the default list's of the user.
     
-    :param: callBack the loginViewController to recieve data back from this call
+    - parameter callBack: the loginViewController to recieve data back from this call
     */
     public func login(email : String, password : String, callback : ((Bool, String?)->())!) {
         
-        var adapterName : String = "SummitAdapter"
-        var procedureName: String = "submitAuthentication"
+        let adapterName : String = "SummitAdapter"
+        let procedureName: String = "submitAuthentication"
         
         self.callback = callback
         
@@ -41,15 +41,15 @@ extension LoginDataManager: WLDataDelegate {
     /**
     Delgate method for WorkLight. Called when connection and return is successful
     
-    :param: response Response from WorkLight
+    - parameter response: Response from WorkLight
     */
     public func onSuccess(response: WLResponse!) {
         
-        var userID = JSONParseHelper.parseUserId(response)
+        let userID = JSONParseHelper.parseUserId(response)
         
         //UserAuthHelper.saveUser(userID)
         
-        var sharedDefaults = NSUserDefaults(suiteName: GroupDataAccess.sharedInstance.groupAppID)!
+        let sharedDefaults = NSUserDefaults(suiteName: GroupDataAccess.sharedInstance.groupAppID)!
         sharedDefaults.setObject(userID, forKey: "userID")
         sharedDefaults.synchronize()
         
@@ -61,11 +61,11 @@ extension LoginDataManager: WLDataDelegate {
     /**
     Delgate method for WorkLight. Called when connection or return is unsuccessful
     
-    :param: response Response from WorkLight
+    - parameter response: Response from WorkLight
     */
     public func onFailure(response: WLFailResponse!) {
         
-       var errorMessage = JSONParseHelper.parseLoginFailureResponse(response)
+       let errorMessage = JSONParseHelper.parseLoginFailureResponse(response)
         
         callback(false, errorMessage)
         

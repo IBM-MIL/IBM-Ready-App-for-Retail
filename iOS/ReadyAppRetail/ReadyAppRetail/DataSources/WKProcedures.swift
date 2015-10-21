@@ -13,8 +13,8 @@ class WKProcedures: NSObject {
     /**
     Watch helper method to perform summit authentication or inform user they need to login on the iPhone
     
-    :param: reply      watchKitExtensionRequest callback to return results
-    :param: dataAction category for type of request
+    - parameter reply:      watchKitExtensionRequest callback to return results
+    - parameter dataAction: category for type of request
     */
     class func loginThroughWatch(reply: (([NSObject : AnyObject]!) -> Void)!, dataAction: String) {
         
@@ -24,8 +24,8 @@ class WKProcedures: NSObject {
         } else {
             
             // Do login
-            var usr : String? = KeychainWrapper.stringForKey("summit_username")
-            var pswd : String? = KeychainWrapper.stringForKey("summit_password")
+            let usr : String? = KeychainWrapper.stringForKey("summit_username")
+            let pswd : String? = KeychainWrapper.stringForKey("summit_password")
             
             if (usr != nil && pswd != nil) {
                 
@@ -65,8 +65,8 @@ class WKProcedures: NSObject {
     /**
     WatchKit helper method to perform MFP call to gather new lists and then return a list of lists, retrieved from Realm
     
-    :param: reply      watchKitExtensionRequest callback to return results
-    :param: dataAction category for type of request
+    - parameter reply:      watchKitExtensionRequest callback to return results
+    - parameter dataAction: category for type of request
     */
     class func getLists(reply: (([NSObject : AnyObject]!) -> Void)!, id: String) {
         
@@ -86,7 +86,7 @@ class WKProcedures: NSObject {
             if done {
                 
                 // Once any new lists are added to Realm, we pull all lists, sorted by name
-                var dataArray = List.allObjects().sortedResultsUsingProperty("created", ascending: true)
+                let dataArray = List.allObjects().sortedResultsUsingProperty("created", ascending: true)
                 
                 let userInfo: [NSObject:AnyObject] = [
                     "parentMessage": id,
@@ -110,8 +110,8 @@ class WKProcedures: NSObject {
     Method not currently needed and may be removed later
     Method to grab product data for id, may never need if everything is sent with list
     
-    :param: reply  watchKitExtensionRequest callback to return results
-    :param: json  Json passed in to parse out a productID
+    - parameter reply:  watchKitExtensionRequest callback to return results
+    - parameter json:  Json passed in to parse out a productID
     */
     class func getProduct(reply: (([NSObject : AnyObject]!) -> Void)!, json: JSON) {
         
@@ -119,7 +119,7 @@ class WKProcedures: NSObject {
             MILWLHelper.getProductById( NSString(string: productID) , callBack: { (success: Bool, jsonResult: JSON?) -> () in
                 if success {
                     if let result = jsonResult {
-                        var product = JSONParseHelper.parseProduct(result)
+                        let product = JSONParseHelper.parseProduct(result)
                         
                         // Only coerce data that we need otherwise it messes up
                         reply(["name": product.name, "price": product.price, "imageUrl": product.imageUrl, "rating": product.rev])

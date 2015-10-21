@@ -27,8 +27,8 @@ class GroupDataAccess  {
     
     var groupAppID: String {
         if let path = NSBundle.mainBundle().pathForResource("Config", ofType: "plist") {
-            var configuration = NSDictionary(contentsOfFile: path)!
-            return (configuration["sharedAppGroupID"] as? String)!
+            let configuration = NSDictionary(contentsOfFile: path)!
+            return configuration["sharedAppGroupID"] as! String
         } else {
             return ""
         }

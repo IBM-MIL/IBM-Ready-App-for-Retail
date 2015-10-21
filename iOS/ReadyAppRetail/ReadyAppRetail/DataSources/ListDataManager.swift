@@ -17,17 +17,17 @@ public class ListDataManager: NSObject {
     /**
     This method is invoked by the loginViewController. It makes a call to Worklight for the default list's of the user.
     
-    :param: callBack the loginViewController to recieve data back from this call
+    - parameter callBack: the loginViewController to recieve data back from this call
     */
     public func getDefaultList(callback : ((Bool)->())!){
         
-        var adapterName : String = "SummitAdapter"
-        var procedureName: String = "getDefaultList"
+        let adapterName : String = "SummitAdapter"
+        let procedureName: String = "getDefaultList"
         
         self.callback = callback
         
-        var sharedDefaults = NSUserDefaults(suiteName: GroupDataAccess.sharedInstance.groupAppID)!
-        var userID: String = sharedDefaults.stringForKey("userID")!
+        let sharedDefaults = NSUserDefaults(suiteName: GroupDataAccess.sharedInstance.groupAppID)!
+        let userID: String = sharedDefaults.stringForKey("userID")!
 
         let params = [userID]
         
@@ -44,7 +44,7 @@ extension ListDataManager: WLDataDelegate {
     /**
     Delgate method for WorkLight. Called when connection and return is successful
     
-    :param: response Response from WorkLight
+    - parameter response: Response from WorkLight
     */
     public func onSuccess(response: WLResponse!) {
         
@@ -58,12 +58,12 @@ extension ListDataManager: WLDataDelegate {
     /**
     Delgate method for WorkLight. Called when connection or return is unsuccessful
     
-    :param: response Response from WorkLight
+    - parameter response: Response from WorkLight
     */
     public func onFailure(response: WLFailResponse!) {
         
-        if (response.errorCode.value == 0) && (response.errorMsg != nil) {
-            println("Response Failure with error: \(response.errorMsg)")
+        if (response.errorCode.rawValue == 0) && (response.errorMsg != nil) {
+            print("Response Failure with error: \(response.errorMsg)")
         }
         
         callback(false)
