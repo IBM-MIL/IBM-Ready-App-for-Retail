@@ -29,5 +29,8 @@
 // MMWormhole
 #import "MMWormhole.h"
 
+//Google Analytics
+#import "Analytics.h"
+
 ////Import swift code into objective c code
 //#import "ReadyAppRetail-Swift.h"
