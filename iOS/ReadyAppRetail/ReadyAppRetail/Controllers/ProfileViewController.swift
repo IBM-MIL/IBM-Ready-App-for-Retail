@@ -6,7 +6,7 @@ Licensed Materials - Property of IBM
 import UIKit
 import CoreLocation
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: SummitUIViewController {
 
     @IBOutlet weak var demoToggle: UISwitch!
     @IBOutlet weak var loginButton: UIButton!

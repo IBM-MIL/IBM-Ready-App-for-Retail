@@ -230,10 +230,8 @@
 		A2C4A0971BD98A650005C1D3 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C4A0901BD98A650005C1D3 /* libGoogleAnalytics.a */; settings = {ASSET_TAGS = (); }; };
 		A2C4A0981BD98A650005C1D3 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C4A0901BD98A650005C1D3 /* libGoogleAnalytics.a */; settings = {ASSET_TAGS = (); }; };
 		A2C4A0991BD98A650005C1D3 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C4A0901BD98A650005C1D3 /* libGoogleAnalytics.a */; settings = {ASSET_TAGS = (); }; };
-		A2C4A09B1BD98B8F0005C1D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2C4A09A1BD98B8F0005C1D3 /* GoogleService-Info.plist */; settings = {ASSET_TAGS = (); }; };
-		A2C4A09C1BD98B8F0005C1D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2C4A09A1BD98B8F0005C1D3 /* GoogleService-Info.plist */; settings = {ASSET_TAGS = (); }; };
-		A2C4A09D1BD98B8F0005C1D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2C4A09A1BD98B8F0005C1D3 /* GoogleService-Info.plist */; settings = {ASSET_TAGS = (); }; };
-		A2C4A09E1BD98B8F0005C1D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2C4A09A1BD98B8F0005C1D3 /* GoogleService-Info.plist */; settings = {ASSET_TAGS = (); }; };
+		A2C4A0A11BDAB9910005C1D3 /* SummitUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4A0A01BDAB9910005C1D3 /* SummitUIViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A2C4A0A31BDABC0F0005C1D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2C4A0A21BDABC0F0005C1D3 /* GoogleService-Info.plist */; settings = {ASSET_TAGS = (); }; };
 		EB394CFE1B27952500B5BF4B /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDE255C1A782A0B0061332B /* Oswald-Bold.ttf */; };
 		EB394CFF1B27952500B5BF4B /* Oswald-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDE255D1A782A0B0061332B /* Oswald-Light.ttf */; };
 		EB394D001B2798B500B5BF4B /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDE255C1A782A0B0061332B /* Oswald-Bold.ttf */; };
@@ -638,7 +636,8 @@
 		A2C4A08D1BD98A650005C1D3 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
 		A2C4A08E1BD98A650005C1D3 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
 		A2C4A0901BD98A650005C1D3 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
-		A2C4A09A1BD98B8F0005C1D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "ReadyAppRetail/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		A2C4A0A01BDAB9910005C1D3 /* SummitUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummitUIViewController.swift; sourceTree = "<group>"; };
+		A2C4A0A21BDABC0F0005C1D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EB4AD0081A687B7700BD30E6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EB4F372A1B3C635400D34D1D /* WatchUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchUtils.swift; sourceTree = "<group>"; };
 		EB770D3F1B21F08000FC7D93 /* ProductOverviewInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductOverviewInterfaceController.swift; sourceTree = "<group>"; };
@@ -994,6 +993,7 @@
 				34D2E38D1A853A3E00DF2927 /* AddToListTableViewController.swift */,
 				3448649B1A89528600047A9C /* AddToListContainerViewController.swift */,
 				344864A01A89680700047A9C /* CreateListInAddToListHierarchyViewController.swift */,
+				A2C4A0A01BDAB9910005C1D3 /* SummitUIViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1001,7 +1001,7 @@
 		1B5533EB1A5F16F3006DAECE /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				A2C4A09A1BD98B8F0005C1D3 /* GoogleService-Info.plist */,
+				A2C4A0A21BDABC0F0005C1D3 /* GoogleService-Info.plist */,
 				1B5533BE1A5EF9A1006DAECE /* Info.plist */,
 			);
 			path = Configuration;
@@ -1756,7 +1756,7 @@
 				1B931FBD1AB1F45600E4A5CF /* angular-touch.js in Resources */,
 				1B931FBE1AB1F45600E4A5CF /* angular-translate.js in Resources */,
 				1B931FD41AB1F45600E4A5CF /* star_lg_yellow.png in Resources */,
-				A2C4A09B1BD98B8F0005C1D3 /* GoogleService-Info.plist in Resources */,
+				A2C4A0A31BDABC0F0005C1D3 /* GoogleService-Info.plist in Resources */,
 				1BDE25651A782A0B0061332B /* Oswald-Light.ttf in Resources */,
 				1B931FCC1AB1F45600E4A5CF /* OpenSans-Semibold.ttf in Resources */,
 			);
@@ -1767,7 +1767,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A21C03301A698785003A9548 /* Config.plist in Resources */,
-				A2C4A09C1BD98B8F0005C1D3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1776,7 +1775,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EF3D0631B3313C200F36F9D /* worklight.plist in Resources */,
-				A2C4A09D1BD98B8F0005C1D3 /* GoogleService-Info.plist in Resources */,
 				2EF449421B161E2500F3576A /* Images.xcassets in Resources */,
 				2EF449461B161E2600F3576A /* Summit WatchKit App.app in Resources */,
 				EB82356A1B3DE80200FA9FC7 /* Images.xcassets in Resources */,
@@ -1795,7 +1793,6 @@
 				2EF4494E1B161E2600F3576A /* Interface.storyboard in Resources */,
 				2EF449501B161E2600F3576A /* Images.xcassets in Resources */,
 				EB394D001B2798B500B5BF4B /* Oswald-Bold.ttf in Resources */,
-				A2C4A09E1BD98B8F0005C1D3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1860,6 +1857,7 @@
 				1B9A85B41A6441170061F729 /* CompanyInboxVC.m in Sources */,
 				2E2E7C441B17D54E005225B4 /* WLProcedureCaller.swift in Sources */,
 				340D77EB1A8A768000AD967C /* ListItemsTableViewController.swift in Sources */,
+				A2C4A0A11BDAB9910005C1D3 /* SummitUIViewController.swift in Sources */,
 				34D2E38E1A853A3E00DF2927 /* AddToListTableViewController.swift in Sources */,
 				344415091A7ACF2C0082A3C2 /* ListViewController.swift in Sources */,
 				2EF3D0571B3310C100F36F9D /* LoginDataManager.swift in Sources */,

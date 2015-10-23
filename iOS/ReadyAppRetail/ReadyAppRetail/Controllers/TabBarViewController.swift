@@ -11,7 +11,8 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         
         self.tabBar.tintColor = Utils.UIColorFromHex(0x005448, alpha: 1.0)
-
+        
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -19,8 +20,6 @@ class TabBarViewController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-
     /*
     // MARK: - Navigation
 

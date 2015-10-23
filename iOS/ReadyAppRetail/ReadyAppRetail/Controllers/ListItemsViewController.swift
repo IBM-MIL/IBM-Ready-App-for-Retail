@@ -5,7 +5,7 @@ Licensed Materials - Property of IBM
 
 import UIKit
 
-class ListItemsViewController: UIViewController {
+class ListItemsViewController: SummitUIViewController {
     
     var list: List!
     

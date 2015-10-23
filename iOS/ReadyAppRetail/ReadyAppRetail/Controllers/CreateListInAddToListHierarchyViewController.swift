@@ -6,7 +6,7 @@ Licensed Materials - Property of IBM
 import UIKit
 import Realm
 
-class CreateListInAddToListHierarchyViewController: UIViewController, UITextFieldDelegate{
+class CreateListInAddToListHierarchyViewController: SummitUIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var listNameTextField: UITextField!
     var containerViewController: AddToListContainerViewController!

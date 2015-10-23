@@ -6,7 +6,7 @@ Licensed Materials - Property of IBM
 import UIKit
 import Security
 
-class LoginViewController: UIViewController, UITextFieldDelegate, UIAlertViewDelegate {
+class LoginViewController: SummitUIViewController, UITextFieldDelegate, UIAlertViewDelegate {
 
     @IBOutlet weak var loginBoxView: UIView!
     @IBOutlet weak var usernameTextField: UITextField!

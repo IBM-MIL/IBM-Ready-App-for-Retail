@@ -5,7 +5,7 @@ Licensed Materials - Property of IBM
 
 import UIKit
 
-class BrowseViewController: UIViewController, UIAlertViewDelegate {
+class BrowseViewController: SummitUIViewController, UIAlertViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollViewContentView: UIView!

@@ -13,7 +13,7 @@ protocol MILWebViewDelegate{
     optional func nativeViewHasChanged(pathComponents: Array<String>)
 }
 
-class MILWebViewController : UIViewController, UIWebViewDelegate{
+class MILWebViewController : SummitUIViewController, UIWebViewDelegate{
     var webView : UIWebView = UIWebView()
     var delegate : MILWebViewDelegate?
     var startPage : String = "index.html"

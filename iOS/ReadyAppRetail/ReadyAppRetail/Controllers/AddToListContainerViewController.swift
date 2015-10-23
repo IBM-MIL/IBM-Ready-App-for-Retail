@@ -5,7 +5,7 @@ Licensed Materials - Property of IBM
 
 import UIKit
 
-class AddToListContainerViewController: UIViewController {
+class AddToListContainerViewController: SummitUIViewController {
     
     var currentSegueIdentifier: String!
 

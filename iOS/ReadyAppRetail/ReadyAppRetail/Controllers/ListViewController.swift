@@ -5,7 +5,7 @@ Licensed Materials - Property of IBM
 
 import UIKit
 
-class ListViewController: UIViewController {
+class ListViewController: SummitUIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
