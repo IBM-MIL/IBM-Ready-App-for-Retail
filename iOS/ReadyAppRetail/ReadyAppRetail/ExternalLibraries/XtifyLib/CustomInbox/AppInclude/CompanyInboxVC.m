@@ -49,6 +49,8 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
 
     [self.tableView reloadData];
+    
+    [super viewWillAppear:animated];
 }
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animate
