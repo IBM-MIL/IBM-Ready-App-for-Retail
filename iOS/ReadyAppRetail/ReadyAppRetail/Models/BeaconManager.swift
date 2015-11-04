@@ -180,12 +180,13 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
         if self.allBeacons.contains(closeBeaconID) { //if beacon has already been assigned, don't do anything!
             return
         }
-        
-        if (self.departments[self.departmentsArray[self.departmentsCount]] == "") { //if department not been assigned a beacon yet
-            self.allBeacons.append(closeBeaconID) //make note that we've assigned this beacon now
-            self.departments[self.departmentsArray[self.departmentsCount]] = closeBeaconID
-            print("Beacon \(closeBeaconID) assigned to Department \(self.departmentsArray[self.departmentsCount])")
-            self.departmentsCount++ //assign next department next time
+        if self.departmentsCount < self.departmentsArray.count && self.departments[self.departmentsArray[self.departmentsCount]] != nil {
+            if (self.departments[self.departmentsArray[self.departmentsCount]] == "") { //if department not been assigned a beacon yet
+                self.allBeacons.append(closeBeaconID) //make note that we've assigned this beacon now
+                self.departments[self.departmentsArray[self.departmentsCount]] = closeBeaconID
+                print("Beacon \(closeBeaconID) assigned to Department \(self.departmentsArray[self.departmentsCount])")
+                self.departmentsCount++ //assign next department next time
+            }
         }
         
     }
