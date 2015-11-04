@@ -15,7 +15,7 @@ IBM Ready App for Retail is made great via
 * [**IBM MobileFirst Platform**](http://www-03.ibm.com/software/products/en/mobilefirstplatform)
 * [**IBM Bluemix**](https://console.ng.bluemix.net/)
   * [**Cloudant**] (https://cloudant.com/)
-* [**IBM® Mobile Push Notification, formerly Xtify® Mobile Push Notification**] (http://www-03.ibm.com/software/products/en/mobile-push-notification)
+* [**IBM Mobile Push Notification, formerly Xtify Mobile Push Notification**] (http://www-03.ibm.com/software/products/en/mobile-push-notification)
 * [**Estimote Beacons**] (http://estimote.com/)
 
 ### Getting Started
