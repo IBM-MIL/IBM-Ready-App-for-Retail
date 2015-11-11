@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="MQA-preprod-1.9.14-saas">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../MQApreprod/libs/MQA-preprod-1.9.14-saas.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

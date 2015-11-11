@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="bcprov">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../ReadyAppsLibrary/src/main/assets/worklight/bcprov.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
