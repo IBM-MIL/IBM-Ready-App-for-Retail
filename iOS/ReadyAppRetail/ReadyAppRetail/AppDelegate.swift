@@ -61,19 +61,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // Do Realm migration
-        RLMRealm.setSchemaVersion(1, forRealmAtPath: RLMRealm.defaultRealmPath(), withMigrationBlock: { migration, oldSchemaVersion in
+        RLMRealm.setSchemaVersion(1, forRealmAtPath: RLMRealm.defaultRealmPath()) {
+            
+            migration, oldSchemaVersion in
             
             if oldSchemaVersion < 1 {
                 migration.enumerateObjects(Product.className()) { oldObject, newObject in
                     newObject["checkedOff"] = ""
                 }
             }
-        })
+            
+        }
         
         // Check for first run
         if (NSUserDefaults.standardUserDefaults().objectForKey("summitFirstRun") == nil) {
+            
             KeychainWrapper.removeObjectForKey("summit_username")
             KeychainWrapper.removeObjectForKey("summit_password")
+            
             NSUserDefaults(suiteName: GroupDataAccess.sharedInstance.groupAppID)!.removeObjectForKey("userID")
             NSUserDefaults(suiteName: GroupDataAccess.sharedInstance.groupAppID)!.synchronize()
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "summitFirstRun")
