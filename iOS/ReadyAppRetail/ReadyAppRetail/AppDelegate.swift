@@ -48,9 +48,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // Tell Realm to install in the app group
-        let directory: NSURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(GroupDataAccess.sharedInstance.groupAppID)!
-        let realmPath = (directory.path! as NSString).stringByAppendingPathComponent("db.realm")
-        RLMRealm.setDefaultRealmPath(realmPath)
+        let dm = NSFileManager.defaultManager()
+        
+        if let groupAppID = GroupDataAccess.sharedInstance.groupAppID,
+            let directory = dm.containerURLForSecurityApplicationGroupIdentifier(groupAppID),
+            let path = directory.path
+        {
+            let dbRealm = "db.realm"
+            let realmPath = (path as NSString).stringByAppendingPathComponent(dbRealm)
+            RLMRealm.setDefaultRealmPath(realmPath)
+            
+        }
         
         // Do Realm migration
         RLMRealm.setSchemaVersion(1, forRealmAtPath: RLMRealm.defaultRealmPath(), withMigrationBlock: { migration, oldSchemaVersion in
