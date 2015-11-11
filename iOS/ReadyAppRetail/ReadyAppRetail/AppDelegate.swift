@@ -89,9 +89,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             realm.beginWriteTransaction()
             realm.deleteAllObjects()
             realm.commitWriteTransaction()
+            
         }
         
-         UserAuthHelper.clearUser() //clear nsuserdefaults so user is forced to login everytime the user opens the app
+        UserAuthHelper.clearUser() //clear nsuserdefaults so user is forced to login everytime the user opens the app
         
         //white status bar
         UIApplication.sharedApplication().statusBarStyle = .LightContent
@@ -115,39 +116,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let gai = GAI.sharedInstance()
         gai.trackUncaughtExceptions = true  // report uncaught exceptions
         gai.logger.logLevel = GAILogLevel.Verbose  // remove before app release
-
+        
         
         return true
     }
     
     
     /**
-    This method sets up MQA. If isDevelopment is set to true in info.plist, MQA isn't set up, else it is.
-    */
+     This method sets up MQA. If isDevelopment is set to true in info.plist, MQA isn't set up, else it is.
+     */
     private func setUpMQA(){
         if(Utils.isDevelopment() != true){
-        let configurationPath = NSBundle.mainBundle().pathForResource("Config", ofType: "plist")
-        var mqaApplicationKey : String = ""
-        
-        var hasValidConfiguation = true
-        
-        if((configurationPath) != nil) {
-            let configuration = NSDictionary(contentsOfFile: configurationPath!)!
+            let configurationPath = NSBundle.mainBundle().pathForResource("Config", ofType: "plist")
+            var mqaApplicationKey : String = ""
             
-            mqaApplicationKey = configuration["mqaApplicationKey"] as! String
-            if(mqaApplicationKey == ""){
-                hasValidConfiguation = false
-                _ = "Open the Config.plist file and set the mqaId to the MQA application key"
+            var hasValidConfiguation = true
+            
+            if((configurationPath) != nil) {
+                let configuration = NSDictionary(contentsOfFile: configurationPath!)!
+                
+                mqaApplicationKey = configuration["mqaApplicationKey"] as! String
+                if(mqaApplicationKey == ""){
+                    hasValidConfiguation = false
+                    _ = "Open the Config.plist file and set the mqaId to the MQA application key"
+                }
             }
-        }
-        if(hasValidConfiguation){
-            
-            MQALogger.startNewSessionWithApplicationKey(mqaApplicationKey)
-            
-            NSSetUncaughtExceptionHandler(exceptionHandlerPointer)
-        }else{
-            NSException().raise()
-        }
+            if(hasValidConfiguation){
+                
+                MQALogger.startNewSessionWithApplicationKey(mqaApplicationKey)
+                
+                NSSetUncaughtExceptionHandler(exceptionHandlerPointer)
+            }else{
+                NSException().raise()
+            }
         }
     }
     
@@ -162,8 +163,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     /**
-    This method registers the challenge handler needed for worklight when a user times out
-    */
+     This method registers the challenge handler needed for worklight when a user times out
+     */
     private func registerChallengeHander(){
         let challengeHandler = ReadyAppsChallengeHandler()
         WLClient.sharedInstance().registerChallengeHandler(challengeHandler)
@@ -176,33 +177,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     /**
-    If demo mode is one, an xtify notification will be sent to the user when the user puts the app in the background
-    
-    - parameter application: 
-    */
+     If demo mode is one, an xtify notification will be sent to the user when the user puts the app in the background
+     
+     - parameter application:
+     */
     func applicationDidEnterBackground(application: UIApplication) {
         XLappMgr.get().appEnterBackground()
         
         if (self.demoModeWillSendNotification == true){  //if demo mode is on, show notification upon entering background
             XtifyHelper.resetLocationForDemo()
-
+            
             XtifyHelper.updateNearSummitStore()
         }
         
     }
     
-
+    
     func applicationWillEnterForeground(application: UIApplication) {
         
         XLappMgr.get().appEnterForeground()
-
+        
     }
     
     func applicationDidBecomeActive(application: UIApplication) {
-
+        
         if (self.demoModeWillSendNotification == true){  //if demo mode is on, show notification upon entering background
             XtifyHelper.resetLocationForDemo()
-   
+            
             XtifyHelper.updateNearSummitStore()
         }
         XLappMgr.get().appEnterActive()
@@ -210,7 +211,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillTerminate(application: UIApplication) {
-
+        
         XLappMgr.get().applicationWillTerminate()
         
         UserAuthHelper.clearUser() //clear nsuserdefaults so the user is forced to login everytime they open the app
@@ -219,14 +220,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: WatchKit related methods
     
     func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]?) -> Void)) {
-
+        
         if let infoDictionary = userInfo as? [String: AnyObject], dataAction = infoDictionary[WatchKitRequestIdentifierKey] as? String {
             
             // Handle data actions watch app might require
             if dataAction == WatchKitGetLists {
-            
+                
                 WKProcedures.loginThroughWatch(reply, dataAction: dataAction)
-
+                
             }
             
         }
@@ -237,7 +238,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
         
         if let userInfo = userActivity.userInfo {
-        
+            
             if let window = self.window {
                 
                 if userActivity.activityType == HandoffListsID {
@@ -266,6 +267,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-
+    
 }
 
