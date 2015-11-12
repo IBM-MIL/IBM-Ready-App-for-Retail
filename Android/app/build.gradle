@@ -90,8 +90,3 @@ task jacocoTestReport(type: JacocoReport, dependsOn: "testDebug") {
         html.enabled = true
     }
 }
-
-def isJenkins = java.lang.System.getProperty("IS_JENKINS", "false")
-if ("true".equals(isJenkins)) {
-    updateAndroid()
-}

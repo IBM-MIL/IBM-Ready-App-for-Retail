@@ -34,10 +34,3 @@ dependencies {
     compile files('src/main/assets/Worklight/android-async-http.jar')
     compile files('src/main/assets/Worklight/gcm.jar')
 }
-
-
-
-def isJenkins = java.lang.System.getProperty("IS_JENKINS", "false")
-if ("true".equals(isJenkins)) {
-    updateAndroid()
-}

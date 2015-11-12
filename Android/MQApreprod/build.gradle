@@ -23,10 +23,3 @@ android {
 dependencies {
     compile files('libs/MQA-preprod-1.9.14-saas.jar')
 }
-
-
-
-def isJenkins = java.lang.System.getProperty("IS_JENKINS", "false")
-if ("true".equals(isJenkins)) {
-    updateAndroid()
-}
