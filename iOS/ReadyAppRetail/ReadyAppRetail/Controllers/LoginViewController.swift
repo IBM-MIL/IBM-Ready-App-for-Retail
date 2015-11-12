@@ -36,16 +36,20 @@ class LoginViewController: SummitUIViewController, UITextFieldDelegate, UIAlertV
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.wormhole = MMWormhole(applicationGroupIdentifier: GroupDataAccess.sharedInstance.groupAppID, optionalDirectory: nil)
+        if let groupAppID = GroupDataAccess.sharedInstance.groupAppID {
+            
+            self.wormhole = MMWormhole(applicationGroupIdentifier: groupAppID, optionalDirectory: nil)
+            
+        }
         
         setUpLoginBoxView()
         setUpLoginButton()
         setUpSignUpButton()
         setUpTextFields()
         saveUIElementOriginalConstraints()
+        
     }
    
-    
     override func viewDidAppear(animated: Bool) {
         self.navigationItem.title = NSLocalizedString("LOGIN", comment:"")
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Oswald-Regular", size: 22)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]

@@ -155,22 +155,26 @@ class ListOverviewInterfaceController: WKInterfaceController {
     }
     
     private func setUpWormhole() {
-        self.wormhole = MMWormhole(applicationGroupIdentifier: GroupDataAccess.sharedInstance.groupAppID, optionalDirectory: nil)
-        self.wormhole!.listenForMessageWithIdentifier("loginNotification", listener: { (messageObject) -> Void in
-            
-            if let message: Dictionary<String, AnyObject> = messageObject as? Dictionary<String, AnyObject> {
+        
+        if let groupAppID = GroupDataAccess.sharedInstance.groupAppID {
+        
+            self.wormhole = MMWormhole(applicationGroupIdentifier: groupAppID, optionalDirectory: nil)
+            self.wormhole!.listenForMessageWithIdentifier("loginNotification", listener: { (messageObject) -> Void in
                 
-                if let username = message["username"] as? String {
-                    KeychainWrapper.setString(username, forKey: "summit_username")
+                if let message: Dictionary<String, AnyObject> = messageObject as? Dictionary<String, AnyObject> {
+                    
+                    if let username = message["username"] as? String {
+                        KeychainWrapper.setString(username, forKey: "summit_username")
+                    }
+                    if let password = message["password"] as? String {
+                        KeychainWrapper.setString(password, forKey: "summit_password")
+                    }
+                    
+                    self.beginLoading()
+                    self.authenticate()
                 }
-                if let password = message["password"] as? String {
-                    KeychainWrapper.setString(password, forKey: "summit_password")
-                }
-                
-                self.beginLoading()
-                self.authenticate()
-            }
-        })
+            })
+        }
         
         self.wormhole!.listenForMessageWithIdentifier("refreshLists", listener: { (messageObject) -> Void in
             self.refresh()
@@ -179,19 +183,22 @@ class ListOverviewInterfaceController: WKInterfaceController {
     
     private func setUpRealm() {
         // Tell Realm to install in the app group
-        let directory: NSURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(GroupDataAccess.sharedInstance.groupAppID)!
-        let realmPath = (directory.path! as NSString).stringByAppendingPathComponent("db.realm")
-        RLMRealm.setDefaultRealmPath(realmPath)
-        
-        // Do Realm migration
-        RLMRealm.setSchemaVersion(1, forRealmAtPath: RLMRealm.defaultRealmPath(), withMigrationBlock: { migration, oldSchemaVersion in
+        if let groupAppID = GroupDataAccess.sharedInstance.groupAppID {
             
-            if oldSchemaVersion < 1 {
-                migration.enumerateObjects(Product.className()) { oldObject, newObject in
-                    newObject["checkedOff"] = ""
+            let directory: NSURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(groupAppID)!
+            let realmPath = (directory.path! as NSString).stringByAppendingPathComponent("db.realm")
+            RLMRealm.setDefaultRealmPath(realmPath)
+            
+            // Do Realm migration
+            RLMRealm.setSchemaVersion(1, forRealmAtPath: RLMRealm.defaultRealmPath(), withMigrationBlock: { migration, oldSchemaVersion in
+                
+                if oldSchemaVersion < 1 {
+                    migration.enumerateObjects(Product.className()) { oldObject, newObject in
+                        newObject["checkedOff"] = ""
+                    }
                 }
-            }
-        })
+            })
+        }
     }
     
     // ------------------

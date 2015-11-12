@@ -19,7 +19,12 @@ class CreateListViewController: SummitUIViewController, UITextFieldDelegate{
         //make cursor color summit green
         self.listNameTextField.tintColor = Utils.UIColorFromHex(0x005448, alpha: 1)
         
-        self.wormhole = MMWormhole(applicationGroupIdentifier: GroupDataAccess.sharedInstance.groupAppID, optionalDirectory: nil)
+        if let groupAppID = GroupDataAccess.sharedInstance.groupAppID {
+            
+            self.wormhole = MMWormhole(applicationGroupIdentifier: groupAppID, optionalDirectory: nil)
+            
+        }
+        
     }
     
     override func viewDidAppear(animated: Bool) {

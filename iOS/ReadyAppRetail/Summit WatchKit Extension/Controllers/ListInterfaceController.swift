@@ -25,10 +25,13 @@ class ListInterfaceController: WKInterfaceController {
             self.list = nil
         }
         
-        self.wormhole = MMWormhole(applicationGroupIdentifier: GroupDataAccess.sharedInstance.groupAppID, optionalDirectory: nil)
-        self.wormhole!.listenForMessageWithIdentifier("refreshProducts", listener: { (messageObject) -> Void in
-            self.reloadTable()
-        })
+        if let groupAppID = GroupDataAccess.sharedInstance.groupAppID {
+            
+            self.wormhole = MMWormhole(applicationGroupIdentifier: groupAppID, optionalDirectory: nil)
+            self.wormhole!.listenForMessageWithIdentifier("refreshProducts", listener: { (messageObject) -> Void in
+                self.reloadTable()
+            })
+        }
     }
     
     override func willActivate() {

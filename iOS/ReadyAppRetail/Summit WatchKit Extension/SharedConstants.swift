@@ -23,14 +23,23 @@ let HandoffProductIDSubKey: String = "summit.productID"
 // Plist Data Handler
 
 class GroupDataAccess  {
+    
     static let sharedInstance = GroupDataAccess()
     
-    var groupAppID: String {
-        if let path = NSBundle.mainBundle().pathForResource("Config", ofType: "plist") {
-            let configuration = NSDictionary(contentsOfFile: path)!
-            return configuration["sharedAppGroupID"] as! String
+    var groupAppID: String? {
+        
+        if let path = NSBundle.mainBundle().pathForResource("Config", ofType: "plist"),
+            let configuration = NSDictionary(contentsOfFile: path),
+            let entry = configuration["sharedAppGroupID"] as? String
+        {
+            
+            return entry
+            
         } else {
-            return ""
+            
+            return nil
+            
         }
+        
     }
 }
