@@ -1,5 +1,6 @@
 ![](README_assets/banner.png)
 # IBM-Ready-App-for-Retail
+[![Issue Stats](http://issuestats.com/github/IBM-MIL/IBM-Ready-App-for-Retail/badge/pr)](http://issuestats.com/github/IBM-MIL/IBM-Ready-App-for-Retail) [![Issue Stats](http://issuestats.com/github/IBM-MIL/IBM-Ready-App-for-Retail/badge/issue)](http://issuestats.com/github/IBM-MIL/IBM-Ready-App-for-Retail)
 
 ### Overview
 IBM Ready App for Retail is the second of the IBM ReadyApp Series. This app
