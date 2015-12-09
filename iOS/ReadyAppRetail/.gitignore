@@ -7,7 +7,7 @@ runAutomation.sh
 uia2junit
 #ReadyAppRetail/ReadyAppRetail.entitlements
 #Summit\ WatchKit\ Extension/Summit\ WatchKit\ Extension.entitlements
-ReadyAppRetail/*.entitlements
+Summit\ WatchKit\ Extension/*.entitlements
 
 
 
