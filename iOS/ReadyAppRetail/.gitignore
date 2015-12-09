@@ -5,9 +5,8 @@ ocunit2junit
 RemoteBuildAndDeploy_DST.xml
 runAutomation.sh
 uia2junit
-#ReadyAppRetail/ReadyAppRetail.entitlements
-#Summit\ WatchKit\ Extension/Summit\ WatchKit\ Extension.entitlements
 Summit\ WatchKit\ Extension/*.entitlements
+ReadyAppRetail/*.entitlements
 
 
 
